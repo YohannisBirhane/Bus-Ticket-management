@@ -12,14 +12,17 @@ namespace Bus_Ticket_mgmt
     {
         None,
         User,
-        Lock
+        Lock,
+        Email,
+        Phone
     }
 
     public enum ButtonIconType
     {
         None,
         Login,
-        GuestUser
+        GuestUser,
+        Register
     }
 
     /// <summary>
@@ -262,6 +265,26 @@ namespace Bus_Ticket_mgmt
                         g.FillRectangle(dotBrush, cx - 1, cy + 3, 2, 3);
                     }
                 }
+                else if (iconType == InputIconType.Email)
+                {
+                    int cx = 13;
+                    int cy = this.Height / 2 - 6;
+                    Rectangle rect = new Rectangle(cx, cy, 18, 12);
+                    using (GraphicsPath mPath = CardPanel.GetRoundedRectanglePath(rect, 2))
+                    {
+                        g.DrawPath(pen, mPath);
+                    }
+                    g.DrawLine(pen, cx + 1, cy + 2, cx + 9, cy + 7);
+                    g.DrawLine(pen, cx + 17, cy + 2, cx + 9, cy + 7);
+                }
+                else if (iconType == InputIconType.Phone)
+                {
+                    int cx = 14;
+                    int cy = this.Height / 2 - 7;
+                    g.DrawArc(pen, cx + 2, cy, 13, 13, 210, 80);
+                    g.DrawLine(pen, cx + 4, cy + 9, cx + 2, cy + 13);
+                    g.DrawLine(pen, cx + 11, cy + 2, cx + 15, cy + 4);
+                }
             }
         }
 
@@ -413,6 +436,14 @@ namespace Bus_Ticket_mgmt
                     int cx = x + 8;
                     g.DrawEllipse(pen, cx - 4, centerY - 7, 8, 8);
                     g.DrawArc(pen, cx - 7, centerY + 2, 14, 9, 180, 180);
+                }
+                else if (ButtonIcon == ButtonIconType.Register)
+                {
+                    int cx = x + 6;
+                    g.DrawEllipse(pen, cx - 3, centerY - 6, 7, 7);
+                    g.DrawArc(pen, cx - 6, centerY + 2, 12, 8, 180, 180);
+                    g.DrawLine(pen, cx + 8, centerY - 2, cx + 8, centerY + 4);
+                    g.DrawLine(pen, cx + 5, centerY + 1, cx + 11, centerY + 1);
                 }
             }
         }
