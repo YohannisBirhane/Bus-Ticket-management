@@ -15,11 +15,6 @@ namespace Bus_Ticket_mgmt
         private Button btnMinimize;
         private Button btnClose;
 
-        // Footer Controls
-        private Panel panelFooter;
-        private Label lblFooterHelp;
-        private Label lblFooterCopyright;
-
         // Main Login Container
         private Panel panelMain;
         private ProfileAvatar avatarProfile;
@@ -57,10 +52,6 @@ namespace Bus_Ticket_mgmt
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
 
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.lblFooterHelp = new System.Windows.Forms.Label();
-            this.lblFooterCopyright = new System.Windows.Forms.Label();
-
             this.panelMain = new System.Windows.Forms.Panel();
             this.avatarProfile = new Bus_Ticket_mgmt.ProfileAvatar();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -79,7 +70,6 @@ namespace Bus_Ticket_mgmt
             this.lblRegisterNow = new System.Windows.Forms.Label();
 
             this.panelTitleBar.SuspendLayout();
-            this.panelFooter.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelDivider.SuspendLayout();
             this.flowRegister.SuspendLayout();
@@ -151,40 +141,6 @@ namespace Bus_Ticket_mgmt
             this.btnClose.UseVisualStyleBackColor = true;
 
             // 
-            // panelFooter
-            // 
-            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            this.panelFooter.Controls.Add(this.lblFooterHelp);
-            this.panelFooter.Controls.Add(this.lblFooterCopyright);
-            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Height = 40;
-            this.panelFooter.Location = new System.Drawing.Point(0, 620);
-            this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(460, 40);
-            this.panelFooter.TabIndex = 1;
-
-            // 
-            // lblFooterHelp
-            // 
-            this.lblFooterHelp.Location = new System.Drawing.Point(16, 2);
-            this.lblFooterHelp.Name = "lblFooterHelp";
-            this.lblFooterHelp.Size = new System.Drawing.Size(230, 36);
-            this.lblFooterHelp.TabIndex = 0;
-
-            // 
-            // lblFooterCopyright
-            // 
-            this.lblFooterCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFooterCopyright.AutoSize = true;
-            this.lblFooterCopyright.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFooterCopyright.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.lblFooterCopyright.Location = new System.Drawing.Point(310, 12);
-            this.lblFooterCopyright.Name = "lblFooterCopyright";
-            this.lblFooterCopyright.Size = new System.Drawing.Size(136, 15);
-            this.lblFooterCopyright.TabIndex = 1;
-            this.lblFooterCopyright.Text = "© 2024 BusBook ET";
-
-            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
@@ -203,8 +159,8 @@ namespace Bus_Ticket_mgmt
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 36);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(460, 584);
-            this.panelMain.TabIndex = 2;
+            this.panelMain.Size = new System.Drawing.Size(460, 564);
+            this.panelMain.TabIndex = 1;
 
             // 
             // avatarProfile
@@ -348,7 +304,7 @@ namespace Bus_Ticket_mgmt
             this.flowRegister.Controls.Add(this.lblNoAccount);
             this.flowRegister.Controls.Add(this.lblRegisterNow);
             this.flowRegister.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
-            this.flowRegister.Location = new System.Drawing.Point(40, 508);
+            this.flowRegister.Location = new System.Drawing.Point(40, 506);
             this.flowRegister.Name = "flowRegister";
             this.flowRegister.Size = new System.Drawing.Size(380, 30);
             this.flowRegister.TabIndex = 11;
@@ -386,22 +342,19 @@ namespace Bus_Ticket_mgmt
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(460, 660);
+            this.ClientSize = new System.Drawing.Size(460, 600);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(460, 660);
-            this.MinimumSize = new System.Drawing.Size(460, 660);
+            this.MaximumSize = new System.Drawing.Size(460, 600);
+            this.MinimumSize = new System.Drawing.Size(460, 600);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bus Ticket Management - Login";
 
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panelFooter.ResumeLayout(false);
-            this.panelFooter.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelDivider.ResumeLayout(false);

@@ -64,26 +64,6 @@ namespace Bus_Ticket_mgmt
                     e.Graphics.DrawLine(pen, 220, lineY, 380, lineY);
                 }
             };
-
-            // Footer bar top border
-            panelFooter.Paint += (s, e) =>
-            {
-                using (Pen pen = new Pen(Color.FromArgb(226, 232, 240), 1))
-                {
-                    e.Graphics.DrawLine(pen, 0, 0, panelFooter.Width, 0);
-                }
-            };
-
-            // Footer support contact info
-            lblFooterHelp.Paint += (s, e) =>
-            {
-                IconRenderer.DrawHeadphoneIcon(e.Graphics, 2, 8, Color.FromArgb(13, 94, 234));
-                using (Font f = new Font("Segoe UI", 9F, FontStyle.Regular))
-                using (SolidBrush b = new SolidBrush(Color.FromArgb(51, 65, 85)))
-                {
-                    e.Graphics.DrawString("Need Help?  support@busbook.et", f, b, 24, 8);
-                }
-            };
         }
 
         private void SetupEvents()
@@ -135,13 +115,23 @@ namespace Bus_Ticket_mgmt
                     return;
                 }
 
-                MessageBox.Show($"Welcome back, {user}!\nLogin successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                using (var adminDashboard = new Bus_Ticket_mgmt.Forms.AdminDashboardForm())
+                {
+                    adminDashboard.ShowDialog(this);
+                }
+                this.Show();
             };
 
             // Continue as guest button action
             btnGuest.Click += (s, e) =>
             {
-                MessageBox.Show("Continuing as Guest...", "Guest Access", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                using (var adminDashboard = new Bus_Ticket_mgmt.Forms.AdminDashboardForm())
+                {
+                    adminDashboard.ShowDialog(this);
+                }
+                this.Show();
             };
 
             // Forgot password click action
@@ -150,10 +140,15 @@ namespace Bus_Ticket_mgmt
                 MessageBox.Show("Password reset instructions will be sent to your registered email.", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
-            // Register now click action
+            // Register now click action - redirect directly to RegisterForm
             lblRegisterNow.Click += (s, e) =>
             {
-                MessageBox.Show("Redirecting to registration page...", "Create Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                using (var registerForm = new Bus_Ticket_mgmt.Forms.RegisterForm())
+                {
+                    registerForm.ShowDialog(this);
+                }
+                this.Show();
             };
         }
 
