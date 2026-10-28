@@ -123,13 +123,13 @@ namespace Bus_Ticket_mgmt
                 this.Show();
             };
 
-            // Continue as guest button action
+            // Passenger demo access uses in-memory trip and booking data.
             btnGuest.Click += (s, e) =>
             {
                 this.Hide();
-                using (var adminDashboard = new Bus_Ticket_mgmt.Forms.AdminDashboardForm())
+                using (var passengerDashboard = new Bus_Ticket_mgmt.Forms.PassengerDashboardForm())
                 {
-                    adminDashboard.ShowDialog(this);
+                    passengerDashboard.ShowDialog(this);
                 }
                 this.Show();
             };

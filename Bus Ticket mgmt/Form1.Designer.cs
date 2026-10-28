@@ -295,7 +295,7 @@ namespace Bus_Ticket_mgmt
             this.btnGuest.Name = "btnGuest";
             this.btnGuest.Size = new System.Drawing.Size(380, 46);
             this.btnGuest.TabIndex = 10;
-            this.btnGuest.Text = "Continue as Guest";
+            this.btnGuest.Text = "Login as Passenger";
             this.btnGuest.UseVisualStyleBackColor = true;
 
             // 
