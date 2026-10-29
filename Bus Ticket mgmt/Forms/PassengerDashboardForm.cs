@@ -20,10 +20,19 @@ namespace Bus_Ticket_mgmt.Forms
         private readonly Button overviewNavigation = new();
         private readonly Button tripsNavigation = new();
         private readonly Button bookingsNavigation = new();
+        private readonly Button profileNavigation = new();
 
         private Panel overviewPage = new();
         private Panel tripsPage = new();
         private Panel bookingsPage = new();
+        private Panel profilePage = new();
+
+        private TextBox profileNameInput = new();
+        private TextBox profileEmailInput = new();
+        private TextBox profilePhoneInput = new();
+        private TextBox profileAddressInput = new();
+        private CheckBox emailUpdatesOption = new();
+        private CheckBox smsUpdatesOption = new();
 
         private Label availableTripMetric = new();
         private Label activeBookingMetric = new();
@@ -62,9 +71,11 @@ namespace Bus_Ticket_mgmt.Forms
             overviewPage = BuildOverviewPage();
             tripsPage = BuildTripsPage();
             bookingsPage = BuildBookingsPage();
+            profilePage = BuildProfilePage();
             pageHost.Controls.Add(overviewPage);
             pageHost.Controls.Add(tripsPage);
             pageHost.Controls.Add(bookingsPage);
+            pageHost.Controls.Add(profilePage);
 
             RefreshTripResults();
             RefreshBookingList();
@@ -132,9 +143,11 @@ namespace Bus_Ticket_mgmt.Forms
             ConfigureNavigationButton(overviewNavigation, "Overview", 48);
             ConfigureNavigationButton(tripsNavigation, "Find trips", 88);
             ConfigureNavigationButton(bookingsNavigation, "My bookings", 128);
+            ConfigureNavigationButton(profileNavigation, "Profile settings", 168);
             sidebar.Controls.Add(overviewNavigation);
             sidebar.Controls.Add(tripsNavigation);
             sidebar.Controls.Add(bookingsNavigation);
+            sidebar.Controls.Add(profileNavigation);
 
             var signOutButton = new Button
             {
@@ -219,6 +232,7 @@ namespace Bus_Ticket_mgmt.Forms
             overviewNavigation.Click += (sender, args) => ShowPage("overview");
             tripsNavigation.Click += (sender, args) => ShowPage("trips");
             bookingsNavigation.Click += (sender, args) => ShowPage("bookings");
+            profileNavigation.Click += (sender, args) => ShowPage("profile");
         }
 
         private static void ConfigureNavigationButton(Button button, string text, int top)
@@ -334,6 +348,209 @@ namespace Bus_Ticket_mgmt.Forms
                 actions.Width = width;
             };
             return page;
+        }
+
+        private Panel BuildProfilePage()
+        {
+            var page = new Panel { Dock = DockStyle.Fill, BackColor = PageBackground };
+            var profileCard = new GroupBox
+            {
+                Text = "Personal information",
+                Location = new Point(10, 8),
+                Size = new Size(860, 282),
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
+                BackColor = Color.White,
+                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
+                ForeColor = Navy
+            };
+            profileCard.Controls.Add(new Label
+            {
+                Text = "DEMO PROFILE",
+                Location = new Point(18, 22),
+                Size = new Size(150, 22),
+                ForeColor = Blue,
+                Font = new Font("Segoe UI", 8F, FontStyle.Bold)
+            });
+            profileCard.Controls.Add(new Label
+            {
+                Text = "Edit your contact details for this session. Changes are not stored after the app closes.",
+                Location = new Point(18, 46),
+                Size = new Size(800, 24),
+                ForeColor = MutedText,
+                Font = new Font("Segoe UI", 9F)
+            });
+
+            AddProfileField(profileCard, "Full name", out profileNameInput, 18, 86, 245);
+            AddProfileField(profileCard, "Email address", out profileEmailInput, 292, 86, 245);
+            AddProfileField(profileCard, "Phone number", out profilePhoneInput, 566, 86, 245);
+            AddProfileField(profileCard, "Address", out profileAddressInput, 18, 162, 519);
+
+            profileCard.Controls.Add(new Label
+            {
+                Text = "Account type",
+                Location = new Point(566, 162),
+                Size = new Size(245, 20),
+                ForeColor = MutedText,
+                Font = new Font("Segoe UI", 8.5F)
+            });
+            profileCard.Controls.Add(new Label
+            {
+                Text = "Passenger (demo)",
+                Location = new Point(566, 184),
+                Size = new Size(245, 30),
+                ForeColor = Navy,
+                Font = new Font("Segoe UI", 10F, FontStyle.Bold)
+            });
+            page.Controls.Add(profileCard);
+
+            var preferencesCard = new GroupBox
+            {
+                Text = "Travel updates",
+                Location = new Point(10, 304),
+                Size = new Size(860, 148),
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
+                BackColor = Color.White,
+                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
+                ForeColor = Navy
+            };
+            preferencesCard.Controls.Add(new Label
+            {
+                Text = "Choose how you would like to receive trip reminders and booking updates.",
+                Location = new Point(18, 26),
+                Size = new Size(800, 22),
+                ForeColor = MutedText,
+                Font = new Font("Segoe UI", 9F)
+            });
+            emailUpdatesOption = new CheckBox
+            {
+                Text = "Email me booking confirmations and travel reminders",
+                Location = new Point(18, 62),
+                Size = new Size(430, 26),
+                Checked = true,
+                ForeColor = Navy,
+                Font = new Font("Segoe UI", 9F)
+            };
+            smsUpdatesOption = new CheckBox
+            {
+                Text = "Send SMS updates for trip changes",
+                Location = new Point(18, 94),
+                Size = new Size(430, 26),
+                Checked = true,
+                ForeColor = Navy,
+                Font = new Font("Segoe UI", 9F)
+            };
+            preferencesCard.Controls.Add(emailUpdatesOption);
+            preferencesCard.Controls.Add(smsUpdatesOption);
+            page.Controls.Add(preferencesCard);
+
+            var saveButton = CreateActionButton("Save settings", true);
+            saveButton.SetBounds(10, 468, 150, 38);
+            saveButton.Click += (sender, args) => SaveProfileSettings();
+            page.Controls.Add(saveButton);
+
+            var resetButton = CreateActionButton("Reset demo profile", false);
+            resetButton.SetBounds(172, 468, 170, 38);
+            resetButton.Click += (sender, args) =>
+            {
+                LoadDefaultProfile();
+                SetStatus("Demo profile settings restored.");
+            };
+            page.Controls.Add(resetButton);
+
+            page.Controls.Add(new Label
+            {
+                Text = "This is a visual mock only. Profile edits and notification preferences stay in memory and are not sent or persisted.",
+                Location = new Point(10, 520),
+                Size = new Size(860, 38),
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
+                ForeColor = MutedText,
+                Font = new Font("Segoe UI", 8.5F)
+            });
+            page.Resize += (sender, args) =>
+            {
+                int width = Math.Max(0, page.ClientSize.Width - 20);
+                profileCard.Width = width;
+                preferencesCard.Width = width;
+                if (width > 650)
+                {
+                    profileEmailInput.Width = Math.Max(180, (width - 100) / 3);
+                    profilePhoneInput.Width = profileEmailInput.Width;
+                    profileEmailInput.Left = 292;
+                    profilePhoneInput.Left = 566;
+                    profileAddressInput.Width = Math.Max(300, profileEmailInput.Width * 2 + 29);
+                }
+            };
+            LoadDefaultProfile();
+            return page;
+        }
+
+        private static void AddProfileField(
+            Control parent,
+            string label,
+            out TextBox input,
+            int left,
+            int top,
+            int width)
+        {
+            parent.Controls.Add(new Label
+            {
+                Text = label,
+                Location = new Point(left, top),
+                Size = new Size(width, 20),
+                ForeColor = MutedText,
+                Font = new Font("Segoe UI", 8.5F)
+            });
+            input = new TextBox
+            {
+                Location = new Point(left, top + 23),
+                Size = new Size(width, 30),
+                Font = new Font("Segoe UI", 9.5F),
+                BorderStyle = BorderStyle.FixedSingle
+            };
+            parent.Controls.Add(input);
+        }
+
+        private void LoadDefaultProfile()
+        {
+            profileNameInput.Text = "Hana Tesfaye";
+            profileEmailInput.Text = "hana@gmail.com";
+            profilePhoneInput.Text = "+251 912 345 678";
+            profileAddressInput.Text = "Mexico, Addis Ababa";
+            emailUpdatesOption.Checked = true;
+            smsUpdatesOption.Checked = true;
+        }
+
+        private void SaveProfileSettings()
+        {
+            if (string.IsNullOrWhiteSpace(profileNameInput.Text) ||
+                string.IsNullOrWhiteSpace(profileEmailInput.Text) ||
+                string.IsNullOrWhiteSpace(profilePhoneInput.Text))
+            {
+                MessageBox.Show(
+                    "Full name, email address, and phone number are required.",
+                    "Profile details required",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!profileEmailInput.Text.Trim().Contains('@'))
+            {
+                MessageBox.Show(
+                    "Enter a valid email address.",
+                    "Invalid email address",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                profileEmailInput.Focus();
+                return;
+            }
+
+            SetStatus("Profile settings saved for this demo session only.");
+            MessageBox.Show(
+                "Your profile settings have been updated for this demo session.\nThey will reset when the application closes.",
+                "Settings saved",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private static Panel CreateMetricCard(string title, out Label valueLabel)
@@ -682,6 +899,7 @@ namespace Bus_Ticket_mgmt.Forms
             overviewPage.Visible = page == "overview";
             tripsPage.Visible = page == "trips";
             bookingsPage.Visible = page == "bookings";
+            profilePage.Visible = page == "profile";
 
             if (page == "overview")
             {
@@ -693,16 +911,22 @@ namespace Bus_Ticket_mgmt.Forms
                 pageTitle.Text = "Find Available Trips";
                 pageSubtitle.Text = "Filter sample routes and choose an open seat before confirming a booking.";
             }
-            else
+            else if (page == "bookings")
             {
                 pageTitle.Text = "My Bookings";
                 pageSubtitle.Text = "View ticket details or cancel a confirmed booking and release its seat.";
                 RefreshBookingList();
             }
+            else
+            {
+                pageTitle.Text = "Profile Settings";
+                pageSubtitle.Text = "Manage your sample passenger details and travel notification preferences.";
+            }
 
             overviewNavigation.BackColor = page == "overview" ? Blue : Navy;
             tripsNavigation.BackColor = page == "trips" ? Blue : Navy;
             bookingsNavigation.BackColor = page == "bookings" ? Blue : Navy;
+            profileNavigation.BackColor = page == "profile" ? Blue : Navy;
             SetStatus(page == "overview"
                 ? "Demo data is held in memory and resets when the application closes."
                 : "Ready.");

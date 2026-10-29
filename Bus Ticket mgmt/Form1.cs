@@ -41,6 +41,13 @@ namespace Bus_Ticket_mgmt
             btnGuest.BorderSize = 1.4f;
             btnGuest.ButtonIcon = ButtonIconType.GuestUser;
 
+            btnDriver.NormalColor = Color.White;
+            btnDriver.HoverColor = Color.FromArgb(241, 245, 249);
+            btnDriver.PressedColor = Color.FromArgb(226, 232, 240);
+            btnDriver.ForeColor = Color.FromArgb(15, 23, 42);
+            btnDriver.BorderLineColor = Color.FromArgb(148, 163, 184);
+            btnDriver.BorderSize = 1.4f;
+
             // Draw vector bus icon on Title Bar
             lblBusIcon.Paint += (s, e) =>
             {
@@ -130,6 +137,16 @@ namespace Bus_Ticket_mgmt
                 using (var passengerDashboard = new Bus_Ticket_mgmt.Forms.PassengerDashboardForm())
                 {
                     passengerDashboard.ShowDialog(this);
+                }
+                this.Show();
+            };
+
+            btnDriver.Click += (s, e) =>
+            {
+                this.Hide();
+                using (var driverDashboard = new Bus_Ticket_mgmt.Forms.DriverDashboardForm())
+                {
+                    driverDashboard.ShowDialog(this);
                 }
                 this.Show();
             };

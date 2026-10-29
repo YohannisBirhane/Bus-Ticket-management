@@ -29,6 +29,7 @@ namespace Bus_Ticket_mgmt
         private Panel panelDivider;
         private Label lblOrText;
         private ModernButton btnGuest;
+        private ModernButton btnDriver;
         private FlowLayoutPanel flowRegister;
         private Label lblNoAccount;
         private Label lblRegisterNow;
@@ -65,6 +66,7 @@ namespace Bus_Ticket_mgmt
             this.panelDivider = new System.Windows.Forms.Panel();
             this.lblOrText = new System.Windows.Forms.Label();
             this.btnGuest = new Bus_Ticket_mgmt.ModernButton();
+            this.btnDriver = new Bus_Ticket_mgmt.ModernButton();
             this.flowRegister = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNoAccount = new System.Windows.Forms.Label();
             this.lblRegisterNow = new System.Windows.Forms.Label();
@@ -155,6 +157,7 @@ namespace Bus_Ticket_mgmt
             this.panelMain.Controls.Add(this.btnLogin);
             this.panelMain.Controls.Add(this.panelDivider);
             this.panelMain.Controls.Add(this.btnGuest);
+            this.panelMain.Controls.Add(this.btnDriver);
             this.panelMain.Controls.Add(this.flowRegister);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 36);
@@ -299,15 +302,29 @@ namespace Bus_Ticket_mgmt
             this.btnGuest.UseVisualStyleBackColor = true;
 
             // 
+            // btnDriver
+            // 
+            this.btnDriver.FlatAppearance.BorderSize = 0;
+            this.btnDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDriver.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDriver.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnDriver.Location = new System.Drawing.Point(40, 498);
+            this.btnDriver.Name = "btnDriver";
+            this.btnDriver.Size = new System.Drawing.Size(380, 46);
+            this.btnDriver.TabIndex = 11;
+            this.btnDriver.Text = "Login as Driver";
+            this.btnDriver.UseVisualStyleBackColor = true;
+
+            // 
             // flowRegister
             // 
             this.flowRegister.Controls.Add(this.lblNoAccount);
             this.flowRegister.Controls.Add(this.lblRegisterNow);
             this.flowRegister.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
-            this.flowRegister.Location = new System.Drawing.Point(40, 506);
+            this.flowRegister.Location = new System.Drawing.Point(40, 554);
             this.flowRegister.Name = "flowRegister";
             this.flowRegister.Size = new System.Drawing.Size(380, 30);
-            this.flowRegister.TabIndex = 11;
+            this.flowRegister.TabIndex = 12;
 
             // 
             // lblNoAccount
@@ -342,13 +359,13 @@ namespace Bus_Ticket_mgmt
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(460, 600);
+            this.ClientSize = new System.Drawing.Size(460, 650);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(460, 600);
-            this.MinimumSize = new System.Drawing.Size(460, 600);
+            this.MaximumSize = new System.Drawing.Size(460, 650);
+            this.MinimumSize = new System.Drawing.Size(460, 650);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bus Ticket Management - Login";
