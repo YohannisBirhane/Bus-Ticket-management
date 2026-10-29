@@ -25,10 +25,16 @@ namespace Bus_Ticket_mgmt.Forms
             SetupEvents();
             SetupUserManagementEvents();
             SetupBusManagementEvents();
+            SetupRouteManagementEvents();
+            SetupBookingManagementEvents();
+            SetupTicketManagementEvents();
 
             PopulateTripsTable();
             PopulateUsersList();
             PopulateBusesList();
+            PopulateRoutesList();
+            PopulateBookingsList();
+            PopulateTicketsList();
         }
 
         private void InitializeCustomUI()
@@ -61,12 +67,12 @@ namespace Bus_Ticket_mgmt.Forms
             cmbStatusFilter.SelectedIndex = 0; // All Statuses
             cmbBusTypeFilter.SelectedIndex = 0; // All Bus Types
             cmbBusStatusFilter.SelectedIndex = 0; // All Statuses
+            cmbRouteStatusFilter.SelectedIndex = 0; // All Statuses
+            cmbBookingStatusFilter.SelectedIndex = 0; // All Statuses
+            cmbTicketStatusFilter.SelectedIndex = 0; // All Statuses
 
             // Sidebar navigation buttons hover effect
-            SetupSidebarButton(btnNavRoutes, "Route Management", "Manage departure locations, destinations, distances, and travel times.");
             SetupSidebarButton(btnNavTrips, "Trip & Schedule Management", "Create trips, assign buses and drivers, and update trip status.");
-            SetupSidebarButton(btnNavBookings, "Booking Management", "View bookings, search reservations, and assist with permitted changes.");
-            SetupSidebarButton(btnNavTickets, "Ticket Management", "Search tickets and verify ticket information.");
             SetupSidebarButton(btnNavPayments, "Payment Management", "View payment records, payment statuses, and eligible refunds.");
             SetupSidebarButton(btnNavStaff, "Driver & Staff Management", "Register drivers and staff, manage details, and assign drivers.");
             SetupSidebarButton(btnNavFares, "Fare Management", "Set and update ticket prices and applicable discounts.");
@@ -81,10 +87,26 @@ namespace Bus_Ticket_mgmt.Forms
             btnQuickSalesReport.Click += (s, e) => ShowSectionInfo("Sales & Revenue Reports", "Export daily reconciliation statements, revenue breakdown and fleet utilization.");
             btnQuickFeedback.Click += (s, e) => ShowSectionInfo("Feedback & Complaints", "Review 14 unresolved customer requests and trip inquiries.");
 
-            // Navigation between Dashboard, User Management, and Bus Management
+            // Sidebar right-edge divider line
+            panelSidebar.Paint += (s, e) =>
+            {
+                using (Pen borderPen = new Pen(Color.FromArgb(226, 232, 240), 1))
+                {
+                    e.Graphics.DrawLine(borderPen, panelSidebar.Width - 1, 0, panelSidebar.Width - 1, panelSidebar.Height);
+                }
+            };
+
+            // Sign out button hover transition
+            btnNavLogout.MouseEnter += (s, e) => { btnNavLogout.BackColor = Color.FromArgb(254, 226, 226); };
+            btnNavLogout.MouseLeave += (s, e) => { btnNavLogout.BackColor = Color.FromArgb(254, 242, 242); };
+
+            // Navigation between Dashboard, User Management, Bus Management, Route Management, Booking Management, and Ticket Management
             btnNavDashboard.Click += (s, e) => ShowDashboardView();
             btnNavUsers.Click += (s, e) => ShowUserManagementView();
             btnNavBuses.Click += (s, e) => ShowBusManagementView();
+            btnNavRoutes.Click += (s, e) => ShowRouteManagementView();
+            btnNavBookings.Click += (s, e) => ShowBookingManagementView();
+            btnNavTickets.Click += (s, e) => ShowTicketManagementView();
         }
 
         private void ShowDashboardView()
@@ -93,15 +115,33 @@ namespace Bus_Ticket_mgmt.Forms
             panelHeaderInfo.Visible = true;
             panelUserManagement.Visible = false;
             panelBusManagement.Visible = false;
+            panelRouteManagement.Visible = false;
+            panelBookingManagement.Visible = false;
+            panelTicketManagement.Visible = false;
 
             btnNavDashboard.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavDashboard.ForeColor = Color.White;
             btnNavDashboard.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
 
-            btnNavUsers.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavUsers.BackColor = Color.Transparent;
+            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
 
-            btnNavBuses.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavBuses.BackColor = Color.Transparent;
+            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavRoutes.BackColor = Color.Transparent;
+            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBookings.BackColor = Color.Transparent;
+            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavTickets.BackColor = Color.Transparent;
+            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
         }
 
         private void ShowUserManagementView()
@@ -110,15 +150,33 @@ namespace Bus_Ticket_mgmt.Forms
             panelHeaderInfo.Visible = false;
             panelUserManagement.Visible = true;
             panelBusManagement.Visible = false;
+            panelRouteManagement.Visible = false;
+            panelBookingManagement.Visible = false;
+            panelTicketManagement.Visible = false;
 
             btnNavUsers.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavUsers.ForeColor = Color.White;
             btnNavUsers.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
 
-            btnNavDashboard.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavDashboard.BackColor = Color.Transparent;
+            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
 
-            btnNavBuses.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavBuses.BackColor = Color.Transparent;
+            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavRoutes.BackColor = Color.Transparent;
+            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBookings.BackColor = Color.Transparent;
+            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavTickets.BackColor = Color.Transparent;
+            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
 
             PopulateUsersList();
         }
@@ -129,17 +187,146 @@ namespace Bus_Ticket_mgmt.Forms
             panelHeaderInfo.Visible = false;
             panelUserManagement.Visible = false;
             panelBusManagement.Visible = true;
+            panelRouteManagement.Visible = false;
+            panelBookingManagement.Visible = false;
+            panelTicketManagement.Visible = false;
 
             btnNavBuses.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavBuses.ForeColor = Color.White;
             btnNavBuses.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
 
-            btnNavDashboard.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavDashboard.BackColor = Color.Transparent;
+            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
 
-            btnNavUsers.BackColor = Color.FromArgb(30, 41, 59);
+            btnNavUsers.BackColor = Color.Transparent;
+            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
 
+            btnNavRoutes.BackColor = Color.Transparent;
+            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBookings.BackColor = Color.Transparent;
+            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavTickets.BackColor = Color.Transparent;
+            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
             PopulateBusesList();
+        }
+
+        private void ShowRouteManagementView()
+        {
+            flowDashboard.Visible = false;
+            panelHeaderInfo.Visible = false;
+            panelUserManagement.Visible = false;
+            panelBusManagement.Visible = false;
+            panelRouteManagement.Visible = true;
+            panelBookingManagement.Visible = false;
+            panelTicketManagement.Visible = false;
+
+            btnNavRoutes.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavRoutes.ForeColor = Color.White;
+            btnNavRoutes.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+
+            btnNavDashboard.BackColor = Color.Transparent;
+            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavUsers.BackColor = Color.Transparent;
+            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBuses.BackColor = Color.Transparent;
+            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBookings.BackColor = Color.Transparent;
+            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavTickets.BackColor = Color.Transparent;
+            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            PopulateRoutesList();
+        }
+
+        private void ShowBookingManagementView()
+        {
+            flowDashboard.Visible = false;
+            panelHeaderInfo.Visible = false;
+            panelUserManagement.Visible = false;
+            panelBusManagement.Visible = false;
+            panelRouteManagement.Visible = false;
+            panelBookingManagement.Visible = true;
+            panelTicketManagement.Visible = false;
+
+            btnNavBookings.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavBookings.ForeColor = Color.White;
+            btnNavBookings.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+
+            btnNavDashboard.BackColor = Color.Transparent;
+            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavUsers.BackColor = Color.Transparent;
+            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBuses.BackColor = Color.Transparent;
+            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavRoutes.BackColor = Color.Transparent;
+            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavTickets.BackColor = Color.Transparent;
+            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            PopulateBookingsList();
+        }
+
+        private void ShowTicketManagementView()
+        {
+            flowDashboard.Visible = false;
+            panelHeaderInfo.Visible = false;
+            panelUserManagement.Visible = false;
+            panelBusManagement.Visible = false;
+            panelRouteManagement.Visible = false;
+            panelBookingManagement.Visible = false;
+            panelTicketManagement.Visible = true;
+
+            btnNavTickets.BackColor = Color.FromArgb(13, 94, 234);
+            btnNavTickets.ForeColor = Color.White;
+            btnNavTickets.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+
+            btnNavDashboard.BackColor = Color.Transparent;
+            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavUsers.BackColor = Color.Transparent;
+            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBuses.BackColor = Color.Transparent;
+            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavRoutes.BackColor = Color.Transparent;
+            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            btnNavBookings.BackColor = Color.Transparent;
+            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+
+            PopulateTicketsList();
         }
 
         private void SetupUserManagementEvents()
@@ -660,20 +847,1011 @@ namespace Bus_Ticket_mgmt.Forms
 
         #endregion
 
+        #region Route Management Logic
+
+        private void SetupRouteManagementEvents()
+        {
+            // Add route
+            btnAddRoute.Click += (s, e) => OpenAddRouteDialog();
+
+            // Edit route
+            btnEditRoute.Click += (s, e) => EditSelectedRoute();
+            lvRoutes.DoubleClick += (s, e) => EditSelectedRoute();
+
+            // View route details
+            btnViewRouteDetails.Click += (s, e) => ViewSelectedRouteDetails();
+
+            // Activate / Deactivate
+            btnToggleRouteStatus.Click += (s, e) => ToggleSelectedRouteStatus();
+
+            // Delete route
+            btnDeleteRoute.Click += (s, e) => DeleteSelectedRoute();
+
+            // Refresh & search filters
+            btnRefreshRoutes.Click += (s, e) =>
+            {
+                txtSearchRoute.Text = "";
+                cmbRouteStatusFilter.SelectedIndex = 0;
+                PopulateRoutesList();
+            };
+
+            txtSearchRoute.TextChanged += (s, e) => PopulateRoutesList();
+            cmbRouteStatusFilter.SelectedIndexChanged += (s, e) => PopulateRoutesList();
+        }
+
+        public void PopulateRoutesList()
+        {
+            // 1. Recalculate and update summary cards dynamically from RouteStore
+            int totalRoutes = RouteStore.GetTotalCount();
+            int activeRoutes = RouteStore.GetActiveCount();
+            int inactiveRoutes = RouteStore.GetInactiveCount();
+            double totalDistance = RouteStore.GetTotalDistanceKm();
+
+            lblMetricTotalRoutesVal.Text = totalRoutes.ToString();
+            lblMetricActiveRoutesVal.Text = activeRoutes.ToString();
+            lblMetricInactiveRoutesVal.Text = inactiveRoutes.ToString();
+            lblMetricTotalDistanceVal.Text = $"{totalDistance:N0} km";
+
+            // 2. Filter routes
+            var allRoutes = RouteStore.GetAll();
+            string search = txtSearchRoute.Text.Trim().ToLower();
+            string selectedStatus = cmbRouteStatusFilter.SelectedItem?.ToString() ?? "All Statuses";
+
+            var filtered = allRoutes.Where(r =>
+            {
+                // Search filter: ID, Name, Source, Destination, Intermediate Stops
+                bool matchesSearch = string.IsNullOrEmpty(search) ||
+                    r.RouteId.ToLower().Contains(search) ||
+                    r.RouteName.ToLower().Contains(search) ||
+                    r.Source.ToLower().Contains(search) ||
+                    r.Destination.ToLower().Contains(search) ||
+                    r.IntermediateStops.ToLower().Contains(search);
+
+                // Status filter
+                bool matchesStatus = selectedStatus == "All Statuses" || r.Status.Equals(selectedStatus, StringComparison.OrdinalIgnoreCase);
+
+                return matchesSearch && matchesStatus;
+            }).ToList();
+
+            // 3. Populate ListView
+            lvRoutes.BeginUpdate();
+            lvRoutes.Items.Clear();
+
+            foreach (var route in filtered)
+            {
+                ListViewItem item = new ListViewItem(route.RouteId);
+                item.SubItems.Add(route.RouteName);
+                item.SubItems.Add(route.Source);
+                item.SubItems.Add(route.Destination);
+                item.SubItems.Add($"{route.DistanceKm:N0} km");
+                item.SubItems.Add(route.EstimatedTime);
+                item.SubItems.Add($"{route.BaseFare:N0} ETB");
+                item.SubItems.Add(route.Status);
+                item.SubItems.Add(string.IsNullOrWhiteSpace(route.IntermediateStops) ? "Direct Route" : route.IntermediateStops);
+
+                // Status color styling
+                if (route.Status == "Inactive")
+                {
+                    item.ForeColor = Color.FromArgb(148, 163, 184); // Muted slate
+                }
+                else
+                {
+                    item.ForeColor = Color.FromArgb(15, 23, 42); // Active dark
+                }
+
+                item.Tag = route;
+                lvRoutes.Items.Add(item);
+            }
+
+            lvRoutes.EndUpdate();
+            lblRouteCount.Text = $"Showing {filtered.Count} of {allRoutes.Count} routes";
+        }
+
+        private Route? GetSelectedRoute()
+        {
+            if (lvRoutes.SelectedItems.Count > 0 && lvRoutes.SelectedItems[0].Tag is Route route)
+            {
+                return route;
+            }
+            return null;
+        }
+
+        private void OpenAddRouteDialog()
+        {
+            using (var dialog = new RouteDialogForm())
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    PopulateRoutesList();
+                }
+            }
+        }
+
+        private void EditSelectedRoute()
+        {
+            var route = GetSelectedRoute();
+            if (route == null)
+            {
+                MessageBox.Show("Please select a route from the table to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var dialog = new RouteDialogForm(route))
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    PopulateRoutesList();
+                }
+            }
+        }
+
+        private void ViewSelectedRouteDetails()
+        {
+            var route = GetSelectedRoute();
+            if (route == null)
+            {
+                MessageBox.Show("Please select a route from the table to view details.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string details = $"========================================\n" +
+                             $"       BUS ROUTE SPECIFICATIONS        \n" +
+                             $"========================================\n\n" +
+                             $"• Route ID:           {route.RouteId}\n" +
+                             $"• Route Name:         {route.RouteName}\n" +
+                             $"• Departure Point:    {route.Source}\n" +
+                             $"• Destination Point:  {route.Destination}\n" +
+                             $"• Stops En Route:     {(string.IsNullOrWhiteSpace(route.IntermediateStops) ? "Direct (No intermediate stops)" : route.IntermediateStops)}\n" +
+                             $"• Network Distance:   {route.DistanceKm:N0} km\n" +
+                             $"• Est. Travel Time:   {route.EstimatedTime}\n" +
+                             $"• Base Standard Fare: {route.BaseFare:N0} ETB\n" +
+                             $"• Operational Status: {route.Status}\n" +
+                             $"• Registered On:      {route.CreatedDate:yyyy-MM-dd HH:mm}\n\n" +
+                             $"Route Description & Advisory:\n{(string.IsNullOrWhiteSpace(route.Description) ? "(No route notes or advisories logged)" : route.Description)}";
+
+            MessageBox.Show(details, $"Route Specifications - {route.RouteId} ({route.RouteName})", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ToggleSelectedRouteStatus()
+        {
+            var route = GetSelectedRoute();
+            if (route == null)
+            {
+                MessageBox.Show("Please select a route from the table to activate or deactivate.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string newStatus = (route.Status == "Active") ? "Inactive" : "Active";
+            string prompt = (newStatus == "Inactive")
+                ? $"Are you sure you want to DEACTIVATE route '{route.RouteName}' ({route.RouteId})?\n\nBusiness Rule Notice:\nInactive routes cannot be selected when creating new trips or schedules.\nExisting trips and booking histories are preserved."
+                : $"Are you sure you want to ACTIVATE route '{route.RouteName}' ({route.RouteId})?\n\nThis route will become available for new trip scheduling.";
+
+            var result = MessageBox.Show(prompt, "Confirm Status Change", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                RouteStore.ToggleStatus(route.RouteId);
+                PopulateRoutesList();
+                MessageBox.Show($"Route '{route.RouteName}' ({route.RouteId}) status changed to '{newStatus}'.", "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void DeleteSelectedRoute()
+        {
+            var route = GetSelectedRoute();
+            if (route == null)
+            {
+                MessageBox.Show("Please select a route from the table to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Business rule: Deleting a route must not corrupt existing trips and booking history
+            var confirm = MessageBox.Show(
+                $"Are you sure you want to permanently delete route:\n\n" +
+                $"• Route ID: {route.RouteId}\n" +
+                $"• Name:     {route.RouteName}\n" +
+                $"• Journey:  {route.Source} ➔ {route.Destination}\n\n" +
+                $"WARNING: Permanent deletion will remove this route configuration.\n" +
+                $"Tip: Consider Deactivating instead to preserve trip and booking history audits.",
+                "Confirm Route Deletion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                RouteStore.Delete(route.RouteId);
+                PopulateRoutesList();
+                MessageBox.Show($"Route '{route.RouteName}' ({route.RouteId}) has been removed.", "Route Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        #endregion
+
+        #region Booking Management Logic
+
+        private void SetupBookingManagementEvents()
+        {
+            // Open Add Booking Form
+            btnNewBooking.Click += (s, e) => OpenAddBookingDialog();
+
+            // Edit Selected Booking
+            btnModifyBooking.Click += (s, e) => EditSelectedBooking();
+            lvBookings.DoubleClick += (s, e) => EditSelectedBooking();
+
+            // View Details
+            btnViewBookingDetails.Click += (s, e) => ViewSelectedBookingDetails();
+
+            // Cancel Booking
+            btnCancelBookingAction.Click += (s, e) => CancelSelectedBooking();
+
+            // Print / View Ticket
+            btnPrintTicket.Click += (s, e) => PrintOrViewSelectedTicket();
+
+            // Search filter
+            txtSearchBooking.TextChanged += (s, e) => PopulateBookingsList();
+
+            // Status filter
+            cmbBookingStatusFilter.SelectedIndexChanged += (s, e) => PopulateBookingsList();
+
+            // Route filter
+            cmbBookingRouteFilter.SelectedIndexChanged += (s, e) => PopulateBookingsList();
+
+            // Date filter
+            chkEnableDateFilter.CheckedChanged += (s, e) =>
+            {
+                dtpBookingFilterDate.Enabled = chkEnableDateFilter.Checked;
+                PopulateBookingsList();
+            };
+            dtpBookingFilterDate.ValueChanged += (s, e) =>
+            {
+                if (chkEnableDateFilter.Checked)
+                {
+                    PopulateBookingsList();
+                }
+            };
+
+            // Reset filters
+            btnResetBookingFilters.Click += (s, e) =>
+            {
+                txtSearchBooking.Text = string.Empty;
+                cmbBookingStatusFilter.SelectedIndex = 0;
+                cmbBookingRouteFilter.SelectedIndex = 0;
+                chkEnableDateFilter.Checked = false;
+                dtpBookingFilterDate.Value = DateTime.Today;
+                PopulateBookingsList();
+            };
+        }
+
+        private void PopulateBookingsList()
+        {
+            // 1. Refresh Summary Cards from BookingStore
+            int totalCount = BookingStore.GetTotalCount();
+            int confirmedCount = BookingStore.GetConfirmedCount();
+            int pendingCount = BookingStore.GetPendingCount();
+            int cancelledCount = BookingStore.GetCancelledCount();
+            int todayCount = BookingStore.GetTodayCount();
+
+            lblMetricTotalBookingsVal.Text = totalCount.ToString("N0");
+            lblMetricTotalBookingsSub.Text = $"{confirmedCount} active passengers";
+
+            lblMetricConfirmedBookingsVal.Text = confirmedCount.ToString("N0");
+            lblMetricConfirmedBookingsSub.Text = totalCount > 0 ? $"{(confirmedCount * 100.0 / totalCount):F0}% of total volume" : "0%";
+
+            lblMetricPendingBookingsVal.Text = pendingCount.ToString("N0");
+            lblMetricPendingBookingsSub.Text = "Awaiting fare clearance";
+
+            lblMetricCancelledBookingsVal.Text = cancelledCount.ToString("N0");
+            lblMetricCancelledBookingsSub.Text = "Seats released to pool";
+
+            lblMetricTodayBookingsVal.Text = todayCount.ToString("N0");
+            lblMetricTodayBookingsSub.Text = "Reservations for today";
+
+            // Also keep top dashboard metric synced
+            if (lblMetricBookingsVal != null)
+            {
+                lblMetricBookingsVal.Text = $"{totalCount:N0} Bookings";
+            }
+
+            // 2. Synchronize route dropdown items if needed
+            if (cmbBookingRouteFilter.Items.Count <= 1)
+            {
+                cmbBookingRouteFilter.Items.Clear();
+                cmbBookingRouteFilter.Items.Add("All Routes / Trips");
+                var activeRoutes = RouteStore.GetAll();
+                foreach (var r in activeRoutes)
+                {
+                    cmbBookingRouteFilter.Items.Add($"{r.RouteId}: {r.RouteName}");
+                }
+                cmbBookingRouteFilter.SelectedIndex = 0;
+            }
+
+            // 3. Filter Bookings
+            string search = txtSearchBooking.Text.Trim().ToLower();
+            string statusFilter = cmbBookingStatusFilter.SelectedItem?.ToString() ?? "All Statuses";
+            string selectedRouteFilter = cmbBookingRouteFilter.SelectedItem?.ToString() ?? "All Routes / Trips";
+            bool filterByDate = chkEnableDateFilter.Checked;
+            DateTime targetDate = dtpBookingFilterDate.Value.Date;
+
+            var allBookings = BookingStore.GetAll();
+            var filtered = allBookings.Where(b =>
+            {
+                // Search condition
+                bool matchSearch = string.IsNullOrEmpty(search) ||
+                    b.BookingId.ToLower().Contains(search) ||
+                    b.PassengerName.ToLower().Contains(search) ||
+                    b.PassengerPhone.ToLower().Contains(search) ||
+                    b.RouteName.ToLower().Contains(search) ||
+                    b.Source.ToLower().Contains(search) ||
+                    b.Destination.ToLower().Contains(search) ||
+                    b.AssignedBus.ToLower().Contains(search);
+
+                if (!matchSearch) return false;
+
+                // Status condition
+                if (statusFilter != "All Statuses" && !b.BookingStatus.Equals(statusFilter, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
+
+                // Route condition
+                if (selectedRouteFilter != "All Routes / Trips")
+                {
+                    string routeIdPrefix = selectedRouteFilter.Split(':')[0].Trim();
+                    if (!b.RouteId.Equals(routeIdPrefix, StringComparison.OrdinalIgnoreCase) &&
+                        !b.RouteName.Equals(selectedRouteFilter, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return false;
+                    }
+                }
+
+                // Date condition
+                if (filterByDate && b.TravelDate.Date != targetDate)
+                {
+                    return false;
+                }
+
+                return true;
+            }).OrderByDescending(b => b.TravelDate).ThenByDescending(b => b.BookingDate).ToList();
+
+            // 4. Populate ListView
+            lvBookings.BeginUpdate();
+            lvBookings.Items.Clear();
+
+            foreach (var b in filtered)
+            {
+                var item = new ListViewItem(b.BookingId);
+                item.SubItems.Add(b.PassengerName);
+                item.SubItems.Add(b.PassengerPhone);
+                item.SubItems.Add(b.FullRouteDisplay);
+                item.SubItems.Add(b.TravelDate.ToString("yyyy-MM-dd"));
+                item.SubItems.Add(b.DepartureTime);
+                item.SubItems.Add(b.SeatNumbersDisplay);
+                item.SubItems.Add($"{b.TotalAmount:N0} ETB");
+                item.SubItems.Add(b.BookingStatus);
+                item.SubItems.Add(b.PaymentStatus);
+
+                item.Tag = b;
+
+                // Visual row styling
+                if (b.BookingStatus == "Cancelled")
+                {
+                    item.ForeColor = Color.FromArgb(148, 163, 184); // Slate muted
+                }
+                else if (b.BookingStatus == "Pending")
+                {
+                    item.ForeColor = Color.FromArgb(180, 83, 9); // Amber
+                }
+                else
+                {
+                    item.ForeColor = Color.FromArgb(15, 23, 42); // Normal
+                }
+
+                lvBookings.Items.Add(item);
+            }
+
+            lvBookings.EndUpdate();
+            lblBookingCount.Text = $"Showing {filtered.Count} of {allBookings.Count} bookings";
+        }
+
+        private Booking? GetSelectedBooking()
+        {
+            if (lvBookings.SelectedItems.Count > 0 && lvBookings.SelectedItems[0].Tag is Booking booking)
+            {
+                return booking;
+            }
+            return null;
+        }
+
+        private void OpenAddBookingDialog()
+        {
+            using (var dialog = new BookingDialogForm())
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    PopulateBookingsList();
+                }
+            }
+        }
+
+        private void EditSelectedBooking()
+        {
+            var booking = GetSelectedBooking();
+            if (booking == null)
+            {
+                MessageBox.Show("Please select a booking reservation from the table to modify.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (booking.BookingStatus == "Cancelled")
+            {
+                MessageBox.Show(
+                    $"Booking '{booking.BookingId}' is marked as CANCELLED.\n\n" +
+                    $"Business Rule Notice:\n" +
+                    $"Cancelled reservations cannot be modified because their assigned seats have been released back to the general inventory.\n" +
+                    $"If the passenger wishes to travel, please create a New Booking.",
+                    "Modification Not Allowed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            using (var dialog = new BookingDialogForm(booking))
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    PopulateBookingsList();
+                }
+            }
+        }
+
+        private void ViewSelectedBookingDetails()
+        {
+            var booking = GetSelectedBooking();
+            if (booking == null)
+            {
+                MessageBox.Show("Please select a booking from the table to view details.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string details = $"====================================================\n" +
+                             $"          RESERVATION & BOOKING DETAILS             \n" +
+                             $"====================================================\n\n" +
+                             $"• Booking Reference:  {booking.BookingId}\n" +
+                             $"• Reservation Date:   {booking.BookingDate:yyyy-MM-dd HH:mm}\n" +
+                             $"• Booking Status:      {booking.BookingStatus}\n" +
+                             $"• Payment Status:      {booking.PaymentStatus}\n\n" +
+                             $"--- PASSENGER INFORMATION ---\n" +
+                             $"• Full Name:          {booking.PassengerName}\n" +
+                             $"• Contact Phone:      {booking.PassengerPhone}\n" +
+                             $"• Email Address:      {(string.IsNullOrWhiteSpace(booking.PassengerEmail) ? "N/A" : booking.PassengerEmail)}\n\n" +
+                             $"--- TRIP & VEHICLE SPECIFICATIONS ---\n" +
+                             $"• Route:              {booking.FullRouteDisplay} ({booking.RouteName})\n" +
+                             $"• Travel Date:        {booking.TravelDate:dddd, MMMM dd, yyyy}\n" +
+                             $"• Departure Time:     {booking.DepartureTime}\n" +
+                             $"• Assigned Bus:       {booking.AssignedBus}\n\n" +
+                             $"--- SEAT & FARE CALCULATION ---\n" +
+                             $"• Assigned Seat(s):   {booking.SeatNumbersDisplay} ({booking.NumberOfSeats} seat{(booking.NumberOfSeats > 1 ? "s" : "")})\n" +
+                             $"• Fare Per Seat:      {booking.FarePerSeat:N0} ETB\n" +
+                             $"• Total Amount:       {booking.TotalAmount:N0} ETB\n" +
+                             $"• Amount Paid:        {booking.AmountPaid:N0} ETB\n" +
+                             $"• Outstanding Due:    {booking.Balance:N0} ETB\n\n" +
+                             $"--- NOTES & SPECIAL REQUESTS ---\n" +
+                             $"{(string.IsNullOrWhiteSpace(booking.Notes) ? "(No extra notes recorded for this passenger reservation)" : booking.Notes)}";
+
+            MessageBox.Show(details, $"Booking Dossier - {booking.BookingId} ({booking.PassengerName})", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void CancelSelectedBooking()
+        {
+            var booking = GetSelectedBooking();
+            if (booking == null)
+            {
+                MessageBox.Show("Please select a booking reservation to cancel.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (booking.BookingStatus == "Cancelled")
+            {
+                MessageBox.Show($"Booking '{booking.BookingId}' is already Cancelled.", "Already Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var confirm = MessageBox.Show(
+                $"Are you sure you want to CANCEL booking '{booking.BookingId}'?\n\n" +
+                $"Passenger:  {booking.PassengerName}\n" +
+                $"Route:      {booking.FullRouteDisplay}\n" +
+                $"Date:       {booking.TravelDate:yyyy-MM-dd} at {booking.DepartureTime}\n" +
+                $"Seat(s):    {booking.SeatNumbersDisplay}\n" +
+                $"Fare:       {booking.TotalAmount:N0} ETB\n\n" +
+                $"Business Rule Enforcement:\n" +
+                $"• Cancelling will release seat(s) {booking.SeatNumbersDisplay} back to the available inventory pool.\n" +
+                $"• The payment status will be updated accordingly.",
+                "Confirm Reservation Cancellation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                bool success = BookingStore.CancelBooking(booking.BookingId);
+                if (success)
+                {
+                    PopulateBookingsList();
+                    MessageBox.Show(
+                        $"Booking '{booking.BookingId}' was successfully CANCELLED.\n\n" +
+                        $"The seats ({booking.SeatNumbersDisplay}) are now released and available for new reservations.",
+                        "Cancellation Confirmed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("Failed to cancel the booking. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void PrintOrViewSelectedTicket()
+        {
+            var booking = GetSelectedBooking();
+            if (booking == null)
+            {
+                MessageBox.Show("Please select a booking reservation from the table to preview or print ticket.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (booking.BookingStatus == "Cancelled")
+            {
+                MessageBox.Show(
+                    $"Cannot generate or print a ticket for booking '{booking.BookingId}' because it has been CANCELLED.\n\n" +
+                    $"Only confirmed or active bookings can produce valid passenger boarding passes.",
+                    "Invalid Ticket Request",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            string ticketPreview =
+                "============================================================\n" +
+                "       ETHIOPIAN BUS TRANSPORT SYSTEM - BOARDING PASS       \n" +
+                "============================================================\n\n" +
+                $" TICKET / BOOKING REF:  {booking.BookingId}\n" +
+                $" PASSENGER NAME:        {booking.PassengerName.ToUpper()}\n" +
+                $" CONTACT PHONE:         {booking.PassengerPhone}\n" +
+                "------------------------------------------------------------\n" +
+                $" ROUTE:                 {booking.Source} ➔ {booking.Destination}\n" +
+                $" TRAVEL DATE:           {booking.TravelDate:dddd, MMMM dd, yyyy}\n" +
+                $" SCHEDULED DEPARTURE:   {booking.DepartureTime}\n" +
+                $" ASSIGNED COACH:        {booking.AssignedBus}\n" +
+                $" SEAT ASSIGNMENT:       {booking.SeatNumbersDisplay}\n" +
+                "------------------------------------------------------------\n" +
+                $" TOTAL FARE:            {booking.TotalAmount:N0} ETB (PAID IN FULL)\n" +
+                $" PAYMENT STATUS:        {booking.PaymentStatus.ToUpper()}\n" +
+                $" ISSUED ON:             {booking.BookingDate:yyyy-MM-dd HH:mm:ss}\n" +
+                "============================================================\n" +
+                " BOARDING INSTRUCTIONS:\n" +
+                " 1. Please arrive at the departure terminal 30 minutes before departure.\n" +
+                " 2. Present this boarding pass along with your Kebele ID or Passport.\n" +
+                " 3. Standard luggage allowance is 25 kg per ticket.\n" +
+                "============================================================";
+
+            MessageBox.Show(ticketPreview, $"Boarding Pass - {booking.BookingId} ({booking.PassengerName})", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
+        #region Ticket Management Logic
+
+        private void SetupTicketManagementEvents()
+        {
+            // Issue New Ticket
+            btnNewTicket.Click += (s, e) => OpenIssueTicketDialog();
+
+            // Boarding Scanner modal
+            btnVerifyBoardModal.Click += (s, e) => OpenBoardingScannerDialog();
+
+            // Verify & Board selected ticket
+            btnVerifyAndBoard.Click += (s, e) => QuickVerifyAndBoardSelectedTicket();
+
+            // View details
+            btnViewTicketDetails.Click += (s, e) => ViewSelectedTicketDetails();
+            lvTickets.DoubleClick += (s, e) => ViewSelectedTicketDetails();
+
+            // Print Boarding Pass
+            btnPrintTicketPass.Click += (s, e) => PrintSelectedBoardingPass();
+
+            // Cancel Ticket
+            btnCancelTicketAction.Click += (s, e) => CancelSelectedTicket();
+
+            // Filters
+            txtSearchTicketFilter.TextChanged += (s, e) => PopulateTicketsList();
+            cmbTicketStatusFilter.SelectedIndexChanged += (s, e) => PopulateTicketsList();
+            cmbTicketRouteFilter.SelectedIndexChanged += (s, e) => PopulateTicketsList();
+            chkEnableTicketDateFilter.CheckedChanged += (s, e) =>
+            {
+                dtpTicketFilterDate.Enabled = chkEnableTicketDateFilter.Checked;
+                PopulateTicketsList();
+            };
+            dtpTicketFilterDate.ValueChanged += (s, e) =>
+            {
+                if (chkEnableTicketDateFilter.Checked)
+                {
+                    PopulateTicketsList();
+                }
+            };
+
+            btnResetTicketFilters.Click += (s, e) =>
+            {
+                txtSearchTicketFilter.Text = string.Empty;
+                cmbTicketStatusFilter.SelectedIndex = 0;
+                cmbTicketRouteFilter.SelectedIndex = 0;
+                chkEnableTicketDateFilter.Checked = false;
+                dtpTicketFilterDate.Value = DateTime.Today;
+                PopulateTicketsList();
+            };
+        }
+
+        private void PopulateTicketsList()
+        {
+            // 1. Refresh Summary Cards
+            int total = TicketStore.GetTotalCount();
+            int valid = TicketStore.GetValidCount();
+            int boarded = TicketStore.GetBoardedCount();
+            int cancelled = TicketStore.GetCancelledCount();
+            int today = TicketStore.GetTodayBoardingCount();
+
+            lblMetricTotalTicketsVal.Text = total.ToString("N0");
+            lblMetricTotalTicketsSub.Text = $"{valid} ready for boarding";
+
+            lblMetricValidTicketsVal.Text = valid.ToString("N0");
+            lblMetricValidTicketsSub.Text = total > 0 ? $"{(valid * 100.0 / total):F0}% of total issued" : "0%";
+
+            lblMetricBoardedTicketsVal.Text = boarded.ToString("N0");
+            lblMetricBoardedTicketsSub.Text = "Passengers cleared";
+
+            lblMetricCancelledTicketsVal.Text = cancelled.ToString("N0");
+            lblMetricCancelledTicketsSub.Text = "Voided or refunded";
+
+            lblMetricTodayTicketsVal.Text = today.ToString("N0");
+            lblMetricTodayTicketsSub.Text = "Departures today";
+
+            // 2. Synchronize route dropdown items if needed
+            if (cmbTicketRouteFilter.Items.Count <= 1)
+            {
+                cmbTicketRouteFilter.Items.Clear();
+                cmbTicketRouteFilter.Items.Add("All Routes / Trips");
+                var activeRoutes = RouteStore.GetAll();
+                foreach (var r in activeRoutes)
+                {
+                    cmbTicketRouteFilter.Items.Add($"{r.RouteId}: {r.RouteName}");
+                }
+                cmbTicketRouteFilter.SelectedIndex = 0;
+            }
+
+            // 3. Filter Tickets
+            string search = txtSearchTicketFilter.Text.Trim().ToLower();
+            string statusFilter = cmbTicketStatusFilter.SelectedItem?.ToString() ?? "All Statuses";
+            string routeFilter = cmbTicketRouteFilter.SelectedItem?.ToString() ?? "All Routes / Trips";
+            bool filterDate = chkEnableTicketDateFilter.Checked;
+            DateTime targetDate = dtpTicketFilterDate.Value.Date;
+
+            var all = TicketStore.GetAll();
+            var filtered = all.Where(t =>
+            {
+                // Search condition
+                bool match = string.IsNullOrEmpty(search) ||
+                    t.TicketId.ToLower().Contains(search) ||
+                    t.BookingId.ToLower().Contains(search) ||
+                    t.PassengerName.ToLower().Contains(search) ||
+                    t.PassengerPhone.ToLower().Contains(search) ||
+                    t.RouteName.ToLower().Contains(search) ||
+                    t.Source.ToLower().Contains(search) ||
+                    t.Destination.ToLower().Contains(search) ||
+                    t.AssignedBusPlate.ToLower().Contains(search) ||
+                    t.GateNumber.ToLower().Contains(search) ||
+                    t.SecurityVerificationCode.ToLower().Contains(search);
+
+                if (!match) return false;
+
+                // Status
+                if (statusFilter != "All Statuses" && !t.Status.Equals(statusFilter, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
+
+                // Route
+                if (routeFilter != "All Routes / Trips")
+                {
+                    string routeIdPrefix = routeFilter.Split(':')[0].Trim();
+                    if (!t.RouteId.Equals(routeIdPrefix, StringComparison.OrdinalIgnoreCase) &&
+                        !t.RouteName.Equals(routeFilter, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return false;
+                    }
+                }
+
+                // Date
+                if (filterDate && t.TravelDate.Date != targetDate)
+                {
+                    return false;
+                }
+
+                return true;
+            }).OrderByDescending(t => t.TravelDate).ThenByDescending(t => t.IssuedDate).ToList();
+
+            // 4. Populate ListView
+            lvTickets.BeginUpdate();
+            lvTickets.Items.Clear();
+
+            foreach (var t in filtered)
+            {
+                var item = new ListViewItem(t.TicketId);
+                item.SubItems.Add(t.BookingId);
+                item.SubItems.Add(t.PassengerName);
+                item.SubItems.Add(t.PassengerPhone);
+                item.SubItems.Add(t.FullRouteDisplay);
+                item.SubItems.Add(t.TravelDate.ToString("yyyy-MM-dd"));
+                item.SubItems.Add($"{t.DepartureTime} ({t.GateNumber})");
+                item.SubItems.Add(t.SeatDisplay);
+                item.SubItems.Add(t.AssignedBusPlate);
+                item.SubItems.Add(t.Status);
+
+                item.Tag = t;
+
+                // Visual row styling
+                if (t.Status == "Cancelled")
+                {
+                    item.ForeColor = Color.FromArgb(148, 163, 184); // Slate muted
+                }
+                else if (t.Status == "Boarded")
+                {
+                    item.ForeColor = Color.FromArgb(22, 101, 52); // Dark Green
+                }
+                else
+                {
+                    item.ForeColor = Color.FromArgb(15, 23, 42); // Normal
+                }
+
+                lvTickets.Items.Add(item);
+            }
+
+            lvTickets.EndUpdate();
+            lblTicketCount.Text = $"Showing {filtered.Count} of {all.Count} tickets";
+        }
+
+        private Ticket? GetSelectedTicket()
+        {
+            if (lvTickets.SelectedItems.Count > 0 && lvTickets.SelectedItems[0].Tag is Ticket ticket)
+            {
+                return ticket;
+            }
+            return null;
+        }
+
+        private void OpenIssueTicketDialog(Booking? booking = null)
+        {
+            using (var dialog = new TicketDialogForm())
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    PopulateTicketsList();
+                }
+            }
+        }
+
+        private void OpenBoardingScannerDialog(string? initialLookup = null)
+        {
+            using (var scanner = new TicketVerifyDialogForm(initialLookup))
+            {
+                scanner.ShowDialog(this);
+                PopulateTicketsList();
+            }
+        }
+
+        private void QuickVerifyAndBoardSelectedTicket()
+        {
+            var ticket = GetSelectedTicket();
+            if (ticket == null)
+            {
+                MessageBox.Show("Please select a ticket from the table to verify and board passenger.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            bool success = TicketStore.VerifyAndBoard(ticket.TicketId, "Gate Officer / Admin", out string msg, out var updatedTicket);
+            if (success)
+            {
+                PopulateTicketsList();
+                MessageBox.Show(
+                    $"BOARDING VERIFIED SUCCESSFULLY!\n\n" +
+                    $"• Ticket:    {ticket.TicketId}\n" +
+                    $"• Passenger: {ticket.PassengerName}\n" +
+                    $"• Journey:   {ticket.FullRouteDisplay}\n" +
+                    $"• Seat:      {ticket.SeatDisplay}\n" +
+                    $"• Coach:     {ticket.AssignedBusPlate} ({ticket.GateNumber})\n\n" +
+                    $"Passenger is authorized to board.",
+                    "Boarding Verified",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(msg, "Boarding Verification Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ViewSelectedTicketDetails()
+        {
+            var ticket = GetSelectedTicket();
+            if (ticket == null)
+            {
+                MessageBox.Show("Please select a ticket from the table to view details.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string details = $"====================================================\n" +
+                             $"             OFFICIAL PASSENGER TICKET             \n" +
+                             $"====================================================\n\n" +
+                             $"• Ticket Reference:    {ticket.TicketId}\n" +
+                             $"• Linked Booking ID:   {ticket.BookingId}\n" +
+                             $"• Security Hash:       {ticket.SecurityVerificationCode}\n" +
+                             $"• Ticket Status:       {ticket.Status.ToUpper()}\n" +
+                             $"• Issue Date:          {ticket.IssuedDate:yyyy-MM-dd HH:mm:ss}\n\n" +
+                             $"--- PASSENGER DETAILS ---\n" +
+                             $"• Full Name:           {ticket.PassengerName}\n" +
+                             $"• Contact Phone:       {ticket.PassengerPhone}\n" +
+                             $"• Email Address:       {(string.IsNullOrWhiteSpace(ticket.PassengerEmail) ? "N/A" : ticket.PassengerEmail)}\n\n" +
+                             $"--- JOURNEY & VEHICLE SPECIFICATIONS ---\n" +
+                             $"• Route:               {ticket.FullRouteDisplay} ({ticket.RouteName})\n" +
+                             $"• Departure Date:      {ticket.TravelDate:dddd, MMMM dd, yyyy}\n" +
+                             $"• Departure Time:      {ticket.DepartureTime}\n" +
+                             $"• Assigned Gate:       {ticket.GateNumber}\n" +
+                             $"• Coach Vehicle:       {ticket.AssignedBusPlate} ({ticket.BusModel})\n" +
+                             $"• Allocated Seat:      {ticket.SeatDisplay}\n\n" +
+                             $"--- BOARDING & VERIFICATION STATUS ---\n" +
+                             $"• Boarding Time:       {(ticket.BoardedTime.HasValue ? ticket.BoardedTime.Value.ToString("yyyy-MM-dd HH:mm:ss") : "Not Boarded Yet")}\n" +
+                             $"• Verified By:         {(string.IsNullOrWhiteSpace(ticket.VerifiedBy) ? "Pending Gate Check-in" : ticket.VerifiedBy)}\n" +
+                             $"• Fare Paid:           {ticket.FareAmount:N0} ETB\n" +
+                             $"• Luggage Allowance:   {ticket.LuggageAllowance}\n\n" +
+                             $"--- INSTRUCTIONS & REMARKS ---\n" +
+                             $"{(string.IsNullOrWhiteSpace(ticket.Notes) ? "(No extra remarks logged)" : ticket.Notes)}";
+
+            MessageBox.Show(details, $"Ticket Dossier - {ticket.TicketId} ({ticket.PassengerName})", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void PrintSelectedBoardingPass()
+        {
+            var ticket = GetSelectedTicket();
+            if (ticket == null)
+            {
+                MessageBox.Show("Please select a ticket from the table to preview or print boarding pass.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (ticket.Status == "Cancelled")
+            {
+                MessageBox.Show(
+                    $"Cannot generate or print a boarding pass for ticket '{ticket.TicketId}' because it has been CANCELLED.",
+                    "Invalid Request",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            string passPreview =
+                "============================================================\n" +
+                "       ETHIOPIAN INTERCITY TRANSPORT - BOARDING PASS        \n" +
+                "============================================================\n\n" +
+                $" BOARDING PASS NO:     {ticket.TicketId}\n" +
+                $" BOOKING REFERENCE:    {ticket.BookingId}\n" +
+                $" SECURITY BARCODE:     {ticket.SecurityVerificationCode}\n" +
+                "------------------------------------------------------------\n" +
+                $" PASSENGER NAME:       {ticket.PassengerName.ToUpper()}\n" +
+                $" CONTACT PHONE:        {ticket.PassengerPhone}\n" +
+                $" JOURNEY:              {ticket.Source} ➔ {ticket.Destination}\n" +
+                $" SERVICE ROUTE:        {ticket.RouteName}\n" +
+                $" DEPARTURE DATE:       {ticket.TravelDate:dddd, MMMM dd, yyyy}\n" +
+                $" SCHEDULED TIME:       {ticket.DepartureTime}\n" +
+                $" DEPARTURE GATE:       {ticket.GateNumber}\n" +
+                $" COACH ASSIGNED:       {ticket.AssignedBusPlate} ({ticket.BusModel})\n" +
+                $" ALLOCATED SEAT:       {ticket.SeatDisplay}\n" +
+                "------------------------------------------------------------\n" +
+                $" TOTAL FARE PAID:      {ticket.FareAmount:N0} ETB (PAID IN FULL)\n" +
+                $" LUGGAGE ALLOWANCE:    {ticket.LuggageAllowance}\n" +
+                $" TICKET STATUS:        {ticket.Status.ToUpper()}\n" +
+                $" ISSUED TIMESTAMP:     {ticket.IssuedDate:yyyy-MM-dd HH:mm}\n" +
+                "============================================================\n" +
+                " SECURITY NOTICE & PASSENGER OBLIGATIONS:\n" +
+                " 1. Please arrive at departure gate 30 minutes before departure.\n" +
+                " 2. Official Ethiopian ID (Kebele ID / Passport) is strictly required.\n" +
+                " 3. Tickets are non-transferable once verified at the boarding gate.\n" +
+                "============================================================";
+
+            MessageBox.Show(passPreview, $"Boarding Pass - {ticket.TicketId} ({ticket.PassengerName})", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void CancelSelectedTicket()
+        {
+            var ticket = GetSelectedTicket();
+            if (ticket == null)
+            {
+                MessageBox.Show("Please select a ticket from the table to cancel.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (ticket.Status == "Cancelled")
+            {
+                MessageBox.Show($"Ticket '{ticket.TicketId}' is already Cancelled.", "Already Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (ticket.Status == "Boarded")
+            {
+                MessageBox.Show(
+                    $"Ticket '{ticket.TicketId}' CANNOT be cancelled because the passenger has already verified and boarded the coach.\n\n" +
+                    $"Business Rule:\n" +
+                    $"Boarded tickets are locked and cannot be voided without administrative security clearance.",
+                    "Cancellation Forbidden",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            var confirm = MessageBox.Show(
+                $"Are you sure you want to CANCEL ticket '{ticket.TicketId}'?\n\n" +
+                $"Passenger:  {ticket.PassengerName}\n" +
+                $"Route:      {ticket.FullRouteDisplay}\n" +
+                $"Seat:       {ticket.SeatDisplay}\n" +
+                $"Fare:       {ticket.FareAmount:N0} ETB\n\n" +
+                $"This will void the boarding pass and mark the ticket as Cancelled.",
+                "Confirm Ticket Cancellation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                bool success = TicketStore.CancelTicket(ticket.TicketId, out string msg);
+                if (success)
+                {
+                    PopulateTicketsList();
+                    MessageBox.Show(
+                        $"Ticket '{ticket.TicketId}' was successfully CANCELLED.",
+                        "Cancellation Confirmed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(msg, "Cancellation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        #endregion
+
         private void SetupSidebarButton(Button btn, string sectionTitle, string responsibility)
         {
             btn.MouseEnter += (s, e) =>
             {
-                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses)
+                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses && btn != btnNavRoutes && btn != btnNavBookings && btn != btnNavTickets)
                 {
-                    btn.BackColor = Color.FromArgb(51, 65, 85);
+                    btn.BackColor = Color.FromArgb(226, 232, 240);
+                    btn.ForeColor = Color.FromArgb(15, 23, 42);
                 }
             };
             btn.MouseLeave += (s, e) =>
             {
-                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses)
+                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses && btn != btnNavRoutes && btn != btnNavBookings && btn != btnNavTickets)
                 {
-                    btn.BackColor = Color.FromArgb(30, 41, 59);
+                    btn.BackColor = Color.Transparent;
+                    btn.ForeColor = Color.FromArgb(51, 65, 85);
                 }
             };
             btn.Click += (s, e) =>
@@ -737,8 +1915,11 @@ namespace Bus_Ticket_mgmt.Forms
                     return;
                 }
 
-                lblVerifyResult.ForeColor = Color.FromArgb(22, 163, 74);
-                lblVerifyResult.Text = $"✅ Ticket [{ticketId.ToUpper()}] is VALID: Addis Ababa ➔ Bahir Dar (Seat 14, Paid 1,150 ETB).";
+                using (var scanner = new TicketVerifyDialogForm(ticketId))
+                {
+                    scanner.ShowDialog(this);
+                    PopulateTicketsList();
+                }
             };
         }
 
