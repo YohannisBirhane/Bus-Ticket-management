@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Bus_Ticket_mgmt.Services;
 
 namespace Bus_Ticket_mgmt
 {
@@ -19,7 +20,7 @@ namespace Bus_Ticket_mgmt
         private void InitializeCustomUI()
         {
             // Configure email & password custom inputs
-            txtEmail.PlaceholderText = "Enter email or username";
+            txtEmail.PlaceholderText = "e.g. admin@gmail.com";
             txtEmail.IconType = InputIconType.User;
 
             txtPassword.PlaceholderText = "Enter password";
@@ -31,22 +32,6 @@ namespace Bus_Ticket_mgmt
             btnLogin.HoverColor = Color.FromArgb(11, 79, 196);
             btnLogin.PressedColor = Color.FromArgb(9, 66, 166);
             btnLogin.ButtonIcon = ButtonIconType.Login;
-
-            // Configure Continue as Guest button
-            btnGuest.NormalColor = Color.White;
-            btnGuest.HoverColor = Color.FromArgb(239, 246, 255);
-            btnGuest.PressedColor = Color.FromArgb(219, 234, 254);
-            btnGuest.ForeColor = Color.FromArgb(13, 94, 234);
-            btnGuest.BorderLineColor = Color.FromArgb(13, 94, 234);
-            btnGuest.BorderSize = 1.4f;
-            btnGuest.ButtonIcon = ButtonIconType.GuestUser;
-
-            btnDriver.NormalColor = Color.White;
-            btnDriver.HoverColor = Color.FromArgb(241, 245, 249);
-            btnDriver.PressedColor = Color.FromArgb(226, 232, 240);
-            btnDriver.ForeColor = Color.FromArgb(15, 23, 42);
-            btnDriver.BorderLineColor = Color.FromArgb(148, 163, 184);
-            btnDriver.BorderSize = 1.4f;
 
             // Draw vector bus icon on Title Bar
             lblBusIcon.Paint += (s, e) =>
@@ -60,17 +45,6 @@ namespace Bus_Ticket_mgmt
 
             btnMinimize.MouseEnter += (s, e) => { btnMinimize.BackColor = Color.FromArgb(241, 245, 249); };
             btnMinimize.MouseLeave += (s, e) => { btnMinimize.BackColor = Color.White; };
-
-            // Draw divider lines around "OR"
-            panelDivider.Paint += (s, e) =>
-            {
-                using (Pen pen = new Pen(Color.FromArgb(226, 232, 240), 1))
-                {
-                    int lineY = panelDivider.Height / 2;
-                    e.Graphics.DrawLine(pen, 0, lineY, 160, lineY);
-                    e.Graphics.DrawLine(pen, 220, lineY, 380, lineY);
-                }
-            };
         }
 
         private void SetupEvents()
@@ -104,60 +78,46 @@ namespace Bus_Ticket_mgmt
             btnClose.Click += (s, e) => Application.Exit();
             btnMinimize.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
 
-            // Login button action
-            btnLogin.Click += (s, e) =>
+            // Single unified Login button action
+            btnLogin.Click += (s, e) => PerformLogin();
+
+            // Support Enter key press inside text inputs
+            txtPassword.KeyDown += (s, e) =>
             {
-                string user = txtEmail.InputText.Trim();
-                string pass = txtPassword.InputText;
-
-                if (string.IsNullOrEmpty(user))
+                if (e.KeyCode == Keys.Enter)
                 {
-                    MessageBox.Show("Please enter your email or username.", "Required Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    e.SuppressKeyPress = true;
+                    PerformLogin();
                 }
-
-                if (string.IsNullOrEmpty(pass))
-                {
-                    MessageBox.Show("Please enter your password.", "Required Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                this.Hide();
-                using (var adminDashboard = new Bus_Ticket_mgmt.Forms.AdminDashboardForm())
-                {
-                    adminDashboard.ShowDialog(this);
-                }
-                this.Show();
             };
-
-            // Passenger demo access uses in-memory trip and booking data.
-            btnGuest.Click += (s, e) =>
+            txtEmail.KeyDown += (s, e) =>
             {
-                this.Hide();
-                using (var passengerDashboard = new Bus_Ticket_mgmt.Forms.PassengerDashboardForm())
+                if (e.KeyCode == Keys.Enter)
                 {
-                    passengerDashboard.ShowDialog(this);
+                    e.SuppressKeyPress = true;
+                    PerformLogin();
                 }
-                this.Show();
-            };
-
-            btnDriver.Click += (s, e) =>
-            {
-                this.Hide();
-                using (var driverDashboard = new Bus_Ticket_mgmt.Forms.DriverDashboardForm())
-                {
-                    driverDashboard.ShowDialog(this);
-                }
-                this.Show();
             };
 
             // Forgot password click action
             lblForgotPassword.Click += (s, e) =>
             {
-                MessageBox.Show("Password reset instructions will be sent to your registered email.", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    "Demo Passwords for all accounts:\n\n" +
+                    "• Password: pass1234\n\n" +
+                    "Registered User Accounts:\n" +
+                    "• Administrator:    admin@gmail.com\n" +
+                    "• Passenger:        passenger@gmail.com\n" +
+                    "• Ticket Officer:   officer@gmail.com\n" +
+                    "• Driver:           driver@gmail.com\n" +
+                    "• Bus Manager:      manager@gmail.com",
+                    "System Credentials Guide",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             };
 
-            // Register now click action - redirect directly to RegisterForm
+            // Register now click action
             lblRegisterNow.Click += (s, e) =>
             {
                 this.Hide();
@@ -167,6 +127,70 @@ namespace Bus_Ticket_mgmt
                 }
                 this.Show();
             };
+        }
+
+        private void PerformLogin()
+        {
+            string email = txtEmail.InputText;
+            string pass = txtPassword.InputText;
+
+            // Delegate authentication to the modular AuthService
+            var authResult = AuthService.Authenticate(email, pass);
+            if (!authResult.IsSuccess)
+            {
+                MessageBox.Show(authResult.ErrorMessage, "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+
+            // Route to appropriate role portal based on authenticated role
+            switch (authResult.Role)
+            {
+                case UserRole.Administrator:
+                case UserRole.BusManager:
+                    this.Hide();
+                    using (var adminDashboard = new Bus_Ticket_mgmt.Forms.AdminDashboardForm())
+                    {
+                        adminDashboard.ShowDialog(this);
+                    }
+                    this.Show();
+                    txtPassword.InputText = "";
+                    break;
+
+                case UserRole.Passenger:
+                    this.Hide();
+                    using (var passengerDashboard = new Bus_Ticket_mgmt.Forms.PassengerDashboardForm())
+                    {
+                        passengerDashboard.ShowDialog(this);
+                    }
+                    this.Show();
+                    txtPassword.InputText = "";
+                    break;
+
+                case UserRole.TicketOfficer:
+                    this.Hide();
+                    using (var officerDashboard = new Bus_Ticket_mgmt.Forms.TicketOfficerDashboardForm())
+                    {
+                        officerDashboard.ShowDialog(this);
+                    }
+                    this.Show();
+                    txtPassword.InputText = "";
+                    break;
+
+                case UserRole.Driver:
+                    this.Hide();
+                    using (var driverDashboard = new Bus_Ticket_mgmt.Forms.DriverDashboardForm())
+                    {
+                        driverDashboard.ShowDialog(this);
+                    }
+                    this.Show();
+                    txtPassword.InputText = "";
+                    break;
+
+                default:
+                    MessageBox.Show("Unknown user role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
