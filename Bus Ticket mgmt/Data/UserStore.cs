@@ -14,11 +14,12 @@ namespace Bus_Ticket_mgmt.Data
             // Seed initial illustrative system accounts
             _users.Add(new User("USR001", "Abebe Kebede", "admin", "abebe@busbook.et", "+251 911 234 567", "Bole, Addis Ababa", "Admin@123", "Administrator", "Active", DateTime.Now.AddMonths(-6)));
             _users.Add(new User("USR002", "Hana Tesfaye", "hana.t", "hana@gmail.com", "+251 912 345 678", "Mexico, Addis Ababa", "Pass@123", "Passenger", "Active", DateTime.Now.AddMonths(-4)));
-            _users.Add(new User("USR003", "Dawit Bekele", "dawit.b", "dawit@busbook.et", "+251 913 456 789", "Autobus Tera, Addis Ababa", "Officer@123", "Ticket Officer", "Inactive", DateTime.Now.AddMonths(-3)));
+            _users.Add(new User("USR003", "Dawit Bekele", "dawit.b", "dawit@busbook.et", "+251 913 456 789", "Autobus Tera, Addis Ababa", "Officer@123", "Ticket Officer", "Active", DateTime.Now.AddMonths(-3)));
             _users.Add(new User("USR004", "Bekele Tadesse", "bekele.driver", "bekele@busbook.et", "+251 914 567 890", "Akaki, Addis Ababa", "Driver@123", "Driver", "Active", DateTime.Now.AddMonths(-2)));
             _users.Add(new User("USR005", "Almaz Wolde", "almaz.manager", "almaz@busbook.et", "+251 915 678 901", "Piazza, Addis Ababa", "Manager@123", "Bus Manager", "Active", DateTime.Now.AddMonths(-1)));
             _users.Add(new User("USR006", "Henok Girma", "henok.driver", "henok@busbook.et", "+251 916 789 012", "Merkato, Addis Ababa", "Driver@123", "Driver", "Active", DateTime.Now.AddDays(-15)));
             _users.Add(new User("USR007", "Selamawit Hailu", "selam.p", "selam@yahoo.com", "+251 917 890 123", "CMC, Addis Ababa", "Pass@123", "Passenger", "Active", DateTime.Now.AddDays(-5)));
+            _users.Add(new User("USR008", "Marta Tadesse", "officer", "marta.t@busbook.et", "+251 911 889 900", "Autobus Tera Counter 01, Addis Ababa", "Officer@123", "Ticket Officer", "Active", DateTime.Now.AddMonths(-2)));
         }
 
         public static List<User> GetAll()
