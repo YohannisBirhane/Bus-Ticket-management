@@ -105,11 +105,9 @@ namespace Bus_Ticket_mgmt
                 MessageBox.Show(
                     "Demo Passwords for all accounts:\n\n" +
                     "• Password: pass1234\n\n" +
-                    "Registered User Accounts:\n" +
+                    "Registered User Portals:\n" +
                     "• Administrator:    admin@gmail.com\n" +
-                    "• Passenger:        passenger@gmail.com\n" +
                     "• Ticket Officer:   officer@gmail.com\n" +
-                    "• Driver:           driver@gmail.com\n" +
                     "• Bus Manager:      manager@gmail.com",
                     "System Credentials Guide",
                     MessageBoxButtons.OK,
@@ -157,16 +155,6 @@ namespace Bus_Ticket_mgmt
                     txtPassword.InputText = "";
                     break;
 
-                case UserRole.Passenger:
-                    this.Hide();
-                    using (var passengerDashboard = new Bus_Ticket_mgmt.Forms.PassengerDashboardForm())
-                    {
-                        passengerDashboard.ShowDialog(this);
-                    }
-                    this.Show();
-                    txtPassword.InputText = "";
-                    break;
-
                 case UserRole.TicketOfficer:
                     this.Hide();
                     using (var officerDashboard = new Bus_Ticket_mgmt.Forms.TicketOfficerDashboardForm())
@@ -177,18 +165,8 @@ namespace Bus_Ticket_mgmt
                     txtPassword.InputText = "";
                     break;
 
-                case UserRole.Driver:
-                    this.Hide();
-                    using (var driverDashboard = new Bus_Ticket_mgmt.Forms.DriverDashboardForm())
-                    {
-                        driverDashboard.ShowDialog(this);
-                    }
-                    this.Show();
-                    txtPassword.InputText = "";
-                    break;
-
                 default:
-                    MessageBox.Show("Unknown user role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unknown user role or access restricted.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
