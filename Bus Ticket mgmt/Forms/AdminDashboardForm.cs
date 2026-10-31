@@ -29,6 +29,13 @@ namespace Bus_Ticket_mgmt.Forms
             SetupBookingManagementEvents();
             SetupTicketManagementEvents();
 
+            InitializeTripManagement();
+            InitializePaymentManagement();
+            InitializeStaffManagement();
+            InitializeFareManagement();
+            InitializeReportManagement();
+            InitializeSettingsManagement();
+
             PopulateTripsTable();
             PopulateUsersList();
             PopulateBusesList();
@@ -71,21 +78,26 @@ namespace Bus_Ticket_mgmt.Forms
             cmbBookingStatusFilter.SelectedIndex = 0; // All Statuses
             cmbTicketStatusFilter.SelectedIndex = 0; // All Statuses
 
-            // Sidebar navigation buttons hover effect
-            SetupSidebarButton(btnNavTrips, "Trip & Schedule Management", "Create trips, assign buses and drivers, and update trip status.");
-            SetupSidebarButton(btnNavPayments, "Payment Management", "View payment records, payment statuses, and eligible refunds.");
-            SetupSidebarButton(btnNavStaff, "Driver & Staff Management", "Register drivers and staff, manage details, and assign drivers.");
-            SetupSidebarButton(btnNavFares, "Fare Management", "Set and update ticket prices and applicable discounts.");
-            SetupSidebarButton(btnNavReports, "Reports", "Review ticket sales, revenue, trip counts, and bus utilization.");
-            SetupSidebarButton(btnNavFeedback, "Feedback & Complaints", "Review and manage passenger feedback and complaints.");
-            SetupSidebarButton(btnNavSettings, "Settings", "Manage system preferences and configured policies.");
+            // Setup sidebar button hover effects
+            SetupSidebarButton(btnNavDashboard);
+            SetupSidebarButton(btnNavUsers);
+            SetupSidebarButton(btnNavBuses);
+            SetupSidebarButton(btnNavRoutes);
+            SetupSidebarButton(btnNavTrips);
+            SetupSidebarButton(btnNavBookings);
+            SetupSidebarButton(btnNavTickets);
+            SetupSidebarButton(btnNavPayments);
+            SetupSidebarButton(btnNavStaff);
+            SetupSidebarButton(btnNavFares);
+            SetupSidebarButton(btnNavReports);
+            SetupSidebarButton(btnNavSettings);
 
             // Quick actions buttons on dashboard
             btnQuickAddBus.Click += (s, e) => { ShowBusManagementView(); OpenAddBusDialog(); };
-            btnQuickNewTrip.Click += (s, e) => ShowSectionInfo("Trip Scheduling", "Assign drivers, buses, departure gates and times for new routes.");
-            btnQuickUpdateFares.Click += (s, e) => ShowSectionInfo("Fare Management", "Adjust standard tariffs, seasonal price discounts and luggage fees.");
-            btnQuickSalesReport.Click += (s, e) => ShowSectionInfo("Sales & Revenue Reports", "Export daily reconciliation statements, revenue breakdown and fleet utilization.");
-            btnQuickFeedback.Click += (s, e) => ShowSectionInfo("Feedback & Complaints", "Review 14 unresolved customer requests and trip inquiries.");
+            btnQuickNewTrip.Click += (s, e) => { ShowTripManagementView(); OpenNewTripDialog(); };
+            btnQuickUpdateFares.Click += (s, e) => ShowFareManagementView();
+            btnQuickSalesReport.Click += (s, e) => ShowReportManagementView();
+           
 
             // Sidebar right-edge divider line
             panelSidebar.Paint += (s, e) =>
@@ -100,232 +112,132 @@ namespace Bus_Ticket_mgmt.Forms
             btnNavLogout.MouseEnter += (s, e) => { btnNavLogout.BackColor = Color.FromArgb(254, 226, 226); };
             btnNavLogout.MouseLeave += (s, e) => { btnNavLogout.BackColor = Color.FromArgb(254, 242, 242); };
 
-            // Navigation between Dashboard, User Management, Bus Management, Route Management, Booking Management, and Ticket Management
+            // Full Sidebar Navigation Wiring for ALL modules
             btnNavDashboard.Click += (s, e) => ShowDashboardView();
             btnNavUsers.Click += (s, e) => ShowUserManagementView();
             btnNavBuses.Click += (s, e) => ShowBusManagementView();
             btnNavRoutes.Click += (s, e) => ShowRouteManagementView();
+            btnNavTrips.Click += (s, e) => ShowTripManagementView();
             btnNavBookings.Click += (s, e) => ShowBookingManagementView();
             btnNavTickets.Click += (s, e) => ShowTicketManagementView();
+            btnNavPayments.Click += (s, e) => ShowPaymentManagementView();
+            btnNavStaff.Click += (s, e) => ShowStaffManagementView();
+            btnNavFares.Click += (s, e) => ShowFareManagementView();
+            btnNavReports.Click += (s, e) => ShowReportManagementView();
+            
+            btnNavSettings.Click += (s, e) => ShowSettingsManagementView();
         }
 
-        private void ShowDashboardView()
+        private void SetActiveSidebarButton(Button activeButton)
         {
-            flowDashboard.Visible = true;
-            panelHeaderInfo.Visible = true;
+            Button[] allNavButtons = new[]
+            {
+                btnNavDashboard, btnNavUsers, btnNavBuses, btnNavRoutes, btnNavTrips,
+                btnNavBookings, btnNavTickets, btnNavPayments, btnNavStaff,
+              
+            };
+
+            foreach (var btn in allNavButtons)
+            {
+                if (btn == null) continue;
+                if (btn == activeButton)
+                {
+                    btn.BackColor = Color.FromArgb(13, 94, 234);
+                    btn.ForeColor = Color.White;
+                    btn.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+                }
+                else
+                {
+                    btn.BackColor = Color.Transparent;
+                    btn.ForeColor = Color.FromArgb(51, 65, 85);
+                    btn.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+                }
+            }
+        }
+
+        private void HideAllPanels()
+        {
+            flowDashboard.Visible = false;
+            panelHeaderInfo.Visible = false;
             panelUserManagement.Visible = false;
             panelBusManagement.Visible = false;
             panelRouteManagement.Visible = false;
             panelBookingManagement.Visible = false;
             panelTicketManagement.Visible = false;
 
-            btnNavDashboard.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavDashboard.ForeColor = Color.White;
-            btnNavDashboard.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+            if (panelTripManagement != null) panelTripManagement.Visible = false;
+            if (panelPaymentManagement != null) panelPaymentManagement.Visible = false;
+            if (panelStaffManagement != null) panelStaffManagement.Visible = false;
+            if (panelFareManagement != null) panelFareManagement.Visible = false;
+            if (panelReportManagement != null) panelReportManagement.Visible = false;
+            
+            if (panelSettingsManagement != null) panelSettingsManagement.Visible = false;
+        }
 
-            btnNavUsers.BackColor = Color.Transparent;
-            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBuses.BackColor = Color.Transparent;
-            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavRoutes.BackColor = Color.Transparent;
-            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBookings.BackColor = Color.Transparent;
-            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavTickets.BackColor = Color.Transparent;
-            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+        private void ShowDashboardView()
+        {
+            HideAllPanels();
+            flowDashboard.Visible = true;
+            panelHeaderInfo.Visible = true;
+            flowDashboard.BringToFront();
+            SetActiveSidebarButton(btnNavDashboard);
+            lblPageHeading.Text = "System Overview";
+            lblPageSubHeading.Text = "Welcome back, System Administrator. Here is today's transportation activity summary.";
+            PopulateTripsTable();
         }
 
         private void ShowUserManagementView()
         {
-            flowDashboard.Visible = false;
-            panelHeaderInfo.Visible = false;
+            HideAllPanels();
             panelUserManagement.Visible = true;
-            panelBusManagement.Visible = false;
-            panelRouteManagement.Visible = false;
-            panelBookingManagement.Visible = false;
-            panelTicketManagement.Visible = false;
-
-            btnNavUsers.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavUsers.ForeColor = Color.White;
-            btnNavUsers.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-
-            btnNavDashboard.BackColor = Color.Transparent;
-            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBuses.BackColor = Color.Transparent;
-            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavRoutes.BackColor = Color.Transparent;
-            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBookings.BackColor = Color.Transparent;
-            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavTickets.BackColor = Color.Transparent;
-            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
+            panelUserManagement.BringToFront();
+            SetActiveSidebarButton(btnNavUsers);
+            lblPageHeading.Text = "User Account Management";
+            lblPageSubHeading.Text = "Manage system users, passengers, drivers, and assign roles & credentials.";
             PopulateUsersList();
         }
 
         private void ShowBusManagementView()
         {
-            flowDashboard.Visible = false;
-            panelHeaderInfo.Visible = false;
-            panelUserManagement.Visible = false;
+            HideAllPanels();
             panelBusManagement.Visible = true;
-            panelRouteManagement.Visible = false;
-            panelBookingManagement.Visible = false;
-            panelTicketManagement.Visible = false;
-
-            btnNavBuses.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavBuses.ForeColor = Color.White;
-            btnNavBuses.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-
-            btnNavDashboard.BackColor = Color.Transparent;
-            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavUsers.BackColor = Color.Transparent;
-            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavRoutes.BackColor = Color.Transparent;
-            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBookings.BackColor = Color.Transparent;
-            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavTickets.BackColor = Color.Transparent;
-            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
+            panelBusManagement.BringToFront();
+            SetActiveSidebarButton(btnNavBuses);
+            lblPageHeading.Text = "Bus Fleet Management";
+            lblPageSubHeading.Text = "Register new buses, track maintenance statuses, and assign buses to routes.";
             PopulateBusesList();
         }
 
         private void ShowRouteManagementView()
         {
-            flowDashboard.Visible = false;
-            panelHeaderInfo.Visible = false;
-            panelUserManagement.Visible = false;
-            panelBusManagement.Visible = false;
+            HideAllPanels();
             panelRouteManagement.Visible = true;
-            panelBookingManagement.Visible = false;
-            panelTicketManagement.Visible = false;
-
-            btnNavRoutes.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavRoutes.ForeColor = Color.White;
-            btnNavRoutes.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-
-            btnNavDashboard.BackColor = Color.Transparent;
-            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavUsers.BackColor = Color.Transparent;
-            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBuses.BackColor = Color.Transparent;
-            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBookings.BackColor = Color.Transparent;
-            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavTickets.BackColor = Color.Transparent;
-            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
+            panelRouteManagement.BringToFront();
+            SetActiveSidebarButton(btnNavRoutes);
+            lblPageHeading.Text = "Route Management";
+            lblPageSubHeading.Text = "Define departure and destination corridors, intermediate stops, distance, and base fares.";
             PopulateRoutesList();
         }
 
         private void ShowBookingManagementView()
         {
-            flowDashboard.Visible = false;
-            panelHeaderInfo.Visible = false;
-            panelUserManagement.Visible = false;
-            panelBusManagement.Visible = false;
-            panelRouteManagement.Visible = false;
+            HideAllPanels();
             panelBookingManagement.Visible = true;
-            panelTicketManagement.Visible = false;
-
-            btnNavBookings.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavBookings.ForeColor = Color.White;
-            btnNavBookings.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-
-            btnNavDashboard.BackColor = Color.Transparent;
-            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavUsers.BackColor = Color.Transparent;
-            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBuses.BackColor = Color.Transparent;
-            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavRoutes.BackColor = Color.Transparent;
-            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavTickets.BackColor = Color.Transparent;
-            btnNavTickets.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavTickets.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
+            panelBookingManagement.BringToFront();
+            SetActiveSidebarButton(btnNavBookings);
+            lblPageHeading.Text = "Booking & Reservation Management";
+            lblPageSubHeading.Text = "Manage passenger reservations, confirm booking references, and handle cancellations.";
             PopulateBookingsList();
         }
 
         private void ShowTicketManagementView()
         {
-            flowDashboard.Visible = false;
-            panelHeaderInfo.Visible = false;
-            panelUserManagement.Visible = false;
-            panelBusManagement.Visible = false;
-            panelRouteManagement.Visible = false;
-            panelBookingManagement.Visible = false;
+            HideAllPanels();
             panelTicketManagement.Visible = true;
-
-            btnNavTickets.BackColor = Color.FromArgb(13, 94, 234);
-            btnNavTickets.ForeColor = Color.White;
-            btnNavTickets.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-
-            btnNavDashboard.BackColor = Color.Transparent;
-            btnNavDashboard.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavDashboard.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavUsers.BackColor = Color.Transparent;
-            btnNavUsers.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavUsers.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBuses.BackColor = Color.Transparent;
-            btnNavBuses.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBuses.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavRoutes.BackColor = Color.Transparent;
-            btnNavRoutes.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavRoutes.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
-            btnNavBookings.BackColor = Color.Transparent;
-            btnNavBookings.ForeColor = Color.FromArgb(51, 65, 85);
-            btnNavBookings.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
-
+            panelTicketManagement.BringToFront();
+            SetActiveSidebarButton(btnNavTickets);
+            lblPageHeading.Text = "Ticket & Boarding Management";
+            lblPageSubHeading.Text = "Search, issue, verify boarding passes, and prevent duplicate ticket reuse.";
             PopulateTicketsList();
         }
 
@@ -1836,11 +1748,11 @@ namespace Bus_Ticket_mgmt.Forms
 
         #endregion
 
-        private void SetupSidebarButton(Button btn, string sectionTitle, string responsibility)
+        private void SetupSidebarButton(Button btn)
         {
             btn.MouseEnter += (s, e) =>
             {
-                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses && btn != btnNavRoutes && btn != btnNavBookings && btn != btnNavTickets)
+                if (btn.BackColor != Color.FromArgb(13, 94, 234))
                 {
                     btn.BackColor = Color.FromArgb(226, 232, 240);
                     btn.ForeColor = Color.FromArgb(15, 23, 42);
@@ -1848,26 +1760,12 @@ namespace Bus_Ticket_mgmt.Forms
             };
             btn.MouseLeave += (s, e) =>
             {
-                if (btn != btnNavDashboard && btn != btnNavUsers && btn != btnNavBuses && btn != btnNavRoutes && btn != btnNavBookings && btn != btnNavTickets)
+                if (btn.BackColor != Color.FromArgb(13, 94, 234))
                 {
                     btn.BackColor = Color.Transparent;
                     btn.ForeColor = Color.FromArgb(51, 65, 85);
                 }
             };
-            btn.Click += (s, e) =>
-            {
-                ShowSectionInfo(sectionTitle, responsibility);
-            };
-        }
-
-        private void ShowSectionInfo(string title, string details)
-        {
-            MessageBox.Show(
-                $"{details}\n\n[Status: Section modules loaded and accessible]",
-                $"Admin: {title}",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
         }
 
         private void SetupEvents()
@@ -1934,12 +1832,11 @@ namespace Bus_Ticket_mgmt.Forms
             dt.Columns.Add("Occupancy", typeof(string));
             dt.Columns.Add("Trip Status", typeof(string));
 
-            dt.Rows.Add("TRP-101", "Addis Ababa ➔ Bahir Dar", "ET-3-4812", "Dawit Alemu", "06:00 AM", "49 / 51 (96%)", "On Route");
-            dt.Rows.Add("TRP-102", "Addis Ababa ➔ Hawassa", "ET-3-9201", "Bekele Tadesse", "07:30 AM", "51 / 51 (100%)", "Departed");
-            dt.Rows.Add("TRP-103", "Addis Ababa ➔ Gondar", "ET-3-1184", "Henok Girma", "08:00 AM", "42 / 51 (82%)", "Boarding");
-            dt.Rows.Add("TRP-104", "Addis Ababa ➔ Dire Dawa", "ET-3-7723", "Yared Solomon", "09:30 AM", "38 / 49 (77%)", "Scheduled");
-            dt.Rows.Add("TRP-105", "Mekelle ➔ Addis Ababa", "ET-3-5509", "Fitsum Berhe", "10:00 AM", "47 / 51 (92%)", "Scheduled");
-            dt.Rows.Add("TRP-106", "Jimma ➔ Addis Ababa", "ET-3-6310", "Tariku Kebede", "11:15 AM", "33 / 49 (67%)", "Scheduled");
+            var trips = TripScheduleStore.GetAll();
+            foreach (var t in trips)
+            {
+                dt.Rows.Add(t.TripId, t.RouteName, t.BusPlate, t.DriverName, t.DepartureTime, t.OccupancyText, t.Status);
+            }
 
             dgvTrips.DataSource = dt;
 
@@ -1983,6 +1880,21 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 e.Graphics.DrawRectangle(borderPen, 0, 0, this.Width - 1, this.Height - 1);
             }
+        }
+
+        private void btnNavBuses_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNavBookings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNavUsers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
