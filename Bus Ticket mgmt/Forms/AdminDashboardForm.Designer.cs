@@ -33,7 +33,6 @@ namespace Bus_Ticket_mgmt.Forms
         private Button btnNavStaff;
         private Button btnNavFares;
         private Button btnNavReports;
-        private Button btnNavFeedback;
         private Button btnNavSettings;
         private Button btnNavLogout;
 
@@ -64,7 +63,6 @@ namespace Bus_Ticket_mgmt.Forms
         private Button btnQuickNewTrip;
         private Button btnQuickUpdateFares;
         private Button btnQuickSalesReport;
-        private Button btnQuickFeedback;
 
         private GroupBox grpTripsSchedule;
         private DataGridView dgvTrips;
@@ -357,7 +355,6 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavStaff = new System.Windows.Forms.Button();
             this.btnNavFares = new System.Windows.Forms.Button();
             this.btnNavReports = new System.Windows.Forms.Button();
-            this.btnNavFeedback = new System.Windows.Forms.Button();
             this.btnNavSettings = new System.Windows.Forms.Button();
             this.btnNavLogout = new System.Windows.Forms.Button();
 
@@ -386,7 +383,6 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickNewTrip = new System.Windows.Forms.Button();
             this.btnQuickUpdateFares = new System.Windows.Forms.Button();
             this.btnQuickSalesReport = new System.Windows.Forms.Button();
-            this.btnQuickFeedback = new System.Windows.Forms.Button();
 
             this.grpTripsSchedule = new System.Windows.Forms.GroupBox();
             this.dgvTrips = new System.Windows.Forms.DataGridView();
@@ -828,7 +824,6 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(245, 247, 250);
             this.panelSidebar.Controls.Add(this.btnNavLogout);
             this.panelSidebar.Controls.Add(this.btnNavSettings);
-            this.panelSidebar.Controls.Add(this.btnNavFeedback);
             this.panelSidebar.Controls.Add(this.btnNavReports);
             this.panelSidebar.Controls.Add(this.btnNavFares);
             this.panelSidebar.Controls.Add(this.btnNavStaff);
@@ -1036,22 +1031,6 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavReports.UseVisualStyleBackColor = true;
 
             // 
-            // btnNavFeedback
-            // 
-            this.btnNavFeedback.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavFeedback.FlatAppearance.BorderSize = 0;
-            this.btnNavFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavFeedback.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNavFeedback.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavFeedback.Location = new System.Drawing.Point(10, 460);
-            this.btnNavFeedback.Name = "btnNavFeedback";
-            this.btnNavFeedback.Size = new System.Drawing.Size(210, 34);
-            this.btnNavFeedback.TabIndex = 12;
-            this.btnNavFeedback.Text = "💬  Feedback & Complaints";
-            this.btnNavFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNavFeedback.UseVisualStyleBackColor = true;
-
-            // 
             // btnNavSettings
             // 
             this.btnNavSettings.BackColor = System.Drawing.Color.Transparent;
@@ -1059,10 +1038,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNavSettings.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavSettings.Location = new System.Drawing.Point(10, 498);
+            this.btnNavSettings.Location = new System.Drawing.Point(10, 460);
             this.btnNavSettings.Name = "btnNavSettings";
             this.btnNavSettings.Size = new System.Drawing.Size(210, 34);
-            this.btnNavSettings.TabIndex = 13;
+            this.btnNavSettings.TabIndex = 12;
             this.btnNavSettings.Text = "⚙️  System Settings";
             this.btnNavSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavSettings.UseVisualStyleBackColor = true;
@@ -1108,10 +1087,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelHeaderInfo.Controls.Add(this.lblPageHeading);
             this.panelHeaderInfo.Controls.Add(this.lblPageSubHeading);
             this.panelHeaderInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderInfo.Height = 60;
+            this.panelHeaderInfo.Height = 42;
             this.panelHeaderInfo.Location = new System.Drawing.Point(20, 20);
             this.panelHeaderInfo.Name = "panelHeaderInfo";
-            this.panelHeaderInfo.Size = new System.Drawing.Size(970, 60);
+            this.panelHeaderInfo.Size = new System.Drawing.Size(970, 42);
             this.panelHeaderInfo.TabIndex = 0;
 
             // 
@@ -1137,6 +1116,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblPageSubHeading.Size = new System.Drawing.Size(465, 17);
             this.lblPageSubHeading.TabIndex = 1;
             this.lblPageSubHeading.Text = "Central operational hub for managing buses, routes, schedules, fares, and reports.";
+            this.lblPageSubHeading.Visible = false;
 
             // 
             // flowDashboard
@@ -1319,7 +1299,6 @@ namespace Bus_Ticket_mgmt.Forms
             this.grpQuickActions.Controls.Add(this.btnQuickNewTrip);
             this.grpQuickActions.Controls.Add(this.btnQuickUpdateFares);
             this.grpQuickActions.Controls.Add(this.btnQuickSalesReport);
-            this.grpQuickActions.Controls.Add(this.btnQuickFeedback);
             this.grpQuickActions.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.grpQuickActions.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.grpQuickActions.Location = new System.Drawing.Point(3, 135);
@@ -1337,9 +1316,9 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickAddBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickAddBus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuickAddBus.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.btnQuickAddBus.Location = new System.Drawing.Point(18, 30);
+            this.btnQuickAddBus.Location = new System.Drawing.Point(20, 30);
             this.btnQuickAddBus.Name = "btnQuickAddBus";
-            this.btnQuickAddBus.Size = new System.Drawing.Size(168, 38);
+            this.btnQuickAddBus.Size = new System.Drawing.Size(210, 38);
             this.btnQuickAddBus.TabIndex = 0;
             this.btnQuickAddBus.Text = "➕  Add New Bus";
             this.btnQuickAddBus.UseVisualStyleBackColor = false;
@@ -1352,9 +1331,9 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickNewTrip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickNewTrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuickNewTrip.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.btnQuickNewTrip.Location = new System.Drawing.Point(198, 30);
+            this.btnQuickNewTrip.Location = new System.Drawing.Point(250, 30);
             this.btnQuickNewTrip.Name = "btnQuickNewTrip";
-            this.btnQuickNewTrip.Size = new System.Drawing.Size(172, 38);
+            this.btnQuickNewTrip.Size = new System.Drawing.Size(210, 38);
             this.btnQuickNewTrip.TabIndex = 1;
             this.btnQuickNewTrip.Text = "📅  Schedule Trip";
             this.btnQuickNewTrip.UseVisualStyleBackColor = false;
@@ -1367,9 +1346,9 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickUpdateFares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickUpdateFares.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuickUpdateFares.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.btnQuickUpdateFares.Location = new System.Drawing.Point(382, 30);
+            this.btnQuickUpdateFares.Location = new System.Drawing.Point(480, 30);
             this.btnQuickUpdateFares.Name = "btnQuickUpdateFares";
-            this.btnQuickUpdateFares.Size = new System.Drawing.Size(172, 38);
+            this.btnQuickUpdateFares.Size = new System.Drawing.Size(210, 38);
             this.btnQuickUpdateFares.TabIndex = 2;
             this.btnQuickUpdateFares.Text = "🏷️  Set Ticket Fares";
             this.btnQuickUpdateFares.UseVisualStyleBackColor = false;
@@ -1382,27 +1361,12 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuickSalesReport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuickSalesReport.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.btnQuickSalesReport.Location = new System.Drawing.Point(566, 30);
+            this.btnQuickSalesReport.Location = new System.Drawing.Point(710, 30);
             this.btnQuickSalesReport.Name = "btnQuickSalesReport";
-            this.btnQuickSalesReport.Size = new System.Drawing.Size(176, 38);
+            this.btnQuickSalesReport.Size = new System.Drawing.Size(210, 38);
             this.btnQuickSalesReport.TabIndex = 3;
             this.btnQuickSalesReport.Text = "📈  Generate Report";
             this.btnQuickSalesReport.UseVisualStyleBackColor = false;
-
-            // 
-            // btnQuickFeedback
-            // 
-            this.btnQuickFeedback.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.btnQuickFeedback.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnQuickFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickFeedback.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnQuickFeedback.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.btnQuickFeedback.Location = new System.Drawing.Point(754, 30);
-            this.btnQuickFeedback.Name = "btnQuickFeedback";
-            this.btnQuickFeedback.Size = new System.Drawing.Size(168, 38);
-            this.btnQuickFeedback.TabIndex = 4;
-            this.btnQuickFeedback.Text = "💬  Passenger Feedback";
-            this.btnQuickFeedback.UseVisualStyleBackColor = false;
 
             // 
             // grpTripsSchedule
@@ -1519,10 +1483,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelUsersHeader.Controls.Add(this.lblUsersTitle);
             this.panelUsersHeader.Controls.Add(this.lblUsersSubtitle);
             this.panelUsersHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUsersHeader.Height = 54;
+            this.panelUsersHeader.Height = 42;
             this.panelUsersHeader.Location = new System.Drawing.Point(0, 0);
             this.panelUsersHeader.Name = "panelUsersHeader";
-            this.panelUsersHeader.Size = new System.Drawing.Size(970, 54);
+            this.panelUsersHeader.Size = new System.Drawing.Size(970, 42);
             this.panelUsersHeader.TabIndex = 0;
 
             // 
@@ -1548,6 +1512,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblUsersSubtitle.Size = new System.Drawing.Size(395, 17);
             this.lblUsersSubtitle.TabIndex = 1;
             this.lblUsersSubtitle.Text = "Manage system users, roles, account status, and access permissions.";
+            this.lblUsersSubtitle.Visible = false;
 
             // 
             // panelUsersToolbar
@@ -1559,7 +1524,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelUsersToolbar.Controls.Add(this.btnRefreshUsers);
             this.panelUsersToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsersToolbar.Height = 52;
-            this.panelUsersToolbar.Location = new System.Drawing.Point(0, 54);
+            this.panelUsersToolbar.Location = new System.Drawing.Point(0, 42);
             this.panelUsersToolbar.Name = "panelUsersToolbar";
             this.panelUsersToolbar.Size = new System.Drawing.Size(970, 52);
             this.panelUsersToolbar.TabIndex = 1;
@@ -1836,10 +1801,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelBusesHeader.Controls.Add(this.lblBusesTitle);
             this.panelBusesHeader.Controls.Add(this.lblBusesSubtitle);
             this.panelBusesHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBusesHeader.Height = 54;
+            this.panelBusesHeader.Height = 42;
             this.panelBusesHeader.Location = new System.Drawing.Point(0, 0);
             this.panelBusesHeader.Name = "panelBusesHeader";
-            this.panelBusesHeader.Size = new System.Drawing.Size(970, 54);
+            this.panelBusesHeader.Size = new System.Drawing.Size(970, 42);
             this.panelBusesHeader.TabIndex = 0;
 
             // 
@@ -1865,6 +1830,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblBusesSubtitle.Size = new System.Drawing.Size(430, 17);
             this.lblBusesSubtitle.TabIndex = 1;
             this.lblBusesSubtitle.Text = "Manage vehicle fleet inventory, seating capacities, and service statuses.";
+            this.lblBusesSubtitle.Visible = false;
 
             // 
             // btnAddBus
@@ -1875,7 +1841,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnAddBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBus.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBus.ForeColor = System.Drawing.Color.White;
-            this.btnAddBus.Location = new System.Drawing.Point(825, 8);
+            this.btnAddBus.Location = new System.Drawing.Point(825, 4);
             this.btnAddBus.Name = "btnAddBus";
             this.btnAddBus.Size = new System.Drawing.Size(145, 36);
             this.btnAddBus.TabIndex = 2;
@@ -1890,10 +1856,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.flowBusMetrics.Controls.Add(this.cardMaintenanceBuses);
             this.flowBusMetrics.Controls.Add(this.cardInactiveBuses);
             this.flowBusMetrics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowBusMetrics.Height = 85;
-            this.flowBusMetrics.Location = new System.Drawing.Point(0, 54);
+            this.flowBusMetrics.Height = 72;
+            this.flowBusMetrics.Location = new System.Drawing.Point(0, 42);
             this.flowBusMetrics.Name = "flowBusMetrics";
-            this.flowBusMetrics.Size = new System.Drawing.Size(970, 85);
+            this.flowBusMetrics.Size = new System.Drawing.Size(970, 72);
             this.flowBusMetrics.TabIndex = 1;
 
             // 
@@ -1907,7 +1873,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTotalBuses.Location = new System.Drawing.Point(0, 5);
             this.cardTotalBuses.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardTotalBuses.Name = "cardTotalBuses";
-            this.cardTotalBuses.Size = new System.Drawing.Size(225, 72);
+            this.cardTotalBuses.Size = new System.Drawing.Size(225, 60);
             this.cardTotalBuses.TabIndex = 0;
 
             // 
@@ -1945,6 +1911,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTotalBusesSub.Size = new System.Drawing.Size(107, 13);
             this.lblMetricTotalBusesSub.TabIndex = 2;
             this.lblMetricTotalBusesSub.Text = "All registered buses";
+            this.lblMetricTotalBusesSub.Visible = false;
 
             // 
             // cardActiveBuses
@@ -1957,7 +1924,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardActiveBuses.Location = new System.Drawing.Point(237, 5);
             this.cardActiveBuses.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardActiveBuses.Name = "cardActiveBuses";
-            this.cardActiveBuses.Size = new System.Drawing.Size(225, 72);
+            this.cardActiveBuses.Size = new System.Drawing.Size(225, 60);
             this.cardActiveBuses.TabIndex = 1;
 
             // 
@@ -1995,6 +1962,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricActiveBusesSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricActiveBusesSub.TabIndex = 2;
             this.lblMetricActiveBusesSub.Text = "Available for operations";
+            this.lblMetricActiveBusesSub.Visible = false;
 
             // 
             // cardMaintenanceBuses
@@ -2007,7 +1975,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardMaintenanceBuses.Location = new System.Drawing.Point(474, 5);
             this.cardMaintenanceBuses.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardMaintenanceBuses.Name = "cardMaintenanceBuses";
-            this.cardMaintenanceBuses.Size = new System.Drawing.Size(225, 72);
+            this.cardMaintenanceBuses.Size = new System.Drawing.Size(225, 60);
             this.cardMaintenanceBuses.TabIndex = 2;
 
             // 
@@ -2045,6 +2013,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricMaintBusesSub.Size = new System.Drawing.Size(107, 13);
             this.lblMetricMaintBusesSub.TabIndex = 2;
             this.lblMetricMaintBusesSub.Text = "Under maintenance";
+            this.lblMetricMaintBusesSub.Visible = false;
 
             // 
             // cardInactiveBuses
@@ -2057,7 +2026,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardInactiveBuses.Location = new System.Drawing.Point(711, 5);
             this.cardInactiveBuses.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.cardInactiveBuses.Name = "cardInactiveBuses";
-            this.cardInactiveBuses.Size = new System.Drawing.Size(225, 72);
+            this.cardInactiveBuses.Size = new System.Drawing.Size(225, 60);
             this.cardInactiveBuses.TabIndex = 3;
 
             // 
@@ -2095,6 +2064,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricInactiveBusesSub.Size = new System.Drawing.Size(80, 13);
             this.lblMetricInactiveBusesSub.TabIndex = 2;
             this.lblMetricInactiveBusesSub.Text = "Not in service";
+            this.lblMetricInactiveBusesSub.Visible = false;
 
             // 
             // panelBusesToolbar
@@ -2351,10 +2321,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelRoutesHeader.Controls.Add(this.lblRoutesTitle);
             this.panelRoutesHeader.Controls.Add(this.lblRoutesSubtitle);
             this.panelRoutesHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRoutesHeader.Height = 54;
+            this.panelRoutesHeader.Height = 42;
             this.panelRoutesHeader.Location = new System.Drawing.Point(0, 0);
             this.panelRoutesHeader.Name = "panelRoutesHeader";
-            this.panelRoutesHeader.Size = new System.Drawing.Size(970, 54);
+            this.panelRoutesHeader.Size = new System.Drawing.Size(970, 42);
             this.panelRoutesHeader.TabIndex = 0;
 
             // 
@@ -2380,6 +2350,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblRoutesSubtitle.Size = new System.Drawing.Size(430, 17);
             this.lblRoutesSubtitle.TabIndex = 1;
             this.lblRoutesSubtitle.Text = "Manage intercity routes, distances, estimated travel durations, and intermediate stops.";
+            this.lblRoutesSubtitle.Visible = false;
 
             // 
             // btnAddRoute
@@ -2390,7 +2361,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnAddRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRoute.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddRoute.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoute.Location = new System.Drawing.Point(815, 8);
+            this.btnAddRoute.Location = new System.Drawing.Point(815, 4);
             this.btnAddRoute.Name = "btnAddRoute";
             this.btnAddRoute.Size = new System.Drawing.Size(155, 36);
             this.btnAddRoute.TabIndex = 2;
@@ -2405,10 +2376,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.flowRouteMetrics.Controls.Add(this.cardInactiveRoutes);
             this.flowRouteMetrics.Controls.Add(this.cardTotalDistance);
             this.flowRouteMetrics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowRouteMetrics.Height = 85;
-            this.flowRouteMetrics.Location = new System.Drawing.Point(0, 54);
+            this.flowRouteMetrics.Height = 72;
+            this.flowRouteMetrics.Location = new System.Drawing.Point(0, 42);
             this.flowRouteMetrics.Name = "flowRouteMetrics";
-            this.flowRouteMetrics.Size = new System.Drawing.Size(970, 85);
+            this.flowRouteMetrics.Size = new System.Drawing.Size(970, 72);
             this.flowRouteMetrics.TabIndex = 1;
 
             // 
@@ -2422,7 +2393,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTotalRoutes.Location = new System.Drawing.Point(0, 5);
             this.cardTotalRoutes.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardTotalRoutes.Name = "cardTotalRoutes";
-            this.cardTotalRoutes.Size = new System.Drawing.Size(225, 72);
+            this.cardTotalRoutes.Size = new System.Drawing.Size(225, 60);
             this.cardTotalRoutes.TabIndex = 0;
 
             // 
@@ -2460,6 +2431,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTotalRoutesSub.Size = new System.Drawing.Size(110, 13);
             this.lblMetricTotalRoutesSub.TabIndex = 2;
             this.lblMetricTotalRoutesSub.Text = "All registered routes";
+            this.lblMetricTotalRoutesSub.Visible = false;
 
             // 
             // cardActiveRoutes
@@ -2472,7 +2444,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardActiveRoutes.Location = new System.Drawing.Point(237, 5);
             this.cardActiveRoutes.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardActiveRoutes.Name = "cardActiveRoutes";
-            this.cardActiveRoutes.Size = new System.Drawing.Size(225, 72);
+            this.cardActiveRoutes.Size = new System.Drawing.Size(225, 60);
             this.cardActiveRoutes.TabIndex = 1;
 
             // 
@@ -2510,6 +2482,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricActiveRoutesSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricActiveRoutesSub.TabIndex = 2;
             this.lblMetricActiveRoutesSub.Text = "Available for scheduling";
+            this.lblMetricActiveRoutesSub.Visible = false;
 
             // 
             // cardInactiveRoutes
@@ -2522,7 +2495,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardInactiveRoutes.Location = new System.Drawing.Point(474, 5);
             this.cardInactiveRoutes.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardInactiveRoutes.Name = "cardInactiveRoutes";
-            this.cardInactiveRoutes.Size = new System.Drawing.Size(225, 72);
+            this.cardInactiveRoutes.Size = new System.Drawing.Size(225, 60);
             this.cardInactiveRoutes.TabIndex = 2;
 
             // 
@@ -2560,6 +2533,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricInactiveRoutesSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricInactiveRoutesSub.TabIndex = 2;
             this.lblMetricInactiveRoutesSub.Text = "Not available for trips";
+            this.lblMetricInactiveRoutesSub.Visible = false;
 
             // 
             // cardTotalDistance
@@ -2572,7 +2546,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTotalDistance.Location = new System.Drawing.Point(711, 5);
             this.cardTotalDistance.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.cardTotalDistance.Name = "cardTotalDistance";
-            this.cardTotalDistance.Size = new System.Drawing.Size(225, 72);
+            this.cardTotalDistance.Size = new System.Drawing.Size(225, 60);
             this.cardTotalDistance.TabIndex = 3;
 
             // 
@@ -2610,6 +2584,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTotalDistanceSub.Size = new System.Drawing.Size(117, 13);
             this.lblMetricTotalDistanceSub.TabIndex = 2;
             this.lblMetricTotalDistanceSub.Text = "Aggregate route network";
+            this.lblMetricTotalDistanceSub.Visible = false;
 
             // 
             // panelRoutesToolbar
@@ -2855,10 +2830,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelBookingsHeader.Controls.Add(this.lblBookingsTitle);
             this.panelBookingsHeader.Controls.Add(this.lblBookingsSubtitle);
             this.panelBookingsHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBookingsHeader.Height = 54;
+            this.panelBookingsHeader.Height = 42;
             this.panelBookingsHeader.Location = new System.Drawing.Point(0, 0);
             this.panelBookingsHeader.Name = "panelBookingsHeader";
-            this.panelBookingsHeader.Size = new System.Drawing.Size(970, 54);
+            this.panelBookingsHeader.Size = new System.Drawing.Size(970, 42);
             this.panelBookingsHeader.TabIndex = 0;
 
             // 
@@ -2884,6 +2859,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblBookingsSubtitle.Size = new System.Drawing.Size(430, 17);
             this.lblBookingsSubtitle.TabIndex = 1;
             this.lblBookingsSubtitle.Text = "View passenger reservations, manage seat allocations, confirm payments, and process cancellations.";
+            this.lblBookingsSubtitle.Visible = false;
 
             // 
             // btnNewBooking
@@ -2894,7 +2870,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewBooking.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNewBooking.ForeColor = System.Drawing.Color.White;
-            this.btnNewBooking.Location = new System.Drawing.Point(815, 8);
+            this.btnNewBooking.Location = new System.Drawing.Point(815, 4);
             this.btnNewBooking.Name = "btnNewBooking";
             this.btnNewBooking.Size = new System.Drawing.Size(155, 36);
             this.btnNewBooking.TabIndex = 2;
@@ -2910,9 +2886,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.flowBookingMetrics.Controls.Add(this.cardCancelledBookings);
             this.flowBookingMetrics.Controls.Add(this.cardTodayBookings);
             this.flowBookingMetrics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowBookingMetrics.Height = 85;
-            this.flowBookingMetrics.Location = new System.Drawing.Point(0, 54);
+            this.flowBookingMetrics.Height = 72;
+            this.flowBookingMetrics.Location = new System.Drawing.Point(0, 42);
             this.flowBookingMetrics.Name = "flowBookingMetrics";
+            this.flowBookingMetrics.Size = new System.Drawing.Size(970, 72);
+            this.flowBookingMetrics.TabIndex = 1;
             this.flowBookingMetrics.Size = new System.Drawing.Size(970, 85);
             this.flowBookingMetrics.TabIndex = 1;
 
@@ -2927,7 +2905,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTotalBookings.Location = new System.Drawing.Point(0, 5);
             this.cardTotalBookings.Margin = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.cardTotalBookings.Name = "cardTotalBookings";
-            this.cardTotalBookings.Size = new System.Drawing.Size(182, 72);
+            this.cardTotalBookings.Size = new System.Drawing.Size(182, 60);
             this.cardTotalBookings.TabIndex = 0;
 
             // 
@@ -2965,6 +2943,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTotalBookingsSub.Size = new System.Drawing.Size(117, 13);
             this.lblMetricTotalBookingsSub.TabIndex = 2;
             this.lblMetricTotalBookingsSub.Text = "All recorded bookings";
+            this.lblMetricTotalBookingsSub.Visible = false;
 
             // 
             // cardConfirmedBookings
@@ -2977,7 +2956,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardConfirmedBookings.Location = new System.Drawing.Point(192, 5);
             this.cardConfirmedBookings.Margin = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.cardConfirmedBookings.Name = "cardConfirmedBookings";
-            this.cardConfirmedBookings.Size = new System.Drawing.Size(182, 72);
+            this.cardConfirmedBookings.Size = new System.Drawing.Size(182, 60);
             this.cardConfirmedBookings.TabIndex = 1;
 
             // 
@@ -3015,6 +2994,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricConfirmedBookingsSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricConfirmedBookingsSub.TabIndex = 2;
             this.lblMetricConfirmedBookingsSub.Text = "Confirmed reservations";
+            this.lblMetricConfirmedBookingsSub.Visible = false;
 
             // 
             // cardPendingBookings
@@ -3027,7 +3007,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardPendingBookings.Location = new System.Drawing.Point(384, 5);
             this.cardPendingBookings.Margin = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.cardPendingBookings.Name = "cardPendingBookings";
-            this.cardPendingBookings.Size = new System.Drawing.Size(182, 72);
+            this.cardPendingBookings.Size = new System.Drawing.Size(182, 60);
             this.cardPendingBookings.TabIndex = 2;
 
             // 
@@ -3065,6 +3045,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricPendingBookingsSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricPendingBookingsSub.TabIndex = 2;
             this.lblMetricPendingBookingsSub.Text = "Awaiting confirmation";
+            this.lblMetricPendingBookingsSub.Visible = false;
 
             // 
             // cardCancelledBookings
@@ -3077,7 +3058,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardCancelledBookings.Location = new System.Drawing.Point(576, 5);
             this.cardCancelledBookings.Margin = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.cardCancelledBookings.Name = "cardCancelledBookings";
-            this.cardCancelledBookings.Size = new System.Drawing.Size(182, 72);
+            this.cardCancelledBookings.Size = new System.Drawing.Size(182, 60);
             this.cardCancelledBookings.TabIndex = 3;
 
             // 
@@ -3115,6 +3096,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricCancelledBookingsSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricCancelledBookingsSub.TabIndex = 2;
             this.lblMetricCancelledBookingsSub.Text = "Released reservations";
+            this.lblMetricCancelledBookingsSub.Visible = false;
 
             // 
             // cardTodayBookings
@@ -3127,7 +3109,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTodayBookings.Location = new System.Drawing.Point(768, 5);
             this.cardTodayBookings.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.cardTodayBookings.Name = "cardTodayBookings";
-            this.cardTodayBookings.Size = new System.Drawing.Size(182, 72);
+            this.cardTodayBookings.Size = new System.Drawing.Size(182, 60);
             this.cardTodayBookings.TabIndex = 4;
 
             // 
@@ -3165,6 +3147,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTodayBookingsSub.Size = new System.Drawing.Size(126, 13);
             this.lblMetricTodayBookingsSub.TabIndex = 2;
             this.lblMetricTodayBookingsSub.Text = "Created or travel today";
+            this.lblMetricTodayBookingsSub.Visible = false;
 
             // 
             // panelBookingsToolbar
@@ -3457,10 +3440,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.panelTicketsHeader.Controls.Add(this.lblTicketsTitle);
             this.panelTicketsHeader.Controls.Add(this.lblTicketsSubtitle);
             this.panelTicketsHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTicketsHeader.Height = 54;
+            this.panelTicketsHeader.Height = 42;
             this.panelTicketsHeader.Location = new System.Drawing.Point(0, 0);
             this.panelTicketsHeader.Name = "panelTicketsHeader";
-            this.panelTicketsHeader.Size = new System.Drawing.Size(970, 54);
+            this.panelTicketsHeader.Size = new System.Drawing.Size(970, 42);
             this.panelTicketsHeader.TabIndex = 0;
 
             // 
@@ -3486,6 +3469,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblTicketsSubtitle.Size = new System.Drawing.Size(460, 17);
             this.lblTicketsSubtitle.TabIndex = 1;
             this.lblTicketsSubtitle.Text = "Generate ticket references, verify authorizations before boarding, and print boarding passes.";
+            this.lblTicketsSubtitle.Visible = false;
 
             // 
             // btnVerifyBoardModal
@@ -3496,7 +3480,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnVerifyBoardModal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyBoardModal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerifyBoardModal.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyBoardModal.Location = new System.Drawing.Point(620, 8);
+            this.btnVerifyBoardModal.Location = new System.Drawing.Point(620, 4);
             this.btnVerifyBoardModal.Name = "btnVerifyBoardModal";
             this.btnVerifyBoardModal.Size = new System.Drawing.Size(180, 36);
             this.btnVerifyBoardModal.TabIndex = 2;
@@ -3512,7 +3496,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(810, 8);
+            this.btnNewTicket.Location = new System.Drawing.Point(810, 4);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(160, 36);
             this.btnNewTicket.TabIndex = 3;
@@ -3528,10 +3512,10 @@ namespace Bus_Ticket_mgmt.Forms
             this.flowTicketMetrics.Controls.Add(this.cardCancelledTickets);
             this.flowTicketMetrics.Controls.Add(this.cardTodayTickets);
             this.flowTicketMetrics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowTicketMetrics.Height = 88;
-            this.flowTicketMetrics.Location = new System.Drawing.Point(0, 54);
+            this.flowTicketMetrics.Height = 72;
+            this.flowTicketMetrics.Location = new System.Drawing.Point(0, 42);
             this.flowTicketMetrics.Name = "flowTicketMetrics";
-            this.flowTicketMetrics.Size = new System.Drawing.Size(970, 88);
+            this.flowTicketMetrics.Size = new System.Drawing.Size(970, 72);
             this.flowTicketMetrics.TabIndex = 1;
             this.flowTicketMetrics.WrapContents = false;
 
@@ -3543,11 +3527,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTotalTickets.Controls.Add(this.lblMetricTotalTicketsSub);
             this.cardTotalTickets.Controls.Add(this.lblMetricTotalTicketsVal);
             this.cardTotalTickets.Controls.Add(this.lblMetricTotalTicketsTitle);
-            this.cardTotalTickets.Location = new System.Drawing.Point(0, 8);
-            this.cardTotalTickets.Margin = new System.Windows.Forms.Padding(0, 8, 12, 8);
+            this.cardTotalTickets.Location = new System.Drawing.Point(0, 5);
+            this.cardTotalTickets.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardTotalTickets.Name = "cardTotalTickets";
-            this.cardTotalTickets.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.cardTotalTickets.Size = new System.Drawing.Size(182, 70);
+            this.cardTotalTickets.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.cardTotalTickets.Size = new System.Drawing.Size(182, 60);
             this.cardTotalTickets.TabIndex = 0;
 
             this.lblMetricTotalTicketsTitle.AutoSize = true;
@@ -3577,6 +3561,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTotalTicketsSub.Size = new System.Drawing.Size(100, 12);
             this.lblMetricTotalTicketsSub.TabIndex = 2;
             this.lblMetricTotalTicketsSub.Text = "All recorded tickets";
+            this.lblMetricTotalTicketsSub.Visible = false;
 
             // 
             // cardValidTickets
@@ -3586,11 +3571,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardValidTickets.Controls.Add(this.lblMetricValidTicketsSub);
             this.cardValidTickets.Controls.Add(this.lblMetricValidTicketsVal);
             this.cardValidTickets.Controls.Add(this.lblMetricValidTicketsTitle);
-            this.cardValidTickets.Location = new System.Drawing.Point(194, 8);
-            this.cardValidTickets.Margin = new System.Windows.Forms.Padding(0, 8, 12, 8);
+            this.cardValidTickets.Location = new System.Drawing.Point(194, 5);
+            this.cardValidTickets.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardValidTickets.Name = "cardValidTickets";
-            this.cardValidTickets.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.cardValidTickets.Size = new System.Drawing.Size(182, 70);
+            this.cardValidTickets.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.cardValidTickets.Size = new System.Drawing.Size(182, 60);
             this.cardValidTickets.TabIndex = 1;
 
             this.lblMetricValidTicketsTitle.AutoSize = true;
@@ -3620,6 +3605,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricValidTicketsSub.Size = new System.Drawing.Size(95, 12);
             this.lblMetricValidTicketsSub.TabIndex = 2;
             this.lblMetricValidTicketsSub.Text = "Ready for boarding";
+            this.lblMetricValidTicketsSub.Visible = false;
 
             // 
             // cardBoardedTickets
@@ -3629,11 +3615,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardBoardedTickets.Controls.Add(this.lblMetricBoardedTicketsSub);
             this.cardBoardedTickets.Controls.Add(this.lblMetricBoardedTicketsVal);
             this.cardBoardedTickets.Controls.Add(this.lblMetricBoardedTicketsTitle);
-            this.cardBoardedTickets.Location = new System.Drawing.Point(388, 8);
-            this.cardBoardedTickets.Margin = new System.Windows.Forms.Padding(0, 8, 12, 8);
+            this.cardBoardedTickets.Location = new System.Drawing.Point(388, 5);
+            this.cardBoardedTickets.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardBoardedTickets.Name = "cardBoardedTickets";
-            this.cardBoardedTickets.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.cardBoardedTickets.Size = new System.Drawing.Size(182, 70);
+            this.cardBoardedTickets.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.cardBoardedTickets.Size = new System.Drawing.Size(182, 60);
             this.cardBoardedTickets.TabIndex = 2;
 
             this.lblMetricBoardedTicketsTitle.AutoSize = true;
@@ -3663,6 +3649,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricBoardedTicketsSub.Size = new System.Drawing.Size(100, 12);
             this.lblMetricBoardedTicketsSub.TabIndex = 2;
             this.lblMetricBoardedTicketsSub.Text = "Checked-in passengers";
+            this.lblMetricBoardedTicketsSub.Visible = false;
 
             // 
             // cardCancelledTickets
@@ -3672,11 +3659,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardCancelledTickets.Controls.Add(this.lblMetricCancelledTicketsSub);
             this.cardCancelledTickets.Controls.Add(this.lblMetricCancelledTicketsVal);
             this.cardCancelledTickets.Controls.Add(this.lblMetricCancelledTicketsTitle);
-            this.cardCancelledTickets.Location = new System.Drawing.Point(582, 8);
-            this.cardCancelledTickets.Margin = new System.Windows.Forms.Padding(0, 8, 12, 8);
+            this.cardCancelledTickets.Location = new System.Drawing.Point(582, 5);
+            this.cardCancelledTickets.Margin = new System.Windows.Forms.Padding(0, 5, 12, 5);
             this.cardCancelledTickets.Name = "cardCancelledTickets";
-            this.cardCancelledTickets.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.cardCancelledTickets.Size = new System.Drawing.Size(182, 70);
+            this.cardCancelledTickets.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.cardCancelledTickets.Size = new System.Drawing.Size(182, 60);
             this.cardCancelledTickets.TabIndex = 3;
 
             this.lblMetricCancelledTicketsTitle.AutoSize = true;
@@ -3706,6 +3693,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricCancelledTicketsSub.Size = new System.Drawing.Size(100, 12);
             this.lblMetricCancelledTicketsSub.TabIndex = 2;
             this.lblMetricCancelledTicketsSub.Text = "Refunded / voided";
+            this.lblMetricCancelledTicketsSub.Visible = false;
 
             // 
             // cardTodayTickets
@@ -3715,11 +3703,11 @@ namespace Bus_Ticket_mgmt.Forms
             this.cardTodayTickets.Controls.Add(this.lblMetricTodayTicketsSub);
             this.cardTodayTickets.Controls.Add(this.lblMetricTodayTicketsVal);
             this.cardTodayTickets.Controls.Add(this.lblMetricTodayTicketsTitle);
-            this.cardTodayTickets.Location = new System.Drawing.Point(776, 8);
-            this.cardTodayTickets.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.cardTodayTickets.Location = new System.Drawing.Point(776, 5);
+            this.cardTodayTickets.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.cardTodayTickets.Name = "cardTodayTickets";
-            this.cardTodayTickets.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.cardTodayTickets.Size = new System.Drawing.Size(182, 70);
+            this.cardTodayTickets.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.cardTodayTickets.Size = new System.Drawing.Size(182, 60);
             this.cardTodayTickets.TabIndex = 4;
 
             this.lblMetricTodayTicketsTitle.AutoSize = true;
@@ -3749,6 +3737,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.lblMetricTodayTicketsSub.Size = new System.Drawing.Size(100, 12);
             this.lblMetricTodayTicketsSub.TabIndex = 2;
             this.lblMetricTodayTicketsSub.Text = "Departures today";
+            this.lblMetricTodayTicketsSub.Visible = false;
 
             // 
             // panelTicketsToolbar
