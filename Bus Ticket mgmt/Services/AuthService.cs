@@ -75,30 +75,28 @@ namespace Bus_Ticket_mgmt.Services
             {
                 return AuthResult.Success(UserRole.Administrator, "admin@gmail.com", "System Administrator");
             }
-            if (cleanEmail == "passenger@gmail.com" || cleanEmail == "passenger")
-            {
-                return AuthResult.Success(UserRole.Passenger, "passenger@gmail.com", "Abebe Bikila (Passenger)");
-            }
             if (cleanEmail == "officer@gmail.com" || cleanEmail == "officer" || cleanEmail == "ticket@gmail.com")
             {
                 return AuthResult.Success(UserRole.TicketOfficer, "officer@gmail.com", "Marta Tadesse (Ticket Officer)");
             }
-            if (cleanEmail == "driver@gmail.com" || cleanEmail == "driver")
-            {
-                return AuthResult.Success(UserRole.Driver, "driver@gmail.com", "Bekele Tadesse (Driver)");
-            }
             if (cleanEmail == "manager@gmail.com" || cleanEmail == "manager")
             {
                 return AuthResult.Success(UserRole.BusManager, "manager@gmail.com", "Almaz Wolde (Bus Manager)");
+            }
+            if (cleanEmail == "passenger@gmail.com" || cleanEmail == "passenger")
+            {
+                return AuthResult.Failure("The Passenger portal has been removed from this system deployment.\nPlease log in as Administrator or Ticket Officer.");
+            }
+            if (cleanEmail == "driver@gmail.com" || cleanEmail == "driver")
+            {
+                return AuthResult.Failure("The Driver portal has been removed from this system deployment.\nPlease log in as Administrator or Ticket Officer.");
             }
 
             return AuthResult.Failure(
                 "User account not found!\n\n" +
                 "Please use one of the registered system accounts (Password: pass1234):\n\n" +
                 "• admin@gmail.com       (Administrator Portal)\n" +
-                "• passenger@gmail.com   (Passenger Portal)\n" +
                 "• officer@gmail.com     (Ticket Officer Portal)\n" +
-                "• driver@gmail.com      (Driver Portal)\n" +
                 "• manager@gmail.com     (Bus Manager Portal)"
             );
         }
@@ -107,10 +105,8 @@ namespace Bus_Ticket_mgmt.Services
         {
             return new List<(string Role, string Email, string Description)>
             {
-                ("Administrator", "admin@gmail.com", "Full administrative control of users, fleet, routes, and fares"),
-                ("Passenger", "passenger@gmail.com", "Book tickets, select seats, and manage personal reservations"),
-                ("Ticket Officer", "officer@gmail.com", "Issue tickets, verify boarding passes, and manage manifests"),
-                ("Driver", "driver@gmail.com", "View assigned trips, schedules, and passenger manifests"),
+                ("Administrator", "admin@gmail.com", "Full administrative control of users, fleet, routes, schedules, and fares"),
+                ("Ticket Officer", "officer@gmail.com", "Issue walk-in tickets, verify boarding passes, cashier and manifests"),
                 ("Bus Manager", "manager@gmail.com", "Monitor fleet operations, assign buses, and track departures")
             };
         }
