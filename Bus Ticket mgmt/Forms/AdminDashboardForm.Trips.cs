@@ -54,10 +54,10 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnAddTripTop = new Button
             {
-                Text = "+ Schedule New Trip",
+                Text = "Schedule New Trip",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
                 Location = new Point(header.Width - 210, 10),
@@ -233,8 +233,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnUpdateStatus = new Button
             {
-                Text = "⚡ Update Trip Status",
+                Text = "Update Trip Status",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(160, 36),
@@ -246,8 +247,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnViewManifest = new Button
             {
-                Text = "📋 View Trip Manifest",
-                Font = new Font("Segoe UI", 9f),
+                Text = "View Trip Manifest",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(160, 36),
@@ -259,16 +261,16 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnCancelTrip = new Button
             {
-                Text = "❌ Cancel / Remove Trip",
-                Font = new Font("Segoe UI", 9f),
-                ForeColor = Color.FromArgb(239, 68, 68),
-                BackColor = Color.FromArgb(254, 242, 242),
+                Text = "Cancel Trip",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(51, 65, 85),
+                BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
-                Size = new Size(170, 36),
+                Size = new Size(150, 36),
                 Location = new Point(364, 8),
                 Cursor = Cursors.Hand
             };
-            btnCancelTrip.FlatAppearance.BorderColor = Color.FromArgb(254, 202, 202);
+            btnCancelTrip.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnCancelTrip.Click += (s, e) => CancelSelectedTrip();
 
             actionBar.Controls.Add(btnUpdateStatus);
@@ -429,7 +431,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Schedule Trip",
                     Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(160, 40),
                     Location = new Point(150, 400),
@@ -531,7 +533,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Save Status",
                     Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(130, 36),
                     Location = new Point(115, 130),
@@ -625,17 +627,13 @@ namespace Bus_Ticket_mgmt.Forms
                     using (SolidBrush b = new SolidBrush(Color.White)) e.Graphics.FillPath(b, p);
                     using (Pen pen = new Pen(Color.FromArgb(226, 232, 240), 1)) e.Graphics.DrawPath(pen, p);
                 }
-                using (SolidBrush b = new SolidBrush(accentColor))
-                {
-                    e.Graphics.FillRectangle(b, 0, 0, 4, card.Height);
-                }
             };
 
             Label val = new Label
             {
                 Text = initialVal,
                 Font = new Font("Segoe UI", 16f, FontStyle.Bold),
-                ForeColor = accentColor,
+                ForeColor = Color.FromArgb(15, 23, 42),
                 Location = new Point(14, 8),
                 AutoSize = true
             };

@@ -765,7 +765,7 @@ namespace Bus_Ticket_mgmt.Forms
             // lblAdminRole
             // 
             this.lblAdminRole.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAdminRole.ForeColor = System.Drawing.Color.FromArgb(56, 189, 248);
+            this.lblAdminRole.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
             this.lblAdminRole.Location = new System.Drawing.Point(0, 18);
             this.lblAdminRole.Name = "lblAdminRole";
             this.lblAdminRole.Size = new System.Drawing.Size(190, 14);
@@ -857,16 +857,16 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // btnNavDashboard
             // 
-            this.btnNavDashboard.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnNavDashboard.BackColor = System.Drawing.Color.FromArgb(226, 232, 240);
             this.btnNavDashboard.FlatAppearance.BorderSize = 0;
             this.btnNavDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavDashboard.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNavDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnNavDashboard.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnNavDashboard.Location = new System.Drawing.Point(10, 40);
             this.btnNavDashboard.Name = "btnNavDashboard";
             this.btnNavDashboard.Size = new System.Drawing.Size(210, 36);
             this.btnNavDashboard.TabIndex = 1;
-            this.btnNavDashboard.Text = "📊  Dashboard";
+            this.btnNavDashboard.Text = "Dashboard";
             this.btnNavDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavDashboard.UseVisualStyleBackColor = false;
 
@@ -882,7 +882,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavUsers.Name = "btnNavUsers";
             this.btnNavUsers.Size = new System.Drawing.Size(210, 34);
             this.btnNavUsers.TabIndex = 2;
-            this.btnNavUsers.Text = "👥  User Management";
+            this.btnNavUsers.Text = "User Management";
             this.btnNavUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavUsers.UseVisualStyleBackColor = true;
 
@@ -898,7 +898,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavBuses.Name = "btnNavBuses";
             this.btnNavBuses.Size = new System.Drawing.Size(210, 34);
             this.btnNavBuses.TabIndex = 3;
-            this.btnNavBuses.Text = "🚌  Bus Management";
+            this.btnNavBuses.Text = "Bus Management";
             this.btnNavBuses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBuses.UseVisualStyleBackColor = true;
 
@@ -914,7 +914,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavRoutes.Name = "btnNavRoutes";
             this.btnNavRoutes.Size = new System.Drawing.Size(210, 34);
             this.btnNavRoutes.TabIndex = 4;
-            this.btnNavRoutes.Text = "🗺️  Route Management";
+            this.btnNavRoutes.Text = "Route Management";
             this.btnNavRoutes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavRoutes.UseVisualStyleBackColor = true;
 
@@ -930,7 +930,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavTrips.Name = "btnNavTrips";
             this.btnNavTrips.Size = new System.Drawing.Size(210, 34);
             this.btnNavTrips.TabIndex = 5;
-            this.btnNavTrips.Text = "📅  Trip & Schedules";
+            this.btnNavTrips.Text = "Trip & Schedules";
             this.btnNavTrips.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavTrips.UseVisualStyleBackColor = true;
 
@@ -946,7 +946,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavBookings.Name = "btnNavBookings";
             this.btnNavBookings.Size = new System.Drawing.Size(210, 34);
             this.btnNavBookings.TabIndex = 6;
-            this.btnNavBookings.Text = "🎫  Booking Management";
+            this.btnNavBookings.Text = "Booking Management";
             this.btnNavBookings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavBookings.UseVisualStyleBackColor = true;
 
@@ -962,7 +962,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavTickets.Name = "btnNavTickets";
             this.btnNavTickets.Size = new System.Drawing.Size(210, 34);
             this.btnNavTickets.TabIndex = 7;
-            this.btnNavTickets.Text = "🎟️  Ticket Management";
+            this.btnNavTickets.Text = "Ticket Management";
             this.btnNavTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavTickets.UseVisualStyleBackColor = true;
 
@@ -978,7 +978,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavPayments.Name = "btnNavPayments";
             this.btnNavPayments.Size = new System.Drawing.Size(210, 34);
             this.btnNavPayments.TabIndex = 8;
-            this.btnNavPayments.Text = "💳  Payment Records";
+            this.btnNavPayments.Text = "Payment Records";
             this.btnNavPayments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavPayments.UseVisualStyleBackColor = true;
 
@@ -994,7 +994,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavStaff.Name = "btnNavStaff";
             this.btnNavStaff.Size = new System.Drawing.Size(210, 34);
             this.btnNavStaff.TabIndex = 9;
-            this.btnNavStaff.Text = "👨‍✈️  Driver & Staff";
+            this.btnNavStaff.Text = "Driver & Staff";
             this.btnNavStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavStaff.UseVisualStyleBackColor = true;
 
@@ -1010,7 +1010,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavFares.Name = "btnNavFares";
             this.btnNavFares.Size = new System.Drawing.Size(210, 34);
             this.btnNavFares.TabIndex = 10;
-            this.btnNavFares.Text = "🏷️  Fare Management";
+            this.btnNavFares.Text = "Fare Management";
             this.btnNavFares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavFares.UseVisualStyleBackColor = true;
 
@@ -1026,7 +1026,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavReports.Name = "btnNavReports";
             this.btnNavReports.Size = new System.Drawing.Size(210, 34);
             this.btnNavReports.TabIndex = 11;
-            this.btnNavReports.Text = "📈  Sales Reports";
+            this.btnNavReports.Text = "Sales Reports";
             this.btnNavReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavReports.UseVisualStyleBackColor = true;
 
@@ -1042,23 +1042,23 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNavSettings.Name = "btnNavSettings";
             this.btnNavSettings.Size = new System.Drawing.Size(210, 34);
             this.btnNavSettings.TabIndex = 12;
-            this.btnNavSettings.Text = "⚙️  System Settings";
+            this.btnNavSettings.Text = "System Settings";
             this.btnNavSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavSettings.UseVisualStyleBackColor = true;
 
             // 
             // btnNavLogout
             // 
-            this.btnNavLogout.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
+            this.btnNavLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnNavLogout.FlatAppearance.BorderSize = 0;
             this.btnNavLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavLogout.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNavLogout.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnNavLogout.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
             this.btnNavLogout.Location = new System.Drawing.Point(10, 546);
             this.btnNavLogout.Name = "btnNavLogout";
             this.btnNavLogout.Size = new System.Drawing.Size(210, 36);
             this.btnNavLogout.TabIndex = 14;
-            this.btnNavLogout.Text = "🚪  Sign Out";
+            this.btnNavLogout.Text = "Sign Out";
             this.btnNavLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNavLogout.UseVisualStyleBackColor = false;
 
@@ -1149,12 +1149,13 @@ namespace Bus_Ticket_mgmt.Forms
             this.grpOverview.Size = new System.Drawing.Size(940, 126);
             this.grpOverview.TabIndex = 0;
             this.grpOverview.TabStop = false;
-            this.grpOverview.Text = "  📊 System Metrics & Summaries  ";
+            this.grpOverview.Text = "System Metrics & Summaries";
 
             // 
             // cardBuses
             // 
-            this.cardBuses.BackColor = System.Drawing.Color.FromArgb(239, 246, 255);
+            this.cardBuses.BackColor = System.Drawing.Color.White;
+            this.cardBuses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cardBuses.Controls.Add(this.lblMetricBusesVal);
             this.cardBuses.Controls.Add(this.lblMetricBusesTitle);
             this.cardBuses.Location = new System.Drawing.Point(18, 30);
@@ -1167,7 +1168,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricBusesVal.AutoSize = true;
             this.lblMetricBusesVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBusesVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricBusesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricBusesVal.Location = new System.Drawing.Point(12, 10);
             this.lblMetricBusesVal.Name = "lblMetricBusesVal";
             this.lblMetricBusesVal.Size = new System.Drawing.Size(108, 32);
@@ -1179,7 +1180,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricBusesTitle.AutoSize = true;
             this.lblMetricBusesTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBusesTitle.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
+            this.lblMetricBusesTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
             this.lblMetricBusesTitle.Location = new System.Drawing.Point(14, 46);
             this.lblMetricBusesTitle.Name = "lblMetricBusesTitle";
             this.lblMetricBusesTitle.Size = new System.Drawing.Size(129, 15);
@@ -1189,7 +1190,8 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // cardTrips
             // 
-            this.cardTrips.BackColor = System.Drawing.Color.FromArgb(240, 253, 244);
+            this.cardTrips.BackColor = System.Drawing.Color.White;
+            this.cardTrips.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cardTrips.Controls.Add(this.lblMetricTripsVal);
             this.cardTrips.Controls.Add(this.lblMetricTripsTitle);
             this.cardTrips.Location = new System.Drawing.Point(246, 30);
@@ -1202,7 +1204,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTripsVal.AutoSize = true;
             this.lblMetricTripsVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTripsVal.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricTripsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTripsVal.Location = new System.Drawing.Point(12, 10);
             this.lblMetricTripsVal.Name = "lblMetricTripsVal";
             this.lblMetricTripsVal.Size = new System.Drawing.Size(107, 32);
@@ -1214,7 +1216,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTripsTitle.AutoSize = true;
             this.lblMetricTripsTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTripsTitle.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
+            this.lblMetricTripsTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
             this.lblMetricTripsTitle.Location = new System.Drawing.Point(14, 46);
             this.lblMetricTripsTitle.Name = "lblMetricTripsTitle";
             this.lblMetricTripsTitle.Size = new System.Drawing.Size(131, 15);
@@ -1224,7 +1226,8 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // cardBookings
             // 
-            this.cardBookings.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
+            this.cardBookings.BackColor = System.Drawing.Color.White;
+            this.cardBookings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cardBookings.Controls.Add(this.lblMetricBookingsVal);
             this.cardBookings.Controls.Add(this.lblMetricBookingsTitle);
             this.cardBookings.Location = new System.Drawing.Point(474, 30);
@@ -1237,7 +1240,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricBookingsVal.AutoSize = true;
             this.lblMetricBookingsVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBookingsVal.ForeColor = System.Drawing.Color.FromArgb(225, 29, 72);
+            this.lblMetricBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricBookingsVal.Location = new System.Drawing.Point(12, 10);
             this.lblMetricBookingsVal.Name = "lblMetricBookingsVal";
             this.lblMetricBookingsVal.Size = new System.Drawing.Size(155, 32);
@@ -1249,7 +1252,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricBookingsTitle.AutoSize = true;
             this.lblMetricBookingsTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBookingsTitle.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
+            this.lblMetricBookingsTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
             this.lblMetricBookingsTitle.Location = new System.Drawing.Point(14, 46);
             this.lblMetricBookingsTitle.Name = "lblMetricBookingsTitle";
             this.lblMetricBookingsTitle.Size = new System.Drawing.Size(126, 15);
@@ -1259,7 +1262,8 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // cardRevenue
             // 
-            this.cardRevenue.BackColor = System.Drawing.Color.FromArgb(254, 249, 195);
+            this.cardRevenue.BackColor = System.Drawing.Color.White;
+            this.cardRevenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cardRevenue.Controls.Add(this.lblMetricRevenueVal);
             this.cardRevenue.Controls.Add(this.lblMetricRevenueTitle);
             this.cardRevenue.Location = new System.Drawing.Point(702, 30);
@@ -1272,7 +1276,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricRevenueVal.AutoSize = true;
             this.lblMetricRevenueVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricRevenueVal.ForeColor = System.Drawing.Color.FromArgb(161, 98, 7);
+            this.lblMetricRevenueVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricRevenueVal.Location = new System.Drawing.Point(8, 12);
             this.lblMetricRevenueVal.Name = "lblMetricRevenueVal";
             this.lblMetricRevenueVal.Size = new System.Drawing.Size(175, 30);
@@ -1284,7 +1288,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricRevenueTitle.AutoSize = true;
             this.lblMetricRevenueTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricRevenueTitle.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
+            this.lblMetricRevenueTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
             this.lblMetricRevenueTitle.Location = new System.Drawing.Point(10, 46);
             this.lblMetricRevenueTitle.Name = "lblMetricRevenueTitle";
             this.lblMetricRevenueTitle.Size = new System.Drawing.Size(130, 15);
@@ -1306,7 +1310,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.grpQuickActions.Size = new System.Drawing.Size(940, 84);
             this.grpQuickActions.TabIndex = 1;
             this.grpQuickActions.TabStop = false;
-            this.grpQuickActions.Text = "  ⚡ Administrator Quick Actions  ";
+            this.grpQuickActions.Text = "Quick Actions";
 
             // 
             // btnQuickAddBus
@@ -1320,7 +1324,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickAddBus.Name = "btnQuickAddBus";
             this.btnQuickAddBus.Size = new System.Drawing.Size(210, 38);
             this.btnQuickAddBus.TabIndex = 0;
-            this.btnQuickAddBus.Text = "➕  Add New Bus";
+            this.btnQuickAddBus.Text = "Add New Bus";
             this.btnQuickAddBus.UseVisualStyleBackColor = false;
 
             // 
@@ -1335,7 +1339,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickNewTrip.Name = "btnQuickNewTrip";
             this.btnQuickNewTrip.Size = new System.Drawing.Size(210, 38);
             this.btnQuickNewTrip.TabIndex = 1;
-            this.btnQuickNewTrip.Text = "📅  Schedule Trip";
+            this.btnQuickNewTrip.Text = "Schedule Trip";
             this.btnQuickNewTrip.UseVisualStyleBackColor = false;
 
             // 
@@ -1350,7 +1354,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickUpdateFares.Name = "btnQuickUpdateFares";
             this.btnQuickUpdateFares.Size = new System.Drawing.Size(210, 38);
             this.btnQuickUpdateFares.TabIndex = 2;
-            this.btnQuickUpdateFares.Text = "🏷️  Set Ticket Fares";
+            this.btnQuickUpdateFares.Text = "Set Ticket Fares";
             this.btnQuickUpdateFares.UseVisualStyleBackColor = false;
 
             // 
@@ -1365,7 +1369,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnQuickSalesReport.Name = "btnQuickSalesReport";
             this.btnQuickSalesReport.Size = new System.Drawing.Size(210, 38);
             this.btnQuickSalesReport.TabIndex = 3;
-            this.btnQuickSalesReport.Text = "📈  Generate Report";
+            this.btnQuickSalesReport.Text = "Generate Report";
             this.btnQuickSalesReport.UseVisualStyleBackColor = false;
 
             // 
@@ -1380,7 +1384,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.grpTripsSchedule.Size = new System.Drawing.Size(940, 240);
             this.grpTripsSchedule.TabIndex = 2;
             this.grpTripsSchedule.TabStop = false;
-            this.grpTripsSchedule.Text = "  🚌 Today\'s Fleet Trips & Active Schedule Status  ";
+            this.grpTripsSchedule.Text = "Today\'s Fleet Trips & Active Schedule Status";
 
             // 
             // dgvTrips
@@ -1414,7 +1418,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.grpTicketVerify.Size = new System.Drawing.Size(940, 110);
             this.grpTicketVerify.TabIndex = 3;
             this.grpTicketVerify.TabStop = false;
-            this.grpTicketVerify.Text = "  🎟️ Ticket Search & Information Verification  ";
+            this.grpTicketVerify.Text = "Ticket Search & Information Verification";
 
             // 
             // lblTicketSearchPrompt
@@ -1455,7 +1459,7 @@ namespace Bus_Ticket_mgmt.Forms
             // lblVerifyResult
             // 
             this.lblVerifyResult.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblVerifyResult.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblVerifyResult.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
             this.lblVerifyResult.Location = new System.Drawing.Point(520, 52);
             this.lblVerifyResult.Name = "lblVerifyResult";
             this.lblVerifyResult.Size = new System.Drawing.Size(400, 42);
@@ -1532,7 +1536,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // btnAddUser
             // 
-            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnAddUser.FlatAppearance.BorderSize = 0;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1541,7 +1545,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(120, 36);
             this.btnAddUser.TabIndex = 0;
-            this.btnAddUser.Text = "➕  Add User";
+            this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = false;
 
             // 
@@ -1598,7 +1602,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnRefreshUsers.Name = "btnRefreshUsers";
             this.btnRefreshUsers.Size = new System.Drawing.Size(100, 32);
             this.btnRefreshUsers.TabIndex = 4;
-            this.btnRefreshUsers.Text = "🔄  Refresh";
+            this.btnRefreshUsers.Text = "Refresh";
             this.btnRefreshUsers.UseVisualStyleBackColor = false;
 
             // 
@@ -1703,7 +1707,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnViewUserDetails.Name = "btnViewUserDetails";
             this.btnViewUserDetails.Size = new System.Drawing.Size(115, 34);
             this.btnViewUserDetails.TabIndex = 0;
-            this.btnViewUserDetails.Text = "👁️  View Details";
+            this.btnViewUserDetails.Text = "View Details";
             this.btnViewUserDetails.UseVisualStyleBackColor = false;
 
             // 
@@ -1718,7 +1722,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(105, 34);
             this.btnEditUser.TabIndex = 1;
-            this.btnEditUser.Text = "✏️  Edit User";
+            this.btnEditUser.Text = "Edit User";
             this.btnEditUser.UseVisualStyleBackColor = false;
 
             // 
@@ -1733,7 +1737,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnToggleUserStatus.Name = "btnToggleUserStatus";
             this.btnToggleUserStatus.Size = new System.Drawing.Size(165, 34);
             this.btnToggleUserStatus.TabIndex = 2;
-            this.btnToggleUserStatus.Text = "🔄  Activate / Deactivate";
+            this.btnToggleUserStatus.Text = "Activate / Deactivate";
             this.btnToggleUserStatus.UseVisualStyleBackColor = false;
 
             // 
@@ -1748,22 +1752,22 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnResetUserPassword.Name = "btnResetUserPassword";
             this.btnResetUserPassword.Size = new System.Drawing.Size(140, 34);
             this.btnResetUserPassword.TabIndex = 3;
-            this.btnResetUserPassword.Text = "🔑  Reset Password";
+            this.btnResetUserPassword.Text = "Reset Password";
             this.btnResetUserPassword.UseVisualStyleBackColor = false;
 
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnDeleteUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(254, 202, 202);
+            this.btnDeleteUser.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
+            this.btnDeleteUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteUser.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnDeleteUser.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnDeleteUser.Location = new System.Drawing.Point(565, 10);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(115, 34);
             this.btnDeleteUser.TabIndex = 4;
-            this.btnDeleteUser.Text = "🗑️  Delete User";
+            this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = false;
 
             // 
@@ -1836,7 +1840,7 @@ namespace Bus_Ticket_mgmt.Forms
             // btnAddBus
             // 
             this.btnAddBus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddBus.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnAddBus.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnAddBus.FlatAppearance.BorderSize = 0;
             this.btnAddBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBus.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1845,7 +1849,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnAddBus.Name = "btnAddBus";
             this.btnAddBus.Size = new System.Drawing.Size(145, 36);
             this.btnAddBus.TabIndex = 2;
-            this.btnAddBus.Text = "➕  Add New Bus";
+            this.btnAddBus.Text = "Add New Bus";
             this.btnAddBus.UseVisualStyleBackColor = false;
 
             // 
@@ -1881,7 +1885,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTotalBusesVal.AutoSize = true;
             this.lblMetricTotalBusesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTotalBusesVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricTotalBusesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTotalBusesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTotalBusesVal.Name = "lblMetricTotalBusesVal";
             this.lblMetricTotalBusesVal.Size = new System.Drawing.Size(26, 30);
@@ -1932,7 +1936,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricActiveBusesVal.AutoSize = true;
             this.lblMetricActiveBusesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricActiveBusesVal.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricActiveBusesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricActiveBusesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricActiveBusesVal.Name = "lblMetricActiveBusesVal";
             this.lblMetricActiveBusesVal.Size = new System.Drawing.Size(26, 30);
@@ -1983,7 +1987,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricMaintBusesVal.AutoSize = true;
             this.lblMetricMaintBusesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricMaintBusesVal.ForeColor = System.Drawing.Color.FromArgb(217, 119, 6);
+            this.lblMetricMaintBusesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricMaintBusesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricMaintBusesVal.Name = "lblMetricMaintBusesVal";
             this.lblMetricMaintBusesVal.Size = new System.Drawing.Size(26, 30);
@@ -2034,7 +2038,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricInactiveBusesVal.AutoSize = true;
             this.lblMetricInactiveBusesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricInactiveBusesVal.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.lblMetricInactiveBusesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricInactiveBusesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricInactiveBusesVal.Name = "lblMetricInactiveBusesVal";
             this.lblMetricInactiveBusesVal.Size = new System.Drawing.Size(26, 30);
@@ -2134,7 +2138,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnRefreshBuses.Name = "btnRefreshBuses";
             this.btnRefreshBuses.Size = new System.Drawing.Size(100, 32);
             this.btnRefreshBuses.TabIndex = 3;
-            this.btnRefreshBuses.Text = "🔄  Refresh";
+            this.btnRefreshBuses.Text = "Refresh";
             this.btnRefreshBuses.UseVisualStyleBackColor = false;
 
             // 
@@ -2238,7 +2242,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnViewBusDetails.Name = "btnViewBusDetails";
             this.btnViewBusDetails.Size = new System.Drawing.Size(125, 34);
             this.btnViewBusDetails.TabIndex = 0;
-            this.btnViewBusDetails.Text = "👁️  View Details";
+            this.btnViewBusDetails.Text = "View Details";
             this.btnViewBusDetails.UseVisualStyleBackColor = false;
 
             // 
@@ -2253,7 +2257,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnEditBus.Name = "btnEditBus";
             this.btnEditBus.Size = new System.Drawing.Size(110, 34);
             this.btnEditBus.TabIndex = 1;
-            this.btnEditBus.Text = "✏️  Edit Bus";
+            this.btnEditBus.Text = "Edit Bus";
             this.btnEditBus.UseVisualStyleBackColor = false;
 
             // 
@@ -2268,22 +2272,22 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnChangeBusStatus.Name = "btnChangeBusStatus";
             this.btnChangeBusStatus.Size = new System.Drawing.Size(155, 34);
             this.btnChangeBusStatus.TabIndex = 2;
-            this.btnChangeBusStatus.Text = "🔄  Change Status";
+            this.btnChangeBusStatus.Text = "Change Status";
             this.btnChangeBusStatus.UseVisualStyleBackColor = false;
 
             // 
             // btnDeleteBus
             // 
-            this.btnDeleteBus.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnDeleteBus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(254, 202, 202);
+            this.btnDeleteBus.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
+            this.btnDeleteBus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnDeleteBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteBus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteBus.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnDeleteBus.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnDeleteBus.Location = new System.Drawing.Point(420, 10);
             this.btnDeleteBus.Name = "btnDeleteBus";
             this.btnDeleteBus.Size = new System.Drawing.Size(120, 34);
             this.btnDeleteBus.TabIndex = 3;
-            this.btnDeleteBus.Text = "🗑️  Delete Bus";
+            this.btnDeleteBus.Text = "Delete Bus";
             this.btnDeleteBus.UseVisualStyleBackColor = false;
 
             // 
@@ -2356,7 +2360,7 @@ namespace Bus_Ticket_mgmt.Forms
             // btnAddRoute
             // 
             this.btnAddRoute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddRoute.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnAddRoute.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnAddRoute.FlatAppearance.BorderSize = 0;
             this.btnAddRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRoute.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -2365,7 +2369,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnAddRoute.Name = "btnAddRoute";
             this.btnAddRoute.Size = new System.Drawing.Size(155, 36);
             this.btnAddRoute.TabIndex = 2;
-            this.btnAddRoute.Text = "➕  Add New Route";
+            this.btnAddRoute.Text = "Add New Route";
             this.btnAddRoute.UseVisualStyleBackColor = false;
 
             // 
@@ -2401,7 +2405,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTotalRoutesVal.AutoSize = true;
             this.lblMetricTotalRoutesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTotalRoutesVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricTotalRoutesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTotalRoutesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTotalRoutesVal.Name = "lblMetricTotalRoutesVal";
             this.lblMetricTotalRoutesVal.Size = new System.Drawing.Size(26, 30);
@@ -2452,7 +2456,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricActiveRoutesVal.AutoSize = true;
             this.lblMetricActiveRoutesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricActiveRoutesVal.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricActiveRoutesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricActiveRoutesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricActiveRoutesVal.Name = "lblMetricActiveRoutesVal";
             this.lblMetricActiveRoutesVal.Size = new System.Drawing.Size(26, 30);
@@ -2503,7 +2507,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricInactiveRoutesVal.AutoSize = true;
             this.lblMetricInactiveRoutesVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricInactiveRoutesVal.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.lblMetricInactiveRoutesVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricInactiveRoutesVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricInactiveRoutesVal.Name = "lblMetricInactiveRoutesVal";
             this.lblMetricInactiveRoutesVal.Size = new System.Drawing.Size(26, 30);
@@ -2554,7 +2558,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTotalDistanceVal.AutoSize = true;
             this.lblMetricTotalDistanceVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTotalDistanceVal.ForeColor = System.Drawing.Color.FromArgb(14, 165, 233);
+            this.lblMetricTotalDistanceVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTotalDistanceVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTotalDistanceVal.Name = "lblMetricTotalDistanceVal";
             this.lblMetricTotalDistanceVal.Size = new System.Drawing.Size(107, 30);
@@ -2605,7 +2609,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.txtSearchRoute.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearchRoute.Location = new System.Drawing.Point(0, 12);
             this.txtSearchRoute.Name = "txtSearchRoute";
-            this.txtSearchRoute.PlaceholderText = "🔍 Search route name, source, destination, or ID...";
+            this.txtSearchRoute.PlaceholderText = "Search route name, source, destination, or ID...";
             this.txtSearchRoute.Size = new System.Drawing.Size(380, 25);
             this.txtSearchRoute.TabIndex = 0;
 
@@ -2636,7 +2640,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnRefreshRoutes.Name = "btnRefreshRoutes";
             this.btnRefreshRoutes.Size = new System.Drawing.Size(100, 32);
             this.btnRefreshRoutes.TabIndex = 2;
-            this.btnRefreshRoutes.Text = "🔄  Refresh";
+            this.btnRefreshRoutes.Text = "Refresh";
             this.btnRefreshRoutes.UseVisualStyleBackColor = false;
 
             // 
@@ -2747,7 +2751,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnViewRouteDetails.Name = "btnViewRouteDetails";
             this.btnViewRouteDetails.Size = new System.Drawing.Size(125, 34);
             this.btnViewRouteDetails.TabIndex = 0;
-            this.btnViewRouteDetails.Text = "👁️  View Details";
+            this.btnViewRouteDetails.Text = "View Details";
             this.btnViewRouteDetails.UseVisualStyleBackColor = false;
 
             // 
@@ -2762,7 +2766,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnEditRoute.Name = "btnEditRoute";
             this.btnEditRoute.Size = new System.Drawing.Size(110, 34);
             this.btnEditRoute.TabIndex = 1;
-            this.btnEditRoute.Text = "✏️  Edit Route";
+            this.btnEditRoute.Text = "Edit Route";
             this.btnEditRoute.UseVisualStyleBackColor = false;
 
             // 
@@ -2777,22 +2781,22 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnToggleRouteStatus.Name = "btnToggleRouteStatus";
             this.btnToggleRouteStatus.Size = new System.Drawing.Size(165, 34);
             this.btnToggleRouteStatus.TabIndex = 2;
-            this.btnToggleRouteStatus.Text = "🔄  Activate / Deactivate";
+            this.btnToggleRouteStatus.Text = "Activate / Deactivate";
             this.btnToggleRouteStatus.UseVisualStyleBackColor = false;
 
             // 
             // btnDeleteRoute
             // 
-            this.btnDeleteRoute.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnDeleteRoute.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(254, 202, 202);
+            this.btnDeleteRoute.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
+            this.btnDeleteRoute.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnDeleteRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteRoute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteRoute.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnDeleteRoute.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnDeleteRoute.Location = new System.Drawing.Point(430, 10);
             this.btnDeleteRoute.Name = "btnDeleteRoute";
             this.btnDeleteRoute.Size = new System.Drawing.Size(120, 34);
             this.btnDeleteRoute.TabIndex = 3;
-            this.btnDeleteRoute.Text = "🗑️  Delete Route";
+            this.btnDeleteRoute.Text = "Delete Route";
             this.btnDeleteRoute.UseVisualStyleBackColor = false;
 
             // 
@@ -2865,7 +2869,7 @@ namespace Bus_Ticket_mgmt.Forms
             // btnNewBooking
             // 
             this.btnNewBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewBooking.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnNewBooking.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnNewBooking.FlatAppearance.BorderSize = 0;
             this.btnNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewBooking.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -2874,7 +2878,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNewBooking.Name = "btnNewBooking";
             this.btnNewBooking.Size = new System.Drawing.Size(155, 36);
             this.btnNewBooking.TabIndex = 2;
-            this.btnNewBooking.Text = "➕  New Booking";
+            this.btnNewBooking.Text = "New Booking";
             this.btnNewBooking.UseVisualStyleBackColor = false;
 
             // 
@@ -2913,7 +2917,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTotalBookingsVal.AutoSize = true;
             this.lblMetricTotalBookingsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTotalBookingsVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricTotalBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTotalBookingsVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTotalBookingsVal.Name = "lblMetricTotalBookingsVal";
             this.lblMetricTotalBookingsVal.Size = new System.Drawing.Size(26, 30);
@@ -2964,7 +2968,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricConfirmedBookingsVal.AutoSize = true;
             this.lblMetricConfirmedBookingsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricConfirmedBookingsVal.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricConfirmedBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricConfirmedBookingsVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricConfirmedBookingsVal.Name = "lblMetricConfirmedBookingsVal";
             this.lblMetricConfirmedBookingsVal.Size = new System.Drawing.Size(26, 30);
@@ -3015,7 +3019,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricPendingBookingsVal.AutoSize = true;
             this.lblMetricPendingBookingsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricPendingBookingsVal.ForeColor = System.Drawing.Color.FromArgb(217, 119, 6);
+            this.lblMetricPendingBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricPendingBookingsVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricPendingBookingsVal.Name = "lblMetricPendingBookingsVal";
             this.lblMetricPendingBookingsVal.Size = new System.Drawing.Size(26, 30);
@@ -3066,7 +3070,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricCancelledBookingsVal.AutoSize = true;
             this.lblMetricCancelledBookingsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricCancelledBookingsVal.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.lblMetricCancelledBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricCancelledBookingsVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricCancelledBookingsVal.Name = "lblMetricCancelledBookingsVal";
             this.lblMetricCancelledBookingsVal.Size = new System.Drawing.Size(26, 30);
@@ -3117,7 +3121,7 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             this.lblMetricTodayBookingsVal.AutoSize = true;
             this.lblMetricTodayBookingsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTodayBookingsVal.ForeColor = System.Drawing.Color.FromArgb(2, 132, 199);
+            this.lblMetricTodayBookingsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTodayBookingsVal.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTodayBookingsVal.Name = "lblMetricTodayBookingsVal";
             this.lblMetricTodayBookingsVal.Size = new System.Drawing.Size(26, 30);
@@ -3171,7 +3175,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.txtSearchBooking.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearchBooking.Location = new System.Drawing.Point(0, 12);
             this.txtSearchBooking.Name = "txtSearchBooking";
-            this.txtSearchBooking.PlaceholderText = "🔍 Search booking ref, passenger, phone, or route...";
+            this.txtSearchBooking.PlaceholderText = "Search booking ref, passenger, phone, or route...";
             this.txtSearchBooking.Size = new System.Drawing.Size(280, 25);
             this.txtSearchBooking.TabIndex = 0;
 
@@ -3238,7 +3242,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnResetBookingFilters.Name = "btnResetBookingFilters";
             this.btnResetBookingFilters.Size = new System.Drawing.Size(95, 32);
             this.btnResetBookingFilters.TabIndex = 5;
-            this.btnResetBookingFilters.Text = "🔄  Reset";
+            this.btnResetBookingFilters.Text = "Reset";
             this.btnResetBookingFilters.UseVisualStyleBackColor = false;
 
             // 
@@ -3356,7 +3360,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnViewBookingDetails.Name = "btnViewBookingDetails";
             this.btnViewBookingDetails.Size = new System.Drawing.Size(125, 34);
             this.btnViewBookingDetails.TabIndex = 0;
-            this.btnViewBookingDetails.Text = "👁️  View Details";
+            this.btnViewBookingDetails.Text = "View Details";
             this.btnViewBookingDetails.UseVisualStyleBackColor = false;
 
             // 
@@ -3371,22 +3375,22 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnModifyBooking.Name = "btnModifyBooking";
             this.btnModifyBooking.Size = new System.Drawing.Size(125, 34);
             this.btnModifyBooking.TabIndex = 1;
-            this.btnModifyBooking.Text = "✏️  Modify Booking";
+            this.btnModifyBooking.Text = "Modify Booking";
             this.btnModifyBooking.UseVisualStyleBackColor = false;
 
             // 
             // btnCancelBookingAction
             // 
-            this.btnCancelBookingAction.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnCancelBookingAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(254, 202, 202);
+            this.btnCancelBookingAction.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
+            this.btnCancelBookingAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnCancelBookingAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBookingAction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelBookingAction.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnCancelBookingAction.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnCancelBookingAction.Location = new System.Drawing.Point(270, 10);
             this.btnCancelBookingAction.Name = "btnCancelBookingAction";
             this.btnCancelBookingAction.Size = new System.Drawing.Size(135, 34);
             this.btnCancelBookingAction.TabIndex = 2;
-            this.btnCancelBookingAction.Text = "❌  Cancel Booking";
+            this.btnCancelBookingAction.Text = "Cancel Booking";
             this.btnCancelBookingAction.UseVisualStyleBackColor = false;
 
             // 
@@ -3401,7 +3405,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnPrintTicket.Name = "btnPrintTicket";
             this.btnPrintTicket.Size = new System.Drawing.Size(155, 34);
             this.btnPrintTicket.TabIndex = 3;
-            this.btnPrintTicket.Text = "🎟️  Print / View Ticket";
+            this.btnPrintTicket.Text = "Print / View Ticket";
             this.btnPrintTicket.UseVisualStyleBackColor = false;
 
             // 
@@ -3475,7 +3479,7 @@ namespace Bus_Ticket_mgmt.Forms
             // btnVerifyBoardModal
             // 
             this.btnVerifyBoardModal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerifyBoardModal.BackColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.btnVerifyBoardModal.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnVerifyBoardModal.FlatAppearance.BorderSize = 0;
             this.btnVerifyBoardModal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyBoardModal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -3484,14 +3488,14 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnVerifyBoardModal.Name = "btnVerifyBoardModal";
             this.btnVerifyBoardModal.Size = new System.Drawing.Size(180, 36);
             this.btnVerifyBoardModal.TabIndex = 2;
-            this.btnVerifyBoardModal.Text = "⚡ Verify & Board Scanner";
+            this.btnVerifyBoardModal.Text = "Verify & Board Scanner";
             this.btnVerifyBoardModal.UseVisualStyleBackColor = false;
 
             // 
             // btnNewTicket
             // 
             this.btnNewTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewTicket.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.btnNewTicket.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnNewTicket.FlatAppearance.BorderSize = 0;
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -3500,7 +3504,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(160, 36);
             this.btnNewTicket.TabIndex = 3;
-            this.btnNewTicket.Text = "➕  Issue New Ticket";
+            this.btnNewTicket.Text = "Issue New Ticket";
             this.btnNewTicket.UseVisualStyleBackColor = false;
 
             // 
@@ -3536,7 +3540,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricTotalTicketsTitle.AutoSize = true;
             this.lblMetricTotalTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTotalTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
+            this.lblMetricTotalTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.lblMetricTotalTicketsTitle.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTotalTicketsTitle.Name = "lblMetricTotalTicketsTitle";
             this.lblMetricTotalTicketsTitle.Size = new System.Drawing.Size(125, 13);
@@ -3580,7 +3584,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricValidTicketsTitle.AutoSize = true;
             this.lblMetricValidTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricValidTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricValidTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.lblMetricValidTicketsTitle.Location = new System.Drawing.Point(12, 8);
             this.lblMetricValidTicketsTitle.Name = "lblMetricValidTicketsTitle";
             this.lblMetricValidTicketsTitle.Size = new System.Drawing.Size(84, 13);
@@ -3589,7 +3593,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricValidTicketsVal.AutoSize = true;
             this.lblMetricValidTicketsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricValidTicketsVal.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.lblMetricValidTicketsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricValidTicketsVal.Location = new System.Drawing.Point(10, 24);
             this.lblMetricValidTicketsVal.Name = "lblMetricValidTicketsVal";
             this.lblMetricValidTicketsVal.Size = new System.Drawing.Size(39, 30);
@@ -3624,7 +3628,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricBoardedTicketsTitle.AutoSize = true;
             this.lblMetricBoardedTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBoardedTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricBoardedTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.lblMetricBoardedTicketsTitle.Location = new System.Drawing.Point(12, 8);
             this.lblMetricBoardedTicketsTitle.Name = "lblMetricBoardedTicketsTitle";
             this.lblMetricBoardedTicketsTitle.Size = new System.Drawing.Size(125, 13);
@@ -3633,7 +3637,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricBoardedTicketsVal.AutoSize = true;
             this.lblMetricBoardedTicketsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricBoardedTicketsVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
+            this.lblMetricBoardedTicketsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricBoardedTicketsVal.Location = new System.Drawing.Point(10, 24);
             this.lblMetricBoardedTicketsVal.Name = "lblMetricBoardedTicketsVal";
             this.lblMetricBoardedTicketsVal.Size = new System.Drawing.Size(39, 30);
@@ -3668,7 +3672,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricCancelledTicketsTitle.AutoSize = true;
             this.lblMetricCancelledTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricCancelledTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(225, 29, 72);
+            this.lblMetricCancelledTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.lblMetricCancelledTicketsTitle.Location = new System.Drawing.Point(12, 8);
             this.lblMetricCancelledTicketsTitle.Name = "lblMetricCancelledTicketsTitle";
             this.lblMetricCancelledTicketsTitle.Size = new System.Drawing.Size(73, 13);
@@ -3677,7 +3681,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricCancelledTicketsVal.AutoSize = true;
             this.lblMetricCancelledTicketsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricCancelledTicketsVal.ForeColor = System.Drawing.Color.FromArgb(225, 29, 72);
+            this.lblMetricCancelledTicketsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricCancelledTicketsVal.Location = new System.Drawing.Point(10, 24);
             this.lblMetricCancelledTicketsVal.Name = "lblMetricCancelledTicketsVal";
             this.lblMetricCancelledTicketsVal.Size = new System.Drawing.Size(39, 30);
@@ -3712,7 +3716,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricTodayTicketsTitle.AutoSize = true;
             this.lblMetricTodayTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTodayTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(124, 58, 237);
+            this.lblMetricTodayTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.lblMetricTodayTicketsTitle.Location = new System.Drawing.Point(12, 8);
             this.lblMetricTodayTicketsTitle.Name = "lblMetricTodayTicketsTitle";
             this.lblMetricTodayTicketsTitle.Size = new System.Drawing.Size(116, 13);
@@ -3721,7 +3725,7 @@ namespace Bus_Ticket_mgmt.Forms
 
             this.lblMetricTodayTicketsVal.AutoSize = true;
             this.lblMetricTodayTicketsVal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMetricTodayTicketsVal.ForeColor = System.Drawing.Color.FromArgb(124, 58, 237);
+            this.lblMetricTodayTicketsVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblMetricTodayTicketsVal.Location = new System.Drawing.Point(10, 24);
             this.lblMetricTodayTicketsVal.Name = "lblMetricTodayTicketsVal";
             this.lblMetricTodayTicketsVal.Size = new System.Drawing.Size(39, 30);
@@ -3822,16 +3826,16 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // btnResetTicketFilters
             // 
-            this.btnResetTicketFilters.BackColor = System.Drawing.Color.White;
+            this.btnResetTicketFilters.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnResetTicketFilters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnResetTicketFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetTicketFilters.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnResetTicketFilters.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
+            this.btnResetTicketFilters.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnResetTicketFilters.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnResetTicketFilters.Location = new System.Drawing.Point(870, 12);
             this.btnResetTicketFilters.Name = "btnResetTicketFilters";
             this.btnResetTicketFilters.Size = new System.Drawing.Size(95, 27);
             this.btnResetTicketFilters.TabIndex = 5;
-            this.btnResetTicketFilters.Text = "↺  Reset";
+            this.btnResetTicketFilters.Text = "Reset";
             this.btnResetTicketFilters.UseVisualStyleBackColor = false;
 
             // 
@@ -3913,22 +3917,22 @@ namespace Bus_Ticket_mgmt.Forms
             // 
             // btnViewTicketDetails
             // 
-            this.btnViewTicketDetails.BackColor = System.Drawing.Color.White;
+            this.btnViewTicketDetails.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnViewTicketDetails.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnViewTicketDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTicketDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnViewTicketDetails.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnViewTicketDetails.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             this.btnViewTicketDetails.Location = new System.Drawing.Point(0, 10);
             this.btnViewTicketDetails.Name = "btnViewTicketDetails";
             this.btnViewTicketDetails.Size = new System.Drawing.Size(120, 34);
             this.btnViewTicketDetails.TabIndex = 0;
-            this.btnViewTicketDetails.Text = "👁️  View Details";
+            this.btnViewTicketDetails.Text = "View Details";
             this.btnViewTicketDetails.UseVisualStyleBackColor = false;
 
             // 
             // btnVerifyAndBoard
             // 
-            this.btnVerifyAndBoard.BackColor = System.Drawing.Color.FromArgb(22, 163, 74);
+            this.btnVerifyAndBoard.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnVerifyAndBoard.FlatAppearance.BorderSize = 0;
             this.btnVerifyAndBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyAndBoard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -3937,7 +3941,7 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnVerifyAndBoard.Name = "btnVerifyAndBoard";
             this.btnVerifyAndBoard.Size = new System.Drawing.Size(145, 34);
             this.btnVerifyAndBoard.TabIndex = 1;
-            this.btnVerifyAndBoard.Text = "✅  Verify & Board";
+            this.btnVerifyAndBoard.Text = "Verify & Board";
             this.btnVerifyAndBoard.UseVisualStyleBackColor = false;
 
             // 
@@ -3952,22 +3956,22 @@ namespace Bus_Ticket_mgmt.Forms
             this.btnPrintTicketPass.Name = "btnPrintTicketPass";
             this.btnPrintTicketPass.Size = new System.Drawing.Size(160, 34);
             this.btnPrintTicketPass.TabIndex = 2;
-            this.btnPrintTicketPass.Text = "🖨️  Print Boarding Pass";
+            this.btnPrintTicketPass.Text = "Print Boarding Pass";
             this.btnPrintTicketPass.UseVisualStyleBackColor = false;
 
             // 
             // btnCancelTicketAction
             // 
-            this.btnCancelTicketAction.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnCancelTicketAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(254, 202, 202);
+            this.btnCancelTicketAction.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
+            this.btnCancelTicketAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
             this.btnCancelTicketAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelTicketAction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelTicketAction.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
+            this.btnCancelTicketAction.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
             this.btnCancelTicketAction.Location = new System.Drawing.Point(455, 10);
             this.btnCancelTicketAction.Name = "btnCancelTicketAction";
             this.btnCancelTicketAction.Size = new System.Drawing.Size(130, 34);
             this.btnCancelTicketAction.TabIndex = 3;
-            this.btnCancelTicketAction.Text = "❌  Cancel Ticket";
+            this.btnCancelTicketAction.Text = "Cancel Ticket";
             this.btnCancelTicketAction.UseVisualStyleBackColor = false;
 
             // 

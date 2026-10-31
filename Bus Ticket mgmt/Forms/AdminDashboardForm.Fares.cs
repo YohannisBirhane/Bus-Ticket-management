@@ -51,10 +51,10 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnDiscounts = new Button
             {
-                Text = "🎁 Concession Discounts",
+                Text = "Concession Discounts",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(190, 36),
                 Location = new Point(header.Width - 220, 10),
@@ -208,8 +208,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnEditFare = new Button
             {
-                Text = "✏️ Edit Route Base Fare",
+                Text = "Edit Route Base Fare",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
@@ -221,8 +222,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnBulkTariff = new Button
             {
-                Text = "📈 Apply Seasonal Tariff Adjustment (%)",
-                Font = new Font("Segoe UI", 9f),
+                Text = "Apply Seasonal Tariff Adjustment (%)",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(250, 36),
@@ -345,7 +347,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Update Fare",
                     Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(130, 36),
                     Location = new Point(115, 140),
@@ -403,7 +405,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Apply to All Routes",
                     Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(160, 36),
                     Location = new Point(110, 150),

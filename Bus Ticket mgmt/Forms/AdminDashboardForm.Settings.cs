@@ -65,7 +65,7 @@ namespace Bus_Ticket_mgmt.Forms
             };
 
             // Card 1: Enterprise Profile
-            Panel card1 = CreateSettingsCard("🏢 Enterprise & Terminal Station Identity", 420);
+            Panel card1 = CreateSettingsCard("Enterprise & Terminal Station Identity", 420);
             AddSettingField(card1, "Company / System Name:", txtSetCompanyName = new TextBox { Text = "Ethio Bus Transportation Services", Width = 380 }, 40);
             AddSettingField(card1, "Central Terminal Hub:", txtSetStationHub = new TextBox { Text = "Autobus Tera National Station, Addis Ababa", Width = 380 }, 105);
             AddSettingField(card1, "Customer Helpline:", txtSetHelpline = new TextBox { Text = "+251 11 551 2233", Width = 180 }, 170);
@@ -74,7 +74,7 @@ namespace Bus_Ticket_mgmt.Forms
             flowContent.Controls.Add(card1);
 
             // Card 2: Booking & Refund Policies
-            Panel card2 = CreateSettingsCard("📋 Reservation, Cancellation & Luggage Policies", 420);
+            Panel card2 = CreateSettingsCard("Reservation, Cancellation & Luggage Policies", 420);
             AddSettingNumeric(card2, "Unpaid Seat Hold Window (Minutes):", numHoldMinutes = new NumericUpDown { Value = 15, Minimum = 5, Maximum = 60, Width = 120 }, 40);
             AddSettingNumeric(card2, "Minimum Cancellation Notice (Hours):", numCancelHours = new NumericUpDown { Value = 2, Minimum = 1, Maximum = 24, Width = 120 }, 105);
             AddSettingNumeric(card2, "Cancellation Refund Fee Deduction (%):", numRefundDeduction = new NumericUpDown { Value = 10, Minimum = 0, Maximum = 50, Width = 120 }, 170);
@@ -83,7 +83,7 @@ namespace Bus_Ticket_mgmt.Forms
             flowContent.Controls.Add(card2);
 
             // Card 3: Notification Services
-            Panel card3 = CreateSettingsCard("🔔 Notification Dispatch & Automation Rules", 420);
+            Panel card3 = CreateSettingsCard("Notification Dispatch & Automation Rules", 420);
             chkSmsNotifications = new CheckBox { Text = "Enable Automated SMS Booking Confirmations", Checked = true, AutoSize = true, Location = new Point(24, 45), Font = new Font("Segoe UI", 9.5f) };
             chkEmailBoarding = new CheckBox { Text = "Email Digital PDF Boarding Passes to Passengers", Checked = true, AutoSize = true, Location = new Point(24, 95), Font = new Font("Segoe UI", 9.5f) };
             chkDelayAlerts = new CheckBox { Text = "Broadcast Real-Time Trip Delay Alerts to Passenger Terminals", Checked = true, AutoSize = true, Location = new Point(24, 145), Font = new Font("Segoe UI", 9.5f) };
@@ -97,10 +97,10 @@ namespace Bus_Ticket_mgmt.Forms
             // Save Buttons inside card 3
             Button btnSaveSettings = new Button
             {
-                Text = "💾 Save Configuration",
+                Text = "Save Configuration",
                 Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 40),
                 Location = new Point(24, 260),
@@ -112,7 +112,8 @@ namespace Bus_Ticket_mgmt.Forms
             Button btnResetDefaults = new Button
             {
                 Text = "Reset to Defaults",
-                Font = new Font("Segoe UI", 9f),
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(51, 65, 85),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(140, 40),

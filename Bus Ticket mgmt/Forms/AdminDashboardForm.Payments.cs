@@ -51,10 +51,10 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnRecordPay = new Button
             {
-                Text = "+ Record Transaction",
+                Text = "Record Transaction",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
                 Location = new Point(header.Width - 210, 10),
@@ -221,8 +221,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnViewReceipt = new Button
             {
-                Text = "🧾 View Official Receipt",
+                Text = "View Official Receipt",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(170, 36),
@@ -234,16 +235,16 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnRefund = new Button
             {
-                Text = "💸 Process Refund",
-                Font = new Font("Segoe UI", 9f),
-                ForeColor = Color.FromArgb(239, 68, 68),
-                BackColor = Color.FromArgb(254, 242, 242),
+                Text = "Process Refund",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(51, 65, 85),
+                BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(150, 36),
                 Location = new Point(204, 8),
                 Cursor = Cursors.Hand
             };
-            btnRefund.FlatAppearance.BorderColor = Color.FromArgb(254, 202, 202);
+            btnRefund.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnRefund.Click += (s, e) => ProcessSelectedPaymentRefund();
 
             actionBar.Controls.Add(btnViewReceipt);
@@ -461,7 +462,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Save Transaction",
                     Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(160, 38),
                     Location = new Point(140, 290),

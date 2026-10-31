@@ -52,10 +52,10 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnPrintExec = new Button
             {
-                Text = "📊 Executive Summary",
+                Text = "Executive Summary",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(190, 36),
                 Location = new Point(header.Width - 220, 10),
@@ -134,7 +134,7 @@ namespace Bus_Ticket_mgmt.Forms
                 Text = "Run Report",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Location = new Point(696, 10),
                 Size = new Size(100, 30),
@@ -145,8 +145,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnExport = new Button
             {
-                Text = "📥 Export Report (CSV)",
-                Font = new Font("Segoe UI", 9f),
+                Text = "Export Report (CSV)",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Location = new Point(806, 10),

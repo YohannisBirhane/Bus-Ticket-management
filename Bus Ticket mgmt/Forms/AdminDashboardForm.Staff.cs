@@ -52,10 +52,10 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnAddStaff = new Button
             {
-                Text = "+ Register New Staff",
+                Text = "Register New Staff",
                 Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(13, 94, 234),
+                BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
                 Location = new Point(header.Width - 210, 10),
@@ -222,8 +222,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnProfile = new Button
             {
-                Text = "👤 Staff Dossier & Rating",
+                Text = "Staff Dossier & Rating",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
@@ -235,8 +236,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             Button btnToggleStatus = new Button
             {
-                Text = "🔄 Toggle Active / Inactive",
-                Font = new Font("Segoe UI", 9f),
+                Text = "Toggle Active / Inactive",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(180, 36),
@@ -430,7 +432,7 @@ namespace Bus_Ticket_mgmt.Forms
                     Text = "Register Staff",
                     Font = new Font("Segoe UI", 9.5f, FontStyle.Bold),
                     ForeColor = Color.White,
-                    BackColor = Color.FromArgb(13, 94, 234),
+                    BackColor = Color.FromArgb(15, 23, 42),
                     FlatStyle = FlatStyle.Flat,
                     Size = new Size(160, 38),
                     Location = new Point(140, 350),
