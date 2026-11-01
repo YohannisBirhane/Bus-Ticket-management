@@ -26,7 +26,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -66,15 +66,15 @@ namespace Bus_Ticket_mgmt.Forms
 
             header.Controls.Add(title);
             header.Controls.Add(btnRecordPay);
-            panelPaymentManagement.Controls.Add(header);
 
             // 2. Metrics Bar
             FlowLayoutPanel flowMetrics = new FlowLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
-                Padding = new Padding(20, 8, 20, 4),
-                BackColor = Color.FromArgb(248, 250, 252)
+                Height = 100,
+                Padding = new Padding(16, 8, 16, 8),
+                BackColor = Color.FromArgb(248, 250, 252),
+                WrapContents = false
             };
 
             var (m1, _, l1) = CreateMetricCard("Total Collections", "0 ETB", "All cleared revenues", Color.FromArgb(16, 185, 129));
@@ -92,8 +92,6 @@ namespace Bus_Ticket_mgmt.Forms
             var (m4, _, l4) = CreateMetricCard("Refunds Disbursed", "0 ETB", "Returned to passengers", Color.FromArgb(239, 68, 68));
             lblPayMetricRefundVal = l4;
             flowMetrics.Controls.Add(m4);
-
-            panelPaymentManagement.Controls.Add(flowMetrics);
 
             // 3. Toolbar
             Panel toolbar = new Panel
@@ -169,13 +167,12 @@ namespace Bus_Ticket_mgmt.Forms
             toolbar.Controls.Add(cmbPaymentStatusFilter);
             toolbar.Controls.Add(btnResetPay);
             toolbar.Controls.Add(lblPaymentsCount);
-            panelPaymentManagement.Controls.Add(toolbar);
 
             // 4. DataGridView
             Panel gridContainer = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 4, 24, 60),
+                Padding = new Padding(24, 8, 24, 8),
                 BackColor = Color.FromArgb(248, 250, 252)
             };
 
@@ -201,7 +198,6 @@ namespace Bus_Ticket_mgmt.Forms
             dgvPayments.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42);
 
             gridContainer.Controls.Add(dgvPayments);
-            panelPaymentManagement.Controls.Add(gridContainer);
 
             // 5. Bottom Action Bar
             Panel actionBar = new Panel
@@ -249,7 +245,13 @@ namespace Bus_Ticket_mgmt.Forms
 
             actionBar.Controls.Add(btnViewReceipt);
             actionBar.Controls.Add(btnRefund);
+
+            // Assembly in proper WinForms Docking Order (Fill first, Bottom second, Tops in reverse order):
+            panelPaymentManagement.Controls.Add(gridContainer);
             panelPaymentManagement.Controls.Add(actionBar);
+            panelPaymentManagement.Controls.Add(toolbar);
+            panelPaymentManagement.Controls.Add(flowMetrics);
+            panelPaymentManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelPaymentManagement);
         }
@@ -261,7 +263,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelPaymentManagement.BringToFront();
             SetActiveSidebarButton(btnNavPayments);
             lblPageHeading.Text = "Payment & Financial Transactions";
-            lblPageSubHeading.Text = "Audit payment records, verify cashless remittances, and execute refund authorizations.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Audit payment records, verify cashless remittances, and execute refund authorizations.";
             PopulatePaymentsList();
         }
 

@@ -27,7 +27,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -67,15 +67,15 @@ namespace Bus_Ticket_mgmt.Forms
 
             header.Controls.Add(title);
             header.Controls.Add(btnPrintExec);
-            panelReportManagement.Controls.Add(header);
 
             // 2. Metrics Bar
             FlowLayoutPanel flowMetrics = new FlowLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
-                Padding = new Padding(20, 8, 20, 4),
-                BackColor = Color.FromArgb(248, 250, 252)
+                Height = 100,
+                Padding = new Padding(16, 8, 16, 8),
+                BackColor = Color.FromArgb(248, 250, 252),
+                WrapContents = false
             };
 
             var (m1, _, l1) = CreateMetricCard("Total Revenue", "0 ETB", "Gross ticket sales", Color.FromArgb(16, 185, 129));
@@ -93,8 +93,6 @@ namespace Bus_Ticket_mgmt.Forms
             var (m4, _, l4) = CreateMetricCard("Avg Seat Occupancy", "0%", "Average passenger load factor", Color.FromArgb(245, 158, 11));
             lblReportMetricOccupancyVal = l4;
             flowMetrics.Controls.Add(m4);
-
-            panelReportManagement.Controls.Add(flowMetrics);
 
             // 3. Toolbar
             Panel toolbar = new Panel
@@ -165,13 +163,12 @@ namespace Bus_Ticket_mgmt.Forms
             toolbar.Controls.Add(dtpReportTo);
             toolbar.Controls.Add(btnRun);
             toolbar.Controls.Add(btnExport);
-            panelReportManagement.Controls.Add(toolbar);
 
             // 4. DataGridView
             Panel gridContainer = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 4, 24, 60),
+                Padding = new Padding(24, 8, 24, 8),
                 BackColor = Color.FromArgb(248, 250, 252)
             };
 
@@ -197,7 +194,6 @@ namespace Bus_Ticket_mgmt.Forms
             dgvReports.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42);
 
             gridContainer.Controls.Add(dgvReports);
-            panelReportManagement.Controls.Add(gridContainer);
 
             // 5. Bottom Summary
             Panel summaryBar = new Panel
@@ -222,7 +218,13 @@ namespace Bus_Ticket_mgmt.Forms
             };
 
             summaryBar.Controls.Add(lblReportSummaryText);
+
+            // Assembly in proper WinForms Docking Order (Fill first, Bottom second, Tops in reverse order):
+            panelReportManagement.Controls.Add(gridContainer);
             panelReportManagement.Controls.Add(summaryBar);
+            panelReportManagement.Controls.Add(toolbar);
+            panelReportManagement.Controls.Add(flowMetrics);
+            panelReportManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelReportManagement);
         }
@@ -234,7 +236,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelReportManagement.BringToFront();
             SetActiveSidebarButton(btnNavReports);
             lblPageHeading.Text = "Reports & Analytics Center";
-            lblPageSubHeading.Text = "Audit transportation statistics, generate financial statements, and track performance indicators.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Audit transportation statistics, generate financial statements, and track performance indicators.";
             GenerateReport();
         }
 

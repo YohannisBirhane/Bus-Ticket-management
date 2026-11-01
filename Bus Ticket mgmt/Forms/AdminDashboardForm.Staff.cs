@@ -27,7 +27,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -67,15 +67,15 @@ namespace Bus_Ticket_mgmt.Forms
 
             header.Controls.Add(title);
             header.Controls.Add(btnAddStaff);
-            panelStaffManagement.Controls.Add(header);
 
             // 2. Metrics Bar
             FlowLayoutPanel flowMetrics = new FlowLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
-                Padding = new Padding(20, 8, 20, 4),
-                BackColor = Color.FromArgb(248, 250, 252)
+                Height = 100,
+                Padding = new Padding(16, 8, 16, 8),
+                BackColor = Color.FromArgb(248, 250, 252),
+                WrapContents = false
             };
 
             var (m1, _, l1) = CreateMetricCard("Total Staff", "0", "All operations workforce", Color.FromArgb(13, 94, 234));
@@ -93,8 +93,6 @@ namespace Bus_Ticket_mgmt.Forms
             var (m4, _, l4) = CreateMetricCard("Active On-Duty", "0", "Ready for deployment", Color.FromArgb(245, 158, 11));
             lblStaffMetricActiveVal = l4;
             flowMetrics.Controls.Add(m4);
-
-            panelStaffManagement.Controls.Add(flowMetrics);
 
             // 3. Toolbar
             Panel toolbar = new Panel
@@ -170,13 +168,12 @@ namespace Bus_Ticket_mgmt.Forms
             toolbar.Controls.Add(cmbStaffStatusFilter);
             toolbar.Controls.Add(btnResetStaff);
             toolbar.Controls.Add(lblStaffCount);
-            panelStaffManagement.Controls.Add(toolbar);
 
             // 4. DataGridView
             Panel gridContainer = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 4, 24, 60),
+                Padding = new Padding(24, 8, 24, 8),
                 BackColor = Color.FromArgb(248, 250, 252)
             };
 
@@ -202,7 +199,6 @@ namespace Bus_Ticket_mgmt.Forms
             dgvStaff.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42);
 
             gridContainer.Controls.Add(dgvStaff);
-            panelStaffManagement.Controls.Add(gridContainer);
 
             // 5. Action Bar
             Panel actionBar = new Panel
@@ -250,7 +246,13 @@ namespace Bus_Ticket_mgmt.Forms
 
             actionBar.Controls.Add(btnProfile);
             actionBar.Controls.Add(btnToggleStatus);
+
+            // Assembly in proper WinForms Docking Order (Fill first, Bottom second, Tops in reverse order):
+            panelStaffManagement.Controls.Add(gridContainer);
             panelStaffManagement.Controls.Add(actionBar);
+            panelStaffManagement.Controls.Add(toolbar);
+            panelStaffManagement.Controls.Add(flowMetrics);
+            panelStaffManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelStaffManagement);
         }
@@ -262,7 +264,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelStaffManagement.BringToFront();
             SetActiveSidebarButton(btnNavStaff);
             lblPageHeading.Text = "Driver & Staff Management";
-            lblPageSubHeading.Text = "Manage drivers, ticket officers, fleet dispatchers, and monitor workforce readiness.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Manage drivers, ticket officers, fleet dispatchers, and monitor workforce readiness.";
             PopulateStaffList();
         }
 

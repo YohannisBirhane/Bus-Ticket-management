@@ -65,518 +65,442 @@ namespace Bus_Ticket_mgmt.Forms
 
         private void InitializeComponent()
         {
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblDialogTitle = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-
-            this.panelContent = new System.Windows.Forms.Panel();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
-            this.lblHeaderSubtitle = new System.Windows.Forms.Label();
-
-            this.lblRouteId = new System.Windows.Forms.Label();
-            this.txtRouteId = new System.Windows.Forms.TextBox();
-
-            this.lblRouteName = new System.Windows.Forms.Label();
-            this.txtRouteName = new System.Windows.Forms.TextBox();
-
-            this.lblSource = new System.Windows.Forms.Label();
-            this.cmbSource = new System.Windows.Forms.ComboBox();
-
-            this.lblDestination = new System.Windows.Forms.Label();
-            this.cmbDestination = new System.Windows.Forms.ComboBox();
-
-            this.lblDistance = new System.Windows.Forms.Label();
-            this.numDistance = new System.Windows.Forms.NumericUpDown();
-
-            this.lblEstimatedTime = new System.Windows.Forms.Label();
-            this.txtEstimatedTime = new System.Windows.Forms.TextBox();
-
-            this.lblBaseFare = new System.Windows.Forms.Label();
-            this.numBaseFare = new System.Windows.Forms.NumericUpDown();
-
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-
-            this.lblIntermediateStops = new System.Windows.Forms.Label();
-            this.txtIntermediateStops = new System.Windows.Forms.TextBox();
-
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-
-            this.panelTitleBar.SuspendLayout();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDistance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBaseFare)).BeginInit();
-            this.SuspendLayout();
-
+            panelTitleBar = new Panel();
+            lblDialogTitle = new Label();
+            btnClose = new Button();
+            panelContent = new Panel();
+            lblHeaderTitle = new Label();
+            lblHeaderSubtitle = new Label();
+            lblRouteId = new Label();
+            txtRouteId = new TextBox();
+            lblRouteName = new Label();
+            txtRouteName = new TextBox();
+            lblSource = new Label();
+            cmbSource = new ComboBox();
+            lblDestination = new Label();
+            cmbDestination = new ComboBox();
+            lblDistance = new Label();
+            numDistance = new NumericUpDown();
+            lblEstimatedTime = new Label();
+            txtEstimatedTime = new TextBox();
+            lblBaseFare = new Label();
+            numBaseFare = new NumericUpDown();
+            lblStatus = new Label();
+            cmbStatus = new ComboBox();
+            lblIntermediateStops = new Label();
+            txtIntermediateStops = new TextBox();
+            lblDescription = new Label();
+            txtDescription = new TextBox();
+            btnSave = new Button();
+            btnClear = new Button();
+            btnCancel = new Button();
+            panelTitleBar.SuspendLayout();
+            panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numDistance).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numBaseFare).BeginInit();
+            SuspendLayout();
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.panelTitleBar.Controls.Add(this.lblDialogTitle);
-            this.panelTitleBar.Controls.Add(this.btnClose);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Height = 36;
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(560, 36);
-            this.panelTitleBar.TabIndex = 0;
-
+            panelTitleBar.BackColor = Color.FromArgb(15, 23, 42);
+            panelTitleBar.Controls.Add(lblDialogTitle);
+            panelTitleBar.Controls.Add(btnClose);
+            panelTitleBar.Dock = DockStyle.Top;
+            panelTitleBar.Location = new Point(0, 0);
+            panelTitleBar.Margin = new Padding(4, 5, 4, 5);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.Size = new Size(800, 60);
+            panelTitleBar.TabIndex = 0;
             // 
             // lblDialogTitle
             // 
-            this.lblDialogTitle.AutoSize = true;
-            this.lblDialogTitle.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDialogTitle.ForeColor = System.Drawing.Color.White;
-            this.lblDialogTitle.Location = new System.Drawing.Point(14, 9);
-            this.lblDialogTitle.Name = "lblDialogTitle";
-            this.lblDialogTitle.Size = new System.Drawing.Size(180, 17);
-            this.lblDialogTitle.TabIndex = 0;
-            this.lblDialogTitle.Text = "Route Network Management";
-
+            lblDialogTitle.AutoSize = true;
+            lblDialogTitle.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblDialogTitle.ForeColor = Color.White;
+            lblDialogTitle.Location = new Point(20, 15);
+            lblDialogTitle.Margin = new Padding(4, 0, 4, 0);
+            lblDialogTitle.Name = "lblDialogTitle";
+            lblDialogTitle.Size = new Size(271, 25);
+            lblDialogTitle.TabIndex = 0;
+            lblDialogTitle.Text = "Route Network Management";
             // 
             // btnClose
             // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.btnClose.Location = new System.Drawing.Point(514, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 36);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "✕";
-            this.btnClose.UseVisualStyleBackColor = true;
-
+            btnClose.Dock = DockStyle.Right;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 9.5F);
+            btnClose.ForeColor = Color.FromArgb(148, 163, 184);
+            btnClose.Location = new Point(734, 0);
+            btnClose.Margin = new Padding(4, 5, 4, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(66, 60);
+            btnClose.TabIndex = 1;
+            btnClose.Text = "✕";
+            btnClose.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.Color.White;
-            this.panelContent.Controls.Add(this.lblHeaderTitle);
-            this.panelContent.Controls.Add(this.lblHeaderSubtitle);
-            this.panelContent.Controls.Add(this.lblRouteId);
-            this.panelContent.Controls.Add(this.txtRouteId);
-            this.panelContent.Controls.Add(this.lblRouteName);
-            this.panelContent.Controls.Add(this.txtRouteName);
-            this.panelContent.Controls.Add(this.lblSource);
-            this.panelContent.Controls.Add(this.cmbSource);
-            this.panelContent.Controls.Add(this.lblDestination);
-            this.panelContent.Controls.Add(this.cmbDestination);
-            this.panelContent.Controls.Add(this.lblDistance);
-            this.panelContent.Controls.Add(this.numDistance);
-            this.panelContent.Controls.Add(this.lblEstimatedTime);
-            this.panelContent.Controls.Add(this.txtEstimatedTime);
-            this.panelContent.Controls.Add(this.lblBaseFare);
-            this.panelContent.Controls.Add(this.numBaseFare);
-            this.panelContent.Controls.Add(this.lblStatus);
-            this.panelContent.Controls.Add(this.cmbStatus);
-            this.panelContent.Controls.Add(this.lblIntermediateStops);
-            this.panelContent.Controls.Add(this.txtIntermediateStops);
-            this.panelContent.Controls.Add(this.lblDescription);
-            this.panelContent.Controls.Add(this.txtDescription);
-            this.panelContent.Controls.Add(this.btnSave);
-            this.panelContent.Controls.Add(this.btnClear);
-            this.panelContent.Controls.Add(this.btnCancel);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 36);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Padding = new System.Windows.Forms.Padding(24);
-            this.panelContent.Size = new System.Drawing.Size(560, 584);
-            this.panelContent.TabIndex = 1;
-
+            panelContent.BackColor = Color.White;
+            panelContent.Controls.Add(lblHeaderTitle);
+            panelContent.Controls.Add(lblHeaderSubtitle);
+            panelContent.Controls.Add(lblRouteId);
+            panelContent.Controls.Add(txtRouteId);
+            panelContent.Controls.Add(lblRouteName);
+            panelContent.Controls.Add(txtRouteName);
+            panelContent.Controls.Add(lblSource);
+            panelContent.Controls.Add(cmbSource);
+            panelContent.Controls.Add(lblDestination);
+            panelContent.Controls.Add(cmbDestination);
+            panelContent.Controls.Add(lblDistance);
+            panelContent.Controls.Add(numDistance);
+            panelContent.Controls.Add(lblEstimatedTime);
+            panelContent.Controls.Add(txtEstimatedTime);
+            panelContent.Controls.Add(lblBaseFare);
+            panelContent.Controls.Add(numBaseFare);
+            panelContent.Controls.Add(lblStatus);
+            panelContent.Controls.Add(cmbStatus);
+            panelContent.Controls.Add(lblIntermediateStops);
+            panelContent.Controls.Add(txtIntermediateStops);
+            panelContent.Controls.Add(lblDescription);
+            panelContent.Controls.Add(txtDescription);
+            panelContent.Controls.Add(btnSave);
+            panelContent.Controls.Add(btnClear);
+            panelContent.Controls.Add(btnCancel);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(0, 60);
+            panelContent.Margin = new Padding(4, 5, 4, 5);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(34, 40, 34, 40);
+            panelContent.Size = new Size(800, 913);
+            panelContent.TabIndex = 1;
             // 
             // lblHeaderTitle
             // 
-            this.lblHeaderTitle.AutoSize = true;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblHeaderTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblHeaderTitle.Location = new System.Drawing.Point(24, 14);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(157, 28);
-            this.lblHeaderTitle.TabIndex = 0;
-            this.lblHeaderTitle.Text = "Add New Route";
-
+            lblHeaderTitle.AutoSize = true;
+            lblHeaderTitle.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            lblHeaderTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblHeaderTitle.Location = new Point(34, 23);
+            lblHeaderTitle.Margin = new Padding(4, 0, 4, 0);
+            lblHeaderTitle.Name = "lblHeaderTitle";
+            lblHeaderTitle.Size = new Size(240, 41);
+            lblHeaderTitle.TabIndex = 0;
+            lblHeaderTitle.Text = "Add New Route";
             // 
             // lblHeaderSubtitle
             // 
-            this.lblHeaderSubtitle.AutoSize = true;
-            this.lblHeaderSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHeaderSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblHeaderSubtitle.Location = new System.Drawing.Point(26, 44);
-            this.lblHeaderSubtitle.Name = "lblHeaderSubtitle";
-            this.lblHeaderSubtitle.Size = new System.Drawing.Size(370, 15);
-            this.lblHeaderSubtitle.TabIndex = 1;
-            this.lblHeaderSubtitle.Text = "Define departure, destination, travel distance, base fare, and stops.";
-
+            lblHeaderSubtitle.AutoSize = true;
+            lblHeaderSubtitle.Font = new Font("Segoe UI", 9F);
+            lblHeaderSubtitle.ForeColor = Color.FromArgb(100, 116, 139);
+            lblHeaderSubtitle.Location = new Point(37, 73);
+            lblHeaderSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblHeaderSubtitle.Name = "lblHeaderSubtitle";
+            lblHeaderSubtitle.Size = new Size(537, 25);
+            lblHeaderSubtitle.TabIndex = 1;
+            lblHeaderSubtitle.Text = "Define departure, destination, travel distance, base fare, and stops.";
             // 
             // lblRouteId
             // 
-            this.lblRouteId.AutoSize = true;
-            this.lblRouteId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRouteId.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblRouteId.Location = new System.Drawing.Point(28, 72);
-            this.lblRouteId.Name = "lblRouteId";
-            this.lblRouteId.Size = new System.Drawing.Size(65, 15);
-            this.lblRouteId.TabIndex = 2;
-            this.lblRouteId.Text = "Route ID *";
-
+            lblRouteId.AutoSize = true;
+            lblRouteId.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblRouteId.ForeColor = Color.FromArgb(30, 41, 59);
+            lblRouteId.Location = new Point(40, 120);
+            lblRouteId.Margin = new Padding(4, 0, 4, 0);
+            lblRouteId.Name = "lblRouteId";
+            lblRouteId.Size = new Size(100, 25);
+            lblRouteId.TabIndex = 2;
+            lblRouteId.Text = "Route ID *";
             // 
             // txtRouteId
             // 
-            this.txtRouteId.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.txtRouteId.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtRouteId.Location = new System.Drawing.Point(28, 92);
-            this.txtRouteId.Name = "txtRouteId";
-            this.txtRouteId.ReadOnly = true;
-            this.txtRouteId.Size = new System.Drawing.Size(235, 24);
-            this.txtRouteId.TabIndex = 3;
-
+            txtRouteId.BackColor = Color.FromArgb(241, 245, 249);
+            txtRouteId.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            txtRouteId.Location = new Point(40, 153);
+            txtRouteId.Margin = new Padding(4, 5, 4, 5);
+            txtRouteId.Name = "txtRouteId";
+            txtRouteId.ReadOnly = true;
+            txtRouteId.Size = new Size(334, 33);
+            txtRouteId.TabIndex = 3;
             // 
             // lblRouteName
             // 
-            this.lblRouteName.AutoSize = true;
-            this.lblRouteName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRouteName.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblRouteName.Location = new System.Drawing.Point(290, 72);
-            this.lblRouteName.Name = "lblRouteName";
-            this.lblRouteName.Size = new System.Drawing.Size(86, 15);
-            this.lblRouteName.TabIndex = 4;
-            this.lblRouteName.Text = "Route Name *";
-
+            lblRouteName.AutoSize = true;
+            lblRouteName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblRouteName.ForeColor = Color.FromArgb(30, 41, 59);
+            lblRouteName.Location = new Point(414, 120);
+            lblRouteName.Margin = new Padding(4, 0, 4, 0);
+            lblRouteName.Name = "lblRouteName";
+            lblRouteName.Size = new Size(131, 25);
+            lblRouteName.TabIndex = 4;
+            lblRouteName.Text = "Route Name *";
             // 
             // txtRouteName
             // 
-            this.txtRouteName.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRouteName.Location = new System.Drawing.Point(290, 92);
-            this.txtRouteName.Name = "txtRouteName";
-            this.txtRouteName.PlaceholderText = "e.g. Addis - Bahir Dar Express";
-            this.txtRouteName.Size = new System.Drawing.Size(242, 24);
-            this.txtRouteName.TabIndex = 5;
-
+            txtRouteName.Font = new Font("Segoe UI", 9.5F);
+            txtRouteName.Location = new Point(414, 153);
+            txtRouteName.Margin = new Padding(4, 5, 4, 5);
+            txtRouteName.Name = "txtRouteName";
+            txtRouteName.PlaceholderText = "e.g. Addis - Bahir Dar Express";
+            txtRouteName.Size = new Size(344, 33);
+            txtRouteName.TabIndex = 5;
             // 
             // lblSource
             // 
-            this.lblSource.AutoSize = true;
-            this.lblSource.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSource.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblSource.Location = new System.Drawing.Point(28, 128);
-            this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(126, 15);
-            this.lblSource.TabIndex = 6;
-            this.lblSource.Text = "Source (Departure) *";
-
+            lblSource.AutoSize = true;
+            lblSource.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblSource.ForeColor = Color.FromArgb(30, 41, 59);
+            lblSource.Location = new Point(40, 213);
+            lblSource.Margin = new Padding(4, 0, 4, 0);
+            lblSource.Name = "lblSource";
+            lblSource.Size = new Size(189, 25);
+            lblSource.TabIndex = 6;
+            lblSource.Text = "Source (Departure) *";
             // 
             // cmbSource
             // 
-            this.cmbSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSource.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbSource.FormattingEnabled = true;
-            this.cmbSource.Items.AddRange(new object[] {
-            "Addis Ababa",
-            "Bahir Dar",
-            "Hawassa",
-            "Gondar",
-            "Dire Dawa",
-            "Mekelle",
-            "Jimma",
-            "Dessie",
-            "Arba Minch",
-            "Debre Berhan",
-            "Jijiga",
-            "Nekemte",
-            "Asosa",
-            "Semera",
-            "Harar",
-            "Bishoftu",
-            "Adama",
-            "Shashemene"});
-            this.cmbSource.Location = new System.Drawing.Point(28, 148);
-            this.cmbSource.Name = "cmbSource";
-            this.cmbSource.Size = new System.Drawing.Size(235, 25);
-            this.cmbSource.TabIndex = 7;
-
+            cmbSource.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSource.Font = new Font("Segoe UI", 9.5F);
+            cmbSource.FormattingEnabled = true;
+            cmbSource.Items.AddRange(new object[] { "Addis Ababa", "Bahir Dar", "Hawassa", "Gondar", "Dire Dawa", "Mekelle", "Jimma", "Dessie", "Arba Minch", "Debre Berhan", "Jijiga", "Nekemte", "Asosa", "Semera", "Harar", "Bishoftu", "Adama", "Shashemene" });
+            cmbSource.Location = new Point(40, 247);
+            cmbSource.Margin = new Padding(4, 5, 4, 5);
+            cmbSource.Name = "cmbSource";
+            cmbSource.Size = new Size(334, 33);
+            cmbSource.TabIndex = 7;
             // 
             // lblDestination
             // 
-            this.lblDestination.AutoSize = true;
-            this.lblDestination.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDestination.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblDestination.Location = new System.Drawing.Point(290, 128);
-            this.lblDestination.Name = "lblDestination";
-            this.lblDestination.Size = new System.Drawing.Size(133, 15);
-            this.lblDestination.TabIndex = 8;
-            this.lblDestination.Text = "Destination (Arrival) *";
-
+            lblDestination.AutoSize = true;
+            lblDestination.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDestination.ForeColor = Color.FromArgb(30, 41, 59);
+            lblDestination.Location = new Point(414, 213);
+            lblDestination.Margin = new Padding(4, 0, 4, 0);
+            lblDestination.Name = "lblDestination";
+            lblDestination.Size = new Size(199, 25);
+            lblDestination.TabIndex = 8;
+            lblDestination.Text = "Destination (Arrival) *";
             // 
             // cmbDestination
             // 
-            this.cmbDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDestination.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbDestination.FormattingEnabled = true;
-            this.cmbDestination.Items.AddRange(new object[] {
-            "Addis Ababa",
-            "Bahir Dar",
-            "Hawassa",
-            "Gondar",
-            "Dire Dawa",
-            "Mekelle",
-            "Jimma",
-            "Dessie",
-            "Arba Minch",
-            "Debre Berhan",
-            "Jijiga",
-            "Nekemte",
-            "Asosa",
-            "Semera",
-            "Harar",
-            "Bishoftu",
-            "Adama",
-            "Shashemene"});
-            this.cmbDestination.Location = new System.Drawing.Point(290, 148);
-            this.cmbDestination.Name = "cmbDestination";
-            this.cmbDestination.Size = new System.Drawing.Size(242, 25);
-            this.cmbDestination.TabIndex = 9;
-
+            cmbDestination.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDestination.Font = new Font("Segoe UI", 9.5F);
+            cmbDestination.FormattingEnabled = true;
+            cmbDestination.Items.AddRange(new object[] { "Addis Ababa", "Bahir Dar", "Hawassa", "Gondar", "Dire Dawa", "Mekelle", "Jimma", "Dessie", "Arba Minch", "Debre Berhan", "Jijiga", "Nekemte", "Asosa", "Semera", "Harar", "Bishoftu", "Adama", "Shashemene" });
+            cmbDestination.Location = new Point(414, 247);
+            cmbDestination.Margin = new Padding(4, 5, 4, 5);
+            cmbDestination.Name = "cmbDestination";
+            cmbDestination.Size = new Size(344, 33);
+            cmbDestination.TabIndex = 9;
             // 
             // lblDistance
             // 
-            this.lblDistance.AutoSize = true;
-            this.lblDistance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDistance.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblDistance.Location = new System.Drawing.Point(28, 186);
-            this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(96, 15);
-            this.lblDistance.TabIndex = 10;
-            this.lblDistance.Text = "Distance (km) *";
-
+            lblDistance.AutoSize = true;
+            lblDistance.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDistance.ForeColor = Color.FromArgb(30, 41, 59);
+            lblDistance.Location = new Point(40, 310);
+            lblDistance.Margin = new Padding(4, 0, 4, 0);
+            lblDistance.Name = "lblDistance";
+            lblDistance.Size = new Size(143, 25);
+            lblDistance.TabIndex = 10;
+            lblDistance.Text = "Distance (km) *";
             // 
             // numDistance
             // 
-            this.numDistance.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numDistance.Location = new System.Drawing.Point(28, 206);
-            this.numDistance.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numDistance.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDistance.Name = "numDistance";
-            this.numDistance.Size = new System.Drawing.Size(235, 24);
-            this.numDistance.TabIndex = 11;
-            this.numDistance.Value = new decimal(new int[] {
-            350,
-            0,
-            0,
-            0});
-
+            numDistance.Font = new Font("Segoe UI", 9.5F);
+            numDistance.Location = new Point(40, 343);
+            numDistance.Margin = new Padding(4, 5, 4, 5);
+            numDistance.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
+            numDistance.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numDistance.Name = "numDistance";
+            numDistance.Size = new Size(336, 33);
+            numDistance.TabIndex = 11;
+            numDistance.Value = new decimal(new int[] { 350, 0, 0, 0 });
+            numDistance.ValueChanged += numDistance_ValueChanged;
             // 
             // lblEstimatedTime
             // 
-            this.lblEstimatedTime.AutoSize = true;
-            this.lblEstimatedTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEstimatedTime.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblEstimatedTime.Location = new System.Drawing.Point(290, 186);
-            this.lblEstimatedTime.Name = "lblEstimatedTime";
-            this.lblEstimatedTime.Size = new System.Drawing.Size(142, 15);
-            this.lblEstimatedTime.TabIndex = 12;
-            this.lblEstimatedTime.Text = "Estimated Travel Time *";
-
+            lblEstimatedTime.AutoSize = true;
+            lblEstimatedTime.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblEstimatedTime.ForeColor = Color.FromArgb(30, 41, 59);
+            lblEstimatedTime.Location = new Point(414, 310);
+            lblEstimatedTime.Margin = new Padding(4, 0, 4, 0);
+            lblEstimatedTime.Name = "lblEstimatedTime";
+            lblEstimatedTime.Size = new Size(213, 25);
+            lblEstimatedTime.TabIndex = 12;
+            lblEstimatedTime.Text = "Estimated Travel Time *";
             // 
             // txtEstimatedTime
             // 
-            this.txtEstimatedTime.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEstimatedTime.Location = new System.Drawing.Point(290, 206);
-            this.txtEstimatedTime.Name = "txtEstimatedTime";
-            this.txtEstimatedTime.PlaceholderText = "e.g. 5 hrs 30 mins";
-            this.txtEstimatedTime.Size = new System.Drawing.Size(242, 24);
-            this.txtEstimatedTime.TabIndex = 13;
-
+            txtEstimatedTime.Font = new Font("Segoe UI", 9.5F);
+            txtEstimatedTime.Location = new Point(414, 343);
+            txtEstimatedTime.Margin = new Padding(4, 5, 4, 5);
+            txtEstimatedTime.Name = "txtEstimatedTime";
+            txtEstimatedTime.PlaceholderText = "e.g. 5 hrs 30 mins";
+            txtEstimatedTime.Size = new Size(344, 33);
+            txtEstimatedTime.TabIndex = 13;
             // 
             // lblBaseFare
             // 
-            this.lblBaseFare.AutoSize = true;
-            this.lblBaseFare.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBaseFare.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblBaseFare.Location = new System.Drawing.Point(28, 244);
-            this.lblBaseFare.Name = "lblBaseFare";
-            this.lblBaseFare.Size = new System.Drawing.Size(99, 15);
-            this.lblBaseFare.TabIndex = 14;
-            this.lblBaseFare.Text = "Base Fare (ETB) *";
-
+            lblBaseFare.AutoSize = true;
+            lblBaseFare.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblBaseFare.ForeColor = Color.FromArgb(30, 41, 59);
+            lblBaseFare.Location = new Point(40, 407);
+            lblBaseFare.Margin = new Padding(4, 0, 4, 0);
+            lblBaseFare.Name = "lblBaseFare";
+            lblBaseFare.Size = new Size(157, 25);
+            lblBaseFare.TabIndex = 14;
+            lblBaseFare.Text = "Base Fare (ETB) *";
             // 
             // numBaseFare
             // 
-            this.numBaseFare.DecimalPlaces = 2;
-            this.numBaseFare.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numBaseFare.Location = new System.Drawing.Point(28, 264);
-            this.numBaseFare.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.numBaseFare.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numBaseFare.Name = "numBaseFare";
-            this.numBaseFare.Size = new System.Drawing.Size(235, 24);
-            this.numBaseFare.TabIndex = 15;
-            this.numBaseFare.Value = new decimal(new int[] {
-            750,
-            0,
-            0,
-            0});
-
+            numBaseFare.DecimalPlaces = 2;
+            numBaseFare.Font = new Font("Segoe UI", 9.5F);
+            numBaseFare.Location = new Point(40, 440);
+            numBaseFare.Margin = new Padding(4, 5, 4, 5);
+            numBaseFare.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
+            numBaseFare.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            numBaseFare.Name = "numBaseFare";
+            numBaseFare.Size = new Size(336, 33);
+            numBaseFare.TabIndex = 15;
+            numBaseFare.Value = new decimal(new int[] { 750, 0, 0, 0 });
             // 
             // lblStatus
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblStatus.Location = new System.Drawing.Point(290, 244);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(91, 15);
-            this.lblStatus.TabIndex = 16;
-            this.lblStatus.Text = "Route Status *";
-
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblStatus.ForeColor = Color.FromArgb(30, 41, 59);
+            lblStatus.Location = new Point(414, 407);
+            lblStatus.Margin = new Padding(4, 0, 4, 0);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(134, 25);
+            lblStatus.TabIndex = 16;
+            lblStatus.Text = "Route Status *";
             // 
             // cmbStatus
             // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(290, 264);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(242, 25);
-            this.cmbStatus.TabIndex = 17;
-
+            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStatus.Font = new Font("Segoe UI", 9.5F);
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Items.AddRange(new object[] { "Active", "Inactive" });
+            cmbStatus.Location = new Point(414, 440);
+            cmbStatus.Margin = new Padding(4, 5, 4, 5);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(344, 33);
+            cmbStatus.TabIndex = 17;
             // 
             // lblIntermediateStops
             // 
-            this.lblIntermediateStops.AutoSize = true;
-            this.lblIntermediateStops.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblIntermediateStops.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblIntermediateStops.Location = new System.Drawing.Point(28, 302);
-            this.lblIntermediateStops.Name = "lblIntermediateStops";
-            this.lblIntermediateStops.Size = new System.Drawing.Size(201, 15);
-            this.lblIntermediateStops.TabIndex = 18;
-            this.lblIntermediateStops.Text = "Intermediate Stops (Optional, comma-separated)";
-
+            lblIntermediateStops.AutoSize = true;
+            lblIntermediateStops.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblIntermediateStops.ForeColor = Color.FromArgb(30, 41, 59);
+            lblIntermediateStops.Location = new Point(40, 503);
+            lblIntermediateStops.Margin = new Padding(4, 0, 4, 0);
+            lblIntermediateStops.Name = "lblIntermediateStops";
+            lblIntermediateStops.Size = new Size(430, 25);
+            lblIntermediateStops.TabIndex = 18;
+            lblIntermediateStops.Text = "Intermediate Stops (Optional, comma-separated)";
             // 
             // txtIntermediateStops
             // 
-            this.txtIntermediateStops.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIntermediateStops.Location = new System.Drawing.Point(28, 322);
-            this.txtIntermediateStops.Name = "txtIntermediateStops";
-            this.txtIntermediateStops.PlaceholderText = "e.g. Bishoftu, Mojo, Batu";
-            this.txtIntermediateStops.Size = new System.Drawing.Size(504, 24);
-            this.txtIntermediateStops.TabIndex = 19;
-
+            txtIntermediateStops.Font = new Font("Segoe UI", 9.5F);
+            txtIntermediateStops.Location = new Point(40, 537);
+            txtIntermediateStops.Margin = new Padding(4, 5, 4, 5);
+            txtIntermediateStops.Name = "txtIntermediateStops";
+            txtIntermediateStops.PlaceholderText = "e.g. Bishoftu, Mojo, Batu";
+            txtIntermediateStops.Size = new Size(718, 33);
+            txtIntermediateStops.TabIndex = 19;
             // 
             // lblDescription
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
-            this.lblDescription.Location = new System.Drawing.Point(28, 358);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(183, 15);
-            this.lblDescription.TabIndex = 20;
-            this.lblDescription.Text = "Route Description / Operational Notes";
-
+            lblDescription.AutoSize = true;
+            lblDescription.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDescription.ForeColor = Color.FromArgb(30, 41, 59);
+            lblDescription.Location = new Point(40, 597);
+            lblDescription.Margin = new Padding(4, 0, 4, 0);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(339, 25);
+            lblDescription.TabIndex = 20;
+            lblDescription.Text = "Route Description / Operational Notes";
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescription.Location = new System.Drawing.Point(28, 378);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PlaceholderText = "Enter highway details, terrain remarks, or seasonal notes...";
-            this.txtDescription.Size = new System.Drawing.Size(504, 66);
-            this.txtDescription.TabIndex = 21;
-
+            txtDescription.Font = new Font("Segoe UI", 9.5F);
+            txtDescription.Location = new Point(40, 630);
+            txtDescription.Margin = new Padding(4, 5, 4, 5);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.PlaceholderText = "Enter highway details, terrain remarks, or seasonal notes...";
+            txtDescription.Size = new Size(718, 107);
+            txtDescription.TabIndex = 21;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(264, 468);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(148, 40);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "Save Route";
-            this.btnSave.UseVisualStyleBackColor = false;
-
+            btnSave.BackColor = Color.FromArgb(13, 94, 234);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(377, 780);
+            btnSave.Margin = new Padding(4, 5, 4, 5);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(211, 67);
+            btnSave.TabIndex = 22;
+            btnSave.Text = "Save Route";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
-            this.btnClear.Location = new System.Drawing.Point(148, 468);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(104, 40);
-            this.btnClear.TabIndex = 23;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-
+            btnClear.BackColor = Color.FromArgb(241, 245, 249);
+            btnClear.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnClear.ForeColor = Color.FromArgb(71, 85, 105);
+            btnClear.Location = new Point(211, 780);
+            btnClear.Margin = new Padding(4, 5, 4, 5);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(149, 67);
+            btnClear.TabIndex = 23;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
-            this.btnCancel.Location = new System.Drawing.Point(424, 468);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 40);
-            this.btnCancel.TabIndex = 24;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-
+            btnCancel.BackColor = Color.FromArgb(241, 245, 249);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnCancel.ForeColor = Color.FromArgb(71, 85, 105);
+            btnCancel.Location = new Point(606, 780);
+            btnCancel.Margin = new Padding(4, 5, 4, 5);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(154, 67);
+            btnCancel.TabIndex = 24;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             // 
             // RouteDialogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(560, 584);
-            this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelTitleBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(560, 584);
-            this.MinimumSize = new System.Drawing.Size(560, 584);
-            this.Name = "RouteDialogForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Route Registration";
-
-            this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
-            this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDistance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBaseFare)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(800, 973);
+            Controls.Add(panelContent);
+            Controls.Add(panelTitleBar);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            MaximumSize = new Size(800, 973);
+            MinimumSize = new Size(800, 973);
+            Name = "RouteDialogForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Route Registration";
+            panelTitleBar.ResumeLayout(false);
+            panelTitleBar.PerformLayout();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numDistance).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numBaseFare).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

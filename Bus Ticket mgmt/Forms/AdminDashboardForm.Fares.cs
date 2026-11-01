@@ -26,7 +26,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -66,15 +66,15 @@ namespace Bus_Ticket_mgmt.Forms
 
             header.Controls.Add(title);
             header.Controls.Add(btnDiscounts);
-            panelFareManagement.Controls.Add(header);
 
             // 2. Metrics Bar
             FlowLayoutPanel flowMetrics = new FlowLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
-                Padding = new Padding(20, 8, 20, 4),
-                BackColor = Color.FromArgb(248, 250, 252)
+                Height = 100,
+                Padding = new Padding(16, 8, 16, 8),
+                BackColor = Color.FromArgb(248, 250, 252),
+                WrapContents = false
             };
 
             var (m1, _, l1) = CreateMetricCard("Avg Route Tariff", "0 ETB", "Mean standard fare", Color.FromArgb(13, 94, 234));
@@ -92,8 +92,6 @@ namespace Bus_Ticket_mgmt.Forms
             var (m4, _, l4) = CreateMetricCard("Priced Routes", "0", "Standardized tariffs", Color.FromArgb(99, 102, 241));
             lblFareMetricTotalVal = l4;
             flowMetrics.Controls.Add(m4);
-
-            panelFareManagement.Controls.Add(flowMetrics);
 
             // 3. Toolbar
             Panel toolbar = new Panel
@@ -156,13 +154,12 @@ namespace Bus_Ticket_mgmt.Forms
             toolbar.Controls.Add(cmbFareStatusFilter);
             toolbar.Controls.Add(btnResetFares);
             toolbar.Controls.Add(lblFareCount);
-            panelFareManagement.Controls.Add(toolbar);
 
             // 4. DataGridView
             Panel gridContainer = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 4, 24, 60),
+                Padding = new Padding(24, 8, 24, 8),
                 BackColor = Color.FromArgb(248, 250, 252)
             };
 
@@ -188,7 +185,6 @@ namespace Bus_Ticket_mgmt.Forms
             dgvFares.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42);
 
             gridContainer.Controls.Add(dgvFares);
-            panelFareManagement.Controls.Add(gridContainer);
 
             // 5. Action Bar
             Panel actionBar = new Panel
@@ -236,7 +232,13 @@ namespace Bus_Ticket_mgmt.Forms
 
             actionBar.Controls.Add(btnEditFare);
             actionBar.Controls.Add(btnBulkTariff);
+
+            // Assembly in proper WinForms Docking Order (Fill first, Bottom second, Tops in reverse order):
+            panelFareManagement.Controls.Add(gridContainer);
             panelFareManagement.Controls.Add(actionBar);
+            panelFareManagement.Controls.Add(toolbar);
+            panelFareManagement.Controls.Add(flowMetrics);
+            panelFareManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelFareManagement);
         }
@@ -248,7 +250,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelFareManagement.BringToFront();
             SetActiveSidebarButton(btnNavFares);
             lblPageHeading.Text = "Fare & Tariff Management";
-            lblPageSubHeading.Text = "Manage route ticket tariffs, configure seasonal price rules, and maintain fare transparency.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Manage route ticket tariffs, configure seasonal price rules, and maintain fare transparency.";
             PopulateFaresList();
         }
 

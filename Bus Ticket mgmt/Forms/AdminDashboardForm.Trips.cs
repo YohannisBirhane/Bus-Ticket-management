@@ -29,7 +29,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -59,8 +59,8 @@ namespace Bus_Ticket_mgmt.Forms
                 ForeColor = Color.White,
                 BackColor = Color.FromArgb(15, 23, 42),
                 FlatStyle = FlatStyle.Flat,
-                Size = new Size(180, 36),
-                Location = new Point(header.Width - 210, 10),
+                Size = new Size(190, 36),
+                Location = new Point(header.Width - 215, 10),
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 Cursor = Cursors.Hand
             };
@@ -69,15 +69,15 @@ namespace Bus_Ticket_mgmt.Forms
 
             header.Controls.Add(title);
             header.Controls.Add(btnAddTripTop);
-            panelTripManagement.Controls.Add(header);
 
             // 2. Metrics Bar
             FlowLayoutPanel flowMetrics = new FlowLayoutPanel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
-                Padding = new Padding(20, 8, 20, 4),
-                BackColor = Color.FromArgb(248, 250, 252)
+                Height = 100,
+                Padding = new Padding(16, 8, 16, 8),
+                BackColor = Color.FromArgb(248, 250, 252),
+                WrapContents = false
             };
 
             var (m1, c1, l1) = CreateMetricCard("Total Trips", "0", "All system schedules", Color.FromArgb(13, 94, 234));
@@ -95,8 +95,6 @@ namespace Bus_Ticket_mgmt.Forms
             var (m4, c4, l4) = CreateMetricCard("Delayed / Need Attention", "0", "Impacted schedules", Color.FromArgb(245, 158, 11));
             lblTripMetricDelayedVal = l4;
             flowMetrics.Controls.Add(m4);
-
-            panelTripManagement.Controls.Add(flowMetrics);
 
             // 3. Toolbar (Search, Filter, Date)
             Panel toolbar = new Panel
@@ -181,13 +179,12 @@ namespace Bus_Ticket_mgmt.Forms
             toolbar.Controls.Add(dtpTripDateFilter);
             toolbar.Controls.Add(btnReset);
             toolbar.Controls.Add(lblTripCount);
-            panelTripManagement.Controls.Add(toolbar);
 
             // 4. DataGridView Container
             Panel gridContainer = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 4, 24, 60),
+                Padding = new Padding(24, 8, 24, 8),
                 BackColor = Color.FromArgb(248, 250, 252)
             };
 
@@ -213,7 +210,6 @@ namespace Bus_Ticket_mgmt.Forms
             dgvTripSchedules.DefaultCellStyle.SelectionForeColor = Color.FromArgb(15, 23, 42);
 
             gridContainer.Controls.Add(dgvTripSchedules);
-            panelTripManagement.Controls.Add(gridContainer);
 
             // 5. Bottom Action Bar
             Panel actionBar = new Panel
@@ -276,7 +272,13 @@ namespace Bus_Ticket_mgmt.Forms
             actionBar.Controls.Add(btnUpdateStatus);
             actionBar.Controls.Add(btnViewManifest);
             actionBar.Controls.Add(btnCancelTrip);
+
+            // Assembly in proper WinForms Docking Order (Fill first, Bottom second, Tops in reverse order):
+            panelTripManagement.Controls.Add(gridContainer);
             panelTripManagement.Controls.Add(actionBar);
+            panelTripManagement.Controls.Add(toolbar);
+            panelTripManagement.Controls.Add(flowMetrics);
+            panelTripManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelTripManagement);
         }
@@ -288,7 +290,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelTripManagement.BringToFront();
             SetActiveSidebarButton(btnNavTrips);
             lblPageHeading.Text = "Trip & Schedule Management";
-            lblPageSubHeading.Text = "Manage intercity departure times, assign drivers and buses, prevent conflicts, and track operational progress.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Manage intercity departure times, assign drivers and buses, prevent conflicts, and track operational progress.";
             PopulateTripsList();
         }
 
@@ -616,9 +618,9 @@ namespace Bus_Ticket_mgmt.Forms
         {
             Panel card = new Panel
             {
-                Size = new Size(220, 64),
+                Size = new Size(224, 84),
                 BackColor = Color.White,
-                Margin = new Padding(4, 2, 12, 2)
+                Margin = new Padding(0, 0, 14, 0)
             };
             card.Paint += (s, e) =>
             {
@@ -632,9 +634,9 @@ namespace Bus_Ticket_mgmt.Forms
             Label val = new Label
             {
                 Text = initialVal,
-                Font = new Font("Segoe UI", 16f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 18f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(15, 23, 42),
-                Location = new Point(14, 8),
+                Location = new Point(16, 12),
                 AutoSize = true
             };
 
@@ -642,8 +644,8 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Text = title,
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
-                ForeColor = Color.FromArgb(30, 41, 59),
-                Location = new Point(14, 36),
+                ForeColor = Color.FromArgb(71, 85, 105),
+                Location = new Point(16, 50),
                 AutoSize = true
             };
 

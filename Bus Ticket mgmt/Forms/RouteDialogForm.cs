@@ -263,5 +263,10 @@ namespace Bus_Ticket_mgmt.Forms
                 e.Graphics.DrawRectangle(borderPen, 0, 0, this.Width - 1, this.Height - 1);
             }
         }
+
+        private void numDistance_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

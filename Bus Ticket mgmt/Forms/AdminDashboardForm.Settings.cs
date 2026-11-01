@@ -29,7 +29,7 @@ namespace Bus_Ticket_mgmt.Forms
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.FromArgb(248, 250, 252),
-                AutoScroll = true,
+                AutoScroll = false,
                 Visible = false
             };
 
@@ -53,7 +53,6 @@ namespace Bus_Ticket_mgmt.Forms
             };
 
             header.Controls.Add(title);
-            panelSettingsManagement.Controls.Add(header);
 
             // 2. Main Content Flow
             FlowLayoutPanel flowContent = new FlowLayoutPanel
@@ -127,7 +126,9 @@ namespace Bus_Ticket_mgmt.Forms
             card3.Controls.Add(btnResetDefaults);
             flowContent.Controls.Add(card3);
 
+            // Assembly in proper WinForms Docking Order (Fill first, Top second):
             panelSettingsManagement.Controls.Add(flowContent);
+            panelSettingsManagement.Controls.Add(header);
 
             this.panelMain.Controls.Add(panelSettingsManagement);
         }
@@ -139,7 +140,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelSettingsManagement.BringToFront();
             SetActiveSidebarButton(btnNavSettings);
             lblPageHeading.Text = "System Configuration & Operational Policies";
-            lblPageSubHeading.Text = "Manage enterprise information, terminal hubs, refund policies, and notification rules.";
+            if (lblPageSubHeading != null) lblPageSubHeading.Text = "Manage enterprise information, terminal hubs, refund policies, and notification rules.";
             LoadSettings();
         }
 
