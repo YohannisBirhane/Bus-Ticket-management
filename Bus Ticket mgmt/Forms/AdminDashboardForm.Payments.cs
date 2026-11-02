@@ -203,7 +203,7 @@ namespace Bus_Ticket_mgmt.Forms
             Panel actionBar = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 52,
+                Height = 60,
                 BackColor = Color.White,
                 Padding = new Padding(24, 8, 24, 8)
             };
@@ -218,11 +218,11 @@ namespace Bus_Ticket_mgmt.Forms
             Button btnViewReceipt = new Button
             {
                 Text = "View Official Receipt",
-                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(30, 41, 59),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
-                Size = new Size(170, 36),
+                Size = new Size(195, 42),
                 Location = new Point(24, 8),
                 Cursor = Cursors.Hand
             };
@@ -232,12 +232,12 @@ namespace Bus_Ticket_mgmt.Forms
             Button btnRefund = new Button
             {
                 Text = "Process Refund",
-                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(51, 65, 85),
                 BackColor = Color.FromArgb(241, 245, 249),
                 FlatStyle = FlatStyle.Flat,
-                Size = new Size(150, 36),
-                Location = new Point(204, 8),
+                Size = new Size(175, 42),
+                Location = new Point(240, 8),
                 Cursor = Cursors.Hand
             };
             btnRefund.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);

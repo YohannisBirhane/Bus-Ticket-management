@@ -30,9 +30,6 @@ namespace Bus_Ticket_mgmt.Forms
         private Button btnNavBookings;
         private Button btnNavTickets;
         private Button btnNavPayments;
-        private Button btnNavStaff;
-        private Button btnNavFares;
-        private Button btnNavReports;
         private Button btnNavSettings;
         private Button btnNavLogout;
 
@@ -61,8 +58,6 @@ namespace Bus_Ticket_mgmt.Forms
         private GroupBox grpQuickActions;
         private Button btnQuickAddBus;
         private Button btnQuickNewTrip;
-        private Button btnQuickUpdateFares;
-        private Button btnQuickSalesReport;
 
         private GroupBox grpTripsSchedule;
         private DataGridView dgvTrips;
@@ -343,9 +338,6 @@ namespace Bus_Ticket_mgmt.Forms
             panelSidebar = new Panel();
             btnNavLogout = new Button();
             btnNavSettings = new Button();
-            btnNavReports = new Button();
-            btnNavFares = new Button();
-            btnNavStaff = new Button();
             btnNavPayments = new Button();
             btnNavTickets = new Button();
             btnNavBookings = new Button();
@@ -584,8 +576,6 @@ namespace Bus_Ticket_mgmt.Forms
             grpQuickActions = new GroupBox();
             btnQuickAddBus = new Button();
             btnQuickNewTrip = new Button();
-            btnQuickUpdateFares = new Button();
-            btnQuickSalesReport = new Button();
             grpTripsSchedule = new GroupBox();
             dgvTrips = new DataGridView();
             grpTicketVerify = new GroupBox();
@@ -777,9 +767,6 @@ namespace Bus_Ticket_mgmt.Forms
             panelSidebar.BackColor = Color.FromArgb(245, 247, 250);
             panelSidebar.Controls.Add(btnNavLogout);
             panelSidebar.Controls.Add(btnNavSettings);
-            panelSidebar.Controls.Add(btnNavReports);
-            panelSidebar.Controls.Add(btnNavFares);
-            panelSidebar.Controls.Add(btnNavStaff);
             panelSidebar.Controls.Add(btnNavPayments);
             panelSidebar.Controls.Add(btnNavTickets);
             panelSidebar.Controls.Add(btnNavBookings);
@@ -833,60 +820,6 @@ namespace Bus_Ticket_mgmt.Forms
             btnNavSettings.Text = "⚙️   Settings";
             btnNavSettings.TextAlign = ContentAlignment.MiddleLeft;
             btnNavSettings.UseVisualStyleBackColor = false;
-            // 
-            // btnNavReports
-            // 
-            btnNavReports.BackColor = Color.White;
-            btnNavReports.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
-            btnNavReports.FlatAppearance.BorderSize = 2;
-            btnNavReports.FlatStyle = FlatStyle.Flat;
-            btnNavReports.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnNavReports.ForeColor = Color.FromArgb(30, 41, 59);
-            btnNavReports.Location = new Point(14, 977);
-            btnNavReports.Margin = new Padding(4, 5, 4, 5);
-            btnNavReports.Name = "btnNavReports";
-            btnNavReports.Padding = new Padding(20, 0, 0, 0);
-            btnNavReports.Size = new Size(340, 75);
-            btnNavReports.TabIndex = 11;
-            btnNavReports.Text = "📈   Reports";
-            btnNavReports.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavReports.UseVisualStyleBackColor = false;
-            // 
-            // btnNavFares
-            // 
-            btnNavFares.BackColor = Color.White;
-            btnNavFares.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
-            btnNavFares.FlatAppearance.BorderSize = 2;
-            btnNavFares.FlatStyle = FlatStyle.Flat;
-            btnNavFares.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnNavFares.ForeColor = Color.FromArgb(30, 41, 59);
-            btnNavFares.Location = new Point(14, 885);
-            btnNavFares.Margin = new Padding(4, 5, 4, 5);
-            btnNavFares.Name = "btnNavFares";
-            btnNavFares.Padding = new Padding(20, 0, 0, 0);
-            btnNavFares.Size = new Size(340, 75);
-            btnNavFares.TabIndex = 10;
-            btnNavFares.Text = "🏷️   Fares";
-            btnNavFares.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavFares.UseVisualStyleBackColor = false;
-            // 
-            // btnNavStaff
-            // 
-            btnNavStaff.BackColor = Color.White;
-            btnNavStaff.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
-            btnNavStaff.FlatAppearance.BorderSize = 2;
-            btnNavStaff.FlatStyle = FlatStyle.Flat;
-            btnNavStaff.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnNavStaff.ForeColor = Color.FromArgb(30, 41, 59);
-            btnNavStaff.Location = new Point(14, 793);
-            btnNavStaff.Margin = new Padding(4, 5, 4, 5);
-            btnNavStaff.Name = "btnNavStaff";
-            btnNavStaff.Padding = new Padding(20, 0, 0, 0);
-            btnNavStaff.Size = new Size(340, 75);
-            btnNavStaff.TabIndex = 9;
-            btnNavStaff.Text = "👔   Staff";
-            btnNavStaff.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavStaff.UseVisualStyleBackColor = false;
             // 
             // btnNavPayments
             // 
@@ -3665,8 +3598,6 @@ namespace Bus_Ticket_mgmt.Forms
             grpQuickActions.BackColor = Color.White;
             grpQuickActions.Controls.Add(btnQuickAddBus);
             grpQuickActions.Controls.Add(btnQuickNewTrip);
-            grpQuickActions.Controls.Add(btnQuickUpdateFares);
-            grpQuickActions.Controls.Add(btnQuickSalesReport);
             grpQuickActions.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold);
             grpQuickActions.ForeColor = Color.FromArgb(15, 23, 42);
             grpQuickActions.Location = new Point(4, 225);
@@ -3707,36 +3638,6 @@ namespace Bus_Ticket_mgmt.Forms
             btnQuickNewTrip.TabIndex = 1;
             btnQuickNewTrip.Text = "Schedule Trip";
             btnQuickNewTrip.UseVisualStyleBackColor = false;
-            // 
-            // btnQuickUpdateFares
-            // 
-            btnQuickUpdateFares.BackColor = Color.FromArgb(241, 245, 249);
-            btnQuickUpdateFares.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
-            btnQuickUpdateFares.FlatStyle = FlatStyle.Flat;
-            btnQuickUpdateFares.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnQuickUpdateFares.ForeColor = Color.FromArgb(30, 41, 59);
-            btnQuickUpdateFares.Location = new Point(686, 50);
-            btnQuickUpdateFares.Margin = new Padding(4, 5, 4, 5);
-            btnQuickUpdateFares.Name = "btnQuickUpdateFares";
-            btnQuickUpdateFares.Size = new Size(300, 63);
-            btnQuickUpdateFares.TabIndex = 2;
-            btnQuickUpdateFares.Text = "Set Ticket Fares";
-            btnQuickUpdateFares.UseVisualStyleBackColor = false;
-            // 
-            // btnQuickSalesReport
-            // 
-            btnQuickSalesReport.BackColor = Color.FromArgb(241, 245, 249);
-            btnQuickSalesReport.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
-            btnQuickSalesReport.FlatStyle = FlatStyle.Flat;
-            btnQuickSalesReport.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnQuickSalesReport.ForeColor = Color.FromArgb(30, 41, 59);
-            btnQuickSalesReport.Location = new Point(1014, 50);
-            btnQuickSalesReport.Margin = new Padding(4, 5, 4, 5);
-            btnQuickSalesReport.Name = "btnQuickSalesReport";
-            btnQuickSalesReport.Size = new Size(300, 63);
-            btnQuickSalesReport.TabIndex = 3;
-            btnQuickSalesReport.Text = "Generate Report";
-            btnQuickSalesReport.UseVisualStyleBackColor = false;
             // 
             // grpTripsSchedule
             // 

@@ -1,14 +1,2884 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
 namespace Bus_Ticket_mgmt.Forms
 {
     partial class TicketOfficerDashboardForm
     {
         private System.ComponentModel.IContainer components = null;
 
-        // Top Navigation Bar
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            btnNavLogout = new Button();
+            btnNavHistory = new Button();
+            btnNavPayments = new Button();
+            btnNavTickets = new Button();
+            btnNavBookings = new Button();
+            btnNavPassengers = new Button();
+            panelPassengers = new Panel();
+            panelPassengerActions = new Panel();
+            lblPassengerCount = new Label();
+            btnViewPassenger = new Button();
+            btnEditPassenger = new Button();
+            lvPassengers = new ListView();
+            colPassId = new ColumnHeader();
+            colPassFullName = new ColumnHeader();
+            colPassUsername = new ColumnHeader();
+            colPassEmail = new ColumnHeader();
+            colPassPhone = new ColumnHeader();
+            colPassAddress = new ColumnHeader();
+            colPassStatus = new ColumnHeader();
+            colPassCreatedDate = new ColumnHeader();
+            panelPassengersToolbar = new Panel();
+            btnRefreshPassengers = new Button();
+            cmbPassengerStatusFilter = new ComboBox();
+            txtSearchPassenger = new TextBox();
+            flowPassengerMetrics = new FlowLayoutPanel();
+            cardTotalPassengers = new Panel();
+            lblMetricTotalPassengersVal = new Label();
+            lblMetricTotalPassengersTitle = new Label();
+            cardActivePassengers = new Panel();
+            lblMetricActivePassengersVal = new Label();
+            lblMetricActivePassengersTitle = new Label();
+            cardNewPassengersToday = new Panel();
+            lblMetricNewPassengersTodayVal = new Label();
+            lblMetricNewPassengersTodayTitle = new Label();
+            panelPassengersHeader = new Panel();
+            btnAddPassenger = new Button();
+            lblPassengersSubtitle = new Label();
+            lblPassengersTitle = new Label();
+            panelBookingHistory = new Panel();
+            panelHistoryActions = new Panel();
+            lblHistoryCount = new Label();
+            btnPrintHistoryPass = new Button();
+            btnViewHistoryDetails = new Button();
+            lvBookingHistory = new ListView();
+            colHistBookingId = new ColumnHeader();
+            colHistPassengerName = new ColumnHeader();
+            colHistPassengerPhone = new ColumnHeader();
+            colHistRoute = new ColumnHeader();
+            colHistTravelDate = new ColumnHeader();
+            colHistDepartureTime = new ColumnHeader();
+            colHistSeats = new ColumnHeader();
+            colHistTotalAmount = new ColumnHeader();
+            colHistBookingStatus = new ColumnHeader();
+            colHistPaymentStatus = new ColumnHeader();
+            panelHistoryToolbar = new Panel();
+            btnRefreshHistory = new Button();
+            cmbHistoryStatusFilter = new ComboBox();
+            txtSearchHistory = new TextBox();
+            flowHistoryMetrics = new FlowLayoutPanel();
+            cardHistoryTotal = new Panel();
+            lblMetricHistoryTotalVal = new Label();
+            lblMetricHistoryTotalTitle = new Label();
+            cardHistoryCompleted = new Panel();
+            lblMetricHistoryCompletedVal = new Label();
+            lblMetricHistoryCompletedTitle = new Label();
+            cardHistoryCancelled = new Panel();
+            lblMetricHistoryCancelledVal = new Label();
+            lblMetricHistoryCancelledTitle = new Label();
+            panelHistoryHeader = new Panel();
+            lblHistoryTitle = new Label();
+            panelTopBar = new Panel();
+            lblAppIcon = new Label();
+            lblPortalTitle = new Label();
+            panelOfficerProfile = new Panel();
+            lblOfficerName = new Label();
+            lblOfficerRole = new Label();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
+            btnClose = new Button();
+            panelSidebar = new Panel();
+            lblNavHeader = new Label();
+            panelMain = new Panel();
+            panelPayments = new Panel();
+            panelPaymentActions = new Panel();
+            lblPaymentCount = new Label();
+            btnProcessRefund = new Button();
+            btnRecordPayment = new Button();
+            btnPrintReceipt = new Button();
+            lvPayments = new ListView();
+            colPayReceipt = new ColumnHeader();
+            colPayBooking = new ColumnHeader();
+            colPayTicket = new ColumnHeader();
+            colPayPassenger = new ColumnHeader();
+            colPayRoute = new ColumnHeader();
+            colPayAmount = new ColumnHeader();
+            colPayMethod = new ColumnHeader();
+            colPayStatus = new ColumnHeader();
+            colPayDate = new ColumnHeader();
+            colPayCashier = new ColumnHeader();
+            panelPaymentsToolbar = new Panel();
+            btnRefreshPayments = new Button();
+            cmbPaymentStatusFilter = new ComboBox();
+            cmbPaymentMethodFilter = new ComboBox();
+            txtSearchPayments = new TextBox();
+            flowPaymentMetrics = new FlowLayoutPanel();
+            cardPayTotal = new Panel();
+            lblPayTotalVal = new Label();
+            lblPayTotalTitle = new Label();
+            cardPayCash = new Panel();
+            lblPayCashVal = new Label();
+            lblPayCashTitle = new Label();
+            cardPayDigital = new Panel();
+            lblPayDigitalVal = new Label();
+            lblPayDigitalTitle = new Label();
+            cardPayRefunds = new Panel();
+            lblPayRefundsVal = new Label();
+            lblPayRefundsTitle = new Label();
+            panelPaymentsHeader = new Panel();
+            lblPaymentsSubtitle = new Label();
+            lblPaymentsTitle = new Label();
+            panelTicketManagement = new Panel();
+            panelTicketActions = new Panel();
+            lblTicketCount = new Label();
+            btnCancelTicketAction = new Button();
+            btnPrintTicketPass = new Button();
+            btnVerifyAndBoard = new Button();
+            btnViewTicketDetails = new Button();
+            lvTickets = new ListView();
+            colTicketId = new ColumnHeader();
+            colTicketBookingRef = new ColumnHeader();
+            colTicketPassenger = new ColumnHeader();
+            colTicketPhone = new ColumnHeader();
+            colTicketRoute = new ColumnHeader();
+            colTicketDate = new ColumnHeader();
+            colTicketTime = new ColumnHeader();
+            colTicketSeat = new ColumnHeader();
+            colTicketGate = new ColumnHeader();
+            colTicketBus = new ColumnHeader();
+            colTicketStatus = new ColumnHeader();
+            panelTicketsToolbar = new Panel();
+            btnResetTicketFilters = new Button();
+            dtpTicketFilterDate = new DateTimePicker();
+            chkEnableTicketDateFilter = new CheckBox();
+            cmbTicketRouteFilter = new ComboBox();
+            cmbTicketStatusFilter = new ComboBox();
+            txtSearchTicketFilter = new TextBox();
+            flowTicketMetrics = new FlowLayoutPanel();
+            cardTotalTickets = new Panel();
+            lblMetricTotalTicketsVal = new Label();
+            lblMetricTotalTicketsTitle = new Label();
+            cardValidTickets = new Panel();
+            lblMetricValidTicketsVal = new Label();
+            lblMetricValidTicketsTitle = new Label();
+            cardBoardedTickets = new Panel();
+            lblMetricBoardedTicketsVal = new Label();
+            lblMetricBoardedTicketsTitle = new Label();
+            cardCancelledTickets = new Panel();
+            lblMetricCancelledTicketsVal = new Label();
+            lblMetricCancelledTicketsTitle = new Label();
+            cardTodayTickets = new Panel();
+            lblMetricTodayTicketsVal = new Label();
+            lblMetricTodayTicketsTitle = new Label();
+            panelTicketsHeader = new Panel();
+            btnVerifyBoardModal = new Button();
+            btnNewTicket = new Button();
+            lblTicketsSubtitle = new Label();
+            lblTicketsTitle = new Label();
+            panelBookingManagement = new Panel();
+            panelBookingActions = new Panel();
+            lblBookingCount = new Label();
+            btnPrintTicket = new Button();
+            btnCancelBookingAction = new Button();
+            btnModifyBooking = new Button();
+            btnViewBookingDetails = new Button();
+            lvBookings = new ListView();
+            colBookingId = new ColumnHeader();
+            colPassengerName = new ColumnHeader();
+            colPassengerPhone = new ColumnHeader();
+            colBookingRoute = new ColumnHeader();
+            colTravelDate = new ColumnHeader();
+            colDepartureTime = new ColumnHeader();
+            colSeats = new ColumnHeader();
+            colTotalAmount = new ColumnHeader();
+            colBookingStatus = new ColumnHeader();
+            colPaymentStatus = new ColumnHeader();
+            panelBookingsToolbar = new Panel();
+            btnResetBookingFilters = new Button();
+            dtpBookingFilterDate = new DateTimePicker();
+            chkEnableDateFilter = new CheckBox();
+            cmbBookingRouteFilter = new ComboBox();
+            cmbBookingStatusFilter = new ComboBox();
+            txtSearchBooking = new TextBox();
+            flowBookingMetrics = new FlowLayoutPanel();
+            cardTotalBookings = new Panel();
+            lblMetricTotalBookingsVal = new Label();
+            lblMetricTotalBookingsTitle = new Label();
+            cardConfirmedBookings = new Panel();
+            lblMetricConfirmedBookingsVal = new Label();
+            lblMetricConfirmedBookingsTitle = new Label();
+            cardPendingBookings = new Panel();
+            lblMetricPendingBookingsVal = new Label();
+            lblMetricPendingBookingsTitle = new Label();
+            cardCancelledBookings = new Panel();
+            lblMetricCancelledBookingsVal = new Label();
+            lblMetricCancelledBookingsTitle = new Label();
+            cardTodayBookings = new Panel();
+            lblMetricTodayBookingsVal = new Label();
+            lblMetricTodayBookingsTitle = new Label();
+            panelBookingsHeader = new Panel();
+            btnNewBooking = new Button();
+            lblBookingsSubtitle = new Label();
+            lblBookingsTitle = new Label();
+            panelHeaderInfo = new Panel();
+            lblPageHeading = new Label();
+            lblMetricTotalBookingsSub = new Label();
+            lblMetricConfirmedBookingsSub = new Label();
+            lblMetricPendingBookingsSub = new Label();
+            lblMetricCancelledBookingsSub = new Label();
+            lblMetricTodayBookingsSub = new Label();
+            lblMetricTotalTicketsSub = new Label();
+            lblMetricValidTicketsSub = new Label();
+            lblMetricBoardedTicketsSub = new Label();
+            lblMetricCancelledTicketsSub = new Label();
+            lblMetricTodayTicketsSub = new Label();
+            colManTicketId = new ColumnHeader();
+            colManBookingId = new ColumnHeader();
+            panelPassengers.SuspendLayout();
+            panelPassengerActions.SuspendLayout();
+            panelPassengersToolbar.SuspendLayout();
+            flowPassengerMetrics.SuspendLayout();
+            cardTotalPassengers.SuspendLayout();
+            cardActivePassengers.SuspendLayout();
+            cardNewPassengersToday.SuspendLayout();
+            panelPassengersHeader.SuspendLayout();
+            panelBookingHistory.SuspendLayout();
+            panelHistoryActions.SuspendLayout();
+            panelHistoryToolbar.SuspendLayout();
+            flowHistoryMetrics.SuspendLayout();
+            cardHistoryTotal.SuspendLayout();
+            cardHistoryCompleted.SuspendLayout();
+            cardHistoryCancelled.SuspendLayout();
+            panelHistoryHeader.SuspendLayout();
+            panelTopBar.SuspendLayout();
+            panelOfficerProfile.SuspendLayout();
+            panelSidebar.SuspendLayout();
+            panelMain.SuspendLayout();
+            panelPayments.SuspendLayout();
+            panelPaymentActions.SuspendLayout();
+            panelPaymentsToolbar.SuspendLayout();
+            flowPaymentMetrics.SuspendLayout();
+            cardPayTotal.SuspendLayout();
+            cardPayCash.SuspendLayout();
+            cardPayDigital.SuspendLayout();
+            cardPayRefunds.SuspendLayout();
+            panelPaymentsHeader.SuspendLayout();
+            panelTicketManagement.SuspendLayout();
+            panelTicketActions.SuspendLayout();
+            panelTicketsToolbar.SuspendLayout();
+            flowTicketMetrics.SuspendLayout();
+            cardTotalTickets.SuspendLayout();
+            cardValidTickets.SuspendLayout();
+            cardBoardedTickets.SuspendLayout();
+            cardCancelledTickets.SuspendLayout();
+            cardTodayTickets.SuspendLayout();
+            panelTicketsHeader.SuspendLayout();
+            panelBookingManagement.SuspendLayout();
+            panelBookingActions.SuspendLayout();
+            panelBookingsToolbar.SuspendLayout();
+            flowBookingMetrics.SuspendLayout();
+            cardTotalBookings.SuspendLayout();
+            cardConfirmedBookings.SuspendLayout();
+            cardPendingBookings.SuspendLayout();
+            cardCancelledBookings.SuspendLayout();
+            cardTodayBookings.SuspendLayout();
+            panelBookingsHeader.SuspendLayout();
+            panelHeaderInfo.SuspendLayout();
+            SuspendLayout();
+            // 
+            // btnNavLogout
+            // 
+            btnNavLogout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnNavLogout.BackColor = Color.White;
+            btnNavLogout.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
+            btnNavLogout.FlatAppearance.BorderSize = 2;
+            btnNavLogout.FlatStyle = FlatStyle.Flat;
+            btnNavLogout.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavLogout.ForeColor = Color.FromArgb(71, 85, 105);
+            btnNavLogout.Location = new Point(20, 920);
+            btnNavLogout.Margin = new Padding(4, 5, 4, 5);
+            btnNavLogout.Name = "btnNavLogout";
+            btnNavLogout.Padding = new Padding(29, 0, 0, 0);
+            btnNavLogout.Size = new Size(360, 100);
+            btnNavLogout.TabIndex = 0;
+            btnNavLogout.Text = "🚪   Sign Out";
+            btnNavLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavLogout.UseVisualStyleBackColor = false;
+            // 
+            // btnNavHistory
+            // 
+            btnNavHistory.BackColor = Color.White;
+            btnNavHistory.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
+            btnNavHistory.FlatAppearance.BorderSize = 2;
+            btnNavHistory.FlatStyle = FlatStyle.Flat;
+            btnNavHistory.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavHistory.ForeColor = Color.FromArgb(30, 41, 59);
+            btnNavHistory.Location = new Point(20, 600);
+            btnNavHistory.Margin = new Padding(4, 5, 4, 5);
+            btnNavHistory.Name = "btnNavHistory";
+            btnNavHistory.Padding = new Padding(29, 0, 0, 0);
+            btnNavHistory.Size = new Size(360, 100);
+            btnNavHistory.TabIndex = 1;
+            btnNavHistory.Text = "📋   Booking History";
+            btnNavHistory.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavHistory.UseVisualStyleBackColor = false;
+            // 
+            // btnNavPayments
+            // 
+            btnNavPayments.BackColor = Color.White;
+            btnNavPayments.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
+            btnNavPayments.FlatAppearance.BorderSize = 2;
+            btnNavPayments.FlatStyle = FlatStyle.Flat;
+            btnNavPayments.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavPayments.ForeColor = Color.FromArgb(30, 41, 59);
+            btnNavPayments.Location = new Point(20, 467);
+            btnNavPayments.Margin = new Padding(4, 5, 4, 5);
+            btnNavPayments.Name = "btnNavPayments";
+            btnNavPayments.Padding = new Padding(29, 0, 0, 0);
+            btnNavPayments.Size = new Size(360, 100);
+            btnNavPayments.TabIndex = 2;
+            btnNavPayments.Text = "💳   Payments";
+            btnNavPayments.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavPayments.UseVisualStyleBackColor = false;
+            // 
+            // btnNavTickets
+            // 
+            btnNavTickets.BackColor = Color.White;
+            btnNavTickets.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
+            btnNavTickets.FlatAppearance.BorderSize = 2;
+            btnNavTickets.FlatStyle = FlatStyle.Flat;
+            btnNavTickets.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavTickets.ForeColor = Color.FromArgb(30, 41, 59);
+            btnNavTickets.Location = new Point(20, 333);
+            btnNavTickets.Margin = new Padding(4, 5, 4, 5);
+            btnNavTickets.Name = "btnNavTickets";
+            btnNavTickets.Padding = new Padding(29, 0, 0, 0);
+            btnNavTickets.Size = new Size(360, 100);
+            btnNavTickets.TabIndex = 3;
+            btnNavTickets.Text = "🏷️   Tickets";
+            btnNavTickets.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavTickets.UseVisualStyleBackColor = false;
+            // 
+            // btnNavBookings
+            // 
+            btnNavBookings.BackColor = Color.White;
+            btnNavBookings.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
+            btnNavBookings.FlatAppearance.BorderSize = 2;
+            btnNavBookings.FlatStyle = FlatStyle.Flat;
+            btnNavBookings.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavBookings.ForeColor = Color.FromArgb(30, 41, 59);
+            btnNavBookings.Location = new Point(20, 200);
+            btnNavBookings.Margin = new Padding(4, 5, 4, 5);
+            btnNavBookings.Name = "btnNavBookings";
+            btnNavBookings.Padding = new Padding(29, 0, 0, 0);
+            btnNavBookings.Size = new Size(360, 100);
+            btnNavBookings.TabIndex = 4;
+            btnNavBookings.Text = "🎫   Bookings";
+            btnNavBookings.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavBookings.UseVisualStyleBackColor = false;
+            // 
+            // btnNavPassengers
+            // 
+            btnNavPassengers.BackColor = Color.White;
+            btnNavPassengers.FlatAppearance.BorderColor = Color.FromArgb(15, 23, 42);
+            btnNavPassengers.FlatAppearance.BorderSize = 2;
+            btnNavPassengers.FlatStyle = FlatStyle.Flat;
+            btnNavPassengers.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnNavPassengers.ForeColor = Color.FromArgb(30, 41, 59);
+            btnNavPassengers.Location = new Point(20, 67);
+            btnNavPassengers.Margin = new Padding(4, 5, 4, 5);
+            btnNavPassengers.Name = "btnNavPassengers";
+            btnNavPassengers.Padding = new Padding(29, 0, 0, 0);
+            btnNavPassengers.Size = new Size(360, 100);
+            btnNavPassengers.TabIndex = 5;
+            btnNavPassengers.Text = "👥   Passengers";
+            btnNavPassengers.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavPassengers.UseVisualStyleBackColor = false;
+            // 
+            // panelPassengers
+            // 
+            panelPassengers.AutoScroll = true;
+            panelPassengers.Controls.Add(panelPassengerActions);
+            panelPassengers.Controls.Add(lvPassengers);
+            panelPassengers.Controls.Add(panelPassengersToolbar);
+            panelPassengers.Controls.Add(flowPassengerMetrics);
+            panelPassengers.Controls.Add(panelPassengersHeader);
+            panelPassengers.Dock = DockStyle.Fill;
+            panelPassengers.Location = new Point(29, 120);
+            panelPassengers.Margin = new Padding(4, 5, 4, 5);
+            panelPassengers.Name = "panelPassengers";
+            panelPassengers.Size = new Size(1488, 880);
+            panelPassengers.TabIndex = 5;
+            panelPassengers.Visible = false;
+            // 
+            // panelPassengerActions
+            // 
+            panelPassengerActions.BackColor = Color.White;
+            panelPassengerActions.BorderStyle = BorderStyle.FixedSingle;
+            panelPassengerActions.Controls.Add(lblPassengerCount);
+            panelPassengerActions.Controls.Add(btnViewPassenger);
+            panelPassengerActions.Controls.Add(btnEditPassenger);
+            panelPassengerActions.Location = new Point(0, 997);
+            panelPassengerActions.Margin = new Padding(4, 5, 4, 5);
+            panelPassengerActions.Name = "panelPassengerActions";
+            panelPassengerActions.Size = new Size(1392, 79);
+            panelPassengerActions.TabIndex = 0;
+            // 
+            // lblPassengerCount
+            // 
+            lblPassengerCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblPassengerCount.Font = new Font("Segoe UI", 9F);
+            lblPassengerCount.ForeColor = Color.FromArgb(100, 116, 139);
+            lblPassengerCount.Location = new Point(1020, 23);
+            lblPassengerCount.Margin = new Padding(4, 0, 4, 0);
+            lblPassengerCount.Name = "lblPassengerCount";
+            lblPassengerCount.Size = new Size(350, 33);
+            lblPassengerCount.TabIndex = 0;
+            lblPassengerCount.Text = "Showing 0 passengers";
+            lblPassengerCount.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnViewPassenger
+            // 
+            btnViewPassenger.BackColor = Color.FromArgb(241, 245, 249);
+            btnViewPassenger.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnViewPassenger.FlatStyle = FlatStyle.Flat;
+            btnViewPassenger.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnViewPassenger.ForeColor = Color.FromArgb(30, 41, 59);
+            btnViewPassenger.Location = new Point(240, 13);
+            btnViewPassenger.Margin = new Padding(4, 5, 4, 5);
+            btnViewPassenger.Name = "btnViewPassenger";
+            btnViewPassenger.Size = new Size(210, 53);
+            btnViewPassenger.TabIndex = 1;
+            btnViewPassenger.Text = "🔍  View Details";
+            btnViewPassenger.UseVisualStyleBackColor = false;
+            // 
+            // btnEditPassenger
+            // 
+            btnEditPassenger.BackColor = Color.FromArgb(241, 245, 249);
+            btnEditPassenger.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnEditPassenger.FlatStyle = FlatStyle.Flat;
+            btnEditPassenger.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnEditPassenger.ForeColor = Color.FromArgb(30, 41, 59);
+            btnEditPassenger.Location = new Point(17, 13);
+            btnEditPassenger.Margin = new Padding(4, 5, 4, 5);
+            btnEditPassenger.Name = "btnEditPassenger";
+            btnEditPassenger.Size = new Size(210, 53);
+            btnEditPassenger.TabIndex = 2;
+            btnEditPassenger.Text = "✏️  Update Info";
+            btnEditPassenger.UseVisualStyleBackColor = false;
+            // 
+            // lvPassengers
+            // 
+            lvPassengers.BorderStyle = BorderStyle.FixedSingle;
+            lvPassengers.Columns.AddRange(new ColumnHeader[] { colPassId, colPassFullName, colPassUsername, colPassEmail, colPassPhone, colPassAddress, colPassStatus, colPassCreatedDate });
+            lvPassengers.FullRowSelect = true;
+            lvPassengers.GridLines = true;
+            lvPassengers.Location = new Point(0, 350);
+            lvPassengers.Margin = new Padding(4, 5, 4, 5);
+            lvPassengers.MultiSelect = false;
+            lvPassengers.Name = "lvPassengers";
+            lvPassengers.Size = new Size(1391, 631);
+            lvPassengers.TabIndex = 1;
+            lvPassengers.UseCompatibleStateImageBehavior = false;
+            lvPassengers.View = View.Details;
+            // 
+            // colPassId
+            // 
+            colPassId.Text = "Passenger ID";
+            colPassId.Width = 120;
+            // 
+            // colPassFullName
+            // 
+            colPassFullName.Text = "Full Name";
+            colPassFullName.Width = 180;
+            // 
+            // colPassUsername
+            // 
+            colPassUsername.Text = "Username";
+            colPassUsername.Width = 130;
+            // 
+            // colPassEmail
+            // 
+            colPassEmail.Text = "Email Address";
+            colPassEmail.Width = 180;
+            // 
+            // colPassPhone
+            // 
+            colPassPhone.Text = "Phone Number";
+            colPassPhone.Width = 150;
+            // 
+            // colPassAddress
+            // 
+            colPassAddress.Text = "Address / City";
+            colPassAddress.Width = 180;
+            // 
+            // colPassStatus
+            // 
+            colPassStatus.Text = "Status";
+            colPassStatus.Width = 100;
+            // 
+            // colPassCreatedDate
+            // 
+            colPassCreatedDate.Text = "Registered Date";
+            colPassCreatedDate.Width = 140;
+            // 
+            // panelPassengersToolbar
+            // 
+            panelPassengersToolbar.BackColor = Color.White;
+            panelPassengersToolbar.BorderStyle = BorderStyle.FixedSingle;
+            panelPassengersToolbar.Controls.Add(btnRefreshPassengers);
+            panelPassengersToolbar.Controls.Add(cmbPassengerStatusFilter);
+            panelPassengersToolbar.Controls.Add(txtSearchPassenger);
+            panelPassengersToolbar.Location = new Point(0, 257);
+            panelPassengersToolbar.Margin = new Padding(4, 5, 4, 5);
+            panelPassengersToolbar.Name = "panelPassengersToolbar";
+            panelPassengersToolbar.Size = new Size(1392, 79);
+            panelPassengersToolbar.TabIndex = 2;
+            // 
+            // btnRefreshPassengers
+            // 
+            btnRefreshPassengers.BackColor = Color.White;
+            btnRefreshPassengers.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnRefreshPassengers.FlatStyle = FlatStyle.Flat;
+            btnRefreshPassengers.Location = new Point(800, 18);
+            btnRefreshPassengers.Margin = new Padding(4, 5, 4, 5);
+            btnRefreshPassengers.Name = "btnRefreshPassengers";
+            btnRefreshPassengers.Size = new Size(120, 43);
+            btnRefreshPassengers.TabIndex = 0;
+            btnRefreshPassengers.Text = "Refresh";
+            btnRefreshPassengers.UseVisualStyleBackColor = false;
+            // 
+            // cmbPassengerStatusFilter
+            // 
+            cmbPassengerStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPassengerStatusFilter.FormattingEnabled = true;
+            cmbPassengerStatusFilter.Items.AddRange(new object[] { "All Statuses", "Active", "Inactive" });
+            cmbPassengerStatusFilter.Location = new Point(500, 20);
+            cmbPassengerStatusFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbPassengerStatusFilter.Name = "cmbPassengerStatusFilter";
+            cmbPassengerStatusFilter.Size = new Size(260, 33);
+            cmbPassengerStatusFilter.TabIndex = 1;
+            // 
+            // txtSearchPassenger
+            // 
+            txtSearchPassenger.Location = new Point(20, 20);
+            txtSearchPassenger.Margin = new Padding(4, 5, 4, 5);
+            txtSearchPassenger.Name = "txtSearchPassenger";
+            txtSearchPassenger.PlaceholderText = "Search by ID, name, phone, email...";
+            txtSearchPassenger.Size = new Size(450, 31);
+            txtSearchPassenger.TabIndex = 2;
+            // 
+            // flowPassengerMetrics
+            // 
+            flowPassengerMetrics.Controls.Add(cardTotalPassengers);
+            flowPassengerMetrics.Controls.Add(cardActivePassengers);
+            flowPassengerMetrics.Controls.Add(cardNewPassengersToday);
+            flowPassengerMetrics.Location = new Point(0, 107);
+            flowPassengerMetrics.Margin = new Padding(4, 5, 4, 5);
+            flowPassengerMetrics.Name = "flowPassengerMetrics";
+            flowPassengerMetrics.Size = new Size(1407, 147);
+            flowPassengerMetrics.TabIndex = 3;
+            // 
+            // cardTotalPassengers
+            // 
+            cardTotalPassengers.BackColor = Color.White;
+            cardTotalPassengers.BorderStyle = BorderStyle.FixedSingle;
+            cardTotalPassengers.Controls.Add(lblMetricTotalPassengersVal);
+            cardTotalPassengers.Controls.Add(lblMetricTotalPassengersTitle);
+            cardTotalPassengers.Location = new Point(0, 0);
+            cardTotalPassengers.Margin = new Padding(0, 0, 20, 0);
+            cardTotalPassengers.Name = "cardTotalPassengers";
+            cardTotalPassengers.Size = new Size(319, 139);
+            cardTotalPassengers.TabIndex = 0;
+            // 
+            // lblMetricTotalPassengersVal
+            // 
+            lblMetricTotalPassengersVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricTotalPassengersVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricTotalPassengersVal.Location = new Point(16, 13);
+            lblMetricTotalPassengersVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalPassengersVal.Name = "lblMetricTotalPassengersVal";
+            lblMetricTotalPassengersVal.Size = new Size(286, 53);
+            lblMetricTotalPassengersVal.TabIndex = 0;
+            lblMetricTotalPassengersVal.Text = "0";
+            // 
+            // lblMetricTotalPassengersTitle
+            // 
+            lblMetricTotalPassengersTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricTotalPassengersTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricTotalPassengersTitle.Location = new Point(17, 73);
+            lblMetricTotalPassengersTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalPassengersTitle.Name = "lblMetricTotalPassengersTitle";
+            lblMetricTotalPassengersTitle.Size = new Size(286, 30);
+            lblMetricTotalPassengersTitle.TabIndex = 1;
+            lblMetricTotalPassengersTitle.Text = "TOTAL PASSENGERS";
+            // 
+            // cardActivePassengers
+            // 
+            cardActivePassengers.BackColor = Color.White;
+            cardActivePassengers.BorderStyle = BorderStyle.FixedSingle;
+            cardActivePassengers.Controls.Add(lblMetricActivePassengersVal);
+            cardActivePassengers.Controls.Add(lblMetricActivePassengersTitle);
+            cardActivePassengers.Location = new Point(339, 0);
+            cardActivePassengers.Margin = new Padding(0, 0, 20, 0);
+            cardActivePassengers.Name = "cardActivePassengers";
+            cardActivePassengers.Size = new Size(319, 139);
+            cardActivePassengers.TabIndex = 1;
+            // 
+            // lblMetricActivePassengersVal
+            // 
+            lblMetricActivePassengersVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricActivePassengersVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricActivePassengersVal.Location = new Point(16, 13);
+            lblMetricActivePassengersVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricActivePassengersVal.Name = "lblMetricActivePassengersVal";
+            lblMetricActivePassengersVal.Size = new Size(286, 53);
+            lblMetricActivePassengersVal.TabIndex = 0;
+            lblMetricActivePassengersVal.Text = "0";
+            // 
+            // lblMetricActivePassengersTitle
+            // 
+            lblMetricActivePassengersTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricActivePassengersTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricActivePassengersTitle.Location = new Point(17, 73);
+            lblMetricActivePassengersTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricActivePassengersTitle.Name = "lblMetricActivePassengersTitle";
+            lblMetricActivePassengersTitle.Size = new Size(286, 30);
+            lblMetricActivePassengersTitle.TabIndex = 1;
+            lblMetricActivePassengersTitle.Text = "ACTIVE ACCOUNTS";
+            // 
+            // cardNewPassengersToday
+            // 
+            cardNewPassengersToday.BackColor = Color.White;
+            cardNewPassengersToday.BorderStyle = BorderStyle.FixedSingle;
+            cardNewPassengersToday.Controls.Add(lblMetricNewPassengersTodayVal);
+            cardNewPassengersToday.Controls.Add(lblMetricNewPassengersTodayTitle);
+            cardNewPassengersToday.Location = new Point(678, 0);
+            cardNewPassengersToday.Margin = new Padding(0, 0, 20, 0);
+            cardNewPassengersToday.Name = "cardNewPassengersToday";
+            cardNewPassengersToday.Size = new Size(319, 139);
+            cardNewPassengersToday.TabIndex = 2;
+            // 
+            // lblMetricNewPassengersTodayVal
+            // 
+            lblMetricNewPassengersTodayVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricNewPassengersTodayVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricNewPassengersTodayVal.Location = new Point(16, 13);
+            lblMetricNewPassengersTodayVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricNewPassengersTodayVal.Name = "lblMetricNewPassengersTodayVal";
+            lblMetricNewPassengersTodayVal.Size = new Size(286, 53);
+            lblMetricNewPassengersTodayVal.TabIndex = 0;
+            lblMetricNewPassengersTodayVal.Text = "0";
+            // 
+            // lblMetricNewPassengersTodayTitle
+            // 
+            lblMetricNewPassengersTodayTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricNewPassengersTodayTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricNewPassengersTodayTitle.Location = new Point(17, 73);
+            lblMetricNewPassengersTodayTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricNewPassengersTodayTitle.Name = "lblMetricNewPassengersTodayTitle";
+            lblMetricNewPassengersTodayTitle.Size = new Size(286, 30);
+            lblMetricNewPassengersTodayTitle.TabIndex = 1;
+            lblMetricNewPassengersTodayTitle.Text = "REGISTERED TODAY";
+            // 
+            // panelPassengersHeader
+            // 
+            panelPassengersHeader.Controls.Add(btnAddPassenger);
+            panelPassengersHeader.Controls.Add(lblPassengersSubtitle);
+            panelPassengersHeader.Controls.Add(lblPassengersTitle);
+            panelPassengersHeader.Dock = DockStyle.Top;
+            panelPassengersHeader.Location = new Point(0, 0);
+            panelPassengersHeader.Margin = new Padding(4, 5, 4, 5);
+            panelPassengersHeader.Name = "panelPassengersHeader";
+            panelPassengersHeader.Size = new Size(1462, 100);
+            panelPassengersHeader.TabIndex = 4;
+            // 
+            // btnAddPassenger
+            // 
+            btnAddPassenger.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAddPassenger.BackColor = Color.FromArgb(15, 23, 42);
+            btnAddPassenger.FlatAppearance.BorderSize = 0;
+            btnAddPassenger.FlatStyle = FlatStyle.Flat;
+            btnAddPassenger.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddPassenger.ForeColor = Color.White;
+            btnAddPassenger.Location = new Point(1177, 23);
+            btnAddPassenger.Margin = new Padding(4, 5, 4, 5);
+            btnAddPassenger.Name = "btnAddPassenger";
+            btnAddPassenger.Size = new Size(264, 57);
+            btnAddPassenger.TabIndex = 0;
+            btnAddPassenger.Text = "➕  Register Passenger";
+            btnAddPassenger.UseVisualStyleBackColor = false;
+            // 
+            // lblPassengersSubtitle
+            // 
+            lblPassengersSubtitle.AutoSize = true;
+            lblPassengersSubtitle.Font = new Font("Segoe UI", 9F);
+            lblPassengersSubtitle.ForeColor = Color.FromArgb(100, 116, 139);
+            lblPassengersSubtitle.Location = new Point(3, 55);
+            lblPassengersSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblPassengersSubtitle.Name = "lblPassengersSubtitle";
+            lblPassengersSubtitle.Size = new Size(607, 25);
+            lblPassengersSubtitle.TabIndex = 1;
+            lblPassengersSubtitle.Text = "Register new passengers, search directory, and update travel customer info.";
+            // 
+            // lblPassengersTitle
+            // 
+            lblPassengersTitle.AutoSize = true;
+            lblPassengersTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblPassengersTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPassengersTitle.Location = new Point(0, 7);
+            lblPassengersTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPassengersTitle.Name = "lblPassengersTitle";
+            lblPassengersTitle.Size = new Size(330, 38);
+            lblPassengersTitle.TabIndex = 2;
+            lblPassengersTitle.Text = "Passenger Management";
+            // 
+            // panelBookingHistory
+            // 
+            panelBookingHistory.AutoScroll = true;
+            panelBookingHistory.Controls.Add(panelHistoryActions);
+            panelBookingHistory.Controls.Add(lvBookingHistory);
+            panelBookingHistory.Controls.Add(panelHistoryToolbar);
+            panelBookingHistory.Controls.Add(flowHistoryMetrics);
+            panelBookingHistory.Controls.Add(panelHistoryHeader);
+            panelBookingHistory.Dock = DockStyle.Fill;
+            panelBookingHistory.Location = new Point(29, 120);
+            panelBookingHistory.Margin = new Padding(4, 5, 4, 5);
+            panelBookingHistory.Name = "panelBookingHistory";
+            panelBookingHistory.Size = new Size(1488, 880);
+            panelBookingHistory.TabIndex = 6;
+            panelBookingHistory.Visible = false;
+            // 
+            // panelHistoryActions
+            // 
+            panelHistoryActions.BackColor = Color.White;
+            panelHistoryActions.BorderStyle = BorderStyle.FixedSingle;
+            panelHistoryActions.Controls.Add(lblHistoryCount);
+            panelHistoryActions.Controls.Add(btnPrintHistoryPass);
+            panelHistoryActions.Controls.Add(btnViewHistoryDetails);
+            panelHistoryActions.Location = new Point(0, 997);
+            panelHistoryActions.Margin = new Padding(4, 5, 4, 5);
+            panelHistoryActions.Name = "panelHistoryActions";
+            panelHistoryActions.Size = new Size(1392, 79);
+            panelHistoryActions.TabIndex = 0;
+            // 
+            // lblHistoryCount
+            // 
+            lblHistoryCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblHistoryCount.Font = new Font("Segoe UI", 9F);
+            lblHistoryCount.ForeColor = Color.FromArgb(100, 116, 139);
+            lblHistoryCount.Location = new Point(1020, 23);
+            lblHistoryCount.Margin = new Padding(4, 0, 4, 0);
+            lblHistoryCount.Name = "lblHistoryCount";
+            lblHistoryCount.Size = new Size(350, 33);
+            lblHistoryCount.TabIndex = 0;
+            lblHistoryCount.Text = "Showing 0 historical records";
+            lblHistoryCount.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnPrintHistoryPass
+            // 
+            btnPrintHistoryPass.BackColor = Color.FromArgb(241, 245, 249);
+            btnPrintHistoryPass.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnPrintHistoryPass.FlatStyle = FlatStyle.Flat;
+            btnPrintHistoryPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrintHistoryPass.ForeColor = Color.FromArgb(30, 41, 59);
+            btnPrintHistoryPass.Location = new Point(240, 13);
+            btnPrintHistoryPass.Margin = new Padding(4, 5, 4, 5);
+            btnPrintHistoryPass.Name = "btnPrintHistoryPass";
+            btnPrintHistoryPass.Size = new Size(210, 53);
+            btnPrintHistoryPass.TabIndex = 1;
+            btnPrintHistoryPass.Text = "🖨️  Reprint Pass";
+            btnPrintHistoryPass.UseVisualStyleBackColor = false;
+            // 
+            // btnViewHistoryDetails
+            // 
+            btnViewHistoryDetails.BackColor = Color.FromArgb(241, 245, 249);
+            btnViewHistoryDetails.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnViewHistoryDetails.FlatStyle = FlatStyle.Flat;
+            btnViewHistoryDetails.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnViewHistoryDetails.ForeColor = Color.FromArgb(30, 41, 59);
+            btnViewHistoryDetails.Location = new Point(17, 13);
+            btnViewHistoryDetails.Margin = new Padding(4, 5, 4, 5);
+            btnViewHistoryDetails.Name = "btnViewHistoryDetails";
+            btnViewHistoryDetails.Size = new Size(210, 53);
+            btnViewHistoryDetails.TabIndex = 2;
+            btnViewHistoryDetails.Text = "🔍  View Record";
+            btnViewHistoryDetails.UseVisualStyleBackColor = false;
+            // 
+            // lvBookingHistory
+            // 
+            lvBookingHistory.BorderStyle = BorderStyle.FixedSingle;
+            lvBookingHistory.Columns.AddRange(new ColumnHeader[] { colHistBookingId, colHistPassengerName, colHistPassengerPhone, colHistRoute, colHistTravelDate, colHistDepartureTime, colHistSeats, colHistTotalAmount, colHistBookingStatus, colHistPaymentStatus });
+            lvBookingHistory.FullRowSelect = true;
+            lvBookingHistory.GridLines = true;
+            lvBookingHistory.Location = new Point(0, 350);
+            lvBookingHistory.Margin = new Padding(4, 5, 4, 5);
+            lvBookingHistory.MultiSelect = false;
+            lvBookingHistory.Name = "lvBookingHistory";
+            lvBookingHistory.Size = new Size(1391, 631);
+            lvBookingHistory.TabIndex = 1;
+            lvBookingHistory.UseCompatibleStateImageBehavior = false;
+            lvBookingHistory.View = View.Details;
+            // 
+            // colHistBookingId
+            // 
+            colHistBookingId.Text = "Booking ID";
+            colHistBookingId.Width = 110;
+            // 
+            // colHistPassengerName
+            // 
+            colHistPassengerName.Text = "Passenger Name";
+            colHistPassengerName.Width = 180;
+            // 
+            // colHistPassengerPhone
+            // 
+            colHistPassengerPhone.Text = "Phone Number";
+            colHistPassengerPhone.Width = 140;
+            // 
+            // colHistRoute
+            // 
+            colHistRoute.Text = "Route";
+            colHistRoute.Width = 180;
+            // 
+            // colHistTravelDate
+            // 
+            colHistTravelDate.Text = "Travel Date";
+            colHistTravelDate.Width = 120;
+            // 
+            // colHistDepartureTime
+            // 
+            colHistDepartureTime.Text = "Time";
+            colHistDepartureTime.Width = 90;
+            // 
+            // colHistSeats
+            // 
+            colHistSeats.Text = "Seats";
+            colHistSeats.Width = 100;
+            // 
+            // colHistTotalAmount
+            // 
+            colHistTotalAmount.Text = "Fare (ETB)";
+            colHistTotalAmount.Width = 110;
+            // 
+            // colHistBookingStatus
+            // 
+            colHistBookingStatus.Text = "Booking Status";
+            colHistBookingStatus.Width = 130;
+            // 
+            // colHistPaymentStatus
+            // 
+            colHistPaymentStatus.Text = "Payment";
+            colHistPaymentStatus.Width = 110;
+            // 
+            // panelHistoryToolbar
+            // 
+            panelHistoryToolbar.BackColor = Color.White;
+            panelHistoryToolbar.BorderStyle = BorderStyle.FixedSingle;
+            panelHistoryToolbar.Controls.Add(btnRefreshHistory);
+            panelHistoryToolbar.Controls.Add(cmbHistoryStatusFilter);
+            panelHistoryToolbar.Controls.Add(txtSearchHistory);
+            panelHistoryToolbar.Location = new Point(0, 257);
+            panelHistoryToolbar.Margin = new Padding(4, 5, 4, 5);
+            panelHistoryToolbar.Name = "panelHistoryToolbar";
+            panelHistoryToolbar.Size = new Size(1392, 79);
+            panelHistoryToolbar.TabIndex = 2;
+            // 
+            // btnRefreshHistory
+            // 
+            btnRefreshHistory.BackColor = Color.White;
+            btnRefreshHistory.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnRefreshHistory.FlatStyle = FlatStyle.Flat;
+            btnRefreshHistory.Location = new Point(800, 18);
+            btnRefreshHistory.Margin = new Padding(4, 5, 4, 5);
+            btnRefreshHistory.Name = "btnRefreshHistory";
+            btnRefreshHistory.Size = new Size(120, 43);
+            btnRefreshHistory.TabIndex = 0;
+            btnRefreshHistory.Text = "Refresh";
+            btnRefreshHistory.UseVisualStyleBackColor = false;
+            // 
+            // cmbHistoryStatusFilter
+            // 
+            cmbHistoryStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbHistoryStatusFilter.FormattingEnabled = true;
+            cmbHistoryStatusFilter.Items.AddRange(new object[] { "All Historical", "Completed / Traveled", "Cancelled" });
+            cmbHistoryStatusFilter.Location = new Point(500, 20);
+            cmbHistoryStatusFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbHistoryStatusFilter.Name = "cmbHistoryStatusFilter";
+            cmbHistoryStatusFilter.Size = new Size(260, 33);
+            cmbHistoryStatusFilter.TabIndex = 1;
+            // 
+            // txtSearchHistory
+            // 
+            txtSearchHistory.Location = new Point(20, 20);
+            txtSearchHistory.Margin = new Padding(4, 5, 4, 5);
+            txtSearchHistory.Name = "txtSearchHistory";
+            txtSearchHistory.PlaceholderText = "Search by booking ID, passenger, phone, route...";
+            txtSearchHistory.Size = new Size(450, 31);
+            txtSearchHistory.TabIndex = 2;
+            // 
+            // flowHistoryMetrics
+            // 
+            flowHistoryMetrics.Controls.Add(cardHistoryTotal);
+            flowHistoryMetrics.Controls.Add(cardHistoryCompleted);
+            flowHistoryMetrics.Controls.Add(cardHistoryCancelled);
+            flowHistoryMetrics.Location = new Point(0, 107);
+            flowHistoryMetrics.Margin = new Padding(4, 5, 4, 5);
+            flowHistoryMetrics.Name = "flowHistoryMetrics";
+            flowHistoryMetrics.Size = new Size(1407, 147);
+            flowHistoryMetrics.TabIndex = 3;
+            // 
+            // cardHistoryTotal
+            // 
+            cardHistoryTotal.BackColor = Color.White;
+            cardHistoryTotal.BorderStyle = BorderStyle.FixedSingle;
+            cardHistoryTotal.Controls.Add(lblMetricHistoryTotalVal);
+            cardHistoryTotal.Controls.Add(lblMetricHistoryTotalTitle);
+            cardHistoryTotal.Location = new Point(0, 0);
+            cardHistoryTotal.Margin = new Padding(0, 0, 20, 0);
+            cardHistoryTotal.Name = "cardHistoryTotal";
+            cardHistoryTotal.Size = new Size(319, 139);
+            cardHistoryTotal.TabIndex = 0;
+            // 
+            // lblMetricHistoryTotalVal
+            // 
+            lblMetricHistoryTotalVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricHistoryTotalVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricHistoryTotalVal.Location = new Point(16, 13);
+            lblMetricHistoryTotalVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryTotalVal.Name = "lblMetricHistoryTotalVal";
+            lblMetricHistoryTotalVal.Size = new Size(286, 53);
+            lblMetricHistoryTotalVal.TabIndex = 0;
+            lblMetricHistoryTotalVal.Text = "0";
+            // 
+            // lblMetricHistoryTotalTitle
+            // 
+            lblMetricHistoryTotalTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricHistoryTotalTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricHistoryTotalTitle.Location = new Point(17, 73);
+            lblMetricHistoryTotalTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryTotalTitle.Name = "lblMetricHistoryTotalTitle";
+            lblMetricHistoryTotalTitle.Size = new Size(286, 30);
+            lblMetricHistoryTotalTitle.TabIndex = 1;
+            lblMetricHistoryTotalTitle.Text = "TOTAL ARCHIVED";
+            // 
+            // cardHistoryCompleted
+            // 
+            cardHistoryCompleted.BackColor = Color.White;
+            cardHistoryCompleted.BorderStyle = BorderStyle.FixedSingle;
+            cardHistoryCompleted.Controls.Add(lblMetricHistoryCompletedVal);
+            cardHistoryCompleted.Controls.Add(lblMetricHistoryCompletedTitle);
+            cardHistoryCompleted.Location = new Point(339, 0);
+            cardHistoryCompleted.Margin = new Padding(0, 0, 20, 0);
+            cardHistoryCompleted.Name = "cardHistoryCompleted";
+            cardHistoryCompleted.Size = new Size(319, 139);
+            cardHistoryCompleted.TabIndex = 1;
+            // 
+            // lblMetricHistoryCompletedVal
+            // 
+            lblMetricHistoryCompletedVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricHistoryCompletedVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricHistoryCompletedVal.Location = new Point(16, 13);
+            lblMetricHistoryCompletedVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryCompletedVal.Name = "lblMetricHistoryCompletedVal";
+            lblMetricHistoryCompletedVal.Size = new Size(286, 53);
+            lblMetricHistoryCompletedVal.TabIndex = 0;
+            lblMetricHistoryCompletedVal.Text = "0";
+            // 
+            // lblMetricHistoryCompletedTitle
+            // 
+            lblMetricHistoryCompletedTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricHistoryCompletedTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricHistoryCompletedTitle.Location = new Point(17, 73);
+            lblMetricHistoryCompletedTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryCompletedTitle.Name = "lblMetricHistoryCompletedTitle";
+            lblMetricHistoryCompletedTitle.Size = new Size(286, 30);
+            lblMetricHistoryCompletedTitle.TabIndex = 1;
+            lblMetricHistoryCompletedTitle.Text = "COMPLETED TRIPS";
+            // 
+            // cardHistoryCancelled
+            // 
+            cardHistoryCancelled.BackColor = Color.White;
+            cardHistoryCancelled.BorderStyle = BorderStyle.FixedSingle;
+            cardHistoryCancelled.Controls.Add(lblMetricHistoryCancelledVal);
+            cardHistoryCancelled.Controls.Add(lblMetricHistoryCancelledTitle);
+            cardHistoryCancelled.Location = new Point(678, 0);
+            cardHistoryCancelled.Margin = new Padding(0, 0, 20, 0);
+            cardHistoryCancelled.Name = "cardHistoryCancelled";
+            cardHistoryCancelled.Size = new Size(319, 139);
+            cardHistoryCancelled.TabIndex = 2;
+            // 
+            // lblMetricHistoryCancelledVal
+            // 
+            lblMetricHistoryCancelledVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricHistoryCancelledVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricHistoryCancelledVal.Location = new Point(16, 13);
+            lblMetricHistoryCancelledVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryCancelledVal.Name = "lblMetricHistoryCancelledVal";
+            lblMetricHistoryCancelledVal.Size = new Size(286, 53);
+            lblMetricHistoryCancelledVal.TabIndex = 0;
+            lblMetricHistoryCancelledVal.Text = "0";
+            // 
+            // lblMetricHistoryCancelledTitle
+            // 
+            lblMetricHistoryCancelledTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricHistoryCancelledTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricHistoryCancelledTitle.Location = new Point(17, 73);
+            lblMetricHistoryCancelledTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricHistoryCancelledTitle.Name = "lblMetricHistoryCancelledTitle";
+            lblMetricHistoryCancelledTitle.Size = new Size(286, 30);
+            lblMetricHistoryCancelledTitle.TabIndex = 1;
+            lblMetricHistoryCancelledTitle.Text = "CANCELLED BOOKINGS";
+            // 
+            // panelHistoryHeader
+            // 
+            panelHistoryHeader.Controls.Add(lblHistoryTitle);
+            panelHistoryHeader.Dock = DockStyle.Top;
+            panelHistoryHeader.Location = new Point(0, 0);
+            panelHistoryHeader.Margin = new Padding(4, 5, 4, 5);
+            panelHistoryHeader.Name = "panelHistoryHeader";
+            panelHistoryHeader.Size = new Size(1462, 100);
+            panelHistoryHeader.TabIndex = 4;
+            // 
+            // lblHistoryTitle
+            // 
+            lblHistoryTitle.AutoSize = true;
+            lblHistoryTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblHistoryTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblHistoryTitle.Location = new Point(0, 7);
+            lblHistoryTitle.Margin = new Padding(4, 0, 4, 0);
+            lblHistoryTitle.Name = "lblHistoryTitle";
+            lblHistoryTitle.Size = new Size(338, 38);
+            lblHistoryTitle.TabIndex = 1;
+            lblHistoryTitle.Text = "Booking History Archive";
+            // 
+            // panelTopBar
+            // 
+            panelTopBar.BackColor = Color.FromArgb(15, 23, 42);
+            panelTopBar.Controls.Add(lblAppIcon);
+            panelTopBar.Controls.Add(lblPortalTitle);
+            panelTopBar.Controls.Add(panelOfficerProfile);
+            panelTopBar.Controls.Add(btnMinimize);
+            panelTopBar.Controls.Add(btnMaximize);
+            panelTopBar.Controls.Add(btnClose);
+            panelTopBar.Dock = DockStyle.Top;
+            panelTopBar.Location = new Point(0, 0);
+            panelTopBar.Margin = new Padding(4, 5, 4, 5);
+            panelTopBar.Name = "panelTopBar";
+            panelTopBar.Size = new Size(1946, 73);
+            panelTopBar.TabIndex = 0;
+            // 
+            // lblAppIcon
+            // 
+            lblAppIcon.Location = new Point(20, 7);
+            lblAppIcon.Margin = new Padding(4, 0, 4, 0);
+            lblAppIcon.Name = "lblAppIcon";
+            lblAppIcon.Size = new Size(46, 60);
+            lblAppIcon.TabIndex = 0;
+            // 
+            // lblPortalTitle
+            // 
+            lblPortalTitle.AutoSize = true;
+            lblPortalTitle.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold);
+            lblPortalTitle.ForeColor = Color.White;
+            lblPortalTitle.Location = new Point(74, 20);
+            lblPortalTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPortalTitle.Name = "lblPortalTitle";
+            lblPortalTitle.Size = new Size(477, 30);
+            lblPortalTitle.TabIndex = 1;
+            lblPortalTitle.Text = "Bus Ticket Management  |  Ticket Officer Portal";
+            // 
+            // panelOfficerProfile
+            // 
+            panelOfficerProfile.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelOfficerProfile.Controls.Add(lblOfficerName);
+            panelOfficerProfile.Controls.Add(lblOfficerRole);
+            panelOfficerProfile.Location = new Point(1432, 7);
+            panelOfficerProfile.Margin = new Padding(4, 5, 4, 5);
+            panelOfficerProfile.Name = "panelOfficerProfile";
+            panelOfficerProfile.Size = new Size(300, 60);
+            panelOfficerProfile.TabIndex = 2;
+            // 
+            // lblOfficerName
+            // 
+            lblOfficerName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblOfficerName.ForeColor = Color.White;
+            lblOfficerName.Location = new Point(0, 3);
+            lblOfficerName.Margin = new Padding(4, 0, 4, 0);
+            lblOfficerName.Name = "lblOfficerName";
+            lblOfficerName.Size = new Size(286, 27);
+            lblOfficerName.TabIndex = 0;
+            lblOfficerName.Text = "Marta Tadesse";
+            lblOfficerName.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblOfficerRole
+            // 
+            lblOfficerRole.Font = new Font("Segoe UI", 8F);
+            lblOfficerRole.ForeColor = Color.FromArgb(148, 163, 184);
+            lblOfficerRole.Location = new Point(0, 30);
+            lblOfficerRole.Margin = new Padding(4, 0, 4, 0);
+            lblOfficerRole.Name = "lblOfficerRole";
+            lblOfficerRole.Size = new Size(286, 23);
+            lblOfficerRole.TabIndex = 1;
+            lblOfficerRole.Text = "Ticket Officer • Terminal Desk 01";
+            lblOfficerRole.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Dock = DockStyle.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Segoe UI", 10F);
+            btnMinimize.ForeColor = Color.FromArgb(148, 163, 184);
+            btnMinimize.Location = new Point(1748, 0);
+            btnMinimize.Margin = new Padding(4, 5, 4, 5);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(66, 73);
+            btnMinimize.TabIndex = 3;
+            btnMinimize.Text = "—";
+            btnMinimize.UseVisualStyleBackColor = true;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Dock = DockStyle.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Font = new Font("Segoe UI", 10.5F);
+            btnMaximize.ForeColor = Color.FromArgb(148, 163, 184);
+            btnMaximize.Location = new Point(1814, 0);
+            btnMaximize.Margin = new Padding(4, 5, 4, 5);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(66, 73);
+            btnMaximize.TabIndex = 4;
+            btnMaximize.Text = "□";
+            btnMaximize.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            btnClose.Dock = DockStyle.Right;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 10F);
+            btnClose.ForeColor = Color.FromArgb(148, 163, 184);
+            btnClose.Location = new Point(1880, 0);
+            btnClose.Margin = new Padding(4, 5, 4, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(66, 73);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "✕";
+            btnClose.UseVisualStyleBackColor = true;
+            // 
+            // panelSidebar
+            // 
+            panelSidebar.BackColor = Color.FromArgb(245, 247, 250);
+            panelSidebar.Controls.Add(btnNavLogout);
+            panelSidebar.Controls.Add(btnNavHistory);
+            panelSidebar.Controls.Add(btnNavPayments);
+            panelSidebar.Controls.Add(btnNavTickets);
+            panelSidebar.Controls.Add(btnNavBookings);
+            panelSidebar.Controls.Add(btnNavPassengers);
+            panelSidebar.Controls.Add(lblNavHeader);
+            panelSidebar.Dock = DockStyle.Left;
+            panelSidebar.Location = new Point(0, 73);
+            panelSidebar.Margin = new Padding(4, 5, 4, 5);
+            panelSidebar.Name = "panelSidebar";
+            panelSidebar.Size = new Size(400, 1033);
+            panelSidebar.TabIndex = 1;
+            // 
+            // lblNavHeader
+            // 
+            lblNavHeader.AutoSize = true;
+            lblNavHeader.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblNavHeader.ForeColor = Color.FromArgb(100, 116, 139);
+            lblNavHeader.Location = new Point(23, 27);
+            lblNavHeader.Margin = new Padding(4, 0, 4, 0);
+            lblNavHeader.Name = "lblNavHeader";
+            lblNavHeader.Size = new Size(187, 21);
+            lblNavHeader.TabIndex = 9;
+            lblNavHeader.Text = "TERMINAL DESK MENU";
+            // 
+            // panelMain
+            // 
+            panelMain.AutoScroll = true;
+            panelMain.BackColor = Color.FromArgb(248, 250, 252);
+            panelMain.Controls.Add(panelBookingHistory);
+            panelMain.Controls.Add(panelPayments);
+            panelMain.Controls.Add(panelTicketManagement);
+            panelMain.Controls.Add(panelBookingManagement);
+            panelMain.Controls.Add(panelPassengers);
+            panelMain.Controls.Add(panelHeaderInfo);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(400, 73);
+            panelMain.Margin = new Padding(4, 5, 4, 5);
+            panelMain.Name = "panelMain";
+            panelMain.Padding = new Padding(29, 27, 29, 33);
+            panelMain.Size = new Size(1546, 1033);
+            panelMain.TabIndex = 0;
+            // 
+            // panelPayments
+            // 
+            panelPayments.AutoScroll = true;
+            panelPayments.Controls.Add(panelPaymentActions);
+            panelPayments.Controls.Add(lvPayments);
+            panelPayments.Controls.Add(panelPaymentsToolbar);
+            panelPayments.Controls.Add(flowPaymentMetrics);
+            panelPayments.Controls.Add(panelPaymentsHeader);
+            panelPayments.Dock = DockStyle.Fill;
+            panelPayments.Location = new Point(29, 120);
+            panelPayments.Margin = new Padding(4, 5, 4, 5);
+            panelPayments.Name = "panelPayments";
+            panelPayments.Size = new Size(1488, 880);
+            panelPayments.TabIndex = 1;
+            panelPayments.Visible = false;
+            // 
+            // panelPaymentActions
+            // 
+            panelPaymentActions.BackColor = Color.White;
+            panelPaymentActions.BorderStyle = BorderStyle.FixedSingle;
+            panelPaymentActions.Controls.Add(lblPaymentCount);
+            panelPaymentActions.Controls.Add(btnProcessRefund);
+            panelPaymentActions.Controls.Add(btnRecordPayment);
+            panelPaymentActions.Controls.Add(btnPrintReceipt);
+            panelPaymentActions.Location = new Point(0, 997);
+            panelPaymentActions.Margin = new Padding(4, 5, 4, 5);
+            panelPaymentActions.Name = "panelPaymentActions";
+            panelPaymentActions.Size = new Size(1392, 79);
+            panelPaymentActions.TabIndex = 0;
+            // 
+            // lblPaymentCount
+            // 
+            lblPaymentCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblPaymentCount.Font = new Font("Segoe UI", 8.5F);
+            lblPaymentCount.ForeColor = Color.FromArgb(100, 116, 139);
+            lblPaymentCount.Location = new Point(1071, 23);
+            lblPaymentCount.Margin = new Padding(4, 0, 4, 0);
+            lblPaymentCount.Name = "lblPaymentCount";
+            lblPaymentCount.Size = new Size(300, 33);
+            lblPaymentCount.TabIndex = 0;
+            lblPaymentCount.Text = "Showing 0 transactions";
+            lblPaymentCount.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnProcessRefund
+            // 
+            btnProcessRefund.BackColor = Color.White;
+            btnProcessRefund.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnProcessRefund.FlatStyle = FlatStyle.Flat;
+            btnProcessRefund.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnProcessRefund.ForeColor = Color.FromArgb(51, 65, 85);
+            btnProcessRefund.Location = new Point(529, 13);
+            btnProcessRefund.Margin = new Padding(4, 5, 4, 5);
+            btnProcessRefund.Name = "btnProcessRefund";
+            btnProcessRefund.Size = new Size(243, 53);
+            btnProcessRefund.TabIndex = 1;
+            btnProcessRefund.Text = "🔄  Issue Cancellation Refund";
+            btnProcessRefund.UseVisualStyleBackColor = false;
+            // 
+            // btnRecordPayment
+            // 
+            btnRecordPayment.BackColor = Color.FromArgb(15, 23, 42);
+            btnRecordPayment.FlatAppearance.BorderSize = 0;
+            btnRecordPayment.FlatStyle = FlatStyle.Flat;
+            btnRecordPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRecordPayment.ForeColor = Color.White;
+            btnRecordPayment.Location = new Point(257, 13);
+            btnRecordPayment.Margin = new Padding(4, 5, 4, 5);
+            btnRecordPayment.Name = "btnRecordPayment";
+            btnRecordPayment.Size = new Size(257, 53);
+            btnRecordPayment.TabIndex = 2;
+            btnRecordPayment.Text = "💵  Record Cash Payment";
+            btnRecordPayment.UseVisualStyleBackColor = false;
+            // 
+            // btnPrintReceipt
+            // 
+            btnPrintReceipt.BackColor = Color.FromArgb(241, 245, 249);
+            btnPrintReceipt.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnPrintReceipt.FlatAppearance.BorderSize = 0;
+            btnPrintReceipt.FlatStyle = FlatStyle.Flat;
+            btnPrintReceipt.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrintReceipt.ForeColor = Color.FromArgb(30, 41, 59);
+            btnPrintReceipt.Location = new Point(17, 13);
+            btnPrintReceipt.Margin = new Padding(4, 5, 4, 5);
+            btnPrintReceipt.Name = "btnPrintReceipt";
+            btnPrintReceipt.Size = new Size(229, 53);
+            btnPrintReceipt.TabIndex = 3;
+            btnPrintReceipt.Text = "\U0001f9fe  Print Official Receipt";
+            btnPrintReceipt.UseVisualStyleBackColor = false;
+            // 
+            // lvPayments
+            // 
+            lvPayments.Columns.AddRange(new ColumnHeader[] { colPayReceipt, colPayBooking, colPayTicket, colPayPassenger, colPayRoute, colPayAmount, colPayMethod, colPayStatus, colPayDate, colPayCashier });
+            lvPayments.FullRowSelect = true;
+            lvPayments.GridLines = true;
+            lvPayments.Location = new Point(0, 360);
+            lvPayments.Margin = new Padding(4, 5, 4, 5);
+            lvPayments.MultiSelect = false;
+            lvPayments.Name = "lvPayments";
+            lvPayments.Size = new Size(1391, 621);
+            lvPayments.TabIndex = 3;
+            lvPayments.UseCompatibleStateImageBehavior = false;
+            lvPayments.View = View.Details;
+            // 
+            // colPayReceipt
+            // 
+            colPayReceipt.Text = "Receipt #";
+            colPayReceipt.Width = 90;
+            // 
+            // colPayBooking
+            // 
+            colPayBooking.Text = "Booking Ref";
+            colPayBooking.Width = 90;
+            // 
+            // colPayTicket
+            // 
+            colPayTicket.Text = "Ticket ID";
+            colPayTicket.Width = 85;
+            // 
+            // colPayPassenger
+            // 
+            colPayPassenger.Text = "Passenger Name";
+            colPayPassenger.Width = 140;
+            // 
+            // colPayRoute
+            // 
+            colPayRoute.Text = "Route";
+            colPayRoute.Width = 150;
+            // 
+            // colPayAmount
+            // 
+            colPayAmount.Text = "Amount (ETB)";
+            colPayAmount.Width = 95;
+            // 
+            // colPayMethod
+            // 
+            colPayMethod.Text = "Method";
+            colPayMethod.Width = 85;
+            // 
+            // colPayStatus
+            // 
+            colPayStatus.Text = "Status";
+            colPayStatus.Width = 75;
+            // 
+            // colPayDate
+            // 
+            colPayDate.Text = "Timestamp";
+            colPayDate.Width = 120;
+            // 
+            // colPayCashier
+            // 
+            colPayCashier.Text = "Cashier / Officer";
+            colPayCashier.Width = 130;
+            // 
+            // panelPaymentsToolbar
+            // 
+            panelPaymentsToolbar.BackColor = Color.White;
+            panelPaymentsToolbar.BorderStyle = BorderStyle.FixedSingle;
+            panelPaymentsToolbar.Controls.Add(btnRefreshPayments);
+            panelPaymentsToolbar.Controls.Add(cmbPaymentStatusFilter);
+            panelPaymentsToolbar.Controls.Add(cmbPaymentMethodFilter);
+            panelPaymentsToolbar.Controls.Add(txtSearchPayments);
+            panelPaymentsToolbar.Location = new Point(0, 267);
+            panelPaymentsToolbar.Margin = new Padding(4, 5, 4, 5);
+            panelPaymentsToolbar.Name = "panelPaymentsToolbar";
+            panelPaymentsToolbar.Size = new Size(1392, 79);
+            panelPaymentsToolbar.TabIndex = 4;
+            // 
+            // btnRefreshPayments
+            // 
+            btnRefreshPayments.BackColor = Color.White;
+            btnRefreshPayments.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnRefreshPayments.FlatStyle = FlatStyle.Flat;
+            btnRefreshPayments.Location = new Point(951, 18);
+            btnRefreshPayments.Margin = new Padding(4, 5, 4, 5);
+            btnRefreshPayments.Name = "btnRefreshPayments";
+            btnRefreshPayments.Size = new Size(129, 43);
+            btnRefreshPayments.TabIndex = 0;
+            btnRefreshPayments.Text = "Refresh";
+            btnRefreshPayments.UseVisualStyleBackColor = false;
+            // 
+            // cmbPaymentStatusFilter
+            // 
+            cmbPaymentStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPaymentStatusFilter.Items.AddRange(new object[] { "All Statuses", "Paid", "Pending", "Refunded" });
+            cmbPaymentStatusFilter.Location = new Point(720, 20);
+            cmbPaymentStatusFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbPaymentStatusFilter.Name = "cmbPaymentStatusFilter";
+            cmbPaymentStatusFilter.Size = new Size(213, 33);
+            cmbPaymentStatusFilter.TabIndex = 1;
+            // 
+            // cmbPaymentMethodFilter
+            // 
+            cmbPaymentMethodFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPaymentMethodFilter.Items.AddRange(new object[] { "All Methods", "Cash", "Telebirr", "CBE Birr", "Card" });
+            cmbPaymentMethodFilter.Location = new Point(491, 20);
+            cmbPaymentMethodFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbPaymentMethodFilter.Name = "cmbPaymentMethodFilter";
+            cmbPaymentMethodFilter.Size = new Size(213, 33);
+            cmbPaymentMethodFilter.TabIndex = 2;
+            // 
+            // txtSearchPayments
+            // 
+            txtSearchPayments.Location = new Point(17, 20);
+            txtSearchPayments.Margin = new Padding(4, 5, 4, 5);
+            txtSearchPayments.Name = "txtSearchPayments";
+            txtSearchPayments.PlaceholderText = "Search by receipt #, booking, passenger name...";
+            txtSearchPayments.Size = new Size(455, 31);
+            txtSearchPayments.TabIndex = 3;
+            // 
+            // flowPaymentMetrics
+            // 
+            flowPaymentMetrics.Controls.Add(cardPayTotal);
+            flowPaymentMetrics.Controls.Add(cardPayCash);
+            flowPaymentMetrics.Controls.Add(cardPayDigital);
+            flowPaymentMetrics.Controls.Add(cardPayRefunds);
+            flowPaymentMetrics.Location = new Point(0, 107);
+            flowPaymentMetrics.Margin = new Padding(4, 5, 4, 5);
+            flowPaymentMetrics.Name = "flowPaymentMetrics";
+            flowPaymentMetrics.Size = new Size(1407, 147);
+            flowPaymentMetrics.TabIndex = 5;
+            // 
+            // cardPayTotal
+            // 
+            cardPayTotal.BackColor = Color.White;
+            cardPayTotal.BorderStyle = BorderStyle.FixedSingle;
+            cardPayTotal.Controls.Add(lblPayTotalVal);
+            cardPayTotal.Controls.Add(lblPayTotalTitle);
+            cardPayTotal.Location = new Point(0, 0);
+            cardPayTotal.Margin = new Padding(0, 0, 20, 0);
+            cardPayTotal.Name = "cardPayTotal";
+            cardPayTotal.Size = new Size(319, 139);
+            cardPayTotal.TabIndex = 0;
+            // 
+            // lblPayTotalVal
+            // 
+            lblPayTotalVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblPayTotalVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPayTotalVal.Location = new Point(17, 13);
+            lblPayTotalVal.Margin = new Padding(4, 0, 4, 0);
+            lblPayTotalVal.Name = "lblPayTotalVal";
+            lblPayTotalVal.Size = new Size(286, 53);
+            lblPayTotalVal.TabIndex = 0;
+            lblPayTotalVal.Text = "0 ETB";
+            // 
+            // lblPayTotalTitle
+            // 
+            lblPayTotalTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblPayTotalTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblPayTotalTitle.Location = new Point(17, 73);
+            lblPayTotalTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPayTotalTitle.Name = "lblPayTotalTitle";
+            lblPayTotalTitle.Size = new Size(286, 30);
+            lblPayTotalTitle.TabIndex = 1;
+            lblPayTotalTitle.Text = "TODAY'S INTAKE";
+            // 
+            // cardPayCash
+            // 
+            cardPayCash.BackColor = Color.White;
+            cardPayCash.BorderStyle = BorderStyle.FixedSingle;
+            cardPayCash.Controls.Add(lblPayCashVal);
+            cardPayCash.Controls.Add(lblPayCashTitle);
+            cardPayCash.Location = new Point(339, 0);
+            cardPayCash.Margin = new Padding(0, 0, 20, 0);
+            cardPayCash.Name = "cardPayCash";
+            cardPayCash.Size = new Size(319, 139);
+            cardPayCash.TabIndex = 1;
+            // 
+            // lblPayCashVal
+            // 
+            lblPayCashVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblPayCashVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPayCashVal.Location = new Point(17, 13);
+            lblPayCashVal.Margin = new Padding(4, 0, 4, 0);
+            lblPayCashVal.Name = "lblPayCashVal";
+            lblPayCashVal.Size = new Size(286, 53);
+            lblPayCashVal.TabIndex = 0;
+            lblPayCashVal.Text = "0 ETB";
+            // 
+            // lblPayCashTitle
+            // 
+            lblPayCashTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblPayCashTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblPayCashTitle.Location = new Point(17, 73);
+            lblPayCashTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPayCashTitle.Name = "lblPayCashTitle";
+            lblPayCashTitle.Size = new Size(286, 30);
+            lblPayCashTitle.TabIndex = 1;
+            lblPayCashTitle.Text = "CASH PAYMENTS";
+            // 
+            // cardPayDigital
+            // 
+            cardPayDigital.BackColor = Color.White;
+            cardPayDigital.BorderStyle = BorderStyle.FixedSingle;
+            cardPayDigital.Controls.Add(lblPayDigitalVal);
+            cardPayDigital.Controls.Add(lblPayDigitalTitle);
+            cardPayDigital.Location = new Point(678, 0);
+            cardPayDigital.Margin = new Padding(0, 0, 20, 0);
+            cardPayDigital.Name = "cardPayDigital";
+            cardPayDigital.Size = new Size(319, 139);
+            cardPayDigital.TabIndex = 2;
+            // 
+            // lblPayDigitalVal
+            // 
+            lblPayDigitalVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblPayDigitalVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPayDigitalVal.Location = new Point(17, 13);
+            lblPayDigitalVal.Margin = new Padding(4, 0, 4, 0);
+            lblPayDigitalVal.Name = "lblPayDigitalVal";
+            lblPayDigitalVal.Size = new Size(286, 53);
+            lblPayDigitalVal.TabIndex = 0;
+            lblPayDigitalVal.Text = "0 ETB";
+            // 
+            // lblPayDigitalTitle
+            // 
+            lblPayDigitalTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblPayDigitalTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblPayDigitalTitle.Location = new Point(17, 73);
+            lblPayDigitalTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPayDigitalTitle.Name = "lblPayDigitalTitle";
+            lblPayDigitalTitle.Size = new Size(286, 30);
+            lblPayDigitalTitle.TabIndex = 1;
+            lblPayDigitalTitle.Text = "DIGITAL / TELEBIRR";
+            // 
+            // cardPayRefunds
+            // 
+            cardPayRefunds.BackColor = Color.White;
+            cardPayRefunds.BorderStyle = BorderStyle.FixedSingle;
+            cardPayRefunds.Controls.Add(lblPayRefundsVal);
+            cardPayRefunds.Controls.Add(lblPayRefundsTitle);
+            cardPayRefunds.Location = new Point(1017, 0);
+            cardPayRefunds.Margin = new Padding(0, 0, 20, 0);
+            cardPayRefunds.Name = "cardPayRefunds";
+            cardPayRefunds.Size = new Size(319, 139);
+            cardPayRefunds.TabIndex = 3;
+            // 
+            // lblPayRefundsVal
+            // 
+            lblPayRefundsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblPayRefundsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPayRefundsVal.Location = new Point(17, 13);
+            lblPayRefundsVal.Margin = new Padding(4, 0, 4, 0);
+            lblPayRefundsVal.Name = "lblPayRefundsVal";
+            lblPayRefundsVal.Size = new Size(286, 53);
+            lblPayRefundsVal.TabIndex = 0;
+            lblPayRefundsVal.Text = "0 ETB";
+            // 
+            // lblPayRefundsTitle
+            // 
+            lblPayRefundsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblPayRefundsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblPayRefundsTitle.Location = new Point(17, 73);
+            lblPayRefundsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPayRefundsTitle.Name = "lblPayRefundsTitle";
+            lblPayRefundsTitle.Size = new Size(286, 30);
+            lblPayRefundsTitle.TabIndex = 1;
+            lblPayRefundsTitle.Text = "REFUNDS ISSUED";
+            // 
+            // panelPaymentsHeader
+            // 
+            panelPaymentsHeader.Controls.Add(lblPaymentsSubtitle);
+            panelPaymentsHeader.Controls.Add(lblPaymentsTitle);
+            panelPaymentsHeader.Dock = DockStyle.Top;
+            panelPaymentsHeader.Location = new Point(0, 0);
+            panelPaymentsHeader.Margin = new Padding(4, 5, 4, 5);
+            panelPaymentsHeader.Name = "panelPaymentsHeader";
+            panelPaymentsHeader.Size = new Size(1462, 100);
+            panelPaymentsHeader.TabIndex = 6;
+            // 
+            // lblPaymentsSubtitle
+            // 
+            lblPaymentsSubtitle.AutoSize = true;
+            lblPaymentsSubtitle.Font = new Font("Segoe UI", 9F);
+            lblPaymentsSubtitle.ForeColor = Color.FromArgb(100, 116, 139);
+            lblPaymentsSubtitle.Location = new Point(3, 55);
+            lblPaymentsSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblPaymentsSubtitle.Name = "lblPaymentsSubtitle";
+            lblPaymentsSubtitle.Size = new Size(917, 25);
+            lblPaymentsSubtitle.TabIndex = 0;
+            lblPaymentsSubtitle.Text = "Manage walk-in counter payments, verify electronic transfers (Telebirr/CBE Birr), issue receipts, and process refunds.";
+            // 
+            // lblPaymentsTitle
+            // 
+            lblPaymentsTitle.AutoSize = true;
+            lblPaymentsTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblPaymentsTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPaymentsTitle.Location = new Point(0, 7);
+            lblPaymentsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblPaymentsTitle.Name = "lblPaymentsTitle";
+            lblPaymentsTitle.Size = new Size(472, 38);
+            lblPaymentsTitle.TabIndex = 1;
+            lblPaymentsTitle.Text = "Counter Cashier & Payment Receipts";
+            // 
+            // panelTicketManagement
+            // 
+            panelTicketManagement.AutoScroll = true;
+            panelTicketManagement.Controls.Add(panelTicketActions);
+            panelTicketManagement.Controls.Add(lvTickets);
+            panelTicketManagement.Controls.Add(panelTicketsToolbar);
+            panelTicketManagement.Controls.Add(flowTicketMetrics);
+            panelTicketManagement.Controls.Add(panelTicketsHeader);
+            panelTicketManagement.Dock = DockStyle.Fill;
+            panelTicketManagement.Location = new Point(29, 120);
+            panelTicketManagement.Margin = new Padding(4, 5, 4, 5);
+            panelTicketManagement.Name = "panelTicketManagement";
+            panelTicketManagement.Size = new Size(1488, 880);
+            panelTicketManagement.TabIndex = 3;
+            panelTicketManagement.Visible = false;
+            // 
+            // panelTicketActions
+            // 
+            panelTicketActions.BackColor = Color.White;
+            panelTicketActions.BorderStyle = BorderStyle.FixedSingle;
+            panelTicketActions.Controls.Add(lblTicketCount);
+            panelTicketActions.Controls.Add(btnCancelTicketAction);
+            panelTicketActions.Controls.Add(btnPrintTicketPass);
+            panelTicketActions.Controls.Add(btnVerifyAndBoard);
+            panelTicketActions.Controls.Add(btnViewTicketDetails);
+            panelTicketActions.Location = new Point(0, 997);
+            panelTicketActions.Margin = new Padding(4, 5, 4, 5);
+            panelTicketActions.Name = "panelTicketActions";
+            panelTicketActions.Size = new Size(1392, 79);
+            panelTicketActions.TabIndex = 0;
+            // 
+            // lblTicketCount
+            // 
+            lblTicketCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTicketCount.Font = new Font("Segoe UI", 8.5F);
+            lblTicketCount.ForeColor = Color.FromArgb(100, 116, 139);
+            lblTicketCount.Location = new Point(1071, 23);
+            lblTicketCount.Margin = new Padding(4, 0, 4, 0);
+            lblTicketCount.Name = "lblTicketCount";
+            lblTicketCount.Size = new Size(300, 33);
+            lblTicketCount.TabIndex = 0;
+            lblTicketCount.Text = "Showing 0 tickets";
+            lblTicketCount.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnCancelTicketAction
+            // 
+            btnCancelTicketAction.BackColor = Color.White;
+            btnCancelTicketAction.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnCancelTicketAction.FlatStyle = FlatStyle.Flat;
+            btnCancelTicketAction.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelTicketAction.ForeColor = Color.FromArgb(51, 65, 85);
+            btnCancelTicketAction.Location = new Point(637, 13);
+            btnCancelTicketAction.Margin = new Padding(4, 5, 4, 5);
+            btnCancelTicketAction.Name = "btnCancelTicketAction";
+            btnCancelTicketAction.Size = new Size(179, 53);
+            btnCancelTicketAction.TabIndex = 1;
+            btnCancelTicketAction.Text = "❌  Cancel Ticket";
+            btnCancelTicketAction.UseVisualStyleBackColor = false;
+            // 
+            // btnPrintTicketPass
+            // 
+            btnPrintTicketPass.BackColor = Color.White;
+            btnPrintTicketPass.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnPrintTicketPass.FlatStyle = FlatStyle.Flat;
+            btnPrintTicketPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrintTicketPass.ForeColor = Color.FromArgb(15, 23, 42);
+            btnPrintTicketPass.Location = new Point(440, 13);
+            btnPrintTicketPass.Margin = new Padding(4, 5, 4, 5);
+            btnPrintTicketPass.Name = "btnPrintTicketPass";
+            btnPrintTicketPass.Size = new Size(186, 53);
+            btnPrintTicketPass.TabIndex = 2;
+            btnPrintTicketPass.Text = "🖨️  Print Ticket";
+            btnPrintTicketPass.UseVisualStyleBackColor = false;
+            // 
+            // btnVerifyAndBoard
+            // 
+            btnVerifyAndBoard.BackColor = Color.FromArgb(241, 245, 249);
+            btnVerifyAndBoard.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnVerifyAndBoard.FlatAppearance.BorderSize = 0;
+            btnVerifyAndBoard.FlatStyle = FlatStyle.Flat;
+            btnVerifyAndBoard.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnVerifyAndBoard.ForeColor = Color.FromArgb(30, 41, 59);
+            btnVerifyAndBoard.Location = new Point(200, 13);
+            btnVerifyAndBoard.Margin = new Padding(4, 5, 4, 5);
+            btnVerifyAndBoard.Name = "btnVerifyAndBoard";
+            btnVerifyAndBoard.Size = new Size(229, 53);
+            btnVerifyAndBoard.TabIndex = 3;
+            btnVerifyAndBoard.Text = "✅  Verify && Board";
+            btnVerifyAndBoard.UseVisualStyleBackColor = false;
+            // 
+            // btnViewTicketDetails
+            // 
+            btnViewTicketDetails.BackColor = Color.FromArgb(241, 245, 249);
+            btnViewTicketDetails.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnViewTicketDetails.FlatAppearance.BorderSize = 0;
+            btnViewTicketDetails.FlatStyle = FlatStyle.Flat;
+            btnViewTicketDetails.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnViewTicketDetails.ForeColor = Color.FromArgb(30, 41, 59);
+            btnViewTicketDetails.Location = new Point(17, 13);
+            btnViewTicketDetails.Margin = new Padding(4, 5, 4, 5);
+            btnViewTicketDetails.Name = "btnViewTicketDetails";
+            btnViewTicketDetails.Size = new Size(171, 53);
+            btnViewTicketDetails.TabIndex = 4;
+            btnViewTicketDetails.Text = "👁️  View Ticket";
+            btnViewTicketDetails.UseVisualStyleBackColor = false;
+            // 
+            // lvTickets
+            // 
+            lvTickets.Columns.AddRange(new ColumnHeader[] { colTicketId, colTicketBookingRef, colTicketPassenger, colTicketPhone, colTicketRoute, colTicketDate, colTicketTime, colTicketSeat, colTicketGate, colTicketBus, colTicketStatus });
+            lvTickets.FullRowSelect = true;
+            lvTickets.GridLines = true;
+            lvTickets.Location = new Point(0, 350);
+            lvTickets.Margin = new Padding(4, 5, 4, 5);
+            lvTickets.MultiSelect = false;
+            lvTickets.Name = "lvTickets";
+            lvTickets.Size = new Size(1391, 631);
+            lvTickets.TabIndex = 3;
+            lvTickets.UseCompatibleStateImageBehavior = false;
+            lvTickets.View = View.Details;
+            // 
+            // colTicketId
+            // 
+            colTicketId.Text = "Ticket ID";
+            colTicketId.Width = 85;
+            // 
+            // colTicketBookingRef
+            // 
+            colTicketBookingRef.Text = "Booking Ref";
+            colTicketBookingRef.Width = 85;
+            // 
+            // colTicketPassenger
+            // 
+            colTicketPassenger.Text = "Passenger";
+            colTicketPassenger.Width = 140;
+            // 
+            // colTicketPhone
+            // 
+            colTicketPhone.Text = "Phone";
+            colTicketPhone.Width = 110;
+            // 
+            // colTicketRoute
+            // 
+            colTicketRoute.Text = "Route";
+            colTicketRoute.Width = 160;
+            // 
+            // colTicketDate
+            // 
+            colTicketDate.Text = "Date";
+            colTicketDate.Width = 90;
+            // 
+            // colTicketTime
+            // 
+            colTicketTime.Text = "Time";
+            colTicketTime.Width = 75;
+            // 
+            // colTicketSeat
+            // 
+            colTicketSeat.Text = "Seat";
+            colTicketSeat.Width = 65;
+            // 
+            // colTicketGate
+            // 
+            colTicketGate.Text = "Gate";
+            colTicketGate.Width = 65;
+            // 
+            // colTicketBus
+            // 
+            colTicketBus.Text = "Coach";
+            colTicketBus.Width = 90;
+            // 
+            // colTicketStatus
+            // 
+            colTicketStatus.Text = "Status";
+            colTicketStatus.Width = 80;
+            // 
+            // panelTicketsToolbar
+            // 
+            panelTicketsToolbar.BackColor = Color.White;
+            panelTicketsToolbar.BorderStyle = BorderStyle.FixedSingle;
+            panelTicketsToolbar.Controls.Add(btnResetTicketFilters);
+            panelTicketsToolbar.Controls.Add(dtpTicketFilterDate);
+            panelTicketsToolbar.Controls.Add(chkEnableTicketDateFilter);
+            panelTicketsToolbar.Controls.Add(cmbTicketRouteFilter);
+            panelTicketsToolbar.Controls.Add(cmbTicketStatusFilter);
+            panelTicketsToolbar.Controls.Add(txtSearchTicketFilter);
+            panelTicketsToolbar.Location = new Point(0, 257);
+            panelTicketsToolbar.Margin = new Padding(4, 5, 4, 5);
+            panelTicketsToolbar.Name = "panelTicketsToolbar";
+            panelTicketsToolbar.Size = new Size(1392, 79);
+            panelTicketsToolbar.TabIndex = 4;
+            // 
+            // btnResetTicketFilters
+            // 
+            btnResetTicketFilters.BackColor = Color.White;
+            btnResetTicketFilters.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnResetTicketFilters.FlatStyle = FlatStyle.Flat;
+            btnResetTicketFilters.Location = new Point(1151, 18);
+            btnResetTicketFilters.Margin = new Padding(4, 5, 4, 5);
+            btnResetTicketFilters.Name = "btnResetTicketFilters";
+            btnResetTicketFilters.Size = new Size(114, 43);
+            btnResetTicketFilters.TabIndex = 0;
+            btnResetTicketFilters.Text = "Reset";
+            btnResetTicketFilters.UseVisualStyleBackColor = false;
+            // 
+            // dtpTicketFilterDate
+            // 
+            dtpTicketFilterDate.Enabled = false;
+            dtpTicketFilterDate.Format = DateTimePickerFormat.Short;
+            dtpTicketFilterDate.Location = new Point(963, 20);
+            dtpTicketFilterDate.Margin = new Padding(4, 5, 4, 5);
+            dtpTicketFilterDate.Name = "dtpTicketFilterDate";
+            dtpTicketFilterDate.Size = new Size(170, 31);
+            dtpTicketFilterDate.TabIndex = 1;
+            // 
+            // chkEnableTicketDateFilter
+            // 
+            chkEnableTicketDateFilter.AutoSize = true;
+            chkEnableTicketDateFilter.Location = new Point(877, 23);
+            chkEnableTicketDateFilter.Margin = new Padding(4, 5, 4, 5);
+            chkEnableTicketDateFilter.Name = "chkEnableTicketDateFilter";
+            chkEnableTicketDateFilter.Size = new Size(79, 29);
+            chkEnableTicketDateFilter.TabIndex = 2;
+            chkEnableTicketDateFilter.Text = "Date:";
+            // 
+            // cmbTicketRouteFilter
+            // 
+            cmbTicketRouteFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTicketRouteFilter.Items.AddRange(new object[] { "All Routes / Trips" });
+            cmbTicketRouteFilter.Location = new Point(603, 20);
+            cmbTicketRouteFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbTicketRouteFilter.Name = "cmbTicketRouteFilter";
+            cmbTicketRouteFilter.Size = new Size(255, 33);
+            cmbTicketRouteFilter.TabIndex = 3;
+            // 
+            // cmbTicketStatusFilter
+            // 
+            cmbTicketStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTicketStatusFilter.Items.AddRange(new object[] { "All Statuses", "Valid", "Boarded", "Cancelled" });
+            cmbTicketStatusFilter.Location = new Point(403, 20);
+            cmbTicketStatusFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbTicketStatusFilter.Name = "cmbTicketStatusFilter";
+            cmbTicketStatusFilter.Size = new Size(184, 33);
+            cmbTicketStatusFilter.TabIndex = 4;
+            // 
+            // txtSearchTicketFilter
+            // 
+            txtSearchTicketFilter.Location = new Point(17, 20);
+            txtSearchTicketFilter.Margin = new Padding(4, 5, 4, 5);
+            txtSearchTicketFilter.Name = "txtSearchTicketFilter";
+            txtSearchTicketFilter.PlaceholderText = "Search by Ticket ID, passenger, phone, code...";
+            txtSearchTicketFilter.Size = new Size(370, 31);
+            txtSearchTicketFilter.TabIndex = 5;
+            // 
+            // flowTicketMetrics
+            // 
+            flowTicketMetrics.Controls.Add(cardTotalTickets);
+            flowTicketMetrics.Controls.Add(cardValidTickets);
+            flowTicketMetrics.Controls.Add(cardBoardedTickets);
+            flowTicketMetrics.Controls.Add(cardCancelledTickets);
+            flowTicketMetrics.Controls.Add(cardTodayTickets);
+            flowTicketMetrics.Location = new Point(0, 107);
+            flowTicketMetrics.Margin = new Padding(4, 5, 4, 5);
+            flowTicketMetrics.Name = "flowTicketMetrics";
+            flowTicketMetrics.Size = new Size(1407, 140);
+            flowTicketMetrics.TabIndex = 5;
+            // 
+            // cardTotalTickets
+            // 
+            cardTotalTickets.BackColor = Color.White;
+            cardTotalTickets.BorderStyle = BorderStyle.FixedSingle;
+            cardTotalTickets.Controls.Add(lblMetricTotalTicketsVal);
+            cardTotalTickets.Controls.Add(lblMetricTotalTicketsTitle);
+            cardTotalTickets.Location = new Point(0, 0);
+            cardTotalTickets.Margin = new Padding(0, 0, 20, 0);
+            cardTotalTickets.Name = "cardTotalTickets";
+            cardTotalTickets.Size = new Size(319, 139);
+            cardTotalTickets.TabIndex = 0;
+            // 
+            // lblMetricTotalTicketsVal
+            // 
+            lblMetricTotalTicketsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricTotalTicketsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricTotalTicketsVal.Location = new Point(17, 13);
+            lblMetricTotalTicketsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalTicketsVal.Name = "lblMetricTotalTicketsVal";
+            lblMetricTotalTicketsVal.Size = new Size(286, 53);
+            lblMetricTotalTicketsVal.TabIndex = 0;
+            lblMetricTotalTicketsVal.Text = "0";
+            // 
+            // lblMetricTotalTicketsTitle
+            // 
+            lblMetricTotalTicketsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricTotalTicketsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricTotalTicketsTitle.Location = new Point(17, 73);
+            lblMetricTotalTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalTicketsTitle.Name = "lblMetricTotalTicketsTitle";
+            lblMetricTotalTicketsTitle.Size = new Size(286, 30);
+            lblMetricTotalTicketsTitle.TabIndex = 1;
+            lblMetricTotalTicketsTitle.Text = "TOTAL TICKETS";
+            // 
+            // cardValidTickets
+            // 
+            cardValidTickets.BackColor = Color.White;
+            cardValidTickets.BorderStyle = BorderStyle.FixedSingle;
+            cardValidTickets.Controls.Add(lblMetricValidTicketsVal);
+            cardValidTickets.Controls.Add(lblMetricValidTicketsTitle);
+            cardValidTickets.Location = new Point(339, 0);
+            cardValidTickets.Margin = new Padding(0, 0, 20, 0);
+            cardValidTickets.Name = "cardValidTickets";
+            cardValidTickets.Size = new Size(319, 139);
+            cardValidTickets.TabIndex = 1;
+            // 
+            // lblMetricValidTicketsVal
+            // 
+            lblMetricValidTicketsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricValidTicketsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricValidTicketsVal.Location = new Point(17, 13);
+            lblMetricValidTicketsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricValidTicketsVal.Name = "lblMetricValidTicketsVal";
+            lblMetricValidTicketsVal.Size = new Size(286, 53);
+            lblMetricValidTicketsVal.TabIndex = 0;
+            lblMetricValidTicketsVal.Text = "0";
+            // 
+            // lblMetricValidTicketsTitle
+            // 
+            lblMetricValidTicketsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricValidTicketsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricValidTicketsTitle.Location = new Point(17, 73);
+            lblMetricValidTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricValidTicketsTitle.Name = "lblMetricValidTicketsTitle";
+            lblMetricValidTicketsTitle.Size = new Size(286, 30);
+            lblMetricValidTicketsTitle.TabIndex = 1;
+            lblMetricValidTicketsTitle.Text = "VALID / ACTIVE";
+            // 
+            // cardBoardedTickets
+            // 
+            cardBoardedTickets.BackColor = Color.White;
+            cardBoardedTickets.BorderStyle = BorderStyle.FixedSingle;
+            cardBoardedTickets.Controls.Add(lblMetricBoardedTicketsVal);
+            cardBoardedTickets.Controls.Add(lblMetricBoardedTicketsTitle);
+            cardBoardedTickets.Location = new Point(678, 0);
+            cardBoardedTickets.Margin = new Padding(0, 0, 20, 0);
+            cardBoardedTickets.Name = "cardBoardedTickets";
+            cardBoardedTickets.Size = new Size(319, 139);
+            cardBoardedTickets.TabIndex = 2;
+            // 
+            // lblMetricBoardedTicketsVal
+            // 
+            lblMetricBoardedTicketsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricBoardedTicketsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricBoardedTicketsVal.Location = new Point(17, 13);
+            lblMetricBoardedTicketsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricBoardedTicketsVal.Name = "lblMetricBoardedTicketsVal";
+            lblMetricBoardedTicketsVal.Size = new Size(286, 53);
+            lblMetricBoardedTicketsVal.TabIndex = 0;
+            lblMetricBoardedTicketsVal.Text = "0";
+            // 
+            // lblMetricBoardedTicketsTitle
+            // 
+            lblMetricBoardedTicketsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricBoardedTicketsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricBoardedTicketsTitle.Location = new Point(17, 73);
+            lblMetricBoardedTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricBoardedTicketsTitle.Name = "lblMetricBoardedTicketsTitle";
+            lblMetricBoardedTicketsTitle.Size = new Size(286, 30);
+            lblMetricBoardedTicketsTitle.TabIndex = 1;
+            lblMetricBoardedTicketsTitle.Text = "BOARDED / USED";
+            // 
+            // cardCancelledTickets
+            // 
+            cardCancelledTickets.BackColor = Color.White;
+            cardCancelledTickets.BorderStyle = BorderStyle.FixedSingle;
+            cardCancelledTickets.Controls.Add(lblMetricCancelledTicketsVal);
+            cardCancelledTickets.Controls.Add(lblMetricCancelledTicketsTitle);
+            cardCancelledTickets.Location = new Point(1017, 0);
+            cardCancelledTickets.Margin = new Padding(0, 0, 20, 0);
+            cardCancelledTickets.Name = "cardCancelledTickets";
+            cardCancelledTickets.Size = new Size(319, 139);
+            cardCancelledTickets.TabIndex = 3;
+            // 
+            // lblMetricCancelledTicketsVal
+            // 
+            lblMetricCancelledTicketsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricCancelledTicketsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricCancelledTicketsVal.Location = new Point(17, 13);
+            lblMetricCancelledTicketsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricCancelledTicketsVal.Name = "lblMetricCancelledTicketsVal";
+            lblMetricCancelledTicketsVal.Size = new Size(286, 53);
+            lblMetricCancelledTicketsVal.TabIndex = 0;
+            lblMetricCancelledTicketsVal.Text = "0";
+            // 
+            // lblMetricCancelledTicketsTitle
+            // 
+            lblMetricCancelledTicketsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricCancelledTicketsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricCancelledTicketsTitle.Location = new Point(17, 73);
+            lblMetricCancelledTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricCancelledTicketsTitle.Name = "lblMetricCancelledTicketsTitle";
+            lblMetricCancelledTicketsTitle.Size = new Size(286, 30);
+            lblMetricCancelledTicketsTitle.TabIndex = 1;
+            lblMetricCancelledTicketsTitle.Text = "CANCELLED";
+            // 
+            // cardTodayTickets
+            // 
+            cardTodayTickets.BackColor = Color.White;
+            cardTodayTickets.BorderStyle = BorderStyle.FixedSingle;
+            cardTodayTickets.Controls.Add(lblMetricTodayTicketsVal);
+            cardTodayTickets.Controls.Add(lblMetricTodayTicketsTitle);
+            cardTodayTickets.Location = new Point(0, 139);
+            cardTodayTickets.Margin = new Padding(0, 0, 20, 0);
+            cardTodayTickets.Name = "cardTodayTickets";
+            cardTodayTickets.Size = new Size(319, 139);
+            cardTodayTickets.TabIndex = 4;
+            // 
+            // lblMetricTodayTicketsVal
+            // 
+            lblMetricTodayTicketsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricTodayTicketsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricTodayTicketsVal.Location = new Point(17, 13);
+            lblMetricTodayTicketsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTodayTicketsVal.Name = "lblMetricTodayTicketsVal";
+            lblMetricTodayTicketsVal.Size = new Size(286, 53);
+            lblMetricTodayTicketsVal.TabIndex = 0;
+            lblMetricTodayTicketsVal.Text = "0";
+            // 
+            // lblMetricTodayTicketsTitle
+            // 
+            lblMetricTodayTicketsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricTodayTicketsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricTodayTicketsTitle.Location = new Point(17, 73);
+            lblMetricTodayTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTodayTicketsTitle.Name = "lblMetricTodayTicketsTitle";
+            lblMetricTodayTicketsTitle.Size = new Size(286, 30);
+            lblMetricTodayTicketsTitle.TabIndex = 1;
+            lblMetricTodayTicketsTitle.Text = "TODAY'S TICKETS";
+            // 
+            // panelTicketsHeader
+            // 
+            panelTicketsHeader.Controls.Add(btnVerifyBoardModal);
+            panelTicketsHeader.Controls.Add(btnNewTicket);
+            panelTicketsHeader.Controls.Add(lblTicketsSubtitle);
+            panelTicketsHeader.Controls.Add(lblTicketsTitle);
+            panelTicketsHeader.Dock = DockStyle.Top;
+            panelTicketsHeader.Location = new Point(0, 0);
+            panelTicketsHeader.Margin = new Padding(4, 5, 4, 5);
+            panelTicketsHeader.Name = "panelTicketsHeader";
+            panelTicketsHeader.Size = new Size(1462, 100);
+            panelTicketsHeader.TabIndex = 6;
+            // 
+            // btnVerifyBoardModal
+            // 
+            btnVerifyBoardModal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnVerifyBoardModal.BackColor = Color.FromArgb(241, 245, 249);
+            btnVerifyBoardModal.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnVerifyBoardModal.FlatAppearance.BorderSize = 0;
+            btnVerifyBoardModal.FlatStyle = FlatStyle.Flat;
+            btnVerifyBoardModal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnVerifyBoardModal.ForeColor = Color.FromArgb(30, 41, 59);
+            btnVerifyBoardModal.Location = new Point(948, 23);
+            btnVerifyBoardModal.Margin = new Padding(4, 5, 4, 5);
+            btnVerifyBoardModal.Name = "btnVerifyBoardModal";
+            btnVerifyBoardModal.Size = new Size(257, 57);
+            btnVerifyBoardModal.TabIndex = 0;
+            btnVerifyBoardModal.Text = "🔍  Boarding Scanner";
+            btnVerifyBoardModal.UseVisualStyleBackColor = false;
+            // 
+            // btnNewTicket
+            // 
+            btnNewTicket.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewTicket.BackColor = Color.FromArgb(15, 23, 42);
+            btnNewTicket.FlatAppearance.BorderSize = 0;
+            btnNewTicket.FlatStyle = FlatStyle.Flat;
+            btnNewTicket.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnNewTicket.ForeColor = Color.White;
+            btnNewTicket.Location = new Point(1217, 23);
+            btnNewTicket.Margin = new Padding(4, 5, 4, 5);
+            btnNewTicket.Name = "btnNewTicket";
+            btnNewTicket.Size = new Size(221, 57);
+            btnNewTicket.TabIndex = 1;
+            btnNewTicket.Text = "➕  Issue Ticket";
+            btnNewTicket.UseVisualStyleBackColor = false;
+            // 
+            // lblTicketsSubtitle
+            // 
+            lblTicketsSubtitle.AutoSize = true;
+            lblTicketsSubtitle.Font = new Font("Segoe UI", 9F);
+            lblTicketsSubtitle.ForeColor = Color.FromArgb(100, 116, 139);
+            lblTicketsSubtitle.Location = new Point(3, 55);
+            lblTicketsSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblTicketsSubtitle.Name = "lblTicketsSubtitle";
+            lblTicketsSubtitle.Size = new Size(752, 25);
+            lblTicketsSubtitle.TabIndex = 2;
+            lblTicketsSubtitle.Text = "Complete ledger of all issued boarding passes, seat allocations, and gate verification statuses.";
+            // 
+            // lblTicketsTitle
+            // 
+            lblTicketsTitle.AutoSize = true;
+            lblTicketsTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTicketsTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblTicketsTitle.Location = new Point(0, 7);
+            lblTicketsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblTicketsTitle.Name = "lblTicketsTitle";
+            lblTicketsTitle.Size = new Size(467, 38);
+            lblTicketsTitle.TabIndex = 3;
+            lblTicketsTitle.Text = "Tickets Directory & Issuance Station";
+            // 
+            // panelBookingManagement
+            // 
+            panelBookingManagement.AutoScroll = true;
+            panelBookingManagement.Controls.Add(panelBookingActions);
+            panelBookingManagement.Controls.Add(lvBookings);
+            panelBookingManagement.Controls.Add(panelBookingsToolbar);
+            panelBookingManagement.Controls.Add(flowBookingMetrics);
+            panelBookingManagement.Controls.Add(panelBookingsHeader);
+            panelBookingManagement.Dock = DockStyle.Fill;
+            panelBookingManagement.Location = new Point(29, 120);
+            panelBookingManagement.Margin = new Padding(4, 5, 4, 5);
+            panelBookingManagement.Name = "panelBookingManagement";
+            panelBookingManagement.Size = new Size(1488, 880);
+            panelBookingManagement.TabIndex = 4;
+            panelBookingManagement.Visible = false;
+            // 
+            // panelBookingActions
+            // 
+            panelBookingActions.BackColor = Color.White;
+            panelBookingActions.BorderStyle = BorderStyle.FixedSingle;
+            panelBookingActions.Controls.Add(lblBookingCount);
+            panelBookingActions.Controls.Add(btnPrintTicket);
+            panelBookingActions.Controls.Add(btnCancelBookingAction);
+            panelBookingActions.Controls.Add(btnModifyBooking);
+            panelBookingActions.Controls.Add(btnViewBookingDetails);
+            panelBookingActions.Location = new Point(0, 997);
+            panelBookingActions.Margin = new Padding(4, 5, 4, 5);
+            panelBookingActions.Name = "panelBookingActions";
+            panelBookingActions.Size = new Size(1392, 79);
+            panelBookingActions.TabIndex = 0;
+            // 
+            // lblBookingCount
+            // 
+            lblBookingCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblBookingCount.Font = new Font("Segoe UI", 8.5F);
+            lblBookingCount.ForeColor = Color.FromArgb(100, 116, 139);
+            lblBookingCount.Location = new Point(1071, 23);
+            lblBookingCount.Margin = new Padding(4, 0, 4, 0);
+            lblBookingCount.Name = "lblBookingCount";
+            lblBookingCount.Size = new Size(300, 33);
+            lblBookingCount.TabIndex = 0;
+            lblBookingCount.Text = "Showing 0 bookings";
+            lblBookingCount.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnPrintTicket
+            // 
+            btnPrintTicket.BackColor = Color.White;
+            btnPrintTicket.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnPrintTicket.FlatStyle = FlatStyle.Flat;
+            btnPrintTicket.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrintTicket.ForeColor = Color.FromArgb(15, 23, 42);
+            btnPrintTicket.Location = new Point(574, 13);
+            btnPrintTicket.Margin = new Padding(4, 5, 4, 5);
+            btnPrintTicket.Name = "btnPrintTicket";
+            btnPrintTicket.Size = new Size(186, 53);
+            btnPrintTicket.TabIndex = 1;
+            btnPrintTicket.Text = "🖨️  Print Boarding Pass";
+            btnPrintTicket.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelBookingAction
+            // 
+            btnCancelBookingAction.BackColor = Color.White;
+            btnCancelBookingAction.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnCancelBookingAction.FlatStyle = FlatStyle.Flat;
+            btnCancelBookingAction.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelBookingAction.ForeColor = Color.FromArgb(51, 65, 85);
+            btnCancelBookingAction.Location = new Point(383, 13);
+            btnCancelBookingAction.Margin = new Padding(4, 5, 4, 5);
+            btnCancelBookingAction.Name = "btnCancelBookingAction";
+            btnCancelBookingAction.Size = new Size(179, 53);
+            btnCancelBookingAction.TabIndex = 2;
+            btnCancelBookingAction.Text = "❌  Cancel Booking";
+            btnCancelBookingAction.UseVisualStyleBackColor = false;
+            // 
+            // btnModifyBooking
+            // 
+            btnModifyBooking.BackColor = Color.White;
+            btnModifyBooking.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnModifyBooking.FlatStyle = FlatStyle.Flat;
+            btnModifyBooking.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnModifyBooking.ForeColor = Color.FromArgb(15, 23, 42);
+            btnModifyBooking.Location = new Point(200, 13);
+            btnModifyBooking.Margin = new Padding(4, 5, 4, 5);
+            btnModifyBooking.Name = "btnModifyBooking";
+            btnModifyBooking.Size = new Size(171, 53);
+            btnModifyBooking.TabIndex = 3;
+            btnModifyBooking.Text = "✏️  Edit Booking";
+            btnModifyBooking.UseVisualStyleBackColor = false;
+            // 
+            // btnViewBookingDetails
+            // 
+            btnViewBookingDetails.BackColor = Color.FromArgb(241, 245, 249);
+            btnViewBookingDetails.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnViewBookingDetails.FlatAppearance.BorderSize = 0;
+            btnViewBookingDetails.FlatStyle = FlatStyle.Flat;
+            btnViewBookingDetails.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnViewBookingDetails.ForeColor = Color.FromArgb(30, 41, 59);
+            btnViewBookingDetails.Location = new Point(17, 13);
+            btnViewBookingDetails.Margin = new Padding(4, 5, 4, 5);
+            btnViewBookingDetails.Name = "btnViewBookingDetails";
+            btnViewBookingDetails.Size = new Size(171, 53);
+            btnViewBookingDetails.TabIndex = 4;
+            btnViewBookingDetails.Text = "👁️  View Dossier";
+            btnViewBookingDetails.UseVisualStyleBackColor = false;
+            // 
+            // lvBookings
+            // 
+            lvBookings.Columns.AddRange(new ColumnHeader[] { colBookingId, colPassengerName, colPassengerPhone, colBookingRoute, colTravelDate, colDepartureTime, colSeats, colTotalAmount, colBookingStatus, colPaymentStatus });
+            lvBookings.FullRowSelect = true;
+            lvBookings.GridLines = true;
+            lvBookings.Location = new Point(0, 350);
+            lvBookings.Margin = new Padding(4, 5, 4, 5);
+            lvBookings.MultiSelect = false;
+            lvBookings.Name = "lvBookings";
+            lvBookings.Size = new Size(1391, 631);
+            lvBookings.TabIndex = 3;
+            lvBookings.UseCompatibleStateImageBehavior = false;
+            lvBookings.View = View.Details;
+            // 
+            // colBookingId
+            // 
+            colBookingId.Text = "Booking ID";
+            colBookingId.Width = 85;
+            // 
+            // colPassengerName
+            // 
+            colPassengerName.Text = "Passenger Name";
+            colPassengerName.Width = 140;
+            // 
+            // colPassengerPhone
+            // 
+            colPassengerPhone.Text = "Phone";
+            colPassengerPhone.Width = 110;
+            // 
+            // colBookingRoute
+            // 
+            colBookingRoute.Text = "Route";
+            colBookingRoute.Width = 160;
+            // 
+            // colTravelDate
+            // 
+            colTravelDate.Text = "Travel Date";
+            colTravelDate.Width = 95;
+            // 
+            // colDepartureTime
+            // 
+            colDepartureTime.Text = "Time";
+            colDepartureTime.Width = 75;
+            // 
+            // colSeats
+            // 
+            colSeats.Text = "Seats";
+            colSeats.Width = 85;
+            // 
+            // colTotalAmount
+            // 
+            colTotalAmount.Text = "Fare (ETB)";
+            colTotalAmount.Width = 80;
+            // 
+            // colBookingStatus
+            // 
+            colBookingStatus.Text = "Status";
+            colBookingStatus.Width = 75;
+            // 
+            // colPaymentStatus
+            // 
+            colPaymentStatus.Text = "Payment";
+            colPaymentStatus.Width = 70;
+            // 
+            // panelBookingsToolbar
+            // 
+            panelBookingsToolbar.BackColor = Color.White;
+            panelBookingsToolbar.BorderStyle = BorderStyle.FixedSingle;
+            panelBookingsToolbar.Controls.Add(btnResetBookingFilters);
+            panelBookingsToolbar.Controls.Add(dtpBookingFilterDate);
+            panelBookingsToolbar.Controls.Add(chkEnableDateFilter);
+            panelBookingsToolbar.Controls.Add(cmbBookingRouteFilter);
+            panelBookingsToolbar.Controls.Add(cmbBookingStatusFilter);
+            panelBookingsToolbar.Controls.Add(txtSearchBooking);
+            panelBookingsToolbar.Location = new Point(0, 257);
+            panelBookingsToolbar.Margin = new Padding(4, 5, 4, 5);
+            panelBookingsToolbar.Name = "panelBookingsToolbar";
+            panelBookingsToolbar.Size = new Size(1392, 79);
+            panelBookingsToolbar.TabIndex = 4;
+            // 
+            // btnResetBookingFilters
+            // 
+            btnResetBookingFilters.BackColor = Color.White;
+            btnResetBookingFilters.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnResetBookingFilters.FlatStyle = FlatStyle.Flat;
+            btnResetBookingFilters.Location = new Point(1151, 18);
+            btnResetBookingFilters.Margin = new Padding(4, 5, 4, 5);
+            btnResetBookingFilters.Name = "btnResetBookingFilters";
+            btnResetBookingFilters.Size = new Size(114, 43);
+            btnResetBookingFilters.TabIndex = 0;
+            btnResetBookingFilters.Text = "Reset";
+            btnResetBookingFilters.UseVisualStyleBackColor = false;
+            // 
+            // dtpBookingFilterDate
+            // 
+            dtpBookingFilterDate.Enabled = false;
+            dtpBookingFilterDate.Format = DateTimePickerFormat.Short;
+            dtpBookingFilterDate.Location = new Point(963, 20);
+            dtpBookingFilterDate.Margin = new Padding(4, 5, 4, 5);
+            dtpBookingFilterDate.Name = "dtpBookingFilterDate";
+            dtpBookingFilterDate.Size = new Size(170, 31);
+            dtpBookingFilterDate.TabIndex = 1;
+            // 
+            // chkEnableDateFilter
+            // 
+            chkEnableDateFilter.AutoSize = true;
+            chkEnableDateFilter.Location = new Point(877, 23);
+            chkEnableDateFilter.Margin = new Padding(4, 5, 4, 5);
+            chkEnableDateFilter.Name = "chkEnableDateFilter";
+            chkEnableDateFilter.Size = new Size(79, 29);
+            chkEnableDateFilter.TabIndex = 2;
+            chkEnableDateFilter.Text = "Date:";
+            // 
+            // cmbBookingRouteFilter
+            // 
+            cmbBookingRouteFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBookingRouteFilter.Items.AddRange(new object[] { "All Routes / Trips" });
+            cmbBookingRouteFilter.Location = new Point(603, 20);
+            cmbBookingRouteFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbBookingRouteFilter.Name = "cmbBookingRouteFilter";
+            cmbBookingRouteFilter.Size = new Size(255, 33);
+            cmbBookingRouteFilter.TabIndex = 3;
+            // 
+            // cmbBookingStatusFilter
+            // 
+            cmbBookingStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBookingStatusFilter.Items.AddRange(new object[] { "All Statuses", "Confirmed", "Pending", "Cancelled" });
+            cmbBookingStatusFilter.Location = new Point(403, 20);
+            cmbBookingStatusFilter.Margin = new Padding(4, 5, 4, 5);
+            cmbBookingStatusFilter.Name = "cmbBookingStatusFilter";
+            cmbBookingStatusFilter.Size = new Size(184, 33);
+            cmbBookingStatusFilter.TabIndex = 4;
+            // 
+            // txtSearchBooking
+            // 
+            txtSearchBooking.Location = new Point(17, 20);
+            txtSearchBooking.Margin = new Padding(4, 5, 4, 5);
+            txtSearchBooking.Name = "txtSearchBooking";
+            txtSearchBooking.PlaceholderText = "Search by ID, name, phone, coach...";
+            txtSearchBooking.Size = new Size(370, 31);
+            txtSearchBooking.TabIndex = 5;
+            // 
+            // flowBookingMetrics
+            // 
+            flowBookingMetrics.Controls.Add(cardTotalBookings);
+            flowBookingMetrics.Controls.Add(cardConfirmedBookings);
+            flowBookingMetrics.Controls.Add(cardPendingBookings);
+            flowBookingMetrics.Controls.Add(cardCancelledBookings);
+            flowBookingMetrics.Controls.Add(cardTodayBookings);
+            flowBookingMetrics.Location = new Point(0, 107);
+            flowBookingMetrics.Margin = new Padding(4, 5, 4, 5);
+            flowBookingMetrics.Name = "flowBookingMetrics";
+            flowBookingMetrics.Size = new Size(1407, 140);
+            flowBookingMetrics.TabIndex = 5;
+            // 
+            // cardTotalBookings
+            // 
+            cardTotalBookings.BackColor = Color.White;
+            cardTotalBookings.BorderStyle = BorderStyle.FixedSingle;
+            cardTotalBookings.Controls.Add(lblMetricTotalBookingsVal);
+            cardTotalBookings.Controls.Add(lblMetricTotalBookingsTitle);
+            cardTotalBookings.Location = new Point(0, 0);
+            cardTotalBookings.Margin = new Padding(0, 0, 20, 0);
+            cardTotalBookings.Name = "cardTotalBookings";
+            cardTotalBookings.Size = new Size(319, 139);
+            cardTotalBookings.TabIndex = 0;
+            // 
+            // lblMetricTotalBookingsVal
+            // 
+            lblMetricTotalBookingsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricTotalBookingsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricTotalBookingsVal.Location = new Point(17, 13);
+            lblMetricTotalBookingsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalBookingsVal.Name = "lblMetricTotalBookingsVal";
+            lblMetricTotalBookingsVal.Size = new Size(286, 53);
+            lblMetricTotalBookingsVal.TabIndex = 0;
+            lblMetricTotalBookingsVal.Text = "0";
+            // 
+            // lblMetricTotalBookingsTitle
+            // 
+            lblMetricTotalBookingsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricTotalBookingsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricTotalBookingsTitle.Location = new Point(17, 73);
+            lblMetricTotalBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTotalBookingsTitle.Name = "lblMetricTotalBookingsTitle";
+            lblMetricTotalBookingsTitle.Size = new Size(286, 30);
+            lblMetricTotalBookingsTitle.TabIndex = 1;
+            lblMetricTotalBookingsTitle.Text = "TOTAL BOOKINGS";
+            // 
+            // cardConfirmedBookings
+            // 
+            cardConfirmedBookings.BackColor = Color.White;
+            cardConfirmedBookings.BorderStyle = BorderStyle.FixedSingle;
+            cardConfirmedBookings.Controls.Add(lblMetricConfirmedBookingsVal);
+            cardConfirmedBookings.Controls.Add(lblMetricConfirmedBookingsTitle);
+            cardConfirmedBookings.Location = new Point(339, 0);
+            cardConfirmedBookings.Margin = new Padding(0, 0, 20, 0);
+            cardConfirmedBookings.Name = "cardConfirmedBookings";
+            cardConfirmedBookings.Size = new Size(319, 139);
+            cardConfirmedBookings.TabIndex = 1;
+            // 
+            // lblMetricConfirmedBookingsVal
+            // 
+            lblMetricConfirmedBookingsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricConfirmedBookingsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricConfirmedBookingsVal.Location = new Point(17, 13);
+            lblMetricConfirmedBookingsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricConfirmedBookingsVal.Name = "lblMetricConfirmedBookingsVal";
+            lblMetricConfirmedBookingsVal.Size = new Size(286, 53);
+            lblMetricConfirmedBookingsVal.TabIndex = 0;
+            lblMetricConfirmedBookingsVal.Text = "0";
+            // 
+            // lblMetricConfirmedBookingsTitle
+            // 
+            lblMetricConfirmedBookingsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricConfirmedBookingsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricConfirmedBookingsTitle.Location = new Point(17, 73);
+            lblMetricConfirmedBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricConfirmedBookingsTitle.Name = "lblMetricConfirmedBookingsTitle";
+            lblMetricConfirmedBookingsTitle.Size = new Size(286, 30);
+            lblMetricConfirmedBookingsTitle.TabIndex = 1;
+            lblMetricConfirmedBookingsTitle.Text = "CONFIRMED";
+            // 
+            // cardPendingBookings
+            // 
+            cardPendingBookings.BackColor = Color.White;
+            cardPendingBookings.BorderStyle = BorderStyle.FixedSingle;
+            cardPendingBookings.Controls.Add(lblMetricPendingBookingsVal);
+            cardPendingBookings.Controls.Add(lblMetricPendingBookingsTitle);
+            cardPendingBookings.Location = new Point(678, 0);
+            cardPendingBookings.Margin = new Padding(0, 0, 20, 0);
+            cardPendingBookings.Name = "cardPendingBookings";
+            cardPendingBookings.Size = new Size(319, 139);
+            cardPendingBookings.TabIndex = 2;
+            // 
+            // lblMetricPendingBookingsVal
+            // 
+            lblMetricPendingBookingsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricPendingBookingsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricPendingBookingsVal.Location = new Point(17, 13);
+            lblMetricPendingBookingsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricPendingBookingsVal.Name = "lblMetricPendingBookingsVal";
+            lblMetricPendingBookingsVal.Size = new Size(286, 53);
+            lblMetricPendingBookingsVal.TabIndex = 0;
+            lblMetricPendingBookingsVal.Text = "0";
+            // 
+            // lblMetricPendingBookingsTitle
+            // 
+            lblMetricPendingBookingsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricPendingBookingsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricPendingBookingsTitle.Location = new Point(17, 73);
+            lblMetricPendingBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricPendingBookingsTitle.Name = "lblMetricPendingBookingsTitle";
+            lblMetricPendingBookingsTitle.Size = new Size(286, 30);
+            lblMetricPendingBookingsTitle.TabIndex = 1;
+            lblMetricPendingBookingsTitle.Text = "PENDING";
+            // 
+            // cardCancelledBookings
+            // 
+            cardCancelledBookings.BackColor = Color.White;
+            cardCancelledBookings.BorderStyle = BorderStyle.FixedSingle;
+            cardCancelledBookings.Controls.Add(lblMetricCancelledBookingsVal);
+            cardCancelledBookings.Controls.Add(lblMetricCancelledBookingsTitle);
+            cardCancelledBookings.Location = new Point(1017, 0);
+            cardCancelledBookings.Margin = new Padding(0, 0, 20, 0);
+            cardCancelledBookings.Name = "cardCancelledBookings";
+            cardCancelledBookings.Size = new Size(319, 139);
+            cardCancelledBookings.TabIndex = 3;
+            // 
+            // lblMetricCancelledBookingsVal
+            // 
+            lblMetricCancelledBookingsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricCancelledBookingsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricCancelledBookingsVal.Location = new Point(17, 13);
+            lblMetricCancelledBookingsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricCancelledBookingsVal.Name = "lblMetricCancelledBookingsVal";
+            lblMetricCancelledBookingsVal.Size = new Size(286, 53);
+            lblMetricCancelledBookingsVal.TabIndex = 0;
+            lblMetricCancelledBookingsVal.Text = "0";
+            // 
+            // lblMetricCancelledBookingsTitle
+            // 
+            lblMetricCancelledBookingsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricCancelledBookingsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricCancelledBookingsTitle.Location = new Point(17, 73);
+            lblMetricCancelledBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricCancelledBookingsTitle.Name = "lblMetricCancelledBookingsTitle";
+            lblMetricCancelledBookingsTitle.Size = new Size(286, 30);
+            lblMetricCancelledBookingsTitle.TabIndex = 1;
+            lblMetricCancelledBookingsTitle.Text = "CANCELLED";
+            // 
+            // cardTodayBookings
+            // 
+            cardTodayBookings.BackColor = Color.White;
+            cardTodayBookings.BorderStyle = BorderStyle.FixedSingle;
+            cardTodayBookings.Controls.Add(lblMetricTodayBookingsVal);
+            cardTodayBookings.Controls.Add(lblMetricTodayBookingsTitle);
+            cardTodayBookings.Location = new Point(0, 139);
+            cardTodayBookings.Margin = new Padding(0, 0, 20, 0);
+            cardTodayBookings.Name = "cardTodayBookings";
+            cardTodayBookings.Size = new Size(319, 139);
+            cardTodayBookings.TabIndex = 4;
+            // 
+            // lblMetricTodayBookingsVal
+            // 
+            lblMetricTodayBookingsVal.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblMetricTodayBookingsVal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblMetricTodayBookingsVal.Location = new Point(17, 13);
+            lblMetricTodayBookingsVal.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTodayBookingsVal.Name = "lblMetricTodayBookingsVal";
+            lblMetricTodayBookingsVal.Size = new Size(286, 53);
+            lblMetricTodayBookingsVal.TabIndex = 0;
+            lblMetricTodayBookingsVal.Text = "0";
+            // 
+            // lblMetricTodayBookingsTitle
+            // 
+            lblMetricTodayBookingsTitle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblMetricTodayBookingsTitle.ForeColor = Color.FromArgb(71, 85, 105);
+            lblMetricTodayBookingsTitle.Location = new Point(17, 73);
+            lblMetricTodayBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblMetricTodayBookingsTitle.Name = "lblMetricTodayBookingsTitle";
+            lblMetricTodayBookingsTitle.Size = new Size(286, 30);
+            lblMetricTodayBookingsTitle.TabIndex = 1;
+            lblMetricTodayBookingsTitle.Text = "TODAY'S TRAVEL";
+            // 
+            // panelBookingsHeader
+            // 
+            panelBookingsHeader.Controls.Add(btnNewBooking);
+            panelBookingsHeader.Controls.Add(lblBookingsSubtitle);
+            panelBookingsHeader.Controls.Add(lblBookingsTitle);
+            panelBookingsHeader.Dock = DockStyle.Top;
+            panelBookingsHeader.Location = new Point(0, 0);
+            panelBookingsHeader.Margin = new Padding(4, 5, 4, 5);
+            panelBookingsHeader.Name = "panelBookingsHeader";
+            panelBookingsHeader.Size = new Size(1462, 100);
+            panelBookingsHeader.TabIndex = 6;
+            // 
+            // btnNewBooking
+            // 
+            btnNewBooking.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewBooking.BackColor = Color.FromArgb(15, 23, 42);
+            btnNewBooking.FlatAppearance.BorderSize = 0;
+            btnNewBooking.FlatStyle = FlatStyle.Flat;
+            btnNewBooking.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnNewBooking.ForeColor = Color.White;
+            btnNewBooking.Location = new Point(1177, 23);
+            btnNewBooking.Margin = new Padding(4, 5, 4, 5);
+            btnNewBooking.Name = "btnNewBooking";
+            btnNewBooking.Size = new Size(264, 57);
+            btnNewBooking.TabIndex = 0;
+            btnNewBooking.Text = "➕  New Walk-In Booking";
+            btnNewBooking.UseVisualStyleBackColor = false;
+            // 
+            // lblBookingsSubtitle
+            // 
+            lblBookingsSubtitle.AutoSize = true;
+            lblBookingsSubtitle.Font = new Font("Segoe UI", 9F);
+            lblBookingsSubtitle.ForeColor = Color.FromArgb(100, 116, 139);
+            lblBookingsSubtitle.Location = new Point(3, 55);
+            lblBookingsSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblBookingsSubtitle.Name = "lblBookingsSubtitle";
+            lblBookingsSubtitle.Size = new Size(736, 25);
+            lblBookingsSubtitle.TabIndex = 1;
+            lblBookingsSubtitle.Text = "Search, modify, or cancel reservations, manage seat allocations, and issue passenger tickets.";
+            // 
+            // lblBookingsTitle
+            // 
+            lblBookingsTitle.AutoSize = true;
+            lblBookingsTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblBookingsTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblBookingsTitle.Location = new Point(0, 7);
+            lblBookingsTitle.Margin = new Padding(4, 0, 4, 0);
+            lblBookingsTitle.Name = "lblBookingsTitle";
+            lblBookingsTitle.Size = new Size(519, 38);
+            lblBookingsTitle.TabIndex = 2;
+            lblBookingsTitle.Text = "Passenger Reservations & Booking Desk";
+            // 
+            // panelHeaderInfo
+            // 
+            panelHeaderInfo.Controls.Add(lblPageHeading);
+            panelHeaderInfo.Dock = DockStyle.Top;
+            panelHeaderInfo.Location = new Point(29, 27);
+            panelHeaderInfo.Margin = new Padding(4, 5, 4, 5);
+            panelHeaderInfo.Name = "panelHeaderInfo";
+            panelHeaderInfo.Size = new Size(1488, 93);
+            panelHeaderInfo.TabIndex = 8;
+            // 
+            // lblPageHeading
+            // 
+            lblPageHeading.AutoSize = true;
+            lblPageHeading.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblPageHeading.ForeColor = Color.FromArgb(15, 23, 42);
+            lblPageHeading.Location = new Point(0, 0);
+            lblPageHeading.Margin = new Padding(4, 0, 4, 0);
+            lblPageHeading.Name = "lblPageHeading";
+            lblPageHeading.Size = new Size(628, 45);
+            lblPageHeading.TabIndex = 1;
+            lblPageHeading.Text = "Ticket Counter Overview & Boarding Desk";
+            // 
+            // lblMetricTotalBookingsSub
+            // 
+            lblMetricTotalBookingsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricTotalBookingsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricTotalBookingsSub.Location = new Point(12, 62);
+            lblMetricTotalBookingsSub.Name = "lblMetricTotalBookingsSub";
+            lblMetricTotalBookingsSub.Size = new Size(200, 16);
+            lblMetricTotalBookingsSub.TabIndex = 0;
+            lblMetricTotalBookingsSub.Text = "All reservations";
+            // 
+            // lblMetricConfirmedBookingsSub
+            // 
+            lblMetricConfirmedBookingsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricConfirmedBookingsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricConfirmedBookingsSub.Location = new Point(12, 62);
+            lblMetricConfirmedBookingsSub.Name = "lblMetricConfirmedBookingsSub";
+            lblMetricConfirmedBookingsSub.Size = new Size(200, 16);
+            lblMetricConfirmedBookingsSub.TabIndex = 0;
+            lblMetricConfirmedBookingsSub.Text = "Active passengers";
+            // 
+            // lblMetricPendingBookingsSub
+            // 
+            lblMetricPendingBookingsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricPendingBookingsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricPendingBookingsSub.Location = new Point(12, 62);
+            lblMetricPendingBookingsSub.Name = "lblMetricPendingBookingsSub";
+            lblMetricPendingBookingsSub.Size = new Size(200, 16);
+            lblMetricPendingBookingsSub.TabIndex = 0;
+            lblMetricPendingBookingsSub.Text = "Awaiting clearance";
+            // 
+            // lblMetricCancelledBookingsSub
+            // 
+            lblMetricCancelledBookingsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricCancelledBookingsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricCancelledBookingsSub.Location = new Point(12, 62);
+            lblMetricCancelledBookingsSub.Name = "lblMetricCancelledBookingsSub";
+            lblMetricCancelledBookingsSub.Size = new Size(200, 16);
+            lblMetricCancelledBookingsSub.TabIndex = 0;
+            lblMetricCancelledBookingsSub.Text = "Seats released";
+            // 
+            // lblMetricTodayBookingsSub
+            // 
+            lblMetricTodayBookingsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricTodayBookingsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricTodayBookingsSub.Location = new Point(12, 62);
+            lblMetricTodayBookingsSub.Name = "lblMetricTodayBookingsSub";
+            lblMetricTodayBookingsSub.Size = new Size(200, 16);
+            lblMetricTodayBookingsSub.TabIndex = 0;
+            lblMetricTodayBookingsSub.Text = "Reservations today";
+            // 
+            // lblMetricTotalTicketsSub
+            // 
+            lblMetricTotalTicketsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricTotalTicketsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricTotalTicketsSub.Location = new Point(12, 62);
+            lblMetricTotalTicketsSub.Name = "lblMetricTotalTicketsSub";
+            lblMetricTotalTicketsSub.Size = new Size(200, 16);
+            lblMetricTotalTicketsSub.TabIndex = 0;
+            lblMetricTotalTicketsSub.Text = "All issued passes";
+            // 
+            // lblMetricValidTicketsSub
+            // 
+            lblMetricValidTicketsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricValidTicketsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricValidTicketsSub.Location = new Point(12, 62);
+            lblMetricValidTicketsSub.Name = "lblMetricValidTicketsSub";
+            lblMetricValidTicketsSub.Size = new Size(200, 16);
+            lblMetricValidTicketsSub.TabIndex = 0;
+            lblMetricValidTicketsSub.Text = "Ready for boarding";
+            // 
+            // lblMetricBoardedTicketsSub
+            // 
+            lblMetricBoardedTicketsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricBoardedTicketsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricBoardedTicketsSub.Location = new Point(12, 62);
+            lblMetricBoardedTicketsSub.Name = "lblMetricBoardedTicketsSub";
+            lblMetricBoardedTicketsSub.Size = new Size(200, 16);
+            lblMetricBoardedTicketsSub.TabIndex = 0;
+            lblMetricBoardedTicketsSub.Text = "Cleared passengers";
+            // 
+            // lblMetricCancelledTicketsSub
+            // 
+            lblMetricCancelledTicketsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricCancelledTicketsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricCancelledTicketsSub.Location = new Point(12, 62);
+            lblMetricCancelledTicketsSub.Name = "lblMetricCancelledTicketsSub";
+            lblMetricCancelledTicketsSub.Size = new Size(200, 16);
+            lblMetricCancelledTicketsSub.TabIndex = 0;
+            lblMetricCancelledTicketsSub.Text = "Voided / refunded";
+            // 
+            // lblMetricTodayTicketsSub
+            // 
+            lblMetricTodayTicketsSub.Font = new Font("Segoe UI", 8F);
+            lblMetricTodayTicketsSub.ForeColor = Color.FromArgb(148, 163, 184);
+            lblMetricTodayTicketsSub.Location = new Point(12, 62);
+            lblMetricTodayTicketsSub.Name = "lblMetricTodayTicketsSub";
+            lblMetricTodayTicketsSub.Size = new Size(200, 16);
+            lblMetricTodayTicketsSub.TabIndex = 0;
+            lblMetricTodayTicketsSub.Text = "Departures today";
+            // 
+            // TicketOfficerDashboardForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(248, 250, 252);
+            ClientSize = new Size(1946, 1106);
+            Controls.Add(panelMain);
+            Controls.Add(panelSidebar);
+            Controls.Add(panelTopBar);
+            Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
+            MinimumSize = new Size(1786, 1078);
+            Name = "TicketOfficerDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Bus Ticket Management - Ticket Officer Portal";
+            panelPassengers.ResumeLayout(false);
+            panelPassengerActions.ResumeLayout(false);
+            panelPassengersToolbar.ResumeLayout(false);
+            panelPassengersToolbar.PerformLayout();
+            flowPassengerMetrics.ResumeLayout(false);
+            cardTotalPassengers.ResumeLayout(false);
+            cardActivePassengers.ResumeLayout(false);
+            cardNewPassengersToday.ResumeLayout(false);
+            panelPassengersHeader.ResumeLayout(false);
+            panelPassengersHeader.PerformLayout();
+            panelBookingHistory.ResumeLayout(false);
+            panelHistoryActions.ResumeLayout(false);
+            panelHistoryToolbar.ResumeLayout(false);
+            panelHistoryToolbar.PerformLayout();
+            flowHistoryMetrics.ResumeLayout(false);
+            cardHistoryTotal.ResumeLayout(false);
+            cardHistoryCompleted.ResumeLayout(false);
+            cardHistoryCancelled.ResumeLayout(false);
+            panelHistoryHeader.ResumeLayout(false);
+            panelHistoryHeader.PerformLayout();
+            panelTopBar.ResumeLayout(false);
+            panelTopBar.PerformLayout();
+            panelOfficerProfile.ResumeLayout(false);
+            panelSidebar.ResumeLayout(false);
+            panelSidebar.PerformLayout();
+            panelMain.ResumeLayout(false);
+            panelPayments.ResumeLayout(false);
+            panelPaymentActions.ResumeLayout(false);
+            panelPaymentsToolbar.ResumeLayout(false);
+            panelPaymentsToolbar.PerformLayout();
+            flowPaymentMetrics.ResumeLayout(false);
+            cardPayTotal.ResumeLayout(false);
+            cardPayCash.ResumeLayout(false);
+            cardPayDigital.ResumeLayout(false);
+            cardPayRefunds.ResumeLayout(false);
+            panelPaymentsHeader.ResumeLayout(false);
+            panelPaymentsHeader.PerformLayout();
+            panelTicketManagement.ResumeLayout(false);
+            panelTicketActions.ResumeLayout(false);
+            panelTicketsToolbar.ResumeLayout(false);
+            panelTicketsToolbar.PerformLayout();
+            flowTicketMetrics.ResumeLayout(false);
+            cardTotalTickets.ResumeLayout(false);
+            cardValidTickets.ResumeLayout(false);
+            cardBoardedTickets.ResumeLayout(false);
+            cardCancelledTickets.ResumeLayout(false);
+            cardTodayTickets.ResumeLayout(false);
+            panelTicketsHeader.ResumeLayout(false);
+            panelTicketsHeader.PerformLayout();
+            panelBookingManagement.ResumeLayout(false);
+            panelBookingActions.ResumeLayout(false);
+            panelBookingsToolbar.ResumeLayout(false);
+            panelBookingsToolbar.PerformLayout();
+            flowBookingMetrics.ResumeLayout(false);
+            cardTotalBookings.ResumeLayout(false);
+            cardConfirmedBookings.ResumeLayout(false);
+            cardPendingBookings.ResumeLayout(false);
+            cardCancelledBookings.ResumeLayout(false);
+            cardTodayBookings.ResumeLayout(false);
+            panelBookingsHeader.ResumeLayout(false);
+            panelBookingsHeader.PerformLayout();
+            panelHeaderInfo.ResumeLayout(false);
+            panelHeaderInfo.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Button btnNavPassengers;
+        private Button btnNavBookings;
+        private Button btnNavTickets;
+        private Button btnNavPayments;
+        private Button btnNavHistory;
+        private Button btnNavLogout;
+        private Panel panelPassengers;
+        private Panel panelPassengersHeader;
+        private Label lblPassengersTitle;
+        private Label lblPassengersSubtitle;
+        private Button btnAddPassenger;
+        private FlowLayoutPanel flowPassengerMetrics;
+        private Panel cardTotalPassengers;
+        private Label lblMetricTotalPassengersVal;
+        private Label lblMetricTotalPassengersTitle;
+        private Panel cardActivePassengers;
+        private Label lblMetricActivePassengersVal;
+        private Label lblMetricActivePassengersTitle;
+        private Panel cardNewPassengersToday;
+        private Label lblMetricNewPassengersTodayVal;
+        private Label lblMetricNewPassengersTodayTitle;
+        private Panel panelPassengersToolbar;
+        private TextBox txtSearchPassenger;
+        private ComboBox cmbPassengerStatusFilter;
+        private Button btnRefreshPassengers;
+        private ListView lvPassengers;
+        private ColumnHeader colPassId;
+        private ColumnHeader colPassFullName;
+        private ColumnHeader colPassUsername;
+        private ColumnHeader colPassEmail;
+        private ColumnHeader colPassPhone;
+        private ColumnHeader colPassAddress;
+        private ColumnHeader colPassStatus;
+        private ColumnHeader colPassCreatedDate;
+        private Panel panelPassengerActions;
+        private Button btnEditPassenger;
+        private Button btnViewPassenger;
+        private Label lblPassengerCount;
+        private Panel panelBookingHistory;
+        private Panel panelHistoryHeader;
+        private Label lblHistoryTitle;
+        private FlowLayoutPanel flowHistoryMetrics;
+        private Panel cardHistoryTotal;
+        private Label lblMetricHistoryTotalVal;
+        private Label lblMetricHistoryTotalTitle;
+        private Panel cardHistoryCompleted;
+        private Label lblMetricHistoryCompletedVal;
+        private Label lblMetricHistoryCompletedTitle;
+        private Panel cardHistoryCancelled;
+        private Label lblMetricHistoryCancelledVal;
+        private Label lblMetricHistoryCancelledTitle;
+        private Panel panelHistoryToolbar;
+        private TextBox txtSearchHistory;
+        private ComboBox cmbHistoryStatusFilter;
+        private Button btnRefreshHistory;
+        private ListView lvBookingHistory;
+        private ColumnHeader colHistBookingId;
+        private ColumnHeader colHistPassengerName;
+        private ColumnHeader colHistPassengerPhone;
+        private ColumnHeader colHistRoute;
+        private ColumnHeader colHistTravelDate;
+        private ColumnHeader colHistDepartureTime;
+        private ColumnHeader colHistSeats;
+        private ColumnHeader colHistTotalAmount;
+        private ColumnHeader colHistBookingStatus;
+        private ColumnHeader colHistPaymentStatus;
+        private Panel panelHistoryActions;
+        private Button btnPrintHistoryPass;
+        private Button btnViewHistoryDetails;
+        private Label lblHistoryCount;
         private Panel panelTopBar;
         private Label lblAppIcon;
         private Label lblPortalTitle;
@@ -18,130 +2888,16 @@ namespace Bus_Ticket_mgmt.Forms
         private Button btnMinimize;
         private Button btnMaximize;
         private Button btnClose;
-
-        // Sidebar Navigation
         private Panel panelSidebar;
         private Label lblNavHeader;
-        private Button btnNavDashboard;
-        private Button btnNavIssueTicket;
-        private Button btnNavVerifyTicket;
-        private Button btnNavBookings;
-        private Button btnNavTickets;
-        private Button btnNavManifest;
-        private Button btnNavPayments;
-        private Button btnNavFeedback;
-        private Button btnNavLogout;
-
-        // Main Content Area
         private Panel panelMain;
         private Panel panelHeaderInfo;
         private Label lblPageHeading;
-        private Label lblPageSubHeading;
-
-        // 1. Dashboard Overview Components
-        private FlowLayoutPanel flowDashboard;
-        private GroupBox grpOverview;
-        private Panel cardTicketsToday;
-        private Label lblMetricTicketsTodayVal;
-        private Label lblMetricTicketsTodayTitle;
-        private Panel cardBoarded;
-        private Label lblMetricBoardedVal;
-        private Label lblMetricBoardedTitle;
-        private Panel cardPendingBoarding;
-        private Label lblMetricPendingVal;
-        private Label lblMetricPendingTitle;
-        private Panel cardRevenueToday;
-        private Label lblMetricRevenueTodayVal;
-        private Label lblMetricRevenueTodayTitle;
-
-        private GroupBox grpQuickActions;
-        private Button btnQuickIssue;
-        private Button btnQuickScanner;
-        private Button btnQuickManifest;
-        private Button btnQuickReceipt;
-        private Button btnQuickHelpdesk;
-
-        private GroupBox grpTripsSchedule;
-        private DataGridView dgvTrips;
-
-        private GroupBox grpTicketVerify;
-        private Label lblTicketSearchPrompt;
-        private ModernTextBox txtTicketNumber;
-        private ModernButton btnVerifyTicket;
-        private Label lblVerifyResult;
-
-        // 2. Issue Walk-In Ticket Components
-        private Panel panelIssueTicket;
-        private Panel panelIssueHeader;
-        private Label lblIssueTitle;
-        private Label lblIssueSubtitle;
-        private Panel panelIssueFormCard;
-        private Label lblIssueFormHeader;
-        private Label lblIssueName;
-        private TextBox txtIssueName;
-        private Label lblIssuePhone;
-        private TextBox txtIssuePhone;
-        private Label lblIssueEmail;
-        private TextBox txtIssueEmail;
-        private Label lblIssueRoute;
-        private ComboBox cmbIssueRoute;
-        private Label lblIssueDate;
-        private DateTimePicker dtpIssueDate;
-        private Label lblIssueTime;
-        private ComboBox cmbIssueTime;
-        private Label lblIssueBus;
-        private ComboBox cmbIssueBus;
-        private Label lblIssueGate;
-        private ComboBox cmbIssueGate;
-        private Label lblIssueSeat;
-        private NumericUpDown numIssueSeat;
-        private Label lblIssueFare;
-        private NumericUpDown numIssueFare;
-        private Label lblIssuePaymentMethod;
-        private ComboBox cmbIssuePaymentMethod;
-        private Label lblIssuePaymentStatus;
-        private ComboBox cmbIssuePaymentStatus;
-        private Label lblIssueLuggage;
-        private TextBox txtIssueLuggage;
-        private Label lblIssueNotes;
-        private TextBox txtIssueNotes;
-        private Button btnConfirmIssueTicket;
-        private Button btnClearIssueForm;
-        private Button btnOpenAdvancedBooking;
-
-        private Panel panelIssueSummaryCard;
-        private Label lblIssueSummaryHeader;
-        private Label lblSummaryDetails;
-        private Label lblPreviewTitle;
-        private TextBox txtTicketPreview;
-
-        // 3. Verification & Boarding Station Components
-        private Panel panelVerifyBoarding;
-        private Panel panelVerifyHeader;
-        private Label lblVerifyTitle;
-        private Label lblVerifySubtitle;
-        private Panel panelVerifyToolbar;
-        private TextBox txtVerifySearch;
-        private Button btnVerifyLookup;
-        private Button btnOpenModalScanner;
-        private Panel panelVerifyBanner;
-        private Label lblVerifyBannerTitle;
-        private Label lblVerifyBannerSub;
-        private Panel panelVerifyDossier;
-        private Label lblDossierTitle;
-        private Label lblDossierContent;
-        private Panel panelVerifyActions;
-        private Button btnMarkBoardedAction;
-        private Button btnPrintVerificationPass;
-        private Button btnReportDiscrepancy;
-
-        // 4. Booking Management Section
         private Panel panelBookingManagement;
         private Panel panelBookingsHeader;
         private Label lblBookingsTitle;
         private Label lblBookingsSubtitle;
         private Button btnNewBooking;
-
         private FlowLayoutPanel flowBookingMetrics;
         private Panel cardTotalBookings;
         private Label lblMetricTotalBookingsVal;
@@ -163,7 +2919,6 @@ namespace Bus_Ticket_mgmt.Forms
         private Label lblMetricTodayBookingsVal;
         private Label lblMetricTodayBookingsTitle;
         private Label lblMetricTodayBookingsSub;
-
         private Panel panelBookingsToolbar;
         private TextBox txtSearchBooking;
         private ComboBox cmbBookingStatusFilter;
@@ -171,7 +2926,6 @@ namespace Bus_Ticket_mgmt.Forms
         private CheckBox chkEnableDateFilter;
         private DateTimePicker dtpBookingFilterDate;
         private Button btnResetBookingFilters;
-
         private ListView lvBookings;
         private ColumnHeader colBookingId;
         private ColumnHeader colPassengerName;
@@ -183,22 +2937,18 @@ namespace Bus_Ticket_mgmt.Forms
         private ColumnHeader colTotalAmount;
         private ColumnHeader colBookingStatus;
         private ColumnHeader colPaymentStatus;
-
         private Panel panelBookingActions;
         private Button btnViewBookingDetails;
         private Button btnModifyBooking;
         private Button btnCancelBookingAction;
         private Button btnPrintTicket;
         private Label lblBookingCount;
-
-        // 5. Ticket Management Section
         private Panel panelTicketManagement;
         private Panel panelTicketsHeader;
         private Label lblTicketsTitle;
         private Label lblTicketsSubtitle;
         private Button btnNewTicket;
         private Button btnVerifyBoardModal;
-
         private FlowLayoutPanel flowTicketMetrics;
         private Panel cardTotalTickets;
         private Label lblMetricTotalTicketsVal;
@@ -220,7 +2970,6 @@ namespace Bus_Ticket_mgmt.Forms
         private Label lblMetricTodayTicketsVal;
         private Label lblMetricTodayTicketsTitle;
         private Label lblMetricTodayTicketsSub;
-
         private Panel panelTicketsToolbar;
         private TextBox txtSearchTicketFilter;
         private ComboBox cmbTicketStatusFilter;
@@ -228,7 +2977,6 @@ namespace Bus_Ticket_mgmt.Forms
         private CheckBox chkEnableTicketDateFilter;
         private DateTimePicker dtpTicketFilterDate;
         private Button btnResetTicketFilters;
-
         private ListView lvTickets;
         private ColumnHeader colTicketId;
         private ColumnHeader colTicketBookingRef;
@@ -241,64 +2989,18 @@ namespace Bus_Ticket_mgmt.Forms
         private ColumnHeader colTicketGate;
         private ColumnHeader colTicketBus;
         private ColumnHeader colTicketStatus;
-
         private Panel panelTicketActions;
         private Button btnViewTicketDetails;
         private Button btnVerifyAndBoard;
         private Button btnPrintTicketPass;
         private Button btnCancelTicketAction;
         private Label lblTicketCount;
-
-        // 6. Passenger Manifest Section
-        private Panel panelManifest;
-        private Panel panelManifestHeader;
-        private Label lblManifestTitle;
-        private Label lblManifestSubtitle;
-        private Panel panelManifestToolbar;
-        private Label lblManifestRoutePrompt;
-        private ComboBox cmbManifestRoute;
-        private Label lblManifestDatePrompt;
-        private DateTimePicker dtpManifestDate;
-        private Button btnLoadManifest;
-
-        private FlowLayoutPanel flowManifestMetrics;
-        private Panel cardManifestTotal;
-        private Label lblManifestTotalVal;
-        private Label lblManifestTotalTitle;
-        private Panel cardManifestBoarded;
-        private Label lblManifestBoardedVal;
-        private Label lblManifestBoardedTitle;
-        private Panel cardManifestPending;
-        private Label lblManifestPendingVal;
-        private Label lblManifestPendingTitle;
-        private Panel cardManifestNoShow;
-        private Label lblManifestNoShowVal;
-        private Label lblManifestNoShowTitle;
-
-        private ListView lvManifest;
-        private ColumnHeader colManSeat;
-        private ColumnHeader colManPassenger;
-        private ColumnHeader colManPhone;
         private ColumnHeader colManTicketId;
         private ColumnHeader colManBookingId;
-        private ColumnHeader colManGate;
-        private ColumnHeader colManStatus;
-        private ColumnHeader colManBoardedTime;
-        private ColumnHeader colManVerifiedBy;
-
-        private Panel panelManifestActions;
-        private Button btnManifestMarkBoarded;
-        private Button btnManifestMarkAbsent;
-        private Button btnPrintManifest;
-        private Button btnVerifyManifestPassenger;
-        private Label lblManifestCount;
-
-        // 7. Counter Payments & Cashier Section
         private Panel panelPayments;
         private Panel panelPaymentsHeader;
         private Label lblPaymentsTitle;
         private Label lblPaymentsSubtitle;
-
         private FlowLayoutPanel flowPaymentMetrics;
         private Panel cardPayTotal;
         private Label lblPayTotalVal;
@@ -312,13 +3014,11 @@ namespace Bus_Ticket_mgmt.Forms
         private Panel cardPayRefunds;
         private Label lblPayRefundsVal;
         private Label lblPayRefundsTitle;
-
         private Panel panelPaymentsToolbar;
         private TextBox txtSearchPayments;
         private ComboBox cmbPaymentMethodFilter;
         private ComboBox cmbPaymentStatusFilter;
         private Button btnRefreshPayments;
-
         private ListView lvPayments;
         private ColumnHeader colPayReceipt;
         private ColumnHeader colPayBooking;
@@ -330,2552 +3030,10 @@ namespace Bus_Ticket_mgmt.Forms
         private ColumnHeader colPayStatus;
         private ColumnHeader colPayDate;
         private ColumnHeader colPayCashier;
-
         private Panel panelPaymentActions;
         private Button btnPrintReceipt;
         private Button btnRecordPayment;
         private Button btnProcessRefund;
         private Label lblPaymentCount;
-
-        // 8. Customer Helpdesk & Inquiries Section
-        private Panel panelFeedback;
-        private Panel panelFeedbackHeader;
-        private Label lblFeedbackTitle;
-        private Label lblFeedbackSubtitle;
-        private Button btnNewInquiry;
-
-        private FlowLayoutPanel flowFeedbackMetrics;
-        private Panel cardInqTotal;
-        private Label lblInqTotalVal;
-        private Label lblInqTotalTitle;
-        private Panel cardInqPending;
-        private Label lblInqPendingVal;
-        private Label lblInqPendingTitle;
-        private Panel cardInqResolved;
-        private Label lblInqResolvedVal;
-        private Label lblInqResolvedTitle;
-
-        private Panel panelFeedbackToolbar;
-        private TextBox txtSearchInquiries;
-        private ComboBox cmbInquiryStatusFilter;
-        private Button btnRefreshInquiries;
-
-        private ListView lvInquiries;
-        private ColumnHeader colInqId;
-        private ColumnHeader colInqPassenger;
-        private ColumnHeader colInqPhone;
-        private ColumnHeader colInqCategory;
-        private ColumnHeader colInqSubject;
-        private ColumnHeader colInqStatus;
-        private ColumnHeader colInqDate;
-        private ColumnHeader colInqOfficer;
-
-        private Panel panelFeedbackActions;
-        private Button btnResolveInquiry;
-        private Button btnViewInquiryDetails;
-        private Label lblInquiryCount;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private void InitializeComponent()
-        {
-            this.panelTopBar = new System.Windows.Forms.Panel();
-            this.lblAppIcon = new System.Windows.Forms.Label();
-            this.lblPortalTitle = new System.Windows.Forms.Label();
-            this.panelOfficerProfile = new System.Windows.Forms.Panel();
-            this.lblOfficerName = new System.Windows.Forms.Label();
-            this.lblOfficerRole = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-
-            this.panelSidebar = new System.Windows.Forms.Panel();
-            this.lblNavHeader = new System.Windows.Forms.Label();
-            this.btnNavDashboard = new System.Windows.Forms.Button();
-            this.btnNavIssueTicket = new System.Windows.Forms.Button();
-            this.btnNavVerifyTicket = new System.Windows.Forms.Button();
-            this.btnNavBookings = new System.Windows.Forms.Button();
-            this.btnNavTickets = new System.Windows.Forms.Button();
-            this.btnNavManifest = new System.Windows.Forms.Button();
-            this.btnNavPayments = new System.Windows.Forms.Button();
-            this.btnNavFeedback = new System.Windows.Forms.Button();
-            this.btnNavLogout = new System.Windows.Forms.Button();
-
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.panelHeaderInfo = new System.Windows.Forms.Panel();
-            this.lblPageHeading = new System.Windows.Forms.Label();
-            this.lblPageSubHeading = new System.Windows.Forms.Label();
-
-            // 1. Dashboard
-            this.flowDashboard = new System.Windows.Forms.FlowLayoutPanel();
-            this.grpOverview = new System.Windows.Forms.GroupBox();
-            this.cardTicketsToday = new System.Windows.Forms.Panel();
-            this.lblMetricTicketsTodayVal = new System.Windows.Forms.Label();
-            this.lblMetricTicketsTodayTitle = new System.Windows.Forms.Label();
-            this.cardBoarded = new System.Windows.Forms.Panel();
-            this.lblMetricBoardedVal = new System.Windows.Forms.Label();
-            this.lblMetricBoardedTitle = new System.Windows.Forms.Label();
-            this.cardPendingBoarding = new System.Windows.Forms.Panel();
-            this.lblMetricPendingVal = new System.Windows.Forms.Label();
-            this.lblMetricPendingTitle = new System.Windows.Forms.Label();
-            this.cardRevenueToday = new System.Windows.Forms.Panel();
-            this.lblMetricRevenueTodayVal = new System.Windows.Forms.Label();
-            this.lblMetricRevenueTodayTitle = new System.Windows.Forms.Label();
-
-            this.grpQuickActions = new System.Windows.Forms.GroupBox();
-            this.btnQuickIssue = new System.Windows.Forms.Button();
-            this.btnQuickScanner = new System.Windows.Forms.Button();
-            this.btnQuickManifest = new System.Windows.Forms.Button();
-            this.btnQuickReceipt = new System.Windows.Forms.Button();
-            this.btnQuickHelpdesk = new System.Windows.Forms.Button();
-
-            this.grpTripsSchedule = new System.Windows.Forms.GroupBox();
-            this.dgvTrips = new System.Windows.Forms.DataGridView();
-
-            this.grpTicketVerify = new System.Windows.Forms.GroupBox();
-            this.lblTicketSearchPrompt = new System.Windows.Forms.Label();
-            this.txtTicketNumber = new Bus_Ticket_mgmt.ModernTextBox();
-            this.btnVerifyTicket = new Bus_Ticket_mgmt.ModernButton();
-            this.lblVerifyResult = new System.Windows.Forms.Label();
-
-            // 2. Issue Walk-In Ticket
-            this.panelIssueTicket = new System.Windows.Forms.Panel();
-            this.panelIssueHeader = new System.Windows.Forms.Panel();
-            this.lblIssueTitle = new System.Windows.Forms.Label();
-            this.lblIssueSubtitle = new System.Windows.Forms.Label();
-            this.panelIssueFormCard = new System.Windows.Forms.Panel();
-            this.lblIssueFormHeader = new System.Windows.Forms.Label();
-            this.lblIssueName = new System.Windows.Forms.Label();
-            this.txtIssueName = new System.Windows.Forms.TextBox();
-            this.lblIssuePhone = new System.Windows.Forms.Label();
-            this.txtIssuePhone = new System.Windows.Forms.TextBox();
-            this.lblIssueEmail = new System.Windows.Forms.Label();
-            this.txtIssueEmail = new System.Windows.Forms.TextBox();
-            this.lblIssueRoute = new System.Windows.Forms.Label();
-            this.cmbIssueRoute = new System.Windows.Forms.ComboBox();
-            this.lblIssueDate = new System.Windows.Forms.Label();
-            this.dtpIssueDate = new System.Windows.Forms.DateTimePicker();
-            this.lblIssueTime = new System.Windows.Forms.Label();
-            this.cmbIssueTime = new System.Windows.Forms.ComboBox();
-            this.lblIssueBus = new System.Windows.Forms.Label();
-            this.cmbIssueBus = new System.Windows.Forms.ComboBox();
-            this.lblIssueGate = new System.Windows.Forms.Label();
-            this.cmbIssueGate = new System.Windows.Forms.ComboBox();
-            this.lblIssueSeat = new System.Windows.Forms.Label();
-            this.numIssueSeat = new System.Windows.Forms.NumericUpDown();
-            this.lblIssueFare = new System.Windows.Forms.Label();
-            this.numIssueFare = new System.Windows.Forms.NumericUpDown();
-            this.lblIssuePaymentMethod = new System.Windows.Forms.Label();
-            this.cmbIssuePaymentMethod = new System.Windows.Forms.ComboBox();
-            this.lblIssuePaymentStatus = new System.Windows.Forms.Label();
-            this.cmbIssuePaymentStatus = new System.Windows.Forms.ComboBox();
-            this.lblIssueLuggage = new System.Windows.Forms.Label();
-            this.txtIssueLuggage = new System.Windows.Forms.TextBox();
-            this.lblIssueNotes = new System.Windows.Forms.Label();
-            this.txtIssueNotes = new System.Windows.Forms.TextBox();
-            this.btnConfirmIssueTicket = new System.Windows.Forms.Button();
-            this.btnClearIssueForm = new System.Windows.Forms.Button();
-            this.btnOpenAdvancedBooking = new System.Windows.Forms.Button();
-
-            this.panelIssueSummaryCard = new System.Windows.Forms.Panel();
-            this.lblIssueSummaryHeader = new System.Windows.Forms.Label();
-            this.lblSummaryDetails = new System.Windows.Forms.Label();
-            this.lblPreviewTitle = new System.Windows.Forms.Label();
-            this.txtTicketPreview = new System.Windows.Forms.TextBox();
-
-            // 3. Verification & Boarding
-            this.panelVerifyBoarding = new System.Windows.Forms.Panel();
-            this.panelVerifyHeader = new System.Windows.Forms.Panel();
-            this.lblVerifyTitle = new System.Windows.Forms.Label();
-            this.lblVerifySubtitle = new System.Windows.Forms.Label();
-            this.panelVerifyToolbar = new System.Windows.Forms.Panel();
-            this.txtVerifySearch = new System.Windows.Forms.TextBox();
-            this.btnVerifyLookup = new System.Windows.Forms.Button();
-            this.btnOpenModalScanner = new System.Windows.Forms.Button();
-            this.panelVerifyBanner = new System.Windows.Forms.Panel();
-            this.lblVerifyBannerTitle = new System.Windows.Forms.Label();
-            this.lblVerifyBannerSub = new System.Windows.Forms.Label();
-            this.panelVerifyDossier = new System.Windows.Forms.Panel();
-            this.lblDossierTitle = new System.Windows.Forms.Label();
-            this.lblDossierContent = new System.Windows.Forms.Label();
-            this.panelVerifyActions = new System.Windows.Forms.Panel();
-            this.btnMarkBoardedAction = new System.Windows.Forms.Button();
-            this.btnPrintVerificationPass = new System.Windows.Forms.Button();
-            this.btnReportDiscrepancy = new System.Windows.Forms.Button();
-
-            // 4. Booking Management
-            this.panelBookingManagement = new System.Windows.Forms.Panel();
-            this.panelBookingsHeader = new System.Windows.Forms.Panel();
-            this.lblBookingsTitle = new System.Windows.Forms.Label();
-            this.lblBookingsSubtitle = new System.Windows.Forms.Label();
-            this.btnNewBooking = new System.Windows.Forms.Button();
-
-            this.flowBookingMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.cardTotalBookings = new System.Windows.Forms.Panel();
-            this.lblMetricTotalBookingsVal = new System.Windows.Forms.Label();
-            this.lblMetricTotalBookingsTitle = new System.Windows.Forms.Label();
-            this.lblMetricTotalBookingsSub = new System.Windows.Forms.Label();
-            this.cardConfirmedBookings = new System.Windows.Forms.Panel();
-            this.lblMetricConfirmedBookingsVal = new System.Windows.Forms.Label();
-            this.lblMetricConfirmedBookingsTitle = new System.Windows.Forms.Label();
-            this.lblMetricConfirmedBookingsSub = new System.Windows.Forms.Label();
-            this.cardPendingBookings = new System.Windows.Forms.Panel();
-            this.lblMetricPendingBookingsVal = new System.Windows.Forms.Label();
-            this.lblMetricPendingBookingsTitle = new System.Windows.Forms.Label();
-            this.lblMetricPendingBookingsSub = new System.Windows.Forms.Label();
-            this.cardCancelledBookings = new System.Windows.Forms.Panel();
-            this.lblMetricCancelledBookingsVal = new System.Windows.Forms.Label();
-            this.lblMetricCancelledBookingsTitle = new System.Windows.Forms.Label();
-            this.lblMetricCancelledBookingsSub = new System.Windows.Forms.Label();
-            this.cardTodayBookings = new System.Windows.Forms.Panel();
-            this.lblMetricTodayBookingsVal = new System.Windows.Forms.Label();
-            this.lblMetricTodayBookingsTitle = new System.Windows.Forms.Label();
-            this.lblMetricTodayBookingsSub = new System.Windows.Forms.Label();
-
-            this.panelBookingsToolbar = new System.Windows.Forms.Panel();
-            this.txtSearchBooking = new System.Windows.Forms.TextBox();
-            this.cmbBookingStatusFilter = new System.Windows.Forms.ComboBox();
-            this.cmbBookingRouteFilter = new System.Windows.Forms.ComboBox();
-            this.chkEnableDateFilter = new System.Windows.Forms.CheckBox();
-            this.dtpBookingFilterDate = new System.Windows.Forms.DateTimePicker();
-            this.btnResetBookingFilters = new System.Windows.Forms.Button();
-
-            this.lvBookings = new System.Windows.Forms.ListView();
-            this.colBookingId = new System.Windows.Forms.ColumnHeader();
-            this.colPassengerName = new System.Windows.Forms.ColumnHeader();
-            this.colPassengerPhone = new System.Windows.Forms.ColumnHeader();
-            this.colBookingRoute = new System.Windows.Forms.ColumnHeader();
-            this.colTravelDate = new System.Windows.Forms.ColumnHeader();
-            this.colDepartureTime = new System.Windows.Forms.ColumnHeader();
-            this.colSeats = new System.Windows.Forms.ColumnHeader();
-            this.colTotalAmount = new System.Windows.Forms.ColumnHeader();
-            this.colBookingStatus = new System.Windows.Forms.ColumnHeader();
-            this.colPaymentStatus = new System.Windows.Forms.ColumnHeader();
-
-            this.panelBookingActions = new System.Windows.Forms.Panel();
-            this.btnViewBookingDetails = new System.Windows.Forms.Button();
-            this.btnModifyBooking = new System.Windows.Forms.Button();
-            this.btnCancelBookingAction = new System.Windows.Forms.Button();
-            this.btnPrintTicket = new System.Windows.Forms.Button();
-            this.lblBookingCount = new System.Windows.Forms.Label();
-
-            // 5. Ticket Management
-            this.panelTicketManagement = new System.Windows.Forms.Panel();
-            this.panelTicketsHeader = new System.Windows.Forms.Panel();
-            this.lblTicketsTitle = new System.Windows.Forms.Label();
-            this.lblTicketsSubtitle = new System.Windows.Forms.Label();
-            this.btnNewTicket = new System.Windows.Forms.Button();
-            this.btnVerifyBoardModal = new System.Windows.Forms.Button();
-
-            this.flowTicketMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.cardTotalTickets = new System.Windows.Forms.Panel();
-            this.lblMetricTotalTicketsVal = new System.Windows.Forms.Label();
-            this.lblMetricTotalTicketsTitle = new System.Windows.Forms.Label();
-            this.lblMetricTotalTicketsSub = new System.Windows.Forms.Label();
-            this.cardValidTickets = new System.Windows.Forms.Panel();
-            this.lblMetricValidTicketsVal = new System.Windows.Forms.Label();
-            this.lblMetricValidTicketsTitle = new System.Windows.Forms.Label();
-            this.lblMetricValidTicketsSub = new System.Windows.Forms.Label();
-            this.cardBoardedTickets = new System.Windows.Forms.Panel();
-            this.lblMetricBoardedTicketsVal = new System.Windows.Forms.Label();
-            this.lblMetricBoardedTicketsTitle = new System.Windows.Forms.Label();
-            this.lblMetricBoardedTicketsSub = new System.Windows.Forms.Label();
-            this.cardCancelledTickets = new System.Windows.Forms.Panel();
-            this.lblMetricCancelledTicketsVal = new System.Windows.Forms.Label();
-            this.lblMetricCancelledTicketsTitle = new System.Windows.Forms.Label();
-            this.lblMetricCancelledTicketsSub = new System.Windows.Forms.Label();
-            this.cardTodayTickets = new System.Windows.Forms.Panel();
-            this.lblMetricTodayTicketsVal = new System.Windows.Forms.Label();
-            this.lblMetricTodayTicketsTitle = new System.Windows.Forms.Label();
-            this.lblMetricTodayTicketsSub = new System.Windows.Forms.Label();
-
-            this.panelTicketsToolbar = new System.Windows.Forms.Panel();
-            this.txtSearchTicketFilter = new System.Windows.Forms.TextBox();
-            this.cmbTicketStatusFilter = new System.Windows.Forms.ComboBox();
-            this.cmbTicketRouteFilter = new System.Windows.Forms.ComboBox();
-            this.chkEnableTicketDateFilter = new System.Windows.Forms.CheckBox();
-            this.dtpTicketFilterDate = new System.Windows.Forms.DateTimePicker();
-            this.btnResetTicketFilters = new System.Windows.Forms.Button();
-
-            this.lvTickets = new System.Windows.Forms.ListView();
-            this.colTicketId = new System.Windows.Forms.ColumnHeader();
-            this.colTicketBookingRef = new System.Windows.Forms.ColumnHeader();
-            this.colTicketPassenger = new System.Windows.Forms.ColumnHeader();
-            this.colTicketPhone = new System.Windows.Forms.ColumnHeader();
-            this.colTicketRoute = new System.Windows.Forms.ColumnHeader();
-            this.colTicketDate = new System.Windows.Forms.ColumnHeader();
-            this.colTicketTime = new System.Windows.Forms.ColumnHeader();
-            this.colTicketSeat = new System.Windows.Forms.ColumnHeader();
-            this.colTicketGate = new System.Windows.Forms.ColumnHeader();
-            this.colTicketBus = new System.Windows.Forms.ColumnHeader();
-            this.colTicketStatus = new System.Windows.Forms.ColumnHeader();
-
-            this.panelTicketActions = new System.Windows.Forms.Panel();
-            this.btnViewTicketDetails = new System.Windows.Forms.Button();
-            this.btnVerifyAndBoard = new System.Windows.Forms.Button();
-            this.btnPrintTicketPass = new System.Windows.Forms.Button();
-            this.btnCancelTicketAction = new System.Windows.Forms.Button();
-            this.lblTicketCount = new System.Windows.Forms.Label();
-
-            // 6. Manifest
-            this.panelManifest = new System.Windows.Forms.Panel();
-            this.panelManifestHeader = new System.Windows.Forms.Panel();
-            this.lblManifestTitle = new System.Windows.Forms.Label();
-            this.lblManifestSubtitle = new System.Windows.Forms.Label();
-            this.panelManifestToolbar = new System.Windows.Forms.Panel();
-            this.lblManifestRoutePrompt = new System.Windows.Forms.Label();
-            this.cmbManifestRoute = new System.Windows.Forms.ComboBox();
-            this.lblManifestDatePrompt = new System.Windows.Forms.Label();
-            this.dtpManifestDate = new System.Windows.Forms.DateTimePicker();
-            this.btnLoadManifest = new System.Windows.Forms.Button();
-
-            this.flowManifestMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.cardManifestTotal = new System.Windows.Forms.Panel();
-            this.lblManifestTotalVal = new System.Windows.Forms.Label();
-            this.lblManifestTotalTitle = new System.Windows.Forms.Label();
-            this.cardManifestBoarded = new System.Windows.Forms.Panel();
-            this.lblManifestBoardedVal = new System.Windows.Forms.Label();
-            this.lblManifestBoardedTitle = new System.Windows.Forms.Label();
-            this.cardManifestPending = new System.Windows.Forms.Panel();
-            this.lblManifestPendingVal = new System.Windows.Forms.Label();
-            this.lblManifestPendingTitle = new System.Windows.Forms.Label();
-            this.cardManifestNoShow = new System.Windows.Forms.Panel();
-            this.lblManifestNoShowVal = new System.Windows.Forms.Label();
-            this.lblManifestNoShowTitle = new System.Windows.Forms.Label();
-
-            this.lvManifest = new System.Windows.Forms.ListView();
-            this.colManSeat = new System.Windows.Forms.ColumnHeader();
-            this.colManPassenger = new System.Windows.Forms.ColumnHeader();
-            this.colManPhone = new System.Windows.Forms.ColumnHeader();
-            this.colManTicketId = new System.Windows.Forms.ColumnHeader();
-            this.colManBookingId = new System.Windows.Forms.ColumnHeader();
-            this.colManGate = new System.Windows.Forms.ColumnHeader();
-            this.colManStatus = new System.Windows.Forms.ColumnHeader();
-            this.colManBoardedTime = new System.Windows.Forms.ColumnHeader();
-            this.colManVerifiedBy = new System.Windows.Forms.ColumnHeader();
-
-            this.panelManifestActions = new System.Windows.Forms.Panel();
-            this.btnManifestMarkBoarded = new System.Windows.Forms.Button();
-            this.btnManifestMarkAbsent = new System.Windows.Forms.Button();
-            this.btnPrintManifest = new System.Windows.Forms.Button();
-            this.btnVerifyManifestPassenger = new System.Windows.Forms.Button();
-            this.lblManifestCount = new System.Windows.Forms.Label();
-
-            // 7. Payments
-            this.panelPayments = new System.Windows.Forms.Panel();
-            this.panelPaymentsHeader = new System.Windows.Forms.Panel();
-            this.lblPaymentsTitle = new System.Windows.Forms.Label();
-            this.lblPaymentsSubtitle = new System.Windows.Forms.Label();
-
-            this.flowPaymentMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.cardPayTotal = new System.Windows.Forms.Panel();
-            this.lblPayTotalVal = new System.Windows.Forms.Label();
-            this.lblPayTotalTitle = new System.Windows.Forms.Label();
-            this.cardPayCash = new System.Windows.Forms.Panel();
-            this.lblPayCashVal = new System.Windows.Forms.Label();
-            this.lblPayCashTitle = new System.Windows.Forms.Label();
-            this.cardPayDigital = new System.Windows.Forms.Panel();
-            this.lblPayDigitalVal = new System.Windows.Forms.Label();
-            this.lblPayDigitalTitle = new System.Windows.Forms.Label();
-            this.cardPayRefunds = new System.Windows.Forms.Panel();
-            this.lblPayRefundsVal = new System.Windows.Forms.Label();
-            this.lblPayRefundsTitle = new System.Windows.Forms.Label();
-
-            this.panelPaymentsToolbar = new System.Windows.Forms.Panel();
-            this.txtSearchPayments = new System.Windows.Forms.TextBox();
-            this.cmbPaymentMethodFilter = new System.Windows.Forms.ComboBox();
-            this.cmbPaymentStatusFilter = new System.Windows.Forms.ComboBox();
-            this.btnRefreshPayments = new System.Windows.Forms.Button();
-
-            this.lvPayments = new System.Windows.Forms.ListView();
-            this.colPayReceipt = new System.Windows.Forms.ColumnHeader();
-            this.colPayBooking = new System.Windows.Forms.ColumnHeader();
-            this.colPayTicket = new System.Windows.Forms.ColumnHeader();
-            this.colPayPassenger = new System.Windows.Forms.ColumnHeader();
-            this.colPayRoute = new System.Windows.Forms.ColumnHeader();
-            this.colPayAmount = new System.Windows.Forms.ColumnHeader();
-            this.colPayMethod = new System.Windows.Forms.ColumnHeader();
-            this.colPayStatus = new System.Windows.Forms.ColumnHeader();
-            this.colPayDate = new System.Windows.Forms.ColumnHeader();
-            this.colPayCashier = new System.Windows.Forms.ColumnHeader();
-
-            this.panelPaymentActions = new System.Windows.Forms.Panel();
-            this.btnPrintReceipt = new System.Windows.Forms.Button();
-            this.btnRecordPayment = new System.Windows.Forms.Button();
-            this.btnProcessRefund = new System.Windows.Forms.Button();
-            this.lblPaymentCount = new System.Windows.Forms.Label();
-
-            // 8. Helpdesk
-            this.panelFeedback = new System.Windows.Forms.Panel();
-            this.panelFeedbackHeader = new System.Windows.Forms.Panel();
-            this.lblFeedbackTitle = new System.Windows.Forms.Label();
-            this.lblFeedbackSubtitle = new System.Windows.Forms.Label();
-            this.btnNewInquiry = new System.Windows.Forms.Button();
-
-            this.flowFeedbackMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.cardInqTotal = new System.Windows.Forms.Panel();
-            this.lblInqTotalVal = new System.Windows.Forms.Label();
-            this.lblInqTotalTitle = new System.Windows.Forms.Label();
-            this.cardInqPending = new System.Windows.Forms.Panel();
-            this.lblInqPendingVal = new System.Windows.Forms.Label();
-            this.lblInqPendingTitle = new System.Windows.Forms.Label();
-            this.cardInqResolved = new System.Windows.Forms.Panel();
-            this.lblInqResolvedVal = new System.Windows.Forms.Label();
-            this.lblInqResolvedTitle = new System.Windows.Forms.Label();
-
-            this.panelFeedbackToolbar = new System.Windows.Forms.Panel();
-            this.txtSearchInquiries = new System.Windows.Forms.TextBox();
-            this.cmbInquiryStatusFilter = new System.Windows.Forms.ComboBox();
-            this.btnRefreshInquiries = new System.Windows.Forms.Button();
-
-            this.lvInquiries = new System.Windows.Forms.ListView();
-            this.colInqId = new System.Windows.Forms.ColumnHeader();
-            this.colInqPassenger = new System.Windows.Forms.ColumnHeader();
-            this.colInqPhone = new System.Windows.Forms.ColumnHeader();
-            this.colInqCategory = new System.Windows.Forms.ColumnHeader();
-            this.colInqSubject = new System.Windows.Forms.ColumnHeader();
-            this.colInqStatus = new System.Windows.Forms.ColumnHeader();
-            this.colInqDate = new System.Windows.Forms.ColumnHeader();
-            this.colInqOfficer = new System.Windows.Forms.ColumnHeader();
-
-            this.panelFeedbackActions = new System.Windows.Forms.Panel();
-            this.btnResolveInquiry = new System.Windows.Forms.Button();
-            this.btnViewInquiryDetails = new System.Windows.Forms.Button();
-            this.lblInquiryCount = new System.Windows.Forms.Label();
-
-            // SuspendLayouts
-            this.panelTopBar.SuspendLayout();
-            this.panelOfficerProfile.SuspendLayout();
-            this.panelSidebar.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            this.panelHeaderInfo.SuspendLayout();
-            this.flowDashboard.SuspendLayout();
-            this.grpOverview.SuspendLayout();
-            this.cardTicketsToday.SuspendLayout();
-            this.cardBoarded.SuspendLayout();
-            this.cardPendingBoarding.SuspendLayout();
-            this.cardRevenueToday.SuspendLayout();
-            this.grpQuickActions.SuspendLayout();
-            this.grpTripsSchedule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrips)).BeginInit();
-            this.grpTicketVerify.SuspendLayout();
-
-            this.panelIssueTicket.SuspendLayout();
-            this.panelIssueHeader.SuspendLayout();
-            this.panelIssueFormCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numIssueSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIssueFare)).BeginInit();
-            this.panelIssueSummaryCard.SuspendLayout();
-
-            this.panelVerifyBoarding.SuspendLayout();
-            this.panelVerifyHeader.SuspendLayout();
-            this.panelVerifyToolbar.SuspendLayout();
-            this.panelVerifyBanner.SuspendLayout();
-            this.panelVerifyDossier.SuspendLayout();
-            this.panelVerifyActions.SuspendLayout();
-
-            this.panelBookingManagement.SuspendLayout();
-            this.panelBookingsHeader.SuspendLayout();
-            this.flowBookingMetrics.SuspendLayout();
-            this.panelBookingsToolbar.SuspendLayout();
-            this.panelBookingActions.SuspendLayout();
-
-            this.panelTicketManagement.SuspendLayout();
-            this.panelTicketsHeader.SuspendLayout();
-            this.flowTicketMetrics.SuspendLayout();
-            this.panelTicketsToolbar.SuspendLayout();
-            this.panelTicketActions.SuspendLayout();
-
-            this.panelManifest.SuspendLayout();
-            this.panelManifestHeader.SuspendLayout();
-            this.panelManifestToolbar.SuspendLayout();
-            this.flowManifestMetrics.SuspendLayout();
-            this.panelManifestActions.SuspendLayout();
-
-            this.panelPayments.SuspendLayout();
-            this.panelPaymentsHeader.SuspendLayout();
-            this.flowPaymentMetrics.SuspendLayout();
-            this.panelPaymentsToolbar.SuspendLayout();
-            this.panelPaymentActions.SuspendLayout();
-
-            this.panelFeedback.SuspendLayout();
-            this.panelFeedbackHeader.SuspendLayout();
-            this.flowFeedbackMetrics.SuspendLayout();
-            this.panelFeedbackToolbar.SuspendLayout();
-            this.panelFeedbackActions.SuspendLayout();
-            this.SuspendLayout();
-
-            // ==========================================
-            // TOP BAR
-            // ==========================================
-            this.panelTopBar.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.panelTopBar.Controls.Add(this.lblAppIcon);
-            this.panelTopBar.Controls.Add(this.lblPortalTitle);
-            this.panelTopBar.Controls.Add(this.panelOfficerProfile);
-            this.panelTopBar.Controls.Add(this.btnMinimize);
-            this.panelTopBar.Controls.Add(this.btnMaximize);
-            this.panelTopBar.Controls.Add(this.btnClose);
-            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Height = 44;
-            this.panelTopBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(1260, 44);
-            this.panelTopBar.TabIndex = 0;
-
-            this.lblAppIcon.Location = new System.Drawing.Point(14, 4);
-            this.lblAppIcon.Name = "lblAppIcon";
-            this.lblAppIcon.Size = new System.Drawing.Size(32, 36);
-
-            this.lblPortalTitle.AutoSize = true;
-            this.lblPortalTitle.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPortalTitle.ForeColor = System.Drawing.Color.White;
-            this.lblPortalTitle.Location = new System.Drawing.Point(52, 12);
-            this.lblPortalTitle.Name = "lblPortalTitle";
-            this.lblPortalTitle.Size = new System.Drawing.Size(340, 19);
-            this.lblPortalTitle.Text = "Bus Ticket Management  |  Ticket Officer Portal";
-
-            this.panelOfficerProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelOfficerProfile.Controls.Add(this.lblOfficerName);
-            this.panelOfficerProfile.Controls.Add(this.lblOfficerRole);
-            this.panelOfficerProfile.Location = new System.Drawing.Point(900, 4);
-            this.panelOfficerProfile.Name = "panelOfficerProfile";
-            this.panelOfficerProfile.Size = new System.Drawing.Size(210, 36);
-
-            this.lblOfficerName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOfficerName.ForeColor = System.Drawing.Color.White;
-            this.lblOfficerName.Location = new System.Drawing.Point(0, 2);
-            this.lblOfficerName.Name = "lblOfficerName";
-            this.lblOfficerName.Size = new System.Drawing.Size(200, 16);
-            this.lblOfficerName.Text = "Marta Tadesse";
-            this.lblOfficerName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            this.lblOfficerRole.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOfficerRole.ForeColor = System.Drawing.Color.FromArgb(56, 189, 248);
-            this.lblOfficerRole.Location = new System.Drawing.Point(0, 18);
-            this.lblOfficerRole.Name = "lblOfficerRole";
-            this.lblOfficerRole.Size = new System.Drawing.Size(200, 14);
-            this.lblOfficerRole.Text = "Ticket Officer • Terminal Desk 01";
-            this.lblOfficerRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.btnMinimize.Location = new System.Drawing.Point(1122, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(46, 44);
-            this.btnMinimize.Text = "—";
-            this.btnMinimize.UseVisualStyleBackColor = true;
-
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.btnMaximize.Location = new System.Drawing.Point(1168, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(46, 44);
-            this.btnMaximize.Text = "□";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
-            this.btnClose.Location = new System.Drawing.Point(1214, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 44);
-            this.btnClose.Text = "✕";
-            this.btnClose.UseVisualStyleBackColor = true;
-
-            // ==========================================
-            // SIDEBAR
-            // ==========================================
-            this.panelSidebar.AutoScroll = true;
-            this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(245, 247, 250);
-            this.panelSidebar.Controls.Add(this.btnNavLogout);
-            this.panelSidebar.Controls.Add(this.btnNavFeedback);
-            this.panelSidebar.Controls.Add(this.btnNavPayments);
-            this.panelSidebar.Controls.Add(this.btnNavManifest);
-            this.panelSidebar.Controls.Add(this.btnNavTickets);
-            this.panelSidebar.Controls.Add(this.btnNavBookings);
-            this.panelSidebar.Controls.Add(this.btnNavVerifyTicket);
-            this.panelSidebar.Controls.Add(this.btnNavIssueTicket);
-            this.panelSidebar.Controls.Add(this.btnNavDashboard);
-            this.panelSidebar.Controls.Add(this.lblNavHeader);
-            this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSidebar.Location = new System.Drawing.Point(0, 44);
-            this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(230, 776);
-
-            this.lblNavHeader.AutoSize = true;
-            this.lblNavHeader.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblNavHeader.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblNavHeader.Location = new System.Drawing.Point(16, 16);
-            this.lblNavHeader.Name = "lblNavHeader";
-            this.lblNavHeader.Size = new System.Drawing.Size(126, 13);
-            this.lblNavHeader.Text = "TERMINAL DESK MENU";
-
-            this.btnNavDashboard.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnNavDashboard.FlatAppearance.BorderSize = 0;
-            this.btnNavDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavDashboard.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnNavDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnNavDashboard.Location = new System.Drawing.Point(10, 40);
-            this.btnNavDashboard.Name = "btnNavDashboard";
-            this.btnNavDashboard.Size = new System.Drawing.Size(210, 36);
-            this.btnNavDashboard.Text = "📊  Counter Overview";
-            this.btnNavDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavIssueTicket.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavIssueTicket.FlatAppearance.BorderSize = 0;
-            this.btnNavIssueTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavIssueTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavIssueTicket.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavIssueTicket.Location = new System.Drawing.Point(10, 80);
-            this.btnNavIssueTicket.Name = "btnNavIssueTicket";
-            this.btnNavIssueTicket.Size = new System.Drawing.Size(210, 34);
-            this.btnNavIssueTicket.Text = "🎫  Issue Walk-in Ticket";
-            this.btnNavIssueTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavVerifyTicket.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavVerifyTicket.FlatAppearance.BorderSize = 0;
-            this.btnNavVerifyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavVerifyTicket.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavVerifyTicket.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavVerifyTicket.Location = new System.Drawing.Point(10, 118);
-            this.btnNavVerifyTicket.Name = "btnNavVerifyTicket";
-            this.btnNavVerifyTicket.Size = new System.Drawing.Size(210, 34);
-            this.btnNavVerifyTicket.Text = "🔍  Verify & Boarding Pass";
-            this.btnNavVerifyTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavBookings.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavBookings.FlatAppearance.BorderSize = 0;
-            this.btnNavBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavBookings.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavBookings.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavBookings.Location = new System.Drawing.Point(10, 156);
-            this.btnNavBookings.Name = "btnNavBookings";
-            this.btnNavBookings.Size = new System.Drawing.Size(210, 34);
-            this.btnNavBookings.Text = "📋  Bookings Desk";
-            this.btnNavBookings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavTickets.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavTickets.FlatAppearance.BorderSize = 0;
-            this.btnNavTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavTickets.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavTickets.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavTickets.Location = new System.Drawing.Point(10, 194);
-            this.btnNavTickets.Name = "btnNavTickets";
-            this.btnNavTickets.Size = new System.Drawing.Size(210, 34);
-            this.btnNavTickets.Text = "🏷️  Tickets Directory";
-            this.btnNavTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavManifest.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavManifest.FlatAppearance.BorderSize = 0;
-            this.btnNavManifest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavManifest.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavManifest.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavManifest.Location = new System.Drawing.Point(10, 232);
-            this.btnNavManifest.Name = "btnNavManifest";
-            this.btnNavManifest.Size = new System.Drawing.Size(210, 34);
-            this.btnNavManifest.Text = "🚌  Passenger Manifest";
-            this.btnNavManifest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavPayments.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavPayments.FlatAppearance.BorderSize = 0;
-            this.btnNavPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavPayments.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavPayments.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavPayments.Location = new System.Drawing.Point(10, 270);
-            this.btnNavPayments.Name = "btnNavPayments";
-            this.btnNavPayments.Size = new System.Drawing.Size(210, 34);
-            this.btnNavPayments.Text = "💳  Cashier & Receipts";
-            this.btnNavPayments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavFeedback.BackColor = System.Drawing.Color.Transparent;
-            this.btnNavFeedback.FlatAppearance.BorderSize = 0;
-            this.btnNavFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavFeedback.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNavFeedback.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.btnNavFeedback.Location = new System.Drawing.Point(10, 308);
-            this.btnNavFeedback.Name = "btnNavFeedback";
-            this.btnNavFeedback.Size = new System.Drawing.Size(210, 34);
-            this.btnNavFeedback.Text = "💬  Customer Helpdesk";
-            this.btnNavFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            this.btnNavLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNavLogout.BackColor = System.Drawing.Color.FromArgb(254, 242, 242);
-            this.btnNavLogout.FlatAppearance.BorderSize = 0;
-            this.btnNavLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavLogout.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnNavLogout.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnNavLogout.Location = new System.Drawing.Point(10, 720);
-            this.btnNavLogout.Name = "btnNavLogout";
-            this.btnNavLogout.Size = new System.Drawing.Size(210, 40);
-            this.btnNavLogout.Text = "🚪  Sign Out";
-            this.btnNavLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            // ==========================================
-            // MAIN CONTAINER
-            // ==========================================
-            this.panelMain.AutoScroll = true;
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            this.panelMain.Controls.Add(this.panelFeedback);
-            this.panelMain.Controls.Add(this.panelPayments);
-            this.panelMain.Controls.Add(this.panelManifest);
-            this.panelMain.Controls.Add(this.panelTicketManagement);
-            this.panelMain.Controls.Add(this.panelBookingManagement);
-            this.panelMain.Controls.Add(this.panelVerifyBoarding);
-            this.panelMain.Controls.Add(this.panelIssueTicket);
-            this.panelMain.Controls.Add(this.flowDashboard);
-            this.panelMain.Controls.Add(this.panelHeaderInfo);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(230, 44);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Padding = new System.Windows.Forms.Padding(20, 16, 20, 20);
-            this.panelMain.Size = new System.Drawing.Size(1030, 776);
-
-            // Header info
-            this.panelHeaderInfo.Controls.Add(this.lblPageSubHeading);
-            this.panelHeaderInfo.Controls.Add(this.lblPageHeading);
-            this.panelHeaderInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderInfo.Location = new System.Drawing.Point(20, 16);
-            this.panelHeaderInfo.Name = "panelHeaderInfo";
-            this.panelHeaderInfo.Size = new System.Drawing.Size(990, 56);
-
-            this.lblPageHeading.AutoSize = true;
-            this.lblPageHeading.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblPageHeading.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblPageHeading.Location = new System.Drawing.Point(0, 0);
-            this.lblPageHeading.Name = "lblPageHeading";
-            this.lblPageHeading.Size = new System.Drawing.Size(430, 30);
-            this.lblPageHeading.Text = "Ticket Counter Overview & Boarding Desk";
-
-            this.lblPageSubHeading.AutoSize = true;
-            this.lblPageSubHeading.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPageSubHeading.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblPageSubHeading.Location = new System.Drawing.Point(2, 33);
-            this.lblPageSubHeading.Name = "lblPageSubHeading";
-            this.lblPageSubHeading.Size = new System.Drawing.Size(550, 15);
-            this.lblPageSubHeading.Text = "Terminal Desk 01  •  Ethiopian Intercity Bus Terminal  •  Live Passenger Services & Boarding Verification";
-
-            // ==========================================
-            // 1. DASHBOARD OVERVIEW VIEW
-            // ==========================================
-            this.flowDashboard.AutoScroll = true;
-            this.flowDashboard.Controls.Add(this.grpOverview);
-            this.flowDashboard.Controls.Add(this.grpQuickActions);
-            this.flowDashboard.Controls.Add(this.grpTicketVerify);
-            this.flowDashboard.Controls.Add(this.grpTripsSchedule);
-            this.flowDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowDashboard.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowDashboard.Location = new System.Drawing.Point(20, 72);
-            this.flowDashboard.Name = "flowDashboard";
-            this.flowDashboard.Size = new System.Drawing.Size(990, 684);
-            this.flowDashboard.WrapContents = false;
-
-            // grpOverview
-            this.grpOverview.Controls.Add(this.cardRevenueToday);
-            this.grpOverview.Controls.Add(this.cardPendingBoarding);
-            this.grpOverview.Controls.Add(this.cardBoarded);
-            this.grpOverview.Controls.Add(this.cardTicketsToday);
-            this.grpOverview.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.grpOverview.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.grpOverview.Location = new System.Drawing.Point(3, 3);
-            this.grpOverview.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
-            this.grpOverview.Name = "grpOverview";
-            this.grpOverview.Size = new System.Drawing.Size(975, 116);
-            this.grpOverview.Text = "TODAY\'S TERMINAL STATS";
-
-            // cardTicketsToday
-            this.cardTicketsToday.BackColor = System.Drawing.Color.White;
-            this.cardTicketsToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardTicketsToday.Controls.Add(this.lblMetricTicketsTodayVal);
-            this.cardTicketsToday.Controls.Add(this.lblMetricTicketsTodayTitle);
-            this.cardTicketsToday.Location = new System.Drawing.Point(14, 25);
-            this.cardTicketsToday.Name = "cardTicketsToday";
-            this.cardTicketsToday.Size = new System.Drawing.Size(224, 76);
-
-            this.lblMetricTicketsTodayVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblMetricTicketsTodayVal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblMetricTicketsTodayVal.Location = new System.Drawing.Point(10, 8);
-            this.lblMetricTicketsTodayVal.Name = "lblMetricTicketsTodayVal";
-            this.lblMetricTicketsTodayVal.Size = new System.Drawing.Size(200, 34);
-            this.lblMetricTicketsTodayVal.Text = "0";
-
-            this.lblMetricTicketsTodayTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.lblMetricTicketsTodayTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblMetricTicketsTodayTitle.Location = new System.Drawing.Point(11, 46);
-            this.lblMetricTicketsTodayTitle.Name = "lblMetricTicketsTodayTitle";
-            this.lblMetricTicketsTodayTitle.Size = new System.Drawing.Size(200, 18);
-            this.lblMetricTicketsTodayTitle.Text = "TICKETS ISSUED TODAY";
-
-            // cardBoarded
-            this.cardBoarded.BackColor = System.Drawing.Color.White;
-            this.cardBoarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardBoarded.Controls.Add(this.lblMetricBoardedVal);
-            this.cardBoarded.Controls.Add(this.lblMetricBoardedTitle);
-            this.cardBoarded.Location = new System.Drawing.Point(252, 25);
-            this.cardBoarded.Name = "cardBoarded";
-            this.cardBoarded.Size = new System.Drawing.Size(224, 76);
-
-            this.lblMetricBoardedVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblMetricBoardedVal.ForeColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.lblMetricBoardedVal.Location = new System.Drawing.Point(10, 8);
-            this.lblMetricBoardedVal.Name = "lblMetricBoardedVal";
-            this.lblMetricBoardedVal.Size = new System.Drawing.Size(200, 34);
-            this.lblMetricBoardedVal.Text = "0";
-
-            this.lblMetricBoardedTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.lblMetricBoardedTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblMetricBoardedTitle.Location = new System.Drawing.Point(11, 46);
-            this.lblMetricBoardedTitle.Name = "lblMetricBoardedTitle";
-            this.lblMetricBoardedTitle.Size = new System.Drawing.Size(200, 18);
-            this.lblMetricBoardedTitle.Text = "PASSENGERS BOARDED";
-
-            // cardPendingBoarding
-            this.cardPendingBoarding.BackColor = System.Drawing.Color.White;
-            this.cardPendingBoarding.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardPendingBoarding.Controls.Add(this.lblMetricPendingVal);
-            this.cardPendingBoarding.Controls.Add(this.lblMetricPendingTitle);
-            this.cardPendingBoarding.Location = new System.Drawing.Point(490, 25);
-            this.cardPendingBoarding.Name = "cardPendingBoarding";
-            this.cardPendingBoarding.Size = new System.Drawing.Size(224, 76);
-
-            this.lblMetricPendingVal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblMetricPendingVal.ForeColor = System.Drawing.Color.FromArgb(234, 88, 12);
-            this.lblMetricPendingVal.Location = new System.Drawing.Point(10, 8);
-            this.lblMetricPendingVal.Name = "lblMetricPendingVal";
-            this.lblMetricPendingVal.Size = new System.Drawing.Size(200, 34);
-            this.lblMetricPendingVal.Text = "0";
-
-            this.lblMetricPendingTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.lblMetricPendingTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblMetricPendingTitle.Location = new System.Drawing.Point(11, 46);
-            this.lblMetricPendingTitle.Name = "lblMetricPendingTitle";
-            this.lblMetricPendingTitle.Size = new System.Drawing.Size(200, 18);
-            this.lblMetricPendingTitle.Text = "AWAITING BOARDING";
-
-            // cardRevenueToday
-            this.cardRevenueToday.BackColor = System.Drawing.Color.White;
-            this.cardRevenueToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardRevenueToday.Controls.Add(this.lblMetricRevenueTodayVal);
-            this.cardRevenueToday.Controls.Add(this.lblMetricRevenueTodayTitle);
-            this.cardRevenueToday.Location = new System.Drawing.Point(728, 25);
-            this.cardRevenueToday.Name = "cardRevenueToday";
-            this.cardRevenueToday.Size = new System.Drawing.Size(232, 76);
-
-            this.lblMetricRevenueTodayVal.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
-            this.lblMetricRevenueTodayVal.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.lblMetricRevenueTodayVal.Location = new System.Drawing.Point(10, 8);
-            this.lblMetricRevenueTodayVal.Name = "lblMetricRevenueTodayVal";
-            this.lblMetricRevenueTodayVal.Size = new System.Drawing.Size(210, 34);
-            this.lblMetricRevenueTodayVal.Text = "0 ETB";
-
-            this.lblMetricRevenueTodayTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
-            this.lblMetricRevenueTodayTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblMetricRevenueTodayTitle.Location = new System.Drawing.Point(11, 46);
-            this.lblMetricRevenueTodayTitle.Name = "lblMetricRevenueTodayTitle";
-            this.lblMetricRevenueTodayTitle.Size = new System.Drawing.Size(210, 18);
-            this.lblMetricRevenueTodayTitle.Text = "TODAY\'S CASHIER INTAKE";
-
-            // grpQuickActions
-            this.grpQuickActions.Controls.Add(this.btnQuickHelpdesk);
-            this.grpQuickActions.Controls.Add(this.btnQuickReceipt);
-            this.grpQuickActions.Controls.Add(this.btnQuickManifest);
-            this.grpQuickActions.Controls.Add(this.btnQuickScanner);
-            this.grpQuickActions.Controls.Add(this.btnQuickIssue);
-            this.grpQuickActions.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.grpQuickActions.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.grpQuickActions.Location = new System.Drawing.Point(3, 136);
-            this.grpQuickActions.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
-            this.grpQuickActions.Name = "grpQuickActions";
-            this.grpQuickActions.Size = new System.Drawing.Size(975, 78);
-            this.grpQuickActions.Text = "FAST TERMINAL ACTIONS";
-
-            this.btnQuickIssue.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnQuickIssue.FlatAppearance.BorderSize = 0;
-            this.btnQuickIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickIssue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnQuickIssue.ForeColor = System.Drawing.Color.White;
-            this.btnQuickIssue.Location = new System.Drawing.Point(14, 26);
-            this.btnQuickIssue.Name = "btnQuickIssue";
-            this.btnQuickIssue.Size = new System.Drawing.Size(180, 36);
-            this.btnQuickIssue.Text = "🎫  Issue Walk-in Ticket";
-
-            this.btnQuickScanner.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnQuickScanner.FlatAppearance.BorderSize = 0;
-            this.btnQuickScanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickScanner.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnQuickScanner.ForeColor = System.Drawing.Color.White;
-            this.btnQuickScanner.Location = new System.Drawing.Point(206, 26);
-            this.btnQuickScanner.Name = "btnQuickScanner";
-            this.btnQuickScanner.Size = new System.Drawing.Size(180, 36);
-            this.btnQuickScanner.Text = "🔍  Boarding Scanner";
-
-            this.btnQuickManifest.BackColor = System.Drawing.Color.White;
-            this.btnQuickManifest.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnQuickManifest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickManifest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnQuickManifest.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnQuickManifest.Location = new System.Drawing.Point(398, 26);
-            this.btnQuickManifest.Name = "btnQuickManifest";
-            this.btnQuickManifest.Size = new System.Drawing.Size(180, 36);
-            this.btnQuickManifest.Text = "🚌  Passenger Manifest";
-
-            this.btnQuickReceipt.BackColor = System.Drawing.Color.White;
-            this.btnQuickReceipt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnQuickReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickReceipt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnQuickReceipt.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnQuickReceipt.Location = new System.Drawing.Point(590, 26);
-            this.btnQuickReceipt.Name = "btnQuickReceipt";
-            this.btnQuickReceipt.Size = new System.Drawing.Size(180, 36);
-            this.btnQuickReceipt.Text = "💳  Cashier Payments";
-
-            this.btnQuickHelpdesk.BackColor = System.Drawing.Color.White;
-            this.btnQuickHelpdesk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnQuickHelpdesk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuickHelpdesk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnQuickHelpdesk.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnQuickHelpdesk.Location = new System.Drawing.Point(782, 26);
-            this.btnQuickHelpdesk.Name = "btnQuickHelpdesk";
-            this.btnQuickHelpdesk.Size = new System.Drawing.Size(178, 36);
-            this.btnQuickHelpdesk.Text = "💬  Customer Helpdesk";
-
-            // grpTicketVerify
-            this.grpTicketVerify.Controls.Add(this.lblVerifyResult);
-            this.grpTicketVerify.Controls.Add(this.btnVerifyTicket);
-            this.grpTicketVerify.Controls.Add(this.txtTicketNumber);
-            this.grpTicketVerify.Controls.Add(this.lblTicketSearchPrompt);
-            this.grpTicketVerify.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.grpTicketVerify.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.grpTicketVerify.Location = new System.Drawing.Point(3, 231);
-            this.grpTicketVerify.Margin = new System.Windows.Forms.Padding(3, 3, 3, 14);
-            this.grpTicketVerify.Name = "grpTicketVerify";
-            this.grpTicketVerify.Size = new System.Drawing.Size(975, 110);
-            this.grpTicketVerify.Text = "INSTANT TICKET VERIFICATION & BOARDING CHECK-IN";
-
-            this.lblTicketSearchPrompt.AutoSize = true;
-            this.lblTicketSearchPrompt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblTicketSearchPrompt.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
-            this.lblTicketSearchPrompt.Location = new System.Drawing.Point(14, 25);
-            this.lblTicketSearchPrompt.Name = "lblTicketSearchPrompt";
-            this.lblTicketSearchPrompt.Size = new System.Drawing.Size(560, 15);
-            this.lblTicketSearchPrompt.Text = "Scan barcode or enter Ticket ID (e.g. TK1001), Booking Reference (BK0001), or Security Code (VER-...) to verify:";
-
-            this.txtTicketNumber.BackColor = System.Drawing.Color.White;
-            this.txtTicketNumber.Location = new System.Drawing.Point(14, 48);
-            this.txtTicketNumber.Name = "txtTicketNumber";
-            this.txtTicketNumber.Size = new System.Drawing.Size(340, 42);
-
-            this.btnVerifyTicket.FlatAppearance.BorderSize = 0;
-            this.btnVerifyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerifyTicket.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnVerifyTicket.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyTicket.Location = new System.Drawing.Point(364, 48);
-            this.btnVerifyTicket.Name = "btnVerifyTicket";
-            this.btnVerifyTicket.Size = new System.Drawing.Size(210, 42);
-            this.btnVerifyTicket.Text = "Verify && Confirm Boarding";
-
-            this.lblVerifyResult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVerifyResult.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblVerifyResult.Location = new System.Drawing.Point(588, 48);
-            this.lblVerifyResult.Name = "lblVerifyResult";
-            this.lblVerifyResult.Size = new System.Drawing.Size(372, 42);
-            this.lblVerifyResult.Text = "Ready for ticket scanning. Enter reference to validate.";
-            this.lblVerifyResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
-            // grpTripsSchedule
-            this.grpTripsSchedule.Controls.Add(this.dgvTrips);
-            this.grpTripsSchedule.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.grpTripsSchedule.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.grpTripsSchedule.Location = new System.Drawing.Point(3, 362);
-            this.grpTripsSchedule.Name = "grpTripsSchedule";
-            this.grpTripsSchedule.Size = new System.Drawing.Size(975, 270);
-            this.grpTripsSchedule.Text = "TODAY\'S TERMINAL DEPARTURES & GATE STATUS";
-
-            this.dgvTrips.AllowUserToAddRows = false;
-            this.dgvTrips.AllowUserToDeleteRows = false;
-            this.dgvTrips.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTrips.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTrips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrips.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTrips.Location = new System.Drawing.Point(3, 20);
-            this.dgvTrips.MultiSelect = false;
-            this.dgvTrips.Name = "dgvTrips";
-            this.dgvTrips.ReadOnly = true;
-            this.dgvTrips.RowHeadersVisible = false;
-            this.dgvTrips.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrips.Size = new System.Drawing.Size(969, 247);
-
-            // ==========================================
-            // 2. ISSUE WALK-IN TICKET VIEW
-            // ==========================================
-            this.panelIssueTicket.AutoScroll = true;
-            this.panelIssueTicket.Controls.Add(this.panelIssueSummaryCard);
-            this.panelIssueTicket.Controls.Add(this.panelIssueFormCard);
-            this.panelIssueTicket.Controls.Add(this.panelIssueHeader);
-            this.panelIssueTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelIssueTicket.Location = new System.Drawing.Point(20, 72);
-            this.panelIssueTicket.Name = "panelIssueTicket";
-            this.panelIssueTicket.Size = new System.Drawing.Size(990, 684);
-            this.panelIssueTicket.Visible = false;
-
-            // panelIssueHeader
-            this.panelIssueHeader.Controls.Add(this.lblIssueSubtitle);
-            this.panelIssueHeader.Controls.Add(this.lblIssueTitle);
-            this.panelIssueHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelIssueHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelIssueHeader.Name = "panelIssueHeader";
-            this.panelIssueHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblIssueTitle.AutoSize = true;
-            this.lblIssueTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblIssueTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblIssueTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblIssueTitle.Name = "lblIssueTitle";
-            this.lblIssueTitle.Size = new System.Drawing.Size(370, 25);
-            this.lblIssueTitle.Text = "Walk-In Passenger Ticket Issuance Desk";
-
-            this.lblIssueSubtitle.AutoSize = true;
-            this.lblIssueSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblIssueSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblIssueSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblIssueSubtitle.Name = "lblIssueSubtitle";
-            this.lblIssueSubtitle.Size = new System.Drawing.Size(590, 15);
-            this.lblIssueSubtitle.Text = "Book seats, calculate fares, process walk-in counter payment, and generate official passenger boarding tickets.";
-
-            // panelIssueFormCard
-            this.panelIssueFormCard.BackColor = System.Drawing.Color.White;
-            this.panelIssueFormCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIssueFormCard.Controls.Add(this.btnOpenAdvancedBooking);
-            this.panelIssueFormCard.Controls.Add(this.btnClearIssueForm);
-            this.panelIssueFormCard.Controls.Add(this.btnConfirmIssueTicket);
-            this.panelIssueFormCard.Controls.Add(this.txtIssueNotes);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueNotes);
-            this.panelIssueFormCard.Controls.Add(this.txtIssueLuggage);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueLuggage);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssuePaymentStatus);
-            this.panelIssueFormCard.Controls.Add(this.lblIssuePaymentStatus);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssuePaymentMethod);
-            this.panelIssueFormCard.Controls.Add(this.lblIssuePaymentMethod);
-            this.panelIssueFormCard.Controls.Add(this.numIssueFare);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueFare);
-            this.panelIssueFormCard.Controls.Add(this.numIssueSeat);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueSeat);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssueGate);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueGate);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssueBus);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueBus);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssueTime);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueTime);
-            this.panelIssueFormCard.Controls.Add(this.dtpIssueDate);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueDate);
-            this.panelIssueFormCard.Controls.Add(this.cmbIssueRoute);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueRoute);
-            this.panelIssueFormCard.Controls.Add(this.txtIssueEmail);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueEmail);
-            this.panelIssueFormCard.Controls.Add(this.txtIssuePhone);
-            this.panelIssueFormCard.Controls.Add(this.lblIssuePhone);
-            this.panelIssueFormCard.Controls.Add(this.txtIssueName);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueName);
-            this.panelIssueFormCard.Controls.Add(this.lblIssueFormHeader);
-            this.panelIssueFormCard.Location = new System.Drawing.Point(3, 68);
-            this.panelIssueFormCard.Name = "panelIssueFormCard";
-            this.panelIssueFormCard.Size = new System.Drawing.Size(560, 580);
-
-            this.lblIssueFormHeader.AutoSize = true;
-            this.lblIssueFormHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblIssueFormHeader.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblIssueFormHeader.Location = new System.Drawing.Point(16, 12);
-            this.lblIssueFormHeader.Name = "lblIssueFormHeader";
-            this.lblIssueFormHeader.Size = new System.Drawing.Size(260, 19);
-            this.lblIssueFormHeader.Text = "PASSENGER && JOURNEY BOOKING ENTRY";
-
-            // Row 1: Name & Phone
-            this.lblIssueName.AutoSize = true;
-            this.lblIssueName.Location = new System.Drawing.Point(16, 42);
-            this.lblIssueName.Name = "lblIssueName";
-            this.lblIssueName.Size = new System.Drawing.Size(125, 15);
-            this.lblIssueName.Text = "Passenger Full Name *";
-
-            this.txtIssueName.Location = new System.Drawing.Point(16, 60);
-            this.txtIssueName.Name = "txtIssueName";
-            this.txtIssueName.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssuePhone.AutoSize = true;
-            this.lblIssuePhone.Location = new System.Drawing.Point(286, 42);
-            this.lblIssuePhone.Name = "lblIssuePhone";
-            this.lblIssuePhone.Size = new System.Drawing.Size(96, 15);
-            this.lblIssuePhone.Text = "Phone Number *";
-
-            this.txtIssuePhone.Location = new System.Drawing.Point(286, 60);
-            this.txtIssuePhone.Name = "txtIssuePhone";
-            this.txtIssuePhone.Size = new System.Drawing.Size(250, 23);
-
-            // Row 2: Email & Route
-            this.lblIssueEmail.AutoSize = true;
-            this.lblIssueEmail.Location = new System.Drawing.Point(16, 92);
-            this.lblIssueEmail.Name = "lblIssueEmail";
-            this.lblIssueEmail.Size = new System.Drawing.Size(81, 15);
-            this.lblIssueEmail.Text = "Email Address";
-
-            this.txtIssueEmail.Location = new System.Drawing.Point(16, 110);
-            this.txtIssueEmail.Name = "txtIssueEmail";
-            this.txtIssueEmail.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssueRoute.AutoSize = true;
-            this.lblIssueRoute.Location = new System.Drawing.Point(286, 92);
-            this.lblIssueRoute.Name = "lblIssueRoute";
-            this.lblIssueRoute.Size = new System.Drawing.Size(83, 15);
-            this.lblIssueRoute.Text = "Select Route *";
-
-            this.cmbIssueRoute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssueRoute.Location = new System.Drawing.Point(286, 110);
-            this.cmbIssueRoute.Name = "cmbIssueRoute";
-            this.cmbIssueRoute.Size = new System.Drawing.Size(250, 23);
-
-            // Row 3: Date & Departure Time
-            this.lblIssueDate.AutoSize = true;
-            this.lblIssueDate.Location = new System.Drawing.Point(16, 142);
-            this.lblIssueDate.Name = "lblIssueDate";
-            this.lblIssueDate.Size = new System.Drawing.Size(73, 15);
-            this.lblIssueDate.Text = "Travel Date *";
-
-            this.dtpIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIssueDate.Location = new System.Drawing.Point(16, 160);
-            this.dtpIssueDate.Name = "dtpIssueDate";
-            this.dtpIssueDate.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssueTime.AutoSize = true;
-            this.lblIssueTime.Location = new System.Drawing.Point(286, 142);
-            this.lblIssueTime.Name = "lblIssueTime";
-            this.lblIssueTime.Size = new System.Drawing.Size(98, 15);
-            this.lblIssueTime.Text = "Departure Time *";
-
-            this.cmbIssueTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssueTime.Items.AddRange(new object[] { "06:00 AM", "07:30 AM", "08:00 AM", "09:30 AM", "11:00 AM", "01:30 PM", "03:00 PM" });
-            this.cmbIssueTime.Location = new System.Drawing.Point(286, 160);
-            this.cmbIssueTime.Name = "cmbIssueTime";
-            this.cmbIssueTime.Size = new System.Drawing.Size(250, 23);
-
-            // Row 4: Bus & Gate
-            this.lblIssueBus.AutoSize = true;
-            this.lblIssueBus.Location = new System.Drawing.Point(16, 192);
-            this.lblIssueBus.Name = "lblIssueBus";
-            this.lblIssueBus.Size = new System.Drawing.Size(89, 15);
-            this.lblIssueBus.Text = "Assigned Coach";
-
-            this.cmbIssueBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssueBus.Location = new System.Drawing.Point(16, 210);
-            this.cmbIssueBus.Name = "cmbIssueBus";
-            this.cmbIssueBus.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssueGate.AutoSize = true;
-            this.lblIssueGate.Location = new System.Drawing.Point(286, 192);
-            this.lblIssueGate.Name = "lblIssueGate";
-            this.lblIssueGate.Size = new System.Drawing.Size(86, 15);
-            this.lblIssueGate.Text = "Departure Gate";
-
-            this.cmbIssueGate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssueGate.Items.AddRange(new object[] { "Gate 01", "Gate 02", "Gate 03", "Gate 04", "Gate 05", "Gate 06" });
-            this.cmbIssueGate.Location = new System.Drawing.Point(286, 210);
-            this.cmbIssueGate.Name = "cmbIssueGate";
-            this.cmbIssueGate.Size = new System.Drawing.Size(250, 23);
-
-            // Row 5: Seat & Fare
-            this.lblIssueSeat.AutoSize = true;
-            this.lblIssueSeat.Location = new System.Drawing.Point(16, 242);
-            this.lblIssueSeat.Name = "lblIssueSeat";
-            this.lblIssueSeat.Size = new System.Drawing.Size(86, 15);
-            this.lblIssueSeat.Text = "Seat Number *";
-
-            this.numIssueSeat.Location = new System.Drawing.Point(16, 260);
-            this.numIssueSeat.Minimum = 1;
-            this.numIssueSeat.Maximum = 65;
-            this.numIssueSeat.Value = 1;
-            this.numIssueSeat.Name = "numIssueSeat";
-            this.numIssueSeat.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssueFare.AutoSize = true;
-            this.lblIssueFare.Location = new System.Drawing.Point(286, 242);
-            this.lblIssueFare.Name = "lblIssueFare";
-            this.lblIssueFare.Size = new System.Drawing.Size(117, 15);
-            this.lblIssueFare.Text = "Fare Amount (ETB) *";
-
-            this.numIssueFare.DecimalPlaces = 2;
-            this.numIssueFare.Maximum = 10000;
-            this.numIssueFare.Location = new System.Drawing.Point(286, 260);
-            this.numIssueFare.Name = "numIssueFare";
-            this.numIssueFare.Size = new System.Drawing.Size(250, 23);
-
-            // Row 6: Payment Method & Payment Status
-            this.lblIssuePaymentMethod.AutoSize = true;
-            this.lblIssuePaymentMethod.Location = new System.Drawing.Point(16, 292);
-            this.lblIssuePaymentMethod.Name = "lblIssuePaymentMethod";
-            this.lblIssuePaymentMethod.Size = new System.Drawing.Size(107, 15);
-            this.lblIssuePaymentMethod.Text = "Payment Method *";
-
-            this.cmbIssuePaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssuePaymentMethod.Items.AddRange(new object[] { "Cash", "Telebirr", "CBE Birr", "Card" });
-            this.cmbIssuePaymentMethod.Location = new System.Drawing.Point(16, 310);
-            this.cmbIssuePaymentMethod.Name = "cmbIssuePaymentMethod";
-            this.cmbIssuePaymentMethod.Size = new System.Drawing.Size(250, 23);
-
-            this.lblIssuePaymentStatus.AutoSize = true;
-            this.lblIssuePaymentStatus.Location = new System.Drawing.Point(286, 292);
-            this.lblIssuePaymentStatus.Name = "lblIssuePaymentStatus";
-            this.lblIssuePaymentStatus.Size = new System.Drawing.Size(97, 15);
-            this.lblIssuePaymentStatus.Text = "Payment Status *";
-
-            this.cmbIssuePaymentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIssuePaymentStatus.Items.AddRange(new object[] { "Paid", "Pending" });
-            this.cmbIssuePaymentStatus.Location = new System.Drawing.Point(286, 310);
-            this.cmbIssuePaymentStatus.Name = "cmbIssuePaymentStatus";
-            this.cmbIssuePaymentStatus.Size = new System.Drawing.Size(250, 23);
-
-            // Row 7: Luggage & Notes
-            this.lblIssueLuggage.AutoSize = true;
-            this.lblIssueLuggage.Location = new System.Drawing.Point(16, 342);
-            this.lblIssueLuggage.Name = "lblIssueLuggage";
-            this.lblIssueLuggage.Size = new System.Drawing.Size(107, 15);
-            this.lblIssueLuggage.Text = "Luggage Allowance";
-
-            this.txtIssueLuggage.Location = new System.Drawing.Point(16, 360);
-            this.txtIssueLuggage.Name = "txtIssueLuggage";
-            this.txtIssueLuggage.Size = new System.Drawing.Size(520, 23);
-            this.txtIssueLuggage.Text = "25 kg (1 Standard Cargo + 1 Handbag)";
-
-            this.lblIssueNotes.AutoSize = true;
-            this.lblIssueNotes.Location = new System.Drawing.Point(16, 392);
-            this.lblIssueNotes.Name = "lblIssueNotes";
-            this.lblIssueNotes.Size = new System.Drawing.Size(148, 15);
-            this.lblIssueNotes.Text = "Special Requests or Notes";
-
-            this.txtIssueNotes.Location = new System.Drawing.Point(16, 410);
-            this.txtIssueNotes.Multiline = true;
-            this.txtIssueNotes.Name = "txtIssueNotes";
-            this.txtIssueNotes.Size = new System.Drawing.Size(520, 50);
-
-            // Action Buttons in Form Card
-            this.btnConfirmIssueTicket.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnConfirmIssueTicket.FlatAppearance.BorderSize = 0;
-            this.btnConfirmIssueTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmIssueTicket.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmIssueTicket.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmIssueTicket.Location = new System.Drawing.Point(16, 474);
-            this.btnConfirmIssueTicket.Name = "btnConfirmIssueTicket";
-            this.btnConfirmIssueTicket.Size = new System.Drawing.Size(260, 42);
-            this.btnConfirmIssueTicket.Text = "🎫  Issue Ticket && Print";
-
-            this.btnClearIssueForm.BackColor = System.Drawing.Color.White;
-            this.btnClearIssueForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnClearIssueForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearIssueForm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnClearIssueForm.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnClearIssueForm.Location = new System.Drawing.Point(286, 474);
-            this.btnClearIssueForm.Name = "btnClearIssueForm";
-            this.btnClearIssueForm.Size = new System.Drawing.Size(120, 42);
-            this.btnClearIssueForm.Text = "🔄  Clear";
-
-            this.btnOpenAdvancedBooking.BackColor = System.Drawing.Color.White;
-            this.btnOpenAdvancedBooking.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnOpenAdvancedBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenAdvancedBooking.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnOpenAdvancedBooking.ForeColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnOpenAdvancedBooking.Location = new System.Drawing.Point(16, 526);
-            this.btnOpenAdvancedBooking.Name = "btnOpenAdvancedBooking";
-            this.btnOpenAdvancedBooking.Size = new System.Drawing.Size(390, 32);
-            this.btnOpenAdvancedBooking.Text = "📑  Need Multiple Seats? Open Advanced Booking Wizard...";
-
-            // panelIssueSummaryCard (Right Side Preview)
-            this.panelIssueSummaryCard.BackColor = System.Drawing.Color.White;
-            this.panelIssueSummaryCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIssueSummaryCard.Controls.Add(this.txtTicketPreview);
-            this.panelIssueSummaryCard.Controls.Add(this.lblPreviewTitle);
-            this.panelIssueSummaryCard.Controls.Add(this.lblSummaryDetails);
-            this.panelIssueSummaryCard.Controls.Add(this.lblIssueSummaryHeader);
-            this.panelIssueSummaryCard.Location = new System.Drawing.Point(576, 68);
-            this.panelIssueSummaryCard.Name = "panelIssueSummaryCard";
-            this.panelIssueSummaryCard.Size = new System.Drawing.Size(400, 580);
-
-            this.lblIssueSummaryHeader.AutoSize = true;
-            this.lblIssueSummaryHeader.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblIssueSummaryHeader.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblIssueSummaryHeader.Location = new System.Drawing.Point(16, 12);
-            this.lblIssueSummaryHeader.Name = "lblIssueSummaryHeader";
-            this.lblIssueSummaryHeader.Size = new System.Drawing.Size(190, 19);
-            this.lblIssueSummaryHeader.Text = "LIVE FARE && SEAT SUMMARY";
-
-            this.lblSummaryDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSummaryDetails.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.lblSummaryDetails.Location = new System.Drawing.Point(16, 40);
-            this.lblSummaryDetails.Name = "lblSummaryDetails";
-            this.lblSummaryDetails.Size = new System.Drawing.Size(366, 100);
-            this.lblSummaryDetails.Text = "Select a route to calculate distance, scheduled departure time, gate assignment, and ticket fare.";
-
-            this.lblPreviewTitle.AutoSize = true;
-            this.lblPreviewTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblPreviewTitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblPreviewTitle.Location = new System.Drawing.Point(16, 150);
-            this.lblPreviewTitle.Name = "lblPreviewTitle";
-            this.lblPreviewTitle.Size = new System.Drawing.Size(195, 15);
-            this.lblPreviewTitle.Text = "BOARDING PASS PREVIEW (PRINT)";
-
-            this.txtTicketPreview.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            this.txtTicketPreview.Font = new System.Drawing.Font("Consolas", 8.5F);
-            this.txtTicketPreview.Location = new System.Drawing.Point(16, 172);
-            this.txtTicketPreview.Multiline = true;
-            this.txtTicketPreview.Name = "txtTicketPreview";
-            this.txtTicketPreview.ReadOnly = true;
-            this.txtTicketPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTicketPreview.Size = new System.Drawing.Size(366, 390);
-
-            // ==========================================
-            // 3. TICKET VERIFICATION & BOARDING VIEW
-            // ==========================================
-            this.panelVerifyBoarding.AutoScroll = true;
-            this.panelVerifyBoarding.Controls.Add(this.panelVerifyActions);
-            this.panelVerifyBoarding.Controls.Add(this.panelVerifyDossier);
-            this.panelVerifyBoarding.Controls.Add(this.panelVerifyBanner);
-            this.panelVerifyBoarding.Controls.Add(this.panelVerifyToolbar);
-            this.panelVerifyBoarding.Controls.Add(this.panelVerifyHeader);
-            this.panelVerifyBoarding.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelVerifyBoarding.Location = new System.Drawing.Point(20, 72);
-            this.panelVerifyBoarding.Name = "panelVerifyBoarding";
-            this.panelVerifyBoarding.Size = new System.Drawing.Size(990, 684);
-            this.panelVerifyBoarding.Visible = false;
-
-            this.panelVerifyHeader.Controls.Add(this.lblVerifySubtitle);
-            this.panelVerifyHeader.Controls.Add(this.lblVerifyTitle);
-            this.panelVerifyHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVerifyHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelVerifyHeader.Name = "panelVerifyHeader";
-            this.panelVerifyHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblVerifyTitle.AutoSize = true;
-            this.lblVerifyTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblVerifyTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblVerifyTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblVerifyTitle.Name = "lblVerifyTitle";
-            this.lblVerifyTitle.Size = new System.Drawing.Size(430, 25);
-            this.lblVerifyTitle.Text = "Ticket Verification & Passenger Check-In Station";
-
-            this.lblVerifySubtitle.AutoSize = true;
-            this.lblVerifySubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblVerifySubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblVerifySubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblVerifySubtitle.Name = "lblVerifySubtitle";
-            this.lblVerifySubtitle.Size = new System.Drawing.Size(610, 15);
-            this.lblVerifySubtitle.Text = "Scan boarding barcode or enter ticket reference to validate security codes, prevent duplicate reuse, and clear boarding.";
-
-            this.panelVerifyToolbar.BackColor = System.Drawing.Color.White;
-            this.panelVerifyToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelVerifyToolbar.Controls.Add(this.btnOpenModalScanner);
-            this.panelVerifyToolbar.Controls.Add(this.btnVerifyLookup);
-            this.panelVerifyToolbar.Controls.Add(this.txtVerifySearch);
-            this.panelVerifyToolbar.Location = new System.Drawing.Point(3, 68);
-            this.panelVerifyToolbar.Name = "panelVerifyToolbar";
-            this.panelVerifyToolbar.Size = new System.Drawing.Size(975, 56);
-
-            this.txtVerifySearch.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtVerifySearch.Location = new System.Drawing.Point(14, 14);
-            this.txtVerifySearch.Name = "txtVerifySearch";
-            this.txtVerifySearch.PlaceholderText = "Scan or type Ticket ID (TK1001), Booking Ref (BK0001), or Security Code (VER-...)";
-            this.txtVerifySearch.Size = new System.Drawing.Size(560, 27);
-
-            this.btnVerifyLookup.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnVerifyLookup.FlatAppearance.BorderSize = 0;
-            this.btnVerifyLookup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerifyLookup.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnVerifyLookup.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyLookup.Location = new System.Drawing.Point(590, 12);
-            this.btnVerifyLookup.Name = "btnVerifyLookup";
-            this.btnVerifyLookup.Size = new System.Drawing.Size(170, 32);
-            this.btnVerifyLookup.Text = "🔍  Verify Ticket";
-
-            this.btnOpenModalScanner.BackColor = System.Drawing.Color.White;
-            this.btnOpenModalScanner.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnOpenModalScanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenModalScanner.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnOpenModalScanner.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnOpenModalScanner.Location = new System.Drawing.Point(772, 12);
-            this.btnOpenModalScanner.Name = "btnOpenModalScanner";
-            this.btnOpenModalScanner.Size = new System.Drawing.Size(188, 32);
-            this.btnOpenModalScanner.Text = "📱  Open Scanner Modal";
-
-            // Status Banner
-            this.panelVerifyBanner.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.panelVerifyBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelVerifyBanner.Controls.Add(this.lblVerifyBannerSub);
-            this.panelVerifyBanner.Controls.Add(this.lblVerifyBannerTitle);
-            this.panelVerifyBanner.Location = new System.Drawing.Point(3, 134);
-            this.panelVerifyBanner.Name = "panelVerifyBanner";
-            this.panelVerifyBanner.Size = new System.Drawing.Size(975, 76);
-
-            this.lblVerifyBannerTitle.AutoSize = true;
-            this.lblVerifyBannerTitle.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblVerifyBannerTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblVerifyBannerTitle.Location = new System.Drawing.Point(16, 12);
-            this.lblVerifyBannerTitle.Name = "lblVerifyBannerTitle";
-            this.lblVerifyBannerTitle.Size = new System.Drawing.Size(330, 25);
-            this.lblVerifyBannerTitle.Text = "READY FOR TICKET VERIFICATION";
-
-            this.lblVerifyBannerSub.AutoSize = true;
-            this.lblVerifyBannerSub.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblVerifyBannerSub.ForeColor = System.Drawing.Color.FromArgb(71, 85, 105);
-            this.lblVerifyBannerSub.Location = new System.Drawing.Point(18, 42);
-            this.lblVerifyBannerSub.Name = "lblVerifyBannerSub";
-            this.lblVerifyBannerSub.Size = new System.Drawing.Size(530, 17);
-            this.lblVerifyBannerSub.Text = "Please enter or scan a passenger boarding reference above to inspect validity.";
-
-            // Dossier Card
-            this.panelVerifyDossier.BackColor = System.Drawing.Color.White;
-            this.panelVerifyDossier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelVerifyDossier.Controls.Add(this.lblDossierContent);
-            this.panelVerifyDossier.Controls.Add(this.lblDossierTitle);
-            this.panelVerifyDossier.Location = new System.Drawing.Point(3, 220);
-            this.panelVerifyDossier.Name = "panelVerifyDossier";
-            this.panelVerifyDossier.Size = new System.Drawing.Size(975, 360);
-
-            this.lblDossierTitle.AutoSize = true;
-            this.lblDossierTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDossierTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblDossierTitle.Location = new System.Drawing.Point(16, 12);
-            this.lblDossierTitle.Name = "lblDossierTitle";
-            this.lblDossierTitle.Size = new System.Drawing.Size(260, 19);
-            this.lblDossierTitle.Text = "PASSENGER && BOARDING DOSSIER";
-
-            this.lblDossierContent.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblDossierContent.ForeColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            this.lblDossierContent.Location = new System.Drawing.Point(16, 42);
-            this.lblDossierContent.Name = "lblDossierContent";
-            this.lblDossierContent.Size = new System.Drawing.Size(940, 300);
-            this.lblDossierContent.Text = "No ticket loaded yet. Enter reference to inspect passenger details, coach assignment, and security clearance.";
-
-            // Actions panel
-            this.panelVerifyActions.BackColor = System.Drawing.Color.White;
-            this.panelVerifyActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelVerifyActions.Controls.Add(this.btnReportDiscrepancy);
-            this.panelVerifyActions.Controls.Add(this.btnPrintVerificationPass);
-            this.panelVerifyActions.Controls.Add(this.btnMarkBoardedAction);
-            this.panelVerifyActions.Location = new System.Drawing.Point(3, 590);
-            this.panelVerifyActions.Name = "panelVerifyActions";
-            this.panelVerifyActions.Size = new System.Drawing.Size(975, 54);
-
-            this.btnMarkBoardedAction.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnMarkBoardedAction.Enabled = false;
-            this.btnMarkBoardedAction.FlatAppearance.BorderSize = 0;
-            this.btnMarkBoardedAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarkBoardedAction.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnMarkBoardedAction.ForeColor = System.Drawing.Color.White;
-            this.btnMarkBoardedAction.Location = new System.Drawing.Point(14, 10);
-            this.btnMarkBoardedAction.Name = "btnMarkBoardedAction";
-            this.btnMarkBoardedAction.Size = new System.Drawing.Size(240, 34);
-            this.btnMarkBoardedAction.Text = "✅  Confirm Passenger Boarded";
-
-            this.btnPrintVerificationPass.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnPrintVerificationPass.Enabled = false;
-            this.btnPrintVerificationPass.FlatAppearance.BorderSize = 0;
-            this.btnPrintVerificationPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintVerificationPass.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.btnPrintVerificationPass.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVerificationPass.Location = new System.Drawing.Point(264, 10);
-            this.btnPrintVerificationPass.Name = "btnPrintVerificationPass";
-            this.btnPrintVerificationPass.Size = new System.Drawing.Size(200, 34);
-            this.btnPrintVerificationPass.Text = "🖨️  Print Boarding Pass";
-
-            this.btnReportDiscrepancy.BackColor = System.Drawing.Color.White;
-            this.btnReportDiscrepancy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(239, 68, 68);
-            this.btnReportDiscrepancy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportDiscrepancy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnReportDiscrepancy.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnReportDiscrepancy.Location = new System.Drawing.Point(474, 10);
-            this.btnReportDiscrepancy.Name = "btnReportDiscrepancy";
-            this.btnReportDiscrepancy.Size = new System.Drawing.Size(210, 34);
-            this.btnReportDiscrepancy.Text = "⚠️  Report Discrepancy / Cancel";
-
-            // ==========================================
-            // 4. BOOKINGS MANAGEMENT VIEW
-            // ==========================================
-            this.panelBookingManagement.AutoScroll = true;
-            this.panelBookingManagement.Controls.Add(this.panelBookingActions);
-            this.panelBookingManagement.Controls.Add(this.lvBookings);
-            this.panelBookingManagement.Controls.Add(this.panelBookingsToolbar);
-            this.panelBookingManagement.Controls.Add(this.flowBookingMetrics);
-            this.panelBookingManagement.Controls.Add(this.panelBookingsHeader);
-            this.panelBookingManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBookingManagement.Location = new System.Drawing.Point(20, 72);
-            this.panelBookingManagement.Name = "panelBookingManagement";
-            this.panelBookingManagement.Size = new System.Drawing.Size(990, 684);
-            this.panelBookingManagement.Visible = false;
-
-            this.panelBookingsHeader.Controls.Add(this.btnNewBooking);
-            this.panelBookingsHeader.Controls.Add(this.lblBookingsSubtitle);
-            this.panelBookingsHeader.Controls.Add(this.lblBookingsTitle);
-            this.panelBookingsHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBookingsHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelBookingsHeader.Name = "panelBookingsHeader";
-            this.panelBookingsHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblBookingsTitle.AutoSize = true;
-            this.lblBookingsTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblBookingsTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblBookingsTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblBookingsTitle.Name = "lblBookingsTitle";
-            this.lblBookingsTitle.Size = new System.Drawing.Size(380, 25);
-            this.lblBookingsTitle.Text = "Passenger Reservations & Booking Desk";
-
-            this.lblBookingsSubtitle.AutoSize = true;
-            this.lblBookingsSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblBookingsSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblBookingsSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblBookingsSubtitle.Name = "lblBookingsSubtitle";
-            this.lblBookingsSubtitle.Size = new System.Drawing.Size(590, 15);
-            this.lblBookingsSubtitle.Text = "Search, modify, or cancel reservations, manage seat allocations, and issue passenger tickets.";
-
-            this.btnNewBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewBooking.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnNewBooking.FlatAppearance.BorderSize = 0;
-            this.btnNewBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNewBooking.ForeColor = System.Drawing.Color.White;
-            this.btnNewBooking.Location = new System.Drawing.Point(790, 14);
-            this.btnNewBooking.Name = "btnNewBooking";
-            this.btnNewBooking.Size = new System.Drawing.Size(185, 34);
-            this.btnNewBooking.Text = "➕  New Walk-In Booking";
-
-            // Metric Cards
-            this.flowBookingMetrics.Controls.Add(this.cardTotalBookings);
-            this.flowBookingMetrics.Controls.Add(this.cardConfirmedBookings);
-            this.flowBookingMetrics.Controls.Add(this.cardPendingBookings);
-            this.flowBookingMetrics.Controls.Add(this.cardCancelledBookings);
-            this.flowBookingMetrics.Controls.Add(this.cardTodayBookings);
-            this.flowBookingMetrics.Location = new System.Drawing.Point(0, 64);
-            this.flowBookingMetrics.Name = "flowBookingMetrics";
-            this.flowBookingMetrics.Size = new System.Drawing.Size(985, 84);
-
-            BuildMetricCard(out this.cardTotalBookings, out this.lblMetricTotalBookingsVal, out this.lblMetricTotalBookingsTitle, out this.lblMetricTotalBookingsSub, "TOTAL BOOKINGS", "0", "All reservations", Color.FromArgb(15, 23, 42));
-            BuildMetricCard(out this.cardConfirmedBookings, out this.lblMetricConfirmedBookingsVal, out this.lblMetricConfirmedBookingsTitle, out this.lblMetricConfirmedBookingsSub, "CONFIRMED", "0", "Active passengers", Color.FromArgb(16, 185, 129));
-            BuildMetricCard(out this.cardPendingBookings, out this.lblMetricPendingBookingsVal, out this.lblMetricPendingBookingsTitle, out this.lblMetricPendingBookingsSub, "PENDING", "0", "Awaiting clearance", Color.FromArgb(234, 88, 12));
-            BuildMetricCard(out this.cardCancelledBookings, out this.lblMetricCancelledBookingsVal, out this.lblMetricCancelledBookingsTitle, out this.lblMetricCancelledBookingsSub, "CANCELLED", "0", "Seats released", Color.FromArgb(239, 68, 68));
-            BuildMetricCard(out this.cardTodayBookings, out this.lblMetricTodayBookingsVal, out this.lblMetricTodayBookingsTitle, out this.lblMetricTodayBookingsSub, "TODAY\'S TRAVEL", "0", "Reservations today", Color.FromArgb(13, 94, 234));
-
-            // Bookings Toolbar
-            this.panelBookingsToolbar.BackColor = System.Drawing.Color.White;
-            this.panelBookingsToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBookingsToolbar.Controls.Add(this.btnResetBookingFilters);
-            this.panelBookingsToolbar.Controls.Add(this.dtpBookingFilterDate);
-            this.panelBookingsToolbar.Controls.Add(this.chkEnableDateFilter);
-            this.panelBookingsToolbar.Controls.Add(this.cmbBookingRouteFilter);
-            this.panelBookingsToolbar.Controls.Add(this.cmbBookingStatusFilter);
-            this.panelBookingsToolbar.Controls.Add(this.txtSearchBooking);
-            this.panelBookingsToolbar.Location = new System.Drawing.Point(0, 154);
-            this.panelBookingsToolbar.Name = "panelBookingsToolbar";
-            this.panelBookingsToolbar.Size = new System.Drawing.Size(975, 48);
-
-            this.txtSearchBooking.Location = new System.Drawing.Point(12, 12);
-            this.txtSearchBooking.Name = "txtSearchBooking";
-            this.txtSearchBooking.PlaceholderText = "Search by ID, name, phone, coach...";
-            this.txtSearchBooking.Size = new System.Drawing.Size(260, 23);
-
-            this.cmbBookingStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBookingStatusFilter.Items.AddRange(new object[] { "All Statuses", "Confirmed", "Pending", "Cancelled" });
-            this.cmbBookingStatusFilter.Location = new System.Drawing.Point(282, 12);
-            this.cmbBookingStatusFilter.Name = "cmbBookingStatusFilter";
-            this.cmbBookingStatusFilter.Size = new System.Drawing.Size(130, 23);
-
-            this.cmbBookingRouteFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBookingRouteFilter.Items.AddRange(new object[] { "All Routes / Trips" });
-            this.cmbBookingRouteFilter.Location = new System.Drawing.Point(422, 12);
-            this.cmbBookingRouteFilter.Name = "cmbBookingRouteFilter";
-            this.cmbBookingRouteFilter.Size = new System.Drawing.Size(180, 23);
-
-            this.chkEnableDateFilter.AutoSize = true;
-            this.chkEnableDateFilter.Location = new System.Drawing.Point(614, 14);
-            this.chkEnableDateFilter.Name = "chkEnableDateFilter";
-            this.chkEnableDateFilter.Size = new System.Drawing.Size(53, 19);
-            this.chkEnableDateFilter.Text = "Date:";
-
-            this.dtpBookingFilterDate.Enabled = false;
-            this.dtpBookingFilterDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBookingFilterDate.Location = new System.Drawing.Point(674, 12);
-            this.dtpBookingFilterDate.Name = "dtpBookingFilterDate";
-            this.dtpBookingFilterDate.Size = new System.Drawing.Size(120, 23);
-
-            this.btnResetBookingFilters.BackColor = System.Drawing.Color.White;
-            this.btnResetBookingFilters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnResetBookingFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetBookingFilters.Location = new System.Drawing.Point(806, 11);
-            this.btnResetBookingFilters.Name = "btnResetBookingFilters";
-            this.btnResetBookingFilters.Size = new System.Drawing.Size(80, 26);
-            this.btnResetBookingFilters.Text = "Reset";
-
-            // lvBookings
-            this.lvBookings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colBookingId, this.colPassengerName, this.colPassengerPhone,
-                this.colBookingRoute, this.colTravelDate, this.colDepartureTime,
-                this.colSeats, this.colTotalAmount, this.colBookingStatus, this.colPaymentStatus
-            });
-            this.lvBookings.FullRowSelect = true;
-            this.lvBookings.GridLines = true;
-            this.lvBookings.Location = new System.Drawing.Point(0, 210);
-            this.lvBookings.MultiSelect = false;
-            this.lvBookings.Name = "lvBookings";
-            this.lvBookings.Size = new System.Drawing.Size(975, 380);
-            this.lvBookings.TabIndex = 3;
-            this.lvBookings.UseCompatibleStateImageBehavior = false;
-            this.lvBookings.View = System.Windows.Forms.View.Details;
-
-            this.colBookingId.Text = "Booking ID"; this.colBookingId.Width = 85;
-            this.colPassengerName.Text = "Passenger Name"; this.colPassengerName.Width = 140;
-            this.colPassengerPhone.Text = "Phone"; this.colPassengerPhone.Width = 110;
-            this.colBookingRoute.Text = "Route"; this.colBookingRoute.Width = 160;
-            this.colTravelDate.Text = "Travel Date"; this.colTravelDate.Width = 95;
-            this.colDepartureTime.Text = "Time"; this.colDepartureTime.Width = 75;
-            this.colSeats.Text = "Seats"; this.colSeats.Width = 85;
-            this.colTotalAmount.Text = "Fare (ETB)"; this.colTotalAmount.Width = 80;
-            this.colBookingStatus.Text = "Status"; this.colBookingStatus.Width = 75;
-            this.colPaymentStatus.Text = "Payment"; this.colPaymentStatus.Width = 70;
-
-            // panelBookingActions
-            this.panelBookingActions.BackColor = System.Drawing.Color.White;
-            this.panelBookingActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBookingActions.Controls.Add(this.lblBookingCount);
-            this.panelBookingActions.Controls.Add(this.btnPrintTicket);
-            this.panelBookingActions.Controls.Add(this.btnCancelBookingAction);
-            this.panelBookingActions.Controls.Add(this.btnModifyBooking);
-            this.panelBookingActions.Controls.Add(this.btnViewBookingDetails);
-            this.panelBookingActions.Location = new System.Drawing.Point(0, 598);
-            this.panelBookingActions.Name = "panelBookingActions";
-            this.panelBookingActions.Size = new System.Drawing.Size(975, 48);
-
-            this.btnViewBookingDetails.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnViewBookingDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewBookingDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewBookingDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnViewBookingDetails.ForeColor = System.Drawing.Color.White;
-            this.btnViewBookingDetails.Location = new System.Drawing.Point(12, 8);
-            this.btnViewBookingDetails.Name = "btnViewBookingDetails";
-            this.btnViewBookingDetails.Size = new System.Drawing.Size(120, 32);
-            this.btnViewBookingDetails.Text = "👁️  View Dossier";
-
-            this.btnModifyBooking.BackColor = System.Drawing.Color.White;
-            this.btnModifyBooking.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnModifyBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnModifyBooking.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnModifyBooking.Location = new System.Drawing.Point(140, 8);
-            this.btnModifyBooking.Name = "btnModifyBooking";
-            this.btnModifyBooking.Size = new System.Drawing.Size(120, 32);
-            this.btnModifyBooking.Text = "✏️  Edit Booking";
-
-            this.btnCancelBookingAction.BackColor = System.Drawing.Color.White;
-            this.btnCancelBookingAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(239, 68, 68);
-            this.btnCancelBookingAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelBookingAction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancelBookingAction.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnCancelBookingAction.Location = new System.Drawing.Point(268, 8);
-            this.btnCancelBookingAction.Name = "btnCancelBookingAction";
-            this.btnCancelBookingAction.Size = new System.Drawing.Size(125, 32);
-            this.btnCancelBookingAction.Text = "❌  Cancel Booking";
-
-            this.btnPrintTicket.BackColor = System.Drawing.Color.White;
-            this.btnPrintTicket.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintTicket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrintTicket.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnPrintTicket.Location = new System.Drawing.Point(402, 8);
-            this.btnPrintTicket.Name = "btnPrintTicket";
-            this.btnPrintTicket.Size = new System.Drawing.Size(130, 32);
-            this.btnPrintTicket.Text = "🖨️  Print Boarding Pass";
-
-            this.lblBookingCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBookingCount.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblBookingCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblBookingCount.Location = new System.Drawing.Point(750, 14);
-            this.lblBookingCount.Name = "lblBookingCount";
-            this.lblBookingCount.Size = new System.Drawing.Size(210, 20);
-            this.lblBookingCount.Text = "Showing 0 bookings";
-            this.lblBookingCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            // ==========================================
-            // 5. TICKETS DIRECTORY VIEW
-            // ==========================================
-            this.panelTicketManagement.AutoScroll = true;
-            this.panelTicketManagement.Controls.Add(this.panelTicketActions);
-            this.panelTicketManagement.Controls.Add(this.lvTickets);
-            this.panelTicketManagement.Controls.Add(this.panelTicketsToolbar);
-            this.panelTicketManagement.Controls.Add(this.flowTicketMetrics);
-            this.panelTicketManagement.Controls.Add(this.panelTicketsHeader);
-            this.panelTicketManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTicketManagement.Location = new System.Drawing.Point(20, 72);
-            this.panelTicketManagement.Name = "panelTicketManagement";
-            this.panelTicketManagement.Size = new System.Drawing.Size(990, 684);
-            this.panelTicketManagement.Visible = false;
-
-            this.panelTicketsHeader.Controls.Add(this.btnVerifyBoardModal);
-            this.panelTicketsHeader.Controls.Add(this.btnNewTicket);
-            this.panelTicketsHeader.Controls.Add(this.lblTicketsSubtitle);
-            this.panelTicketsHeader.Controls.Add(this.lblTicketsTitle);
-            this.panelTicketsHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTicketsHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelTicketsHeader.Name = "panelTicketsHeader";
-            this.panelTicketsHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblTicketsTitle.AutoSize = true;
-            this.lblTicketsTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTicketsTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblTicketsTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblTicketsTitle.Name = "lblTicketsTitle";
-            this.lblTicketsTitle.Size = new System.Drawing.Size(370, 25);
-            this.lblTicketsTitle.Text = "Tickets Directory & Issuance Station";
-
-            this.lblTicketsSubtitle.AutoSize = true;
-            this.lblTicketsSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblTicketsSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblTicketsSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblTicketsSubtitle.Name = "lblTicketsSubtitle";
-            this.lblTicketsSubtitle.Size = new System.Drawing.Size(590, 15);
-            this.lblTicketsSubtitle.Text = "Complete ledger of all issued boarding passes, seat allocations, and gate verification statuses.";
-
-            this.btnVerifyBoardModal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerifyBoardModal.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnVerifyBoardModal.FlatAppearance.BorderSize = 0;
-            this.btnVerifyBoardModal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerifyBoardModal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnVerifyBoardModal.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyBoardModal.Location = new System.Drawing.Point(630, 14);
-            this.btnVerifyBoardModal.Name = "btnVerifyBoardModal";
-            this.btnVerifyBoardModal.Size = new System.Drawing.Size(180, 34);
-            this.btnVerifyBoardModal.Text = "🔍  Boarding Scanner";
-
-            this.btnNewTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewTicket.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnNewTicket.FlatAppearance.BorderSize = 0;
-            this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewTicket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(818, 14);
-            this.btnNewTicket.Name = "btnNewTicket";
-            this.btnNewTicket.Size = new System.Drawing.Size(155, 34);
-            this.btnNewTicket.Text = "➕  Issue Ticket";
-
-            // Ticket Metrics
-            this.flowTicketMetrics.Controls.Add(this.cardTotalTickets);
-            this.flowTicketMetrics.Controls.Add(this.cardValidTickets);
-            this.flowTicketMetrics.Controls.Add(this.cardBoardedTickets);
-            this.flowTicketMetrics.Controls.Add(this.cardCancelledTickets);
-            this.flowTicketMetrics.Controls.Add(this.cardTodayTickets);
-            this.flowTicketMetrics.Location = new System.Drawing.Point(0, 64);
-            this.flowTicketMetrics.Name = "flowTicketMetrics";
-            this.flowTicketMetrics.Size = new System.Drawing.Size(985, 84);
-
-            BuildMetricCard(out this.cardTotalTickets, out this.lblMetricTotalTicketsVal, out this.lblMetricTotalTicketsTitle, out this.lblMetricTotalTicketsSub, "TOTAL TICKETS", "0", "All issued passes", Color.FromArgb(15, 23, 42));
-            BuildMetricCard(out this.cardValidTickets, out this.lblMetricValidTicketsVal, out this.lblMetricValidTicketsTitle, out this.lblMetricValidTicketsSub, "VALID / ACTIVE", "0", "Ready for boarding", Color.FromArgb(13, 94, 234));
-            BuildMetricCard(out this.cardBoardedTickets, out this.lblMetricBoardedTicketsVal, out this.lblMetricBoardedTicketsTitle, out this.lblMetricBoardedTicketsSub, "BOARDED / USED", "0", "Cleared passengers", Color.FromArgb(16, 185, 129));
-            BuildMetricCard(out this.cardCancelledTickets, out this.lblMetricCancelledTicketsVal, out this.lblMetricCancelledTicketsTitle, out this.lblMetricCancelledTicketsSub, "CANCELLED", "0", "Voided / refunded", Color.FromArgb(239, 68, 68));
-            BuildMetricCard(out this.cardTodayTickets, out this.lblMetricTodayTicketsVal, out this.lblMetricTodayTicketsTitle, out this.lblMetricTodayTicketsSub, "TODAY\'S TICKETS", "0", "Departures today", Color.FromArgb(234, 88, 12));
-
-            // Tickets Toolbar
-            this.panelTicketsToolbar.BackColor = System.Drawing.Color.White;
-            this.panelTicketsToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTicketsToolbar.Controls.Add(this.btnResetTicketFilters);
-            this.panelTicketsToolbar.Controls.Add(this.dtpTicketFilterDate);
-            this.panelTicketsToolbar.Controls.Add(this.chkEnableTicketDateFilter);
-            this.panelTicketsToolbar.Controls.Add(this.cmbTicketRouteFilter);
-            this.panelTicketsToolbar.Controls.Add(this.cmbTicketStatusFilter);
-            this.panelTicketsToolbar.Controls.Add(this.txtSearchTicketFilter);
-            this.panelTicketsToolbar.Location = new System.Drawing.Point(0, 154);
-            this.panelTicketsToolbar.Name = "panelTicketsToolbar";
-            this.panelTicketsToolbar.Size = new System.Drawing.Size(975, 48);
-
-            this.txtSearchTicketFilter.Location = new System.Drawing.Point(12, 12);
-            this.txtSearchTicketFilter.Name = "txtSearchTicketFilter";
-            this.txtSearchTicketFilter.PlaceholderText = "Search by Ticket ID, passenger, phone, code...";
-            this.txtSearchTicketFilter.Size = new System.Drawing.Size(260, 23);
-
-            this.cmbTicketStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTicketStatusFilter.Items.AddRange(new object[] { "All Statuses", "Valid", "Boarded", "Cancelled" });
-            this.cmbTicketStatusFilter.Location = new System.Drawing.Point(282, 12);
-            this.cmbTicketStatusFilter.Name = "cmbTicketStatusFilter";
-            this.cmbTicketStatusFilter.Size = new System.Drawing.Size(130, 23);
-
-            this.cmbTicketRouteFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTicketRouteFilter.Items.AddRange(new object[] { "All Routes / Trips" });
-            this.cmbTicketRouteFilter.Location = new System.Drawing.Point(422, 12);
-            this.cmbTicketRouteFilter.Name = "cmbTicketRouteFilter";
-            this.cmbTicketRouteFilter.Size = new System.Drawing.Size(180, 23);
-
-            this.chkEnableTicketDateFilter.AutoSize = true;
-            this.chkEnableTicketDateFilter.Location = new System.Drawing.Point(614, 14);
-            this.chkEnableTicketDateFilter.Name = "chkEnableTicketDateFilter";
-            this.chkEnableTicketDateFilter.Size = new System.Drawing.Size(53, 19);
-            this.chkEnableTicketDateFilter.Text = "Date:";
-
-            this.dtpTicketFilterDate.Enabled = false;
-            this.dtpTicketFilterDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTicketFilterDate.Location = new System.Drawing.Point(674, 12);
-            this.dtpTicketFilterDate.Name = "dtpTicketFilterDate";
-            this.dtpTicketFilterDate.Size = new System.Drawing.Size(120, 23);
-
-            this.btnResetTicketFilters.BackColor = System.Drawing.Color.White;
-            this.btnResetTicketFilters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnResetTicketFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetTicketFilters.Location = new System.Drawing.Point(806, 11);
-            this.btnResetTicketFilters.Name = "btnResetTicketFilters";
-            this.btnResetTicketFilters.Size = new System.Drawing.Size(80, 26);
-            this.btnResetTicketFilters.Text = "Reset";
-
-            // lvTickets
-            this.lvTickets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colTicketId, this.colTicketBookingRef, this.colTicketPassenger,
-                this.colTicketPhone, this.colTicketRoute, this.colTicketDate,
-                this.colTicketTime, this.colTicketSeat, this.colTicketGate,
-                this.colTicketBus, this.colTicketStatus
-            });
-            this.lvTickets.FullRowSelect = true;
-            this.lvTickets.GridLines = true;
-            this.lvTickets.Location = new System.Drawing.Point(0, 210);
-            this.lvTickets.MultiSelect = false;
-            this.lvTickets.Name = "lvTickets";
-            this.lvTickets.Size = new System.Drawing.Size(975, 380);
-            this.lvTickets.TabIndex = 3;
-            this.lvTickets.UseCompatibleStateImageBehavior = false;
-            this.lvTickets.View = System.Windows.Forms.View.Details;
-
-            this.colTicketId.Text = "Ticket ID"; this.colTicketId.Width = 85;
-            this.colTicketBookingRef.Text = "Booking Ref"; this.colTicketBookingRef.Width = 85;
-            this.colTicketPassenger.Text = "Passenger"; this.colTicketPassenger.Width = 140;
-            this.colTicketPhone.Text = "Phone"; this.colTicketPhone.Width = 110;
-            this.colTicketRoute.Text = "Route"; this.colTicketRoute.Width = 160;
-            this.colTicketDate.Text = "Date"; this.colTicketDate.Width = 90;
-            this.colTicketTime.Text = "Time"; this.colTicketTime.Width = 75;
-            this.colTicketSeat.Text = "Seat"; this.colTicketSeat.Width = 65;
-            this.colTicketGate.Text = "Gate"; this.colTicketGate.Width = 65;
-            this.colTicketBus.Text = "Coach"; this.colTicketBus.Width = 90;
-            this.colTicketStatus.Text = "Status"; this.colTicketStatus.Width = 80;
-
-            // panelTicketActions
-            this.panelTicketActions.BackColor = System.Drawing.Color.White;
-            this.panelTicketActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTicketActions.Controls.Add(this.lblTicketCount);
-            this.panelTicketActions.Controls.Add(this.btnCancelTicketAction);
-            this.panelTicketActions.Controls.Add(this.btnPrintTicketPass);
-            this.panelTicketActions.Controls.Add(this.btnVerifyAndBoard);
-            this.panelTicketActions.Controls.Add(this.btnViewTicketDetails);
-            this.panelTicketActions.Location = new System.Drawing.Point(0, 598);
-            this.panelTicketActions.Name = "panelTicketActions";
-            this.panelTicketActions.Size = new System.Drawing.Size(975, 48);
-
-            this.btnViewTicketDetails.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnViewTicketDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewTicketDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewTicketDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnViewTicketDetails.ForeColor = System.Drawing.Color.White;
-            this.btnViewTicketDetails.Location = new System.Drawing.Point(12, 8);
-            this.btnViewTicketDetails.Name = "btnViewTicketDetails";
-            this.btnViewTicketDetails.Size = new System.Drawing.Size(120, 32);
-            this.btnViewTicketDetails.Text = "👁️  View Ticket";
-
-            this.btnVerifyAndBoard.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnVerifyAndBoard.FlatAppearance.BorderSize = 0;
-            this.btnVerifyAndBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerifyAndBoard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnVerifyAndBoard.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyAndBoard.Location = new System.Drawing.Point(140, 8);
-            this.btnVerifyAndBoard.Name = "btnVerifyAndBoard";
-            this.btnVerifyAndBoard.Size = new System.Drawing.Size(160, 32);
-            this.btnVerifyAndBoard.Text = "✅  Verify && Board";
-
-            this.btnPrintTicketPass.BackColor = System.Drawing.Color.White;
-            this.btnPrintTicketPass.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnPrintTicketPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintTicketPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrintTicketPass.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnPrintTicketPass.Location = new System.Drawing.Point(308, 8);
-            this.btnPrintTicketPass.Name = "btnPrintTicketPass";
-            this.btnPrintTicketPass.Size = new System.Drawing.Size(130, 32);
-            this.btnPrintTicketPass.Text = "🖨️  Print Ticket";
-
-            this.btnCancelTicketAction.BackColor = System.Drawing.Color.White;
-            this.btnCancelTicketAction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(239, 68, 68);
-            this.btnCancelTicketAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelTicketAction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancelTicketAction.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnCancelTicketAction.Location = new System.Drawing.Point(446, 8);
-            this.btnCancelTicketAction.Name = "btnCancelTicketAction";
-            this.btnCancelTicketAction.Size = new System.Drawing.Size(125, 32);
-            this.btnCancelTicketAction.Text = "❌  Cancel Ticket";
-
-            this.lblTicketCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTicketCount.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblTicketCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblTicketCount.Location = new System.Drawing.Point(750, 14);
-            this.lblTicketCount.Name = "lblTicketCount";
-            this.lblTicketCount.Size = new System.Drawing.Size(210, 20);
-            this.lblTicketCount.Text = "Showing 0 tickets";
-            this.lblTicketCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            // ==========================================
-            // 6. PASSENGER MANIFEST & BOARDING VIEW
-            // ==========================================
-            this.panelManifest.AutoScroll = true;
-            this.panelManifest.Controls.Add(this.panelManifestActions);
-            this.panelManifest.Controls.Add(this.lvManifest);
-            this.panelManifest.Controls.Add(this.flowManifestMetrics);
-            this.panelManifest.Controls.Add(this.panelManifestToolbar);
-            this.panelManifest.Controls.Add(this.panelManifestHeader);
-            this.panelManifest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelManifest.Location = new System.Drawing.Point(20, 72);
-            this.panelManifest.Name = "panelManifest";
-            this.panelManifest.Size = new System.Drawing.Size(990, 684);
-            this.panelManifest.Visible = false;
-
-            this.panelManifestHeader.Controls.Add(this.lblManifestSubtitle);
-            this.panelManifestHeader.Controls.Add(this.lblManifestTitle);
-            this.panelManifestHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManifestHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelManifestHeader.Name = "panelManifestHeader";
-            this.panelManifestHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblManifestTitle.AutoSize = true;
-            this.lblManifestTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblManifestTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblManifestTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblManifestTitle.Name = "lblManifestTitle";
-            this.lblManifestTitle.Size = new System.Drawing.Size(390, 25);
-            this.lblManifestTitle.Text = "Passenger Manifest & Boarding Oversight";
-
-            this.lblManifestSubtitle.AutoSize = true;
-            this.lblManifestSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblManifestSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblManifestSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblManifestSubtitle.Name = "lblManifestSubtitle";
-            this.lblManifestSubtitle.Size = new System.Drawing.Size(630, 15);
-            this.lblManifestSubtitle.Text = "Review passenger manifest for any scheduled trip, record boarding status, identify absentees, and print departure logs.";
-
-            // Manifest Toolbar
-            this.panelManifestToolbar.BackColor = System.Drawing.Color.White;
-            this.panelManifestToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelManifestToolbar.Controls.Add(this.btnLoadManifest);
-            this.panelManifestToolbar.Controls.Add(this.dtpManifestDate);
-            this.panelManifestToolbar.Controls.Add(this.lblManifestDatePrompt);
-            this.panelManifestToolbar.Controls.Add(this.cmbManifestRoute);
-            this.panelManifestToolbar.Controls.Add(this.lblManifestRoutePrompt);
-            this.panelManifestToolbar.Location = new System.Drawing.Point(0, 64);
-            this.panelManifestToolbar.Name = "panelManifestToolbar";
-            this.panelManifestToolbar.Size = new System.Drawing.Size(975, 48);
-
-            this.lblManifestRoutePrompt.AutoSize = true;
-            this.lblManifestRoutePrompt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblManifestRoutePrompt.Location = new System.Drawing.Point(12, 16);
-            this.lblManifestRoutePrompt.Name = "lblManifestRoutePrompt";
-            this.lblManifestRoutePrompt.Size = new System.Drawing.Size(74, 15);
-            this.lblManifestRoutePrompt.Text = "Select Trip:";
-
-            this.cmbManifestRoute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbManifestRoute.Location = new System.Drawing.Point(92, 12);
-            this.cmbManifestRoute.Name = "cmbManifestRoute";
-            this.cmbManifestRoute.Size = new System.Drawing.Size(320, 23);
-
-            this.lblManifestDatePrompt.AutoSize = true;
-            this.lblManifestDatePrompt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblManifestDatePrompt.Location = new System.Drawing.Point(430, 16);
-            this.lblManifestDatePrompt.Name = "lblManifestDatePrompt";
-            this.lblManifestDatePrompt.Size = new System.Drawing.Size(73, 15);
-            this.lblManifestDatePrompt.Text = "Travel Date:";
-
-            this.dtpManifestDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpManifestDate.Location = new System.Drawing.Point(510, 12);
-            this.dtpManifestDate.Name = "dtpManifestDate";
-            this.dtpManifestDate.Size = new System.Drawing.Size(130, 23);
-
-            this.btnLoadManifest.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnLoadManifest.FlatAppearance.BorderSize = 0;
-            this.btnLoadManifest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadManifest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnLoadManifest.ForeColor = System.Drawing.Color.White;
-            this.btnLoadManifest.Location = new System.Drawing.Point(660, 10);
-            this.btnLoadManifest.Name = "btnLoadManifest";
-            this.btnLoadManifest.Size = new System.Drawing.Size(140, 28);
-            this.btnLoadManifest.Text = "🔍  Load Manifest";
-
-            // Manifest Metrics
-            this.flowManifestMetrics.Controls.Add(this.cardManifestTotal);
-            this.flowManifestMetrics.Controls.Add(this.cardManifestBoarded);
-            this.flowManifestMetrics.Controls.Add(this.cardManifestPending);
-            this.flowManifestMetrics.Controls.Add(this.cardManifestNoShow);
-            this.flowManifestMetrics.Location = new System.Drawing.Point(0, 118);
-            this.flowManifestMetrics.Name = "flowManifestMetrics";
-            this.flowManifestMetrics.Size = new System.Drawing.Size(985, 76);
-
-            BuildMetricCard(out this.cardManifestTotal, out this.lblManifestTotalVal, out this.lblManifestTotalTitle, out _, "MANIFEST SEATS", "0", "Booked on coach", Color.FromArgb(15, 23, 42));
-            BuildMetricCard(out this.cardManifestBoarded, out this.lblManifestBoardedVal, out this.lblManifestBoardedTitle, out _, "BOARDED", "0", "Checked-in", Color.FromArgb(16, 185, 129));
-            BuildMetricCard(out this.cardManifestPending, out this.lblManifestPendingVal, out this.lblManifestPendingTitle, out _, "AWAITING BOARDING", "0", "At terminal", Color.FromArgb(234, 88, 12));
-            BuildMetricCard(out this.cardManifestNoShow, out this.lblManifestNoShowVal, out this.lblManifestNoShowTitle, out _, "ABSENT / NO-SHOW", "0", "Unchecked", Color.FromArgb(239, 68, 68));
-
-            // lvManifest
-            this.lvManifest.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colManSeat, this.colManPassenger, this.colManPhone,
-                this.colManTicketId, this.colManBookingId, this.colManGate,
-                this.colManStatus, this.colManBoardedTime, this.colManVerifiedBy
-            });
-            this.lvManifest.FullRowSelect = true;
-            this.lvManifest.GridLines = true;
-            this.lvManifest.Location = new System.Drawing.Point(0, 200);
-            this.lvManifest.MultiSelect = false;
-            this.lvManifest.Name = "lvManifest";
-            this.lvManifest.Size = new System.Drawing.Size(975, 390);
-            this.lvManifest.TabIndex = 3;
-            this.lvManifest.UseCompatibleStateImageBehavior = false;
-            this.lvManifest.View = System.Windows.Forms.View.Details;
-
-            this.colManSeat.Text = "Seat #"; this.colManSeat.Width = 65;
-            this.colManPassenger.Text = "Passenger Name"; this.colManPassenger.Width = 160;
-            this.colManPhone.Text = "Phone Number"; this.colManPhone.Width = 120;
-            this.colManTicketId.Text = "Ticket ID"; this.colManTicketId.Width = 90;
-            this.colManBookingId.Text = "Booking Ref"; this.colManBookingId.Width = 90;
-            this.colManGate.Text = "Gate"; this.colManGate.Width = 65;
-            this.colManStatus.Text = "Boarding Status"; this.colManStatus.Width = 110;
-            this.colManBoardedTime.Text = "Check-In Time"; this.colManBoardedTime.Width = 120;
-            this.colManVerifiedBy.Text = "Gate Officer"; this.colManVerifiedBy.Width = 130;
-
-            // panelManifestActions
-            this.panelManifestActions.BackColor = System.Drawing.Color.White;
-            this.panelManifestActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelManifestActions.Controls.Add(this.lblManifestCount);
-            this.panelManifestActions.Controls.Add(this.btnVerifyManifestPassenger);
-            this.panelManifestActions.Controls.Add(this.btnPrintManifest);
-            this.panelManifestActions.Controls.Add(this.btnManifestMarkAbsent);
-            this.panelManifestActions.Controls.Add(this.btnManifestMarkBoarded);
-            this.panelManifestActions.Location = new System.Drawing.Point(0, 598);
-            this.panelManifestActions.Name = "panelManifestActions";
-            this.panelManifestActions.Size = new System.Drawing.Size(975, 48);
-
-            this.btnManifestMarkBoarded.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnManifestMarkBoarded.FlatAppearance.BorderSize = 0;
-            this.btnManifestMarkBoarded.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManifestMarkBoarded.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnManifestMarkBoarded.ForeColor = System.Drawing.Color.White;
-            this.btnManifestMarkBoarded.Location = new System.Drawing.Point(12, 8);
-            this.btnManifestMarkBoarded.Name = "btnManifestMarkBoarded";
-            this.btnManifestMarkBoarded.Size = new System.Drawing.Size(160, 32);
-            this.btnManifestMarkBoarded.Text = "✅  Confirm Boarded";
-
-            this.btnManifestMarkAbsent.BackColor = System.Drawing.Color.White;
-            this.btnManifestMarkAbsent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(239, 68, 68);
-            this.btnManifestMarkAbsent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManifestMarkAbsent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnManifestMarkAbsent.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnManifestMarkAbsent.Location = new System.Drawing.Point(180, 8);
-            this.btnManifestMarkAbsent.Name = "btnManifestMarkAbsent";
-            this.btnManifestMarkAbsent.Size = new System.Drawing.Size(150, 32);
-            this.btnManifestMarkAbsent.Text = "⚠️  Mark as No-Show";
-
-            this.btnPrintManifest.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnPrintManifest.FlatAppearance.BorderSize = 0;
-            this.btnPrintManifest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintManifest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrintManifest.ForeColor = System.Drawing.Color.White;
-            this.btnPrintManifest.Location = new System.Drawing.Point(338, 8);
-            this.btnPrintManifest.Name = "btnPrintManifest";
-            this.btnPrintManifest.Size = new System.Drawing.Size(160, 32);
-            this.btnPrintManifest.Text = "🖨️  Print Trip Manifest";
-
-            this.btnVerifyManifestPassenger.BackColor = System.Drawing.Color.White;
-            this.btnVerifyManifestPassenger.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnVerifyManifestPassenger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerifyManifestPassenger.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnVerifyManifestPassenger.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.btnVerifyManifestPassenger.Location = new System.Drawing.Point(506, 8);
-            this.btnVerifyManifestPassenger.Name = "btnVerifyManifestPassenger";
-            this.btnVerifyManifestPassenger.Size = new System.Drawing.Size(150, 32);
-            this.btnVerifyManifestPassenger.Text = "🔍  Verify Identity";
-
-            this.lblManifestCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblManifestCount.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblManifestCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblManifestCount.Location = new System.Drawing.Point(750, 14);
-            this.lblManifestCount.Name = "lblManifestCount";
-            this.lblManifestCount.Size = new System.Drawing.Size(210, 20);
-            this.lblManifestCount.Text = "Manifest: 0 passengers";
-            this.lblManifestCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            // ==========================================
-            // 7. COUNTER PAYMENTS & CASHIER VIEW
-            // ==========================================
-            this.panelPayments.AutoScroll = true;
-            this.panelPayments.Controls.Add(this.panelPaymentActions);
-            this.panelPayments.Controls.Add(this.lvPayments);
-            this.panelPayments.Controls.Add(this.panelPaymentsToolbar);
-            this.panelPayments.Controls.Add(this.flowPaymentMetrics);
-            this.panelPayments.Controls.Add(this.panelPaymentsHeader);
-            this.panelPayments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPayments.Location = new System.Drawing.Point(20, 72);
-            this.panelPayments.Name = "panelPayments";
-            this.panelPayments.Size = new System.Drawing.Size(990, 684);
-            this.panelPayments.Visible = false;
-
-            this.panelPaymentsHeader.Controls.Add(this.lblPaymentsSubtitle);
-            this.panelPaymentsHeader.Controls.Add(this.lblPaymentsTitle);
-            this.panelPaymentsHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPaymentsHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelPaymentsHeader.Name = "panelPaymentsHeader";
-            this.panelPaymentsHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblPaymentsTitle.AutoSize = true;
-            this.lblPaymentsTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblPaymentsTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblPaymentsTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblPaymentsTitle.Name = "lblPaymentsTitle";
-            this.lblPaymentsTitle.Size = new System.Drawing.Size(370, 25);
-            this.lblPaymentsTitle.Text = "Counter Cashier & Payment Receipts";
-
-            this.lblPaymentsSubtitle.AutoSize = true;
-            this.lblPaymentsSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPaymentsSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblPaymentsSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblPaymentsSubtitle.Name = "lblPaymentsSubtitle";
-            this.lblPaymentsSubtitle.Size = new System.Drawing.Size(610, 15);
-            this.lblPaymentsSubtitle.Text = "Manage walk-in counter payments, verify electronic transfers (Telebirr/CBE Birr), issue receipts, and process refunds.";
-
-            // Payment Metrics
-            this.flowPaymentMetrics.Controls.Add(this.cardPayTotal);
-            this.flowPaymentMetrics.Controls.Add(this.cardPayCash);
-            this.flowPaymentMetrics.Controls.Add(this.cardPayDigital);
-            this.flowPaymentMetrics.Controls.Add(this.cardPayRefunds);
-            this.flowPaymentMetrics.Location = new System.Drawing.Point(0, 64);
-            this.flowPaymentMetrics.Name = "flowPaymentMetrics";
-            this.flowPaymentMetrics.Size = new System.Drawing.Size(985, 76);
-
-            BuildMetricCard(out this.cardPayTotal, out this.lblPayTotalVal, out this.lblPayTotalTitle, out _, "TODAY\'S INTAKE", "0 ETB", "Total collections", Color.FromArgb(13, 94, 234));
-            BuildMetricCard(out this.cardPayCash, out this.lblPayCashVal, out this.lblPayCashTitle, out _, "CASH PAYMENTS", "0 ETB", "Counter drawer", Color.FromArgb(16, 185, 129));
-            BuildMetricCard(out this.cardPayDigital, out this.lblPayDigitalVal, out this.lblPayDigitalTitle, out _, "DIGITAL / TELEBIRR", "0 ETB", "Electronic money", Color.FromArgb(234, 88, 12));
-            BuildMetricCard(out this.cardPayRefunds, out this.lblPayRefundsVal, out this.lblPayRefundsTitle, out _, "REFUNDS ISSUED", "0 ETB", "Cancelled bookings", Color.FromArgb(239, 68, 68));
-
-            // Payments Toolbar
-            this.panelPaymentsToolbar.BackColor = System.Drawing.Color.White;
-            this.panelPaymentsToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelPaymentsToolbar.Controls.Add(this.btnRefreshPayments);
-            this.panelPaymentsToolbar.Controls.Add(this.cmbPaymentStatusFilter);
-            this.panelPaymentsToolbar.Controls.Add(this.cmbPaymentMethodFilter);
-            this.panelPaymentsToolbar.Controls.Add(this.txtSearchPayments);
-            this.panelPaymentsToolbar.Location = new System.Drawing.Point(0, 146);
-            this.panelPaymentsToolbar.Name = "panelPaymentsToolbar";
-            this.panelPaymentsToolbar.Size = new System.Drawing.Size(975, 48);
-
-            this.txtSearchPayments.Location = new System.Drawing.Point(12, 12);
-            this.txtSearchPayments.Name = "txtSearchPayments";
-            this.txtSearchPayments.PlaceholderText = "Search by receipt #, booking, passenger name...";
-            this.txtSearchPayments.Size = new System.Drawing.Size(320, 23);
-
-            this.cmbPaymentMethodFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaymentMethodFilter.Items.AddRange(new object[] { "All Methods", "Cash", "Telebirr", "CBE Birr", "Card" });
-            this.cmbPaymentMethodFilter.Location = new System.Drawing.Point(344, 12);
-            this.cmbPaymentMethodFilter.Name = "cmbPaymentMethodFilter";
-            this.cmbPaymentMethodFilter.Size = new System.Drawing.Size(150, 23);
-
-            this.cmbPaymentStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaymentStatusFilter.Items.AddRange(new object[] { "All Statuses", "Paid", "Pending", "Refunded" });
-            this.cmbPaymentStatusFilter.Location = new System.Drawing.Point(504, 12);
-            this.cmbPaymentStatusFilter.Name = "cmbPaymentStatusFilter";
-            this.cmbPaymentStatusFilter.Size = new System.Drawing.Size(150, 23);
-
-            this.btnRefreshPayments.BackColor = System.Drawing.Color.White;
-            this.btnRefreshPayments.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnRefreshPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshPayments.Location = new System.Drawing.Point(666, 11);
-            this.btnRefreshPayments.Name = "btnRefreshPayments";
-            this.btnRefreshPayments.Size = new System.Drawing.Size(90, 26);
-            this.btnRefreshPayments.Text = "Refresh";
-
-            // lvPayments
-            this.lvPayments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colPayReceipt, this.colPayBooking, this.colPayTicket,
-                this.colPayPassenger, this.colPayRoute, this.colPayAmount,
-                this.colPayMethod, this.colPayStatus, this.colPayDate, this.colPayCashier
-            });
-            this.lvPayments.FullRowSelect = true;
-            this.lvPayments.GridLines = true;
-            this.lvPayments.Location = new System.Drawing.Point(0, 202);
-            this.lvPayments.MultiSelect = false;
-            this.lvPayments.Name = "lvPayments";
-            this.lvPayments.Size = new System.Drawing.Size(975, 388);
-            this.lvPayments.TabIndex = 3;
-            this.lvPayments.UseCompatibleStateImageBehavior = false;
-            this.lvPayments.View = System.Windows.Forms.View.Details;
-
-            this.colPayReceipt.Text = "Receipt #"; this.colPayReceipt.Width = 90;
-            this.colPayBooking.Text = "Booking Ref"; this.colPayBooking.Width = 90;
-            this.colPayTicket.Text = "Ticket ID"; this.colPayTicket.Width = 85;
-            this.colPayPassenger.Text = "Passenger Name"; this.colPayPassenger.Width = 140;
-            this.colPayRoute.Text = "Route"; this.colPayRoute.Width = 150;
-            this.colPayAmount.Text = "Amount (ETB)"; this.colPayAmount.Width = 95;
-            this.colPayMethod.Text = "Method"; this.colPayMethod.Width = 85;
-            this.colPayStatus.Text = "Status"; this.colPayStatus.Width = 75;
-            this.colPayDate.Text = "Timestamp"; this.colPayDate.Width = 120;
-            this.colPayCashier.Text = "Cashier / Officer"; this.colPayCashier.Width = 130;
-
-            // panelPaymentActions
-            this.panelPaymentActions.BackColor = System.Drawing.Color.White;
-            this.panelPaymentActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelPaymentActions.Controls.Add(this.lblPaymentCount);
-            this.panelPaymentActions.Controls.Add(this.btnProcessRefund);
-            this.panelPaymentActions.Controls.Add(this.btnRecordPayment);
-            this.panelPaymentActions.Controls.Add(this.btnPrintReceipt);
-            this.panelPaymentActions.Location = new System.Drawing.Point(0, 598);
-            this.panelPaymentActions.Name = "panelPaymentActions";
-            this.panelPaymentActions.Size = new System.Drawing.Size(975, 48);
-
-            this.btnPrintReceipt.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnPrintReceipt.FlatAppearance.BorderSize = 0;
-            this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintReceipt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrintReceipt.ForeColor = System.Drawing.Color.White;
-            this.btnPrintReceipt.Location = new System.Drawing.Point(12, 8);
-            this.btnPrintReceipt.Name = "btnPrintReceipt";
-            this.btnPrintReceipt.Size = new System.Drawing.Size(160, 32);
-            this.btnPrintReceipt.Text = "🧾  Print Official Receipt";
-
-            this.btnRecordPayment.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnRecordPayment.FlatAppearance.BorderSize = 0;
-            this.btnRecordPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordPayment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRecordPayment.ForeColor = System.Drawing.Color.White;
-            this.btnRecordPayment.Location = new System.Drawing.Point(180, 8);
-            this.btnRecordPayment.Name = "btnRecordPayment";
-            this.btnRecordPayment.Size = new System.Drawing.Size(180, 32);
-            this.btnRecordPayment.Text = "💵  Record Cash Payment";
-
-            this.btnProcessRefund.BackColor = System.Drawing.Color.White;
-            this.btnProcessRefund.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(239, 68, 68);
-            this.btnProcessRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcessRefund.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnProcessRefund.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
-            this.btnProcessRefund.Location = new System.Drawing.Point(370, 8);
-            this.btnProcessRefund.Name = "btnProcessRefund";
-            this.btnProcessRefund.Size = new System.Drawing.Size(170, 32);
-            this.btnProcessRefund.Text = "🔄  Issue Cancellation Refund";
-
-            this.lblPaymentCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPaymentCount.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblPaymentCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblPaymentCount.Location = new System.Drawing.Point(750, 14);
-            this.lblPaymentCount.Name = "lblPaymentCount";
-            this.lblPaymentCount.Size = new System.Drawing.Size(210, 20);
-            this.lblPaymentCount.Text = "Showing 0 transactions";
-            this.lblPaymentCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            // ==========================================
-            // 8. CUSTOMER HELPDESK & INQUIRIES VIEW
-            // ==========================================
-            this.panelFeedback.AutoScroll = true;
-            this.panelFeedback.Controls.Add(this.panelFeedbackActions);
-            this.panelFeedback.Controls.Add(this.lvInquiries);
-            this.panelFeedback.Controls.Add(this.panelFeedbackToolbar);
-            this.panelFeedback.Controls.Add(this.flowFeedbackMetrics);
-            this.panelFeedback.Controls.Add(this.panelFeedbackHeader);
-            this.panelFeedback.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFeedback.Location = new System.Drawing.Point(20, 72);
-            this.panelFeedback.Name = "panelFeedback";
-            this.panelFeedback.Size = new System.Drawing.Size(990, 684);
-            this.panelFeedback.Visible = false;
-
-            this.panelFeedbackHeader.Controls.Add(this.btnNewInquiry);
-            this.panelFeedbackHeader.Controls.Add(this.lblFeedbackSubtitle);
-            this.panelFeedbackHeader.Controls.Add(this.lblFeedbackTitle);
-            this.panelFeedbackHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFeedbackHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelFeedbackHeader.Name = "panelFeedbackHeader";
-            this.panelFeedbackHeader.Size = new System.Drawing.Size(990, 60);
-
-            this.lblFeedbackTitle.AutoSize = true;
-            this.lblFeedbackTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblFeedbackTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblFeedbackTitle.Location = new System.Drawing.Point(0, 4);
-            this.lblFeedbackTitle.Name = "lblFeedbackTitle";
-            this.lblFeedbackTitle.Size = new System.Drawing.Size(370, 25);
-            this.lblFeedbackTitle.Text = "Customer Inquiries & Terminal Helpdesk";
-
-            this.lblFeedbackSubtitle.AutoSize = true;
-            this.lblFeedbackSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFeedbackSubtitle.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblFeedbackSubtitle.Location = new System.Drawing.Point(2, 33);
-            this.lblFeedbackSubtitle.Name = "lblFeedbackSubtitle";
-            this.lblFeedbackSubtitle.Size = new System.Drawing.Size(610, 15);
-            this.lblFeedbackSubtitle.Text = "Assist passengers with inquiries, special boarding assistance, lost luggage reporting, and complaint resolution.";
-
-            this.btnNewInquiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewInquiry.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnNewInquiry.FlatAppearance.BorderSize = 0;
-            this.btnNewInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewInquiry.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNewInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnNewInquiry.Location = new System.Drawing.Point(800, 14);
-            this.btnNewInquiry.Name = "btnNewInquiry";
-            this.btnNewInquiry.Size = new System.Drawing.Size(175, 34);
-            this.btnNewInquiry.Text = "➕  Log New Inquiry";
-
-            // Helpdesk Metrics
-            this.flowFeedbackMetrics.Controls.Add(this.cardInqTotal);
-            this.flowFeedbackMetrics.Controls.Add(this.cardInqPending);
-            this.flowFeedbackMetrics.Controls.Add(this.cardInqResolved);
-            this.flowFeedbackMetrics.Location = new System.Drawing.Point(0, 64);
-            this.flowFeedbackMetrics.Name = "flowFeedbackMetrics";
-            this.flowFeedbackMetrics.Size = new System.Drawing.Size(985, 76);
-
-            BuildMetricCard(out this.cardInqTotal, out this.lblInqTotalVal, out this.lblInqTotalTitle, out _, "TOTAL INQUIRIES", "0", "Logged requests", Color.FromArgb(15, 23, 42));
-            BuildMetricCard(out this.cardInqPending, out this.lblInqPendingVal, out this.lblInqPendingTitle, out _, "PENDING ACTION", "0", "Awaiting resolution", Color.FromArgb(234, 88, 12));
-            BuildMetricCard(out this.cardInqResolved, out this.lblInqResolvedVal, out this.lblInqResolvedTitle, out _, "RESOLVED REQUESTS", "0", "Handled by desk", Color.FromArgb(16, 185, 129));
-
-            // Helpdesk Toolbar
-            this.panelFeedbackToolbar.BackColor = System.Drawing.Color.White;
-            this.panelFeedbackToolbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFeedbackToolbar.Controls.Add(this.btnRefreshInquiries);
-            this.panelFeedbackToolbar.Controls.Add(this.cmbInquiryStatusFilter);
-            this.panelFeedbackToolbar.Controls.Add(this.txtSearchInquiries);
-            this.panelFeedbackToolbar.Location = new System.Drawing.Point(0, 146);
-            this.panelFeedbackToolbar.Name = "panelFeedbackToolbar";
-            this.panelFeedbackToolbar.Size = new System.Drawing.Size(975, 48);
-
-            this.txtSearchInquiries.Location = new System.Drawing.Point(12, 12);
-            this.txtSearchInquiries.Name = "txtSearchInquiries";
-            this.txtSearchInquiries.PlaceholderText = "Search by ID, passenger name, category, subject...";
-            this.txtSearchInquiries.Size = new System.Drawing.Size(340, 23);
-
-            this.cmbInquiryStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbInquiryStatusFilter.Items.AddRange(new object[] { "All Statuses", "Pending", "Resolved" });
-            this.cmbInquiryStatusFilter.Location = new System.Drawing.Point(364, 12);
-            this.cmbInquiryStatusFilter.Name = "cmbInquiryStatusFilter";
-            this.cmbInquiryStatusFilter.Size = new System.Drawing.Size(140, 23);
-
-            this.btnRefreshInquiries.BackColor = System.Drawing.Color.White;
-            this.btnRefreshInquiries.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225);
-            this.btnRefreshInquiries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshInquiries.Location = new System.Drawing.Point(516, 11);
-            this.btnRefreshInquiries.Name = "btnRefreshInquiries";
-            this.btnRefreshInquiries.Size = new System.Drawing.Size(90, 26);
-            this.btnRefreshInquiries.Text = "Refresh";
-
-            // lvInquiries
-            this.lvInquiries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-                this.colInqId, this.colInqPassenger, this.colInqPhone,
-                this.colInqCategory, this.colInqSubject, this.colInqStatus,
-                this.colInqDate, this.colInqOfficer
-            });
-            this.lvInquiries.FullRowSelect = true;
-            this.lvInquiries.GridLines = true;
-            this.lvInquiries.Location = new System.Drawing.Point(0, 202);
-            this.lvInquiries.MultiSelect = false;
-            this.lvInquiries.Name = "lvInquiries";
-            this.lvInquiries.Size = new System.Drawing.Size(975, 388);
-            this.lvInquiries.TabIndex = 3;
-            this.lvInquiries.UseCompatibleStateImageBehavior = false;
-            this.lvInquiries.View = System.Windows.Forms.View.Details;
-
-            this.colInqId.Text = "Inquiry ID"; this.colInqId.Width = 85;
-            this.colInqPassenger.Text = "Passenger Name"; this.colInqPassenger.Width = 140;
-            this.colInqPhone.Text = "Phone"; this.colInqPhone.Width = 110;
-            this.colInqCategory.Text = "Category"; this.colInqCategory.Width = 120;
-            this.colInqSubject.Text = "Subject / Request"; this.colInqSubject.Width = 220;
-            this.colInqStatus.Text = "Status"; this.colInqStatus.Width = 85;
-            this.colInqDate.Text = "Recorded At"; this.colInqDate.Width = 120;
-            this.colInqOfficer.Text = "Attended By"; this.colInqOfficer.Width = 110;
-
-            // panelFeedbackActions
-            this.panelFeedbackActions.BackColor = System.Drawing.Color.White;
-            this.panelFeedbackActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFeedbackActions.Controls.Add(this.lblInquiryCount);
-            this.panelFeedbackActions.Controls.Add(this.btnViewInquiryDetails);
-            this.panelFeedbackActions.Controls.Add(this.btnResolveInquiry);
-            this.panelFeedbackActions.Location = new System.Drawing.Point(0, 598);
-            this.panelFeedbackActions.Name = "panelFeedbackActions";
-            this.panelFeedbackActions.Size = new System.Drawing.Size(975, 48);
-
-            this.btnResolveInquiry.BackColor = System.Drawing.Color.FromArgb(16, 185, 129);
-            this.btnResolveInquiry.FlatAppearance.BorderSize = 0;
-            this.btnResolveInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResolveInquiry.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnResolveInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnResolveInquiry.Location = new System.Drawing.Point(12, 8);
-            this.btnResolveInquiry.Name = "btnResolveInquiry";
-            this.btnResolveInquiry.Size = new System.Drawing.Size(160, 32);
-            this.btnResolveInquiry.Text = "✅  Mark as Resolved";
-
-            this.btnViewInquiryDetails.BackColor = System.Drawing.Color.FromArgb(13, 94, 234);
-            this.btnViewInquiryDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewInquiryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewInquiryDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnViewInquiryDetails.ForeColor = System.Drawing.Color.White;
-            this.btnViewInquiryDetails.Location = new System.Drawing.Point(180, 8);
-            this.btnViewInquiryDetails.Name = "btnViewInquiryDetails";
-            this.btnViewInquiryDetails.Size = new System.Drawing.Size(140, 32);
-            this.btnViewInquiryDetails.Text = "👁️  View Details";
-
-            this.lblInquiryCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblInquiryCount.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.lblInquiryCount.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblInquiryCount.Location = new System.Drawing.Point(750, 14);
-            this.lblInquiryCount.Name = "lblInquiryCount";
-            this.lblInquiryCount.Size = new System.Drawing.Size(210, 20);
-            this.lblInquiryCount.Text = "Showing 0 inquiries";
-            this.lblInquiryCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-
-            // ==========================================
-            // FINAL FORM SETUP
-            // ==========================================
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            this.ClientSize = new System.Drawing.Size(1260, 820);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelSidebar);
-            this.Controls.Add(this.panelTopBar);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1150, 750);
-            this.Name = "TicketOfficerDashboardForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bus Ticket Management - Ticket Officer Portal";
-
-            // Resume layouts
-            this.panelTopBar.ResumeLayout(false);
-            this.panelTopBar.PerformLayout();
-            this.panelOfficerProfile.ResumeLayout(false);
-            this.panelSidebar.ResumeLayout(false);
-            this.panelSidebar.PerformLayout();
-            this.panelMain.ResumeLayout(false);
-            this.panelHeaderInfo.ResumeLayout(false);
-            this.panelHeaderInfo.PerformLayout();
-            this.flowDashboard.ResumeLayout(false);
-            this.grpOverview.ResumeLayout(false);
-            this.cardTicketsToday.ResumeLayout(false);
-            this.cardBoarded.ResumeLayout(false);
-            this.cardPendingBoarding.ResumeLayout(false);
-            this.cardRevenueToday.ResumeLayout(false);
-            this.grpQuickActions.ResumeLayout(false);
-            this.grpTicketVerify.ResumeLayout(false);
-            this.grpTicketVerify.PerformLayout();
-            this.grpTripsSchedule.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrips)).EndInit();
-
-            this.panelIssueTicket.ResumeLayout(false);
-            this.panelIssueHeader.ResumeLayout(false);
-            this.panelIssueHeader.PerformLayout();
-            this.panelIssueFormCard.ResumeLayout(false);
-            this.panelIssueFormCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numIssueSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIssueFare)).EndInit();
-            this.panelIssueSummaryCard.ResumeLayout(false);
-            this.panelIssueSummaryCard.PerformLayout();
-
-            this.panelVerifyBoarding.ResumeLayout(false);
-            this.panelVerifyHeader.ResumeLayout(false);
-            this.panelVerifyHeader.PerformLayout();
-            this.panelVerifyToolbar.ResumeLayout(false);
-            this.panelVerifyToolbar.PerformLayout();
-            this.panelVerifyBanner.ResumeLayout(false);
-            this.panelVerifyBanner.PerformLayout();
-            this.panelVerifyDossier.ResumeLayout(false);
-            this.panelVerifyDossier.PerformLayout();
-            this.panelVerifyActions.ResumeLayout(false);
-
-            this.panelBookingManagement.ResumeLayout(false);
-            this.panelBookingsHeader.ResumeLayout(false);
-            this.panelBookingsHeader.PerformLayout();
-            this.flowBookingMetrics.ResumeLayout(false);
-            this.panelBookingsToolbar.ResumeLayout(false);
-            this.panelBookingsToolbar.PerformLayout();
-            this.panelBookingActions.ResumeLayout(false);
-
-            this.panelTicketManagement.ResumeLayout(false);
-            this.panelTicketsHeader.ResumeLayout(false);
-            this.panelTicketsHeader.PerformLayout();
-            this.flowTicketMetrics.ResumeLayout(false);
-            this.panelTicketsToolbar.ResumeLayout(false);
-            this.panelTicketsToolbar.PerformLayout();
-            this.panelTicketActions.ResumeLayout(false);
-
-            this.panelManifest.ResumeLayout(false);
-            this.panelManifestHeader.ResumeLayout(false);
-            this.panelManifestHeader.PerformLayout();
-            this.panelManifestToolbar.ResumeLayout(false);
-            this.panelManifestToolbar.PerformLayout();
-            this.flowManifestMetrics.ResumeLayout(false);
-            this.panelManifestActions.ResumeLayout(false);
-
-            this.panelPayments.ResumeLayout(false);
-            this.panelPaymentsHeader.ResumeLayout(false);
-            this.panelPaymentsHeader.PerformLayout();
-            this.flowPaymentMetrics.ResumeLayout(false);
-            this.panelPaymentsToolbar.ResumeLayout(false);
-            this.panelPaymentsToolbar.PerformLayout();
-            this.panelPaymentActions.ResumeLayout(false);
-
-            this.panelFeedback.ResumeLayout(false);
-            this.panelFeedbackHeader.ResumeLayout(false);
-            this.panelFeedbackHeader.PerformLayout();
-            this.flowFeedbackMetrics.ResumeLayout(false);
-            this.panelFeedbackToolbar.ResumeLayout(false);
-            this.panelFeedbackToolbar.PerformLayout();
-            this.panelFeedbackActions.ResumeLayout(false);
-
-            this.ResumeLayout(false);
-        }
-
-        private void BuildMetricCard(out Panel card, out Label lblVal, out Label lblTitle, out Label lblSub,
-                                     string title, string val, string sub, Color accentColor)
-        {
-            card = new Panel
-            {
-                BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle,
-                Size = new Size(188, 70),
-                Margin = new Padding(0, 0, 8, 0)
-            };
-
-            lblVal = new Label
-            {
-                Font = new Font("Segoe UI", 16F, FontStyle.Bold),
-                ForeColor = accentColor,
-                Location = new Point(8, 6),
-                Size = new Size(170, 28),
-                Text = val
-            };
-
-            lblTitle = new Label
-            {
-                Font = new Font("Segoe UI", 8F, FontStyle.Bold),
-                ForeColor = Color.FromArgb(100, 116, 139),
-                Location = new Point(9, 34),
-                Size = new Size(170, 16),
-                Text = title
-            };
-
-            lblSub = new Label
-            {
-                Font = new Font("Segoe UI", 7.5F),
-                ForeColor = Color.FromArgb(148, 163, 184),
-                Location = new Point(9, 50),
-                Size = new Size(170, 14),
-                Text = sub
-            };
-
-            card.Controls.Add(lblSub);
-            card.Controls.Add(lblTitle);
-            card.Controls.Add(lblVal);
-        }
     }
 }

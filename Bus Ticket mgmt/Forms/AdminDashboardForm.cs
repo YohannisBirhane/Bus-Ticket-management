@@ -51,9 +51,6 @@ namespace Bus_Ticket_mgmt.Forms
 
             InitializeTripManagement();
             InitializePaymentManagement();
-            InitializeStaffManagement();
-            InitializeFareManagement();
-            InitializeReportManagement();
             InitializeSettingsManagement();
 
             PopulateTripsTable();
@@ -104,7 +101,7 @@ namespace Bus_Ticket_mgmt.Forms
             panelSidebarBottom = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 78,
+                Height = 88,
                 BackColor = Color.FromArgb(245, 247, 250)
             };
             panelSidebarBottom.Paint += (s, e) =>
@@ -139,8 +136,8 @@ namespace Bus_Ticket_mgmt.Forms
             Button[] navButtonsList = new[]
             {
                 btnNavDashboard, btnNavUsers, btnNavBuses, btnNavRoutes, btnNavTrips,
-                btnNavBookings, btnNavTickets, btnNavPayments, btnNavStaff,
-                btnNavFares, btnNavReports, btnNavSettings
+                btnNavBookings, btnNavTickets, btnNavPayments,
+                btnNavSettings
             };
 
             foreach (var btn in navButtonsList)
@@ -169,9 +166,6 @@ namespace Bus_Ticket_mgmt.Forms
             btnNavBookings.Text = "📋   Bookings";
             btnNavTickets.Text = "🎫   Tickets";
             btnNavPayments.Text = "💳   Payments";
-            btnNavStaff.Text = "👔   Staff";
-            btnNavFares.Text = "🏷️   Fares";
-            btnNavReports.Text = "📈   Reports";
             btnNavSettings.Text = "⚙️   Settings";
             btnNavLogout.Text = "🚪   Sign Out";
 
@@ -184,16 +178,11 @@ namespace Bus_Ticket_mgmt.Forms
             SetupSidebarButton(btnNavBookings);
             SetupSidebarButton(btnNavTickets);
             SetupSidebarButton(btnNavPayments);
-            SetupSidebarButton(btnNavStaff);
-            SetupSidebarButton(btnNavFares);
-            SetupSidebarButton(btnNavReports);
             SetupSidebarButton(btnNavSettings);
 
             // Quick actions buttons on dashboard
             btnQuickAddBus.Click += (s, e) => { ShowBusManagementView(); OpenAddBusDialog(); };
             btnQuickNewTrip.Click += (s, e) => { ShowTripManagementView(); OpenNewTripDialog(); };
-            btnQuickUpdateFares.Click += (s, e) => ShowFareManagementView();
-            btnQuickSalesReport.Click += (s, e) => ShowReportManagementView();
            
 
             // Sidebar right-edge divider line
@@ -232,9 +221,6 @@ namespace Bus_Ticket_mgmt.Forms
             btnNavBookings.Click += (s, e) => ShowBookingManagementView();
             btnNavTickets.Click += (s, e) => ShowTicketManagementView();
             btnNavPayments.Click += (s, e) => ShowPaymentManagementView();
-            btnNavStaff.Click += (s, e) => ShowStaffManagementView();
-            btnNavFares.Click += (s, e) => ShowFareManagementView();
-            btnNavReports.Click += (s, e) => ShowReportManagementView();
             btnNavSettings.Click += (s, e) => ShowSettingsManagementView();
         }
 
@@ -243,8 +229,8 @@ namespace Bus_Ticket_mgmt.Forms
             Button[] allNavButtons = new[]
             {
                 btnNavDashboard, btnNavUsers, btnNavBuses, btnNavRoutes, btnNavTrips,
-                btnNavBookings, btnNavTickets, btnNavPayments, btnNavStaff,
-                btnNavFares, btnNavReports, btnNavSettings
+                btnNavBookings, btnNavTickets, btnNavPayments,
+                btnNavSettings
             };
 
             foreach (var btn in allNavButtons)
@@ -254,7 +240,7 @@ namespace Bus_Ticket_mgmt.Forms
                 {
                     btn.BackColor = Color.FromArgb(226, 232, 240);
                     btn.ForeColor = Color.FromArgb(15, 23, 42);
-                    btn.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
+                    btn.Font = new Font("Segoe UI", 12f, FontStyle.Bold);
                     btn.FlatAppearance.BorderSize = 2;
                     btn.FlatAppearance.BorderColor = Color.FromArgb(15, 23, 42);
                 }
@@ -262,7 +248,7 @@ namespace Bus_Ticket_mgmt.Forms
                 {
                     btn.BackColor = Color.White;
                     btn.ForeColor = Color.FromArgb(30, 41, 59);
-                    btn.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
+                    btn.Font = new Font("Segoe UI", 12f, FontStyle.Bold);
                     btn.FlatAppearance.BorderSize = 2;
                     btn.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
                 }
@@ -281,9 +267,6 @@ namespace Bus_Ticket_mgmt.Forms
 
             if (panelTripManagement != null) panelTripManagement.Visible = false;
             if (panelPaymentManagement != null) panelPaymentManagement.Visible = false;
-            if (panelStaffManagement != null) panelStaffManagement.Visible = false;
-            if (panelFareManagement != null) panelFareManagement.Visible = false;
-            if (panelReportManagement != null) panelReportManagement.Visible = false;
             
             if (panelSettingsManagement != null) panelSettingsManagement.Visible = false;
         }
@@ -1869,8 +1852,8 @@ namespace Bus_Ticket_mgmt.Forms
             Button[] navButtons = new[]
             {
                 btnNavDashboard, btnNavUsers, btnNavBuses, btnNavRoutes, btnNavTrips,
-                btnNavBookings, btnNavTickets, btnNavPayments, btnNavStaff,
-                btnNavFares, btnNavReports, btnNavSettings
+                btnNavBookings, btnNavTickets, btnNavPayments,
+                btnNavSettings
             };
 
             int sideWidth = panelSidebarNav.ClientSize.Width;
@@ -1879,9 +1862,9 @@ namespace Bus_Ticket_mgmt.Forms
 
             int marginX = 14;
             int btnWidth = Math.Max(200, sideWidth - (marginX * 2));
-            int startY = 46;
-            int btnHeight = 52;
-            int constantSpacing = 14; // Increased gap between buttons!
+            int startY = 36;
+            int btnHeight = 60;
+            int constantSpacing = 20; // Increased button size and wider 20px gap
 
             for (int i = 0; i < navButtons.Length; i++)
             {
@@ -1894,8 +1877,8 @@ namespace Bus_Ticket_mgmt.Forms
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 2;
                 btn.FlatAppearance.BorderColor = (btn == btnNavDashboard) ? Color.FromArgb(15, 23, 42) : Color.FromArgb(148, 163, 184);
-                btn.Padding = new Padding(16, 0, 0, 0);
-                btn.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
+                btn.Padding = new Padding(20, 0, 0, 0);
+                btn.Font = new Font("Segoe UI", 12f, FontStyle.Bold);
                 btn.TextAlign = ContentAlignment.MiddleLeft;
                 btn.Cursor = Cursors.Hand;
             }
@@ -1905,14 +1888,14 @@ namespace Bus_Ticket_mgmt.Forms
             if (bottomWidth < 180) bottomWidth = panelSidebar.Width;
             int logoutWidth = Math.Max(200, bottomWidth - (marginX * 2));
 
-            btnNavLogout.Location = new Point(marginX, 12);
+            btnNavLogout.Location = new Point(marginX, 14);
             btnNavLogout.Size = new Size(logoutWidth, btnHeight);
             btnNavLogout.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnNavLogout.FlatStyle = FlatStyle.Flat;
             btnNavLogout.FlatAppearance.BorderSize = 2;
             btnNavLogout.FlatAppearance.BorderColor = Color.FromArgb(148, 163, 184);
-            btnNavLogout.Padding = new Padding(16, 0, 0, 0);
-            btnNavLogout.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
+            btnNavLogout.Padding = new Padding(20, 0, 0, 0);
+            btnNavLogout.Font = new Font("Segoe UI", 12f, FontStyle.Bold);
             btnNavLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnNavLogout.Cursor = Cursors.Hand;
         }
